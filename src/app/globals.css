@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --primary: #7D562D;
+  --on-primary: #FFFFFF;
+  --primary-container: #EDD9C0;
+
+  --secondary: #2C3E50;
+  --on-secondary: #FFFFFF;
+
+  --tertiary: #D4A373;
+  --on-tertiary: #FFFFFF;
+
+  /* Surface Hierarchy — derived from Soft Nude #FAF3EE */
+  --surface: #FAF3EE;
+  --surface-container-low: #F2E8DF;
+  --surface-container: #EBDFD4;
+  --surface-container-high: #E4D6C9;
+  --surface-container-highest: #DDCEC0;
+
+  /* Text */
+  --on-background: #2C3E50;
+  --on-surface: #3A2E24;
+  --outline-variant: rgba(44, 62, 80, 0.12);
+}
+
+@theme inline {
+  /* Colors */
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-surface: var(--surface);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-on-background: var(--on-background);
+  --color-on-surface: var(--on-surface);
+  --color-outline-variant: var(--outline-variant);
+
+  /* Fonts */
+  --font-serif: var(--font-noto-serif), "Georgia", serif;
+  --font-sans: var(--font-manrope), "Helvetica Neue", sans-serif;
+
+  /* Shadows — extra-diffused, tinted */
+  --shadow-ambient: 0 8px 40px 0 rgba(44, 62, 80, 0.05);
+  --shadow-float: 0 16px 60px 0 rgba(44, 62, 80, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--on-background);
+  font-family: var(--font-manrope), "Helvetica Neue", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-noto-serif), "Georgia", serif;
+}
