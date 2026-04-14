@@ -10,12 +10,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
   return (
     <div>
       {items.map((item, i) => (
-        <div
-          key={i}
-          style={{
-            borderBottom: "1px solid rgba(44, 62, 80, 0.10)",
-          }}
-        >
+        <div key={i} className="border-b border-secondary/10">
           <button
             onClick={() => setOpen(open === i ? null : i)}
             className="w-full flex items-start justify-between gap-8 py-6 text-left"
@@ -24,18 +19,13 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
               {item.q}
             </span>
             <span
-              className="font-sans text-2xl shrink-0 mt-0.5 transition-transform"
-              style={{
-                color: "#7D562D",
-                transform: open === i ? "rotate(45deg)" : "rotate(0deg)",
-              }}
+              className={`font-sans text-2xl text-primary shrink-0 mt-0.5 transition-transform ${open === i ? "rotate-45" : ""}`}
             >
               +
             </span>
           </button>
           {open === i && (
-            <p className="pb-6 font-sans text-base leading-relaxed max-w-2xl"
-               style={{ color: "rgba(44, 62, 80, 0.70)" }}>
+            <p className="pb-6 font-sans text-base leading-relaxed text-secondary/70 max-w-2xl">
               {item.a}
             </p>
           )}

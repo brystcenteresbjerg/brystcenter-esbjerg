@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/layout/Breadcrumb";
+import PageFAQ from "@/components/sections/PageFAQ";
 
 export const metadata: Metadata = {
   title: "Implantatudskiftning i Esbjerg | Stabilitet med PU-protese",
@@ -7,27 +8,25 @@ export const metadata: Metadata = {
     "Skal dine brystimplantater udskiftes? Hos Brystcenter Esbjerg bruger vi avancerede PU-overflader for at sikre præcis placering og stabilitet. Læs mere her.",
 };
 
+const faqItems = [
+  {
+    q: "Hvad er fordelen ved en polyuretanbelagt (PU) overflade?",
+    a: "Polyuretan-overfladen (PU) har en mikroporøs struktur, der fremmer vævsvækst ind i overfladen og forankrer implantatet på plads. Det reducerer markant risikoen for rotation og displacering, som er de hyppigste årsager til revisionskirurgi. PU-overfladen har desuden den laveste dokumenterede rate for kapselkontraktur blandt tilgængelige implantatoverflader. Det gør PU-implantater særligt velegnede ved revisionskirurgi, hvor kaviteten og vævskvaliteten kan være påvirket af det tidligere implantat.",
+  },
+  {
+    q: "Kan man skifte fra implantat til eget fedt?",
+    a: "Ja, det er muligt at fjerne eksisterende implantater og erstatte volumen med fedttransplantation (lipofilling). Resultatet afhænger af patientens tilgængelige fedtdepoter og det ønskede volumen. Det kræver typisk to eller flere behandlinger for at opnå tilstrækkeligt volumen, da fedt transplanteres i lag. For patienter, der ønsker en helt implantatfri løsning, er dette et realistisk alternativ, som vi vurderer individuelt under konsultationen.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Hvad er fordelen ved en polyuretanbelagt (PU) overflade?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Polyuretan-overfladen (PU) har en mikroporøs struktur, der fremmer vævsvækst ind i overfladen og forankrer implantatet på plads. Det reducerer markant risikoen for rotation og displacering, som er de hyppigste årsager til revisionskirurgi. PU-overfladen har desuden den laveste dokumenterede rate for kapselkontraktur blandt tilgængelige implantatoverflader. Det gør PU-implantater særligt velegnede ved revisionskirurgi, hvor kaviteten og vævskvaliteten kan være påvirket af det tidligere implantat.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Kan man skifte fra implantat til eget fedt?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ja, det er muligt at fjerne eksisterende implantater og erstatte volumen med fedttransplantation (lipofilling). Resultatet afhænger af patientens tilgængelige fedtdepoter og det ønskede volumen. Det kræver typisk to eller flere behandlinger for at opnå tilstrækkeligt volumen, da fedt transplanteres i lag. For patienter, der ønsker en helt implantatfri løsning, er dette et realistisk alternativ, som vi vurderer individuelt under konsultationen.",
-      },
-    },
-  ],
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 export default function Page() {
@@ -38,13 +37,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main className="max-w-3xl mx-auto px-8 py-24">
-        <nav className="mb-16 text-sm font-sans text-tertiary">
-          <Link href="/" className="text-primary hover:underline">
-            Brystkirurgi
-          </Link>
-          <span className="mx-2">›</span>
-          Implantatudskiftning
-        </nav>
+        <Breadcrumb current="Implantatudskiftning" />
 
         <article>
           <h1 className="font-serif text-5xl font-semibold leading-tight text-secondary mb-8">
@@ -112,39 +105,7 @@ export default function Page() {
             forventninger til resultatet, inden vi bestemmer den endelige plan.
           </p>
 
-          <section className="mt-20 bg-surface-container-low rounded-2xl p-10">
-            <h2 className="font-serif text-2xl font-medium text-secondary mb-8">
-              Hyppige spørgsmål
-            </h2>
-
-            <div className="mb-10">
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Hvad er fordelen ved en polyuretanbelagt (PU) overflade?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                PU-overfladen har en mikroporøs struktur, der fremmer
-                vævsvækst og forankrer implantatet. Det reducerer risikoen for
-                rotation og displacering markant og har den laveste
-                dokumenterede rate for kapselkontraktur. PU-implantater er
-                derfor særligt velegnede ved revisionskirurgi, hvor kaviteten
-                kan være påvirket af det tidligere implantat.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Kan man skifte fra implantat til eget fedt?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                Ja, det er muligt at fjerne implantater og erstatte volumen med
-                fedttransplantation (lipofilling). Resultatet afhænger af
-                tilgængelige fedtdepoter og ønsket volumen. Det kræver typisk
-                to eller flere behandlinger for tilstrækkeligt volumen. For
-                patienter, der ønsker en implantatfri løsning, er dette et
-                realistisk alternativ, der vurderes individuelt.
-              </p>
-            </div>
-          </section>
+          <PageFAQ items={faqItems} />
         </article>
       </main>
     </>

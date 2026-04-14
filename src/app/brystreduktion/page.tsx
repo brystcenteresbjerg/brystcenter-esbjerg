@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/layout/Breadcrumb";
+import PageFAQ from "@/components/sections/PageFAQ";
 
 export const metadata: Metadata = {
   title: "Brystreduktion i Esbjerg | Fokus på form & proportioner",
@@ -7,43 +8,33 @@ export const metadata: Metadata = {
     "Få mindre bryster og bedre velvære hos Brystcenter Esbjerg. Vi anvender moderne teknikker som B-teknik for optimal form og projektion. Book konsultation.",
 };
 
+const faqItems = [
+  {
+    q: "Hvor meget vægt kan man fjerne ved en brystreduktion?",
+    a: "Mængden af væv, der fjernes, afhænger af udgangspunktet og det ønskede resultat. Det er ikke ualmindeligt at fjerne 300-800 gram per side, og i tilfælde af makromasti kan der fjernes betydeligt mere. Vi prioriterer altid æstetisk balance og proportioner frem for et specifikt antal gram. Planlægningen sker individuelt baseret på din krop, din livsstil og dine ønsker om det endelige resultat.",
+  },
+  {
+    q: "Efterlader moderne teknikker som B-teknik færre ar?",
+    a: "B-teknikken (Renault) er designet til at optimere form og projektion med minimal ardannelse. Arlinjen følger areola-kanten, en kort vertikal linje og en diskret horisontal ar i brystranden. Sammenlignet med ældre teknikker er aret kortere og placeret mere skjult. Ardannelse afhænger desuden af individuelle faktorer som heling, hudtype og genetik. Vi rådgiver om arpleje fra dag ét for at sikre det bedste resultat.",
+  },
+  {
+    q: "Kan man amme efter en brystreduktion?",
+    a: "Ammemuligheder efter brystreduktion afhænger af den anvendte teknik og mængden af fjernet væv. Moderne teknikker som B-teknikken søger at bevare forbindelsen mellem brystvorte og kirtelvæv, hvilket øger sandsynligheden for at kunne amme. Det kan dog ikke garanteres. Kvinder, der planlægger graviditet og amning, bør drøfte dette med speciallægen inden operationen, da tidspunktet for indgrebet kan tilpasses.",
+  },
+  {
+    q: "Hvornår kan man genoptage træning og arbejde?",
+    a: "De fleste kan vende tilbage til stillesiddende arbejde efter 1-2 uger. Fysisk krævende arbejde og sport frarådes i 4-6 uger for at sikre en god heling. Øvre kropsøvelser og løb bør undgås i mindst 6 uger. Vi udleverer detaljerede retningslinjer for genoptræning og kontrollerer helingen løbende ved de planlagte opfølgningsbesøg.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Hvor meget vægt kan man fjerne ved en brystreduktion?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Mængden af væv, der fjernes, afhænger af udgangspunktet og det ønskede resultat. Det er ikke ualmindeligt at fjerne 300-800 gram per side, og i tilfælde af makromasti kan der fjernes betydeligt mere. Vi prioriterer altid æstetisk balance og proportioner frem for et specifikt antal gram. Planlægningen sker individuelt baseret på din krop, din livsstil og dine ønsker om det endelige resultat.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Efterlader moderne teknikker som B-teknik færre ar?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "B-teknikken (Renault) er designet til at optimere form og projektion med minimal ardannelse. Arlinjen følger areola-kanten, en kort vertikal linje og en diskret horisontal ar i brystranden. Sammenlignet med ældre teknikker er aret kortere og placeret mere skjult. Ardannelse afhænger desuden af individuelle faktorer som heling, hudtype og genetik. Vi rådgiver om arpleje fra dag ét for at sikre det bedste resultat.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Kan man amme efter en brystreduktion?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ammemuligheder efter brystreduktion afhænger af den anvendte teknik og mængden af fjernet væv. Moderne teknikker som B-teknikken søger at bevare forbindelsen mellem brystvorte og kirtelvæv, hvilket øger sandsynligheden for at kunne amme. Det kan dog ikke garanteres. Kvinder, der planlægger graviditet og amning, bør drøfte dette med speciallægen inden operationen, da tidspunktet for indgrebet kan tilpasses.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Hvornår kan man genoptage træning og arbejde?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "De fleste kan vende tilbage til stillesiddende arbejde efter 1-2 uger. Fysisk krævende arbejde og sport frarådes i 4-6 uger for at sikre en god heling. Øvre kropsøvelser og løb bør undgås i mindst 6 uger. Vi udleverer detaljerede retningslinjer for genoptræning og kontrollerer helingen løbende ved de planlagte opfølgningsbesøg.",
-      },
-    },
-  ],
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 export default function Page() {
@@ -54,13 +45,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main className="max-w-3xl mx-auto px-8 py-24">
-        <nav className="mb-16 text-sm font-sans text-tertiary">
-          <Link href="/" className="text-primary hover:underline">
-            Brystkirurgi
-          </Link>
-          <span className="mx-2">›</span>
-          Brystreduktion
-        </nav>
+        <Breadcrumb current="Brystreduktion" />
 
         <article>
           <h1 className="font-serif text-5xl font-semibold leading-tight text-secondary mb-8">
@@ -114,70 +99,13 @@ export default function Page() {
             Individuel planlægning af dit armønster
           </h3>
           <p className="font-sans leading-relaxed text-on-background">
-            Armønsteret tilpasses din anatomii og udgangspunktet for
+            Armønsteret tilpasses din anatomi og udgangspunktet for
             operationen. Vi tegner og diskuterer planlægningen i stående
             stilling forud for operationen, så du præcist ved, hvad du kan
             forvente.
           </p>
 
-          <section className="mt-20 bg-surface-container-low rounded-2xl p-10">
-            <h2 className="font-serif text-2xl font-medium text-secondary mb-8">
-              Hyppige spørgsmål
-            </h2>
-
-            <div className="mb-10">
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Hvor meget vægt kan man fjerne ved en brystreduktion?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                Mængden af fjernet væv afhænger af udgangspunktet og det
-                ønskede resultat. Det er ikke ualmindeligt at fjerne 300-800
-                gram per side, og ved makromasti kan der fjernes betydeligt
-                mere. Vi prioriterer æstetisk balance og proportioner frem for
-                et specifikt antal gram og planlægger individuelt baseret på
-                din krop og dine ønsker.
-              </p>
-            </div>
-
-            <div className="mb-10">
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Efterlader moderne teknikker som B-teknik færre ar?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                B-teknikken er designet til at optimere form og projektion med
-                minimal ardannelse. Arlinjen er kortere og mere skjult end ved
-                ældre teknikker. Ardannelse afhænger desuden af individuelle
-                faktorer som heling, hudtype og genetik. Vi rådgiver om arpleje
-                fra dag ét.
-              </p>
-            </div>
-
-            <div className="mb-10">
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Kan man amme efter en brystreduktion?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                Ammemuligheder afhænger af teknik og mængden af fjernet væv.
-                B-teknikken søger at bevare forbindelsen mellem brystvorte og
-                kirtelvæv, men amning kan ikke garanteres. Kvinder, der
-                planlægger graviditet og amning, bør drøfte dette inden
-                operationen, da tidspunktet for indgrebet kan tilpasses.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Hvornår kan man genoptage træning og arbejde?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                Stillesiddende arbejde er muligt efter 1-2 uger. Fysisk
-                krævende arbejde og sport frarådes i 4-6 uger. Øvre
-                kropsøvelser og løb bør undgås i mindst 6 uger. Vi udleverer
-                detaljerede retningslinjer og kontrollerer helingen ved
-                planlagte opfølgningsbesøg.
-              </p>
-            </div>
-          </section>
+          <PageFAQ items={faqItems} />
         </article>
       </main>
     </>

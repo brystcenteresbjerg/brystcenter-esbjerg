@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/layout/Breadcrumb";
+import PageFAQ from "@/components/sections/PageFAQ";
 
 export const metadata: Metadata = {
   title: "Brystforstørrelse med eget fedt | Regenerativ æstetik",
@@ -7,27 +8,25 @@ export const metadata: Metadata = {
     "Ønsker du større bryster uden implantater? Få en naturlig brystforstørrelse med eget fedt (lipofilling) hos Brystcenter Esbjerg. Læs om regenerativ æstetik her.",
 };
 
+const faqItems = [
+  {
+    q: "Hvad er fordelen ved stamceller i fedtvæv?",
+    a: "Fedtvæv indeholder en naturlig koncentration af stamceller, som fremmer vævsheling og regeneration. Når fedtet transplanteres til brystet, bidrager stamcellerne ikke blot til volumen, men forbedrer også vævskvaliteten i det omgivende væv. Resultatet er en gradvis forbedring af hudens tekstur og elasticitet over tid. Stamcellerne understøtter den biologiske integration og øger andelen af fedt, der overlever transplantationen, hvilket giver et mere varigt og naturligt udseende.",
+  },
+  {
+    q: "Kan man kombinere implantat og eget fedt (Hybrid)?",
+    a: "Ja, en hybridtilgang kombinerer et implantat med fedttransplantation og er særligt velegnet til patienter, der ønsker mere volumen end eget fedt alene kan give, men som også ønsker et naturligt udseende. Implantatet sikrer strukturel volumen, mens lipofillingen former konturerne, dækker implantatets kanter og skaber en blødere overgang. Hybrid-teknikken kræver specialiseret erfaring og individuel planlægning for at opnå det bedste æstetiske resultat.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Hvad er fordelen ved stamceller i fedtvæv?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Fedtvæv indeholder en naturlig koncentration af stamceller, som fremmer vævsheling og regeneration. Når fedtet transplanteres til brystet, bidrager stamcellerne ikke blot til volumen, men forbedrer også vævskvaliteten i det omgivende væv. Resultatet er en gradvis forbedring af hudens tekstur og elasticitet over tid. Stamcellerne understøtter den biologiske integration og øger andelen af fedt, der overlever transplantationen, hvilket giver et mere varigt og naturligt udseende.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Kan man kombinere implantat og eget fedt (Hybrid)?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ja, en hybridtilgang kombinerer et implantat med fedttransplantation og er særligt velegnet til patienter, der ønsker mere volumen end eget fedt alene kan give, men som også ønsker et naturligt udseende. Implantatet sikrer strukturel volumen, mens lipofillingen former konturerne, dækker implantatets kanter og skaber en blødere overgang. Hybrid-teknikken kræver specialiseret erfaring og individuel planlægning for at opnå det bedste æstetiske resultat.",
-      },
-    },
-  ],
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 export default function Page() {
@@ -38,13 +37,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main className="max-w-3xl mx-auto px-8 py-24">
-        <nav className="mb-16 text-sm font-sans text-tertiary">
-          <Link href="/" className="text-primary hover:underline">
-            Brystkirurgi
-          </Link>
-          <span className="mx-2">›</span>
-          Brystforstørrelse med eget fedt
-        </nav>
+        <Breadcrumb current="Brystforstørrelse med eget fedt" />
 
         <article>
           <h1 className="font-serif text-5xl font-semibold leading-tight text-secondary mb-8">
@@ -110,40 +103,7 @@ export default function Page() {
             levedygtigt fedt og reducerer hævelse ved donorstedet.
           </p>
 
-          <section className="mt-20 bg-surface-container-low rounded-2xl p-10">
-            <h2 className="font-serif text-2xl font-medium text-secondary mb-8">
-              Hyppige spørgsmål
-            </h2>
-
-            <div className="mb-10">
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Hvad er fordelen ved stamceller i fedtvæv?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                Fedtvæv indeholder en naturlig koncentration af stamceller, som
-                fremmer vævsheling og regeneration. Når fedtet transplanteres
-                til brystet, bidrager stamcellerne ikke blot til volumen, men
-                forbedrer også vævskvaliteten i det omgivende væv. Resultatet
-                er en gradvis forbedring af hudens tekstur og elasticitet.
-                Stamcellerne understøtter den biologiske integration og øger
-                andelen af fedt, der overlever transplantationen.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Kan man kombinere implantat og eget fedt (Hybrid)?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                Ja, en hybridtilgang kombinerer et implantat med
-                fedttransplantation og er særligt velegnet til patienter, der
-                ønsker mere volumen end eget fedt alene kan give. Implantatet
-                sikrer strukturel volumen, mens lipofillingen former konturerne
-                og skaber en blødere overgang. Hybrid-teknikken kræver
-                specialiseret erfaring og individuel planlægning.
-              </p>
-            </div>
-          </section>
+          <PageFAQ items={faqItems} />
         </article>
       </main>
     </>

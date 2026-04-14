@@ -8,7 +8,7 @@ import ConsultationFloat from "@/components/layout/ConsultationFloat";
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const manrope = Manrope({

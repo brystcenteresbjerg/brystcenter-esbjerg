@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 
 const navLinks = [
   { label: "Brystforstørrelse", href: "/bfo-implantat" },
@@ -11,13 +12,7 @@ const navLinks = [
 
 export default function Header() {
   return (
-    <header
-      className="fixed top-0 inset-x-0 z-50"
-      style={{
-        backdropFilter: "blur(20px)",
-        backgroundColor: "rgba(250, 243, 238, 0.80)",
-      }}
-    >
+    <header className="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-[20px]">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 h-16 flex items-center justify-between gap-8">
         <Link
           href="/"
@@ -38,12 +33,9 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link
-          href="#book"
-          className="hidden lg:flex h-9 items-center px-5 rounded-full bg-secondary text-on-secondary font-sans text-sm font-medium hover:opacity-90 transition-opacity shrink-0"
-        >
+        <Button href="#book" size="sm" className="hidden lg:flex shrink-0">
           Book konsultation
-        </Link>
+        </Button>
       </div>
     </header>
   );

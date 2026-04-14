@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Breadcrumb from "@/components/layout/Breadcrumb";
+import PageFAQ from "@/components/sections/PageFAQ";
 
 export const metadata: Metadata = {
   title: "Brystløft i Esbjerg | Naturlig form med Ruth Graf teknik",
@@ -7,27 +8,25 @@ export const metadata: Metadata = {
     "Få et naturligt brystløft hos Brystcenter Esbjerg. Vi anvender Ruth Graf-teknikken til auto-augmentation, der giver fylde uden implantater. Book tid i dag.",
 };
 
+const faqItems = [
+  {
+    q: "Hvem er egnet til et vertikalt brystløft?",
+    a: "Et vertikalt brystløft er velegnet til kvinder med moderate til svære grader af brystptose (hængen), som ønsker et løft og gerne mere fylde – uden at anvende implantat. Det er særligt relevant efter graviditet, amning eller vægttab, hvor brystet har mistet volumen og form. Forudsætningen er tilstrækkeligt brystkirtelvæv til at skabe auto-augmentation. Under konsultationen vurderer vi din anatomi og afklarer, om teknikken er den rette løsning for dig.",
+  },
+  {
+    q: "Hvad er forskellen på et klassisk løft og Ruth Graf teknikken?",
+    a: "Et klassisk brystløft fjerner hud og løfter brystkirtlen op, men efterlader brystet fladere. Ruth Graf-teknikken (vertikal mastopeksi med auto-augmentation) omplacerer derimod kirtelvævet indvendigt, så det fungerer som en intern fylde. Det giver volumen i den øvre pol og en mere rund, ungdommelig form – uden implantat. Arlinjen er kortere: kun en vertikal ar og en areola-ar, ingen horisontal ar i brystranden.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Hvem er egnet til et vertikalt brystløft?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Et vertikalt brystløft er velegnet til kvinder med moderate til svære grader af brystptose (hængen), som ønsker et løft og gerne mere fylde – uden at anvende implantat. Det er særligt relevant efter graviditet, amning eller vægttab, hvor brystet har mistet volumen og form. Forudsætningen er tilstrækkeligt brystkirtelvæv til at skabe auto-augmentation. Under konsultationen vurderer vi din anatomi og afklarer, om teknikken er den rette løsning for dig.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Hvad er forskellen på et klassisk løft og Ruth Graf teknikken?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Et klassisk brystløft fjerner hud og løfter brystkirtlen op, men efterlader brystet fladere. Ruth Graf-teknikken (vertikal mastopeksi med auto-augmentation) omplacerer derimod kirtelvævet indvendigt, så det fungerer som en intern fylde. Det giver volumen i den øvre pol og en mere rund, ungdommelig form – uden implantat. Arlinjen er kortere: kun en vertikal ar og en areola-ar, ingen horisontal ar i brystranden.",
-      },
-    },
-  ],
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 export default function Page() {
@@ -38,13 +37,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main className="max-w-3xl mx-auto px-8 py-24">
-        <nav className="mb-16 text-sm font-sans text-tertiary">
-          <Link href="/" className="text-primary hover:underline">
-            Brystkirurgi
-          </Link>
-          <span className="mx-2">›</span>
-          Brystløft
-        </nav>
+        <Breadcrumb current="Brystløft" />
 
         <article>
           <h1 className="font-serif text-5xl font-semibold leading-tight text-secondary mb-8">
@@ -93,40 +86,7 @@ export default function Page() {
             naturligt, symmetrisk resultat med god projektion.
           </p>
 
-          <section className="mt-20 bg-surface-container-low rounded-2xl p-10">
-            <h2 className="font-serif text-2xl font-medium text-secondary mb-8">
-              Hyppige spørgsmål
-            </h2>
-
-            <div className="mb-10">
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Hvem er egnet til et vertikalt brystløft?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                Et vertikalt brystløft er velegnet til kvinder med moderate til
-                svære grader af brystptose, som ønsker et løft og mere fylde
-                uden implantat. Det er særligt relevant efter graviditet,
-                amning eller vægttab. Forudsætningen er tilstrækkeligt
-                brystkirtelvæv til at skabe auto-augmentation. Under
-                konsultationen vurderer vi din anatomi og afklarer, om
-                teknikken er den rette løsning for dig.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="font-serif text-lg font-semibold text-secondary mb-3">
-                Hvad er forskellen på et klassisk løft og Ruth Graf teknikken?
-              </h2>
-              <p className="font-sans leading-relaxed text-on-background">
-                Et klassisk brystløft fjerner hud og løfter kirtlen, men
-                efterlader brystet fladere. Ruth Graf-teknikken omplacerer
-                kirtelvævet indvendigt, så det fungerer som intern fylde. Det
-                giver volumen i den øvre pol og en mere rund form uden
-                implantat. Arlinjen er kortere: en vertikal ar og en areola-ar,
-                ingen horisontal ar i brystranden.
-              </p>
-            </div>
-          </section>
+          <PageFAQ items={faqItems} />
         </article>
       </main>
     </>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FAQAccordion from "@/components/sections/FAQAccordion";
+import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Brystcenter Esbjerg | Specialister i naturlig brystkirurgi",
@@ -59,25 +61,25 @@ const services = [
     title: "Brystforstørrelse",
     desc: "Opnå dit ønskede volumen med implantat eller eget fedt. Vi skræddersyr løsningen til din anatomi og dine ønsker.",
     href: "/bfo-implantat",
-    bg: "linear-gradient(160deg, #C49060 0%, #7D562D 100%)",
+    bg: "linear-gradient(160deg, var(--tertiary) 0%, var(--primary) 100%)",
   },
   {
     title: "Brystløft",
     desc: "Genvind din naturlige form med Ruth Graf-teknikken og auto-augmentation — uden implantat.",
     href: "/brystloeft",
-    bg: "linear-gradient(160deg, #D4B896 0%, #8A6040 100%)",
+    bg: "linear-gradient(135deg, var(--primary-container) 0%, var(--tertiary) 100%)",
   },
   {
     title: "Brystreduktion",
     desc: "Find din naturlige balance. Moderne B-teknik for optimal form, projektion og lindring af fysiske gener.",
     href: "/brystreduktion",
-    bg: "linear-gradient(160deg, #B8824A 0%, #6B4520 100%)",
+    bg: "linear-gradient(180deg, var(--tertiary) 0%, var(--primary) 100%)",
   },
   {
     title: "Implantatudskiftning",
     desc: "Revisionskirurgi med avancerede PU-overflader for præcis placering og langvarig stabilitet.",
     href: "/udskiftning-af-protese",
-    bg: "linear-gradient(160deg, #D4A373 0%, #9A6830 100%)",
+    bg: "linear-gradient(145deg, var(--tertiary) 0%, var(--primary) 100%)",
   },
 ];
 
@@ -94,68 +96,46 @@ export default function Home() {
         {/* Left: text */}
         <div className="flex flex-1 items-center px-8 lg:px-24 py-24 bg-surface">
           <div className="max-w-lg">
-            <p
-              className="font-sans text-xs uppercase tracking-[0.15em] mb-8"
-              style={{ color: "#7D562D" }}
-            >
+            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">
               Brystcenter Esbjerg
             </p>
 
             <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8">
               Brystcenter Esbjerg –{" "}
-              <span className="block">Skræddersyet</span>
+              <span className="block italic font-light">Skræddersyet</span>
               <span className="block">brystkirurgi</span>
             </h1>
 
-            <p
-              className="font-sans text-base leading-relaxed mb-10 max-w-sm"
-              style={{ color: "rgba(44, 62, 80, 0.65)" }}
-            >
+            <p className="font-sans text-base leading-relaxed mb-10 max-w-sm text-secondary/65">
               Fra første konsultation til det endelige resultat. Vi kombinerer
               klinisk præcision med en personlig tilgang for naturlig harmoni.
             </p>
 
-            <Link
-              href="#book"
-              className="inline-flex h-12 items-center px-8 rounded-full font-sans text-sm font-medium text-white hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#2C3E50" }}
-            >
+            <Button href="#book">
               Book en konsultation
-            </Link>
+            </Button>
 
             {/* Philosophy pillars */}
             <div className="mt-16 grid grid-cols-2 gap-8">
               <div>
-                <p
-                  className="font-serif text-3xl mb-2"
-                  style={{ color: "#7D562D" }}
-                >
+                <p className="font-serif text-3xl mb-2 text-primary">
                   ←
                 </p>
                 <p className="font-sans text-sm font-semibold text-secondary mb-1">
                   Kompromisløst og æstetisk
                 </p>
-                <p
-                  className="font-sans text-xs leading-relaxed"
-                  style={{ color: "rgba(44, 62, 80, 0.55)" }}
-                >
+                <p className="font-sans text-xs leading-relaxed text-secondary/55">
                   Naturlige resultater der harmonerer med din krop og dit liv
                 </p>
               </div>
               <div>
-                <p
-                  className="font-serif text-3xl mb-2"
-                  style={{ color: "#7D562D" }}
-                >
+                <p className="font-serif text-3xl mb-2 text-primary">
                   4
                 </p>
                 <p className="font-sans text-sm font-semibold text-secondary mb-1">
                   Kirurgisk præcision
                 </p>
-                <p
-                  className="font-sans text-xs leading-relaxed"
-                  style={{ color: "rgba(44, 62, 80, 0.55)" }}
-                >
+                <p className="font-sans text-xs leading-relaxed text-secondary/55">
                   Specialiserede ydelser med dokumenterede teknikker
                 </p>
               </div>
@@ -163,27 +143,22 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right: image placeholder — replace with Next.js <Image> */}
-        <div
-          className="hidden lg:block w-[44%] shrink-0"
-          style={{
-            background:
-              "linear-gradient(160deg, #E8C99A 0%, #D4A373 35%, #B07840 65%, #7D562D 100%)",
-          }}
-          aria-hidden="true"
-        />
+        {/* Right: hero image */}
+        <div className="hidden lg:block w-[44%] shrink-0 relative">
+          <Image
+            src="/hero-silk.png"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       </section>
 
       {/* ── VORES FILOSOFI ───────────────────────────────────────── */}
-      <section
-        className="px-8 lg:px-16 py-14"
-        style={{ backgroundColor: "#F2E8DF" }}
-      >
+      <section className="px-8 lg:px-16 py-14 bg-surface-container-low">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-24 lg:items-start">
-          <p
-            className="font-sans text-xs uppercase tracking-[0.12em] shrink-0 pt-1"
-            style={{ color: "rgba(44, 62, 80, 0.40)" }}
-          >
+          <p className="font-sans text-xs uppercase tracking-[0.12em] shrink-0 pt-1 text-secondary/40">
             Vores filosofi
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 flex-1">
@@ -191,10 +166,7 @@ export default function Home() {
               <p className="font-serif text-lg font-semibold text-secondary mb-3">
                 Specialister i naturlig harmoni
               </p>
-              <p
-                className="font-sans text-sm leading-relaxed"
-                style={{ color: "rgba(44, 62, 80, 0.65)" }}
-              >
+              <p className="font-sans text-sm leading-relaxed text-secondary/65">
                 Vi tror på, at det bedste kirurgiske resultat er det, der aldrig
                 behøver at forklare sig. Vores mål er naturlige proportioner —
                 resultater der ser ud som om de altid har hørt til kroppen.
@@ -204,10 +176,7 @@ export default function Home() {
               <p className="font-serif text-lg font-semibold text-secondary mb-3">
                 Individuel tilpasning fra start til slut
               </p>
-              <p
-                className="font-sans text-sm leading-relaxed"
-                style={{ color: "rgba(44, 62, 80, 0.65)" }}
-              >
+              <p className="font-sans text-sm leading-relaxed text-secondary/65">
                 Ingen standardløsninger. Hvert forløb begynder med en grundig
                 analyse af din anatomi, dine ønsker og dine forudsætninger —
                 og afsluttes med et resultat, der er unikt dig.
@@ -224,10 +193,7 @@ export default function Home() {
             <h2 className="font-serif text-4xl font-semibold text-secondary mb-4">
               Vores Ekspertise
             </h2>
-            <p
-              className="font-sans text-base max-w-md mx-auto"
-              style={{ color: "rgba(44, 62, 80, 0.60)" }}
-            >
+            <p className="font-sans text-base max-w-md mx-auto text-secondary/60">
               Udvalgte indgreb med fokus på naturlighed, holdbarhed og individuel
               tilpasning til din anatomi.
             </p>
@@ -238,31 +204,21 @@ export default function Home() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group relative overflow-hidden rounded-2xl flex flex-col justify-end p-8"
-                style={{ minHeight: "280px" }}
+                className="group relative overflow-hidden rounded-2xl flex flex-col justify-end p-8 min-h-70"
               >
                 <div
                   className="absolute inset-0"
                   style={{ background: s.bg }}
                 />
-                <div
-                  className="absolute inset-0"
-                  style={{ backgroundColor: "rgba(44, 62, 80, 0.60)" }}
-                />
+                <div className="absolute inset-0 bg-secondary/60" />
                 <div className="relative z-10">
                   <h3 className="font-serif text-2xl font-semibold text-white mb-2">
                     {s.title}
                   </h3>
-                  <p
-                    className="font-sans text-sm leading-relaxed mb-4"
-                    style={{ color: "rgba(255, 255, 255, 0.68)" }}
-                  >
+                  <p className="font-sans text-sm leading-relaxed mb-4 text-on-primary/68">
                     {s.desc}
                   </p>
-                  <span
-                    className="font-sans text-xs transition-opacity group-hover:opacity-100"
-                    style={{ color: "rgba(255, 255, 255, 0.45)" }}
-                  >
+                  <span className="font-sans text-xs transition-opacity group-hover:opacity-100 text-on-primary/45">
                     Læs mere →
                   </span>
                 </div>
@@ -273,10 +229,7 @@ export default function Home() {
       </section>
 
       {/* ── HVORFOR VÆLGE OS ─────────────────────────────────────── */}
-      <section
-        className="px-8 lg:px-16 py-24"
-        style={{ backgroundColor: "#F2E8DF" }}
-      >
+      <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-serif text-4xl font-semibold text-secondary mb-16 text-center">
             Hvorfor vælge os?
@@ -300,21 +253,12 @@ export default function Home() {
                 },
               ].map((item) => (
                 <div key={item.label} className="flex gap-5">
-                  <div
-                    className="w-0.5 rounded-full shrink-0 self-stretch"
-                    style={{ backgroundColor: "#D4A373" }}
-                  />
+                  <div className="w-0.5 rounded-full shrink-0 self-stretch bg-tertiary" />
                   <div>
-                    <p
-                      className="font-sans text-xs font-semibold uppercase tracking-widest mb-2"
-                      style={{ color: "#2C3E50" }}
-                    >
+                    <p className="font-sans text-xs font-semibold uppercase tracking-widest mb-2 text-secondary">
                       {item.label}
                     </p>
-                    <p
-                      className="font-sans text-base leading-relaxed"
-                      style={{ color: "rgba(44, 62, 80, 0.70)" }}
-                    >
+                    <p className="font-sans text-base leading-relaxed text-secondary/70">
                       {item.text}
                     </p>
                   </div>
@@ -323,28 +267,19 @@ export default function Home() {
             </div>
 
             {/* Testimonial */}
-            <div
-              className="rounded-2xl p-10 bg-surface"
-              style={{ boxShadow: "0 8px 40px 0 rgba(44, 62, 80, 0.06)" }}
-            >
+            <div className="rounded-2xl p-10 bg-surface shadow-ambient">
               <p className="font-serif text-xl leading-relaxed text-secondary mb-8">
                 &ldquo;Jeg oplevede hos Brystcenter Esbjerg et meget professionelt
                 og menneskeligt behandlingsforløb. Jeg føler mig tryg og i de
                 kompetente hænder.&rdquo;
               </p>
               <div className="flex items-center gap-4">
-                <div
-                  className="w-10 h-10 rounded-full shrink-0"
-                  style={{ backgroundColor: "#EDD9C0" }}
-                />
+                <div className="w-10 h-10 rounded-full shrink-0 bg-primary-container" />
                 <div>
                   <p className="font-sans text-sm font-semibold text-secondary">
                     Maria, 34 år
                   </p>
-                  <p
-                    className="font-sans text-xs"
-                    style={{ color: "rgba(44, 62, 80, 0.50)" }}
-                  >
+                  <p className="font-sans text-xs text-secondary/50">
                     Brystforstørrelse
                   </p>
                 </div>
@@ -360,38 +295,24 @@ export default function Home() {
           <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">
             Klar til at tage det første skridt?
           </h2>
-          <p
-            className="font-sans text-base leading-relaxed mb-10"
-            style={{ color: "rgba(44, 62, 80, 0.60)" }}
-          >
+          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
             En uforpligtende konsultation er det første skridt mod det resultat,
             du ønsker. Vi gennemgår dine muligheder og besvarer alle dine
             spørgsmål.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:kontakt@brystcenter-esbjerg.dk"
-              className="inline-flex h-12 items-center justify-center px-8 rounded-full font-sans text-sm font-medium text-white hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: "#2C3E50" }}
-            >
+            <Button href="mailto:kontakt@brystcenter-esbjerg.dk">
               Book en konsultation
-            </a>
-            <a
-              href="tel:+4576185656"
-              className="inline-flex h-12 items-center justify-center px-8 rounded-full font-sans text-sm font-medium text-secondary hover:opacity-70 transition-opacity"
-              style={{ border: "1px solid rgba(44, 62, 80, 0.20)" }}
-            >
+            </Button>
+            <Button href="tel:+4576185656" variant="outline">
               Ring til os: +45 76 18 56 56
-            </a>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
-      <section
-        className="px-8 lg:px-16 py-24"
-        style={{ backgroundColor: "#F2E8DF" }}
-      >
+      <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-serif text-4xl font-semibold text-secondary mb-14 text-center">
             Spørgsmål & Svar
