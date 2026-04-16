@@ -2,26 +2,26 @@
 
 :root {
   /* Brand Colors */
-  --primary: #7D562D;
-  --on-primary: #FFFFFF;
-  --primary-container: #EDD9C0;
+  --primary: #7d562d;
+  --on-primary: #ffffff;
+  --primary-container: #edd9c0;
 
-  --secondary: #2C3E50;
-  --on-secondary: #FFFFFF;
+  --secondary: #2c3e50;
+  --on-secondary: #ffffff;
 
-  --tertiary: #D4A373;
-  --on-tertiary: #FFFFFF;
+  --tertiary: #d4a373;
+  --on-tertiary: #ffffff;
 
   /* Surface Hierarchy — derived from Soft Nude #FAF3EE */
-  --surface: #FAF3EE;
-  --surface-container-low: #F2E8DF;
-  --surface-container: #EBDFD4;
-  --surface-container-high: #E4D6C9;
-  --surface-container-highest: #DDCEC0;
+  --surface: #fffdfa;
+  --surface-container-low: #faf6f1;
+  --surface-container: #ebdfd4;
+  --surface-container-high: #e4d6c9;
+  --surface-container-highest: #ddcec0;
 
   /* Text */
-  --on-background: #2C3E50;
-  --on-surface: #3A2E24;
+  --on-background: #2c3e50;
+  --on-surface: #3a2e24;
   --outline-variant: rgba(44, 62, 80, 0.12);
 }
 
@@ -62,6 +62,11 @@ body {
   font-family: var(--font-manrope), "Helvetica Neue", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-noto-serif), "Georgia", serif;
 }

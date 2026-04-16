@@ -9,6 +9,7 @@ interface ButtonProps {
   variant?: Variant;
   size?: Size;
   className?: string;
+  onClick?: () => void;
 }
 
 const variants: Record<Variant, string> = {
@@ -25,19 +26,19 @@ const sizes: Record<Size, string> = {
 
 const base = "inline-flex items-center justify-center rounded-full font-sans text-sm font-medium transition-opacity";
 
-export default function Button({ href, children, variant = "primary", size = "lg", className = "" }: ButtonProps) {
+export default function Button({ href, children, variant = "primary", size = "lg", className = "", onClick }: ButtonProps) {
   const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`.trim();
 
   if (href.startsWith("mailto:") || href.startsWith("tel:")) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} onClick={onClick}>
         {children}
       </a>
     );
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} onClick={onClick}>
       {children}
     </Link>
   );
