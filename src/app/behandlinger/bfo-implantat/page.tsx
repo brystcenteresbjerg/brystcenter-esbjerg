@@ -1,10 +1,10 @@
 import { AlignJustify, Gem, Ruler } from "lucide-react";
 
 import Button from "@/components/ui/Button";
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
+import PageHero from "@/components/sections/PageHero";
 
 export const metadata: Metadata = {
   title: "Brystforstørrelse med implantat | Skræddersyet i Esbjerg",
@@ -61,43 +61,25 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="relative flex items-end">
-        {/* 1. background image */}
-        <Image src="/hero_implants_two_hands.png" alt="Brystimplantater" fill sizes="100vw" className="object-cover" priority />
-        {/* 2. gradient overlays — inline style because Tailwind v4 CSS-var gradient stops are unreliable */}
-        {/* <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(to bottom, #FAF3EE 0%, rgba(250,243,238,0.7) 45%, rgba(250,243,238,0) 80%)" }}
-        /> */}
-
-        {/* 3. content */}
-        <div className="relative z-10 w-full px-8 lg:px-24 pb-20 pt-32">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">Brystforstørrelse / Implantat</p>
-
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-xl">
-            Brystforstørrelse <span className="block italic font-light">med implantater</span>
-          </h1>
-
-          <p className="font-sans text-base leading-relaxed mb-10 max-w-sm text-secondary/65">
-            Et skræddersyet indgreb, der tager udgangspunkt i din anatomi, dine proportioner og dine ønsker — ikke en
-            standardstørrelse.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Button href="#book">Book konsultation</Button>
-            <Button href="/behandlinger/bfo-eget-fedt-lipofilling" variant="outline">
-              Eget fedt som alternativ
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        label="Brystforstørrelse / Implantat"
+        h1Main="Brystforstørrelse"
+        h1Italic="med implantater"
+        subtitle="Et skræddersyet indgreb, der tager udgangspunkt i din anatomi, dine proportioner og dine ønsker — ikke en standardstørrelse."
+        image="/images/hero-silk.png"
+        gradient={false}
+        buttons={[
+          { label: "Book konsultation", href: "#book" },
+          { label: "Eget fedt som alternativ", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
+        ]}
+      />
 
       {/* ── À LA CARTE ───────────────────────────────────────────── */}
       <section className="">
         <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Portrait image with floating quote card */}
           <div className="relative rounded-2xl overflow-hidden aspect-square">
-            <img src="/body_boobs.png" alt="" className="w-full h-full object-cover" />
+            <img src="/images/body_boobs.png" alt="" className="w-full h-full object-cover" />
             <div
               className="absolute inset-0"
               style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 55%)" }}
@@ -191,10 +173,10 @@ export default function Page() {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-2xl overflow-hidden aspect-square">
-              <img src="/gemini_generated_image_implants.png" alt="" className="w-full h-full object-cover" />
+              <img src="/images/gemini_generated_image_implants.png" alt="" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-2xl overflow-hidden aspect-square mt-8">
-              <img src="/gemini_generated_image_implants_hands.png" alt="" className="w-full h-full object-cover" />
+              <img src="/images/gemini_generated_image_implants_hands.png" alt="" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

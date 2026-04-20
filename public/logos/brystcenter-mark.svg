@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" fill="none" width="64" height="48" role="img" aria-label="Brystcenter Esbjerg mark">
+  <circle cx="32" cy="40" r="4" fill="#7D562D"></circle>
+  <path d="M 18 40 A 14 14 0 0 1 46 40" stroke="#7D562D" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.85"></path>
+  <path d="M 10 40 A 22 22 0 0 1 54 40" stroke="#7D562D" stroke-width="1.4" fill="none" stroke-linecap="round"></path>
+  <path d="M 2  40 A 30 30 0 0 1 62 40" stroke="#7D562D" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.55"></path>
+</svg>

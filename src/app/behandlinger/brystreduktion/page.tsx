@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
+import PageHero from "@/components/sections/PageHero";
 
 export const metadata: Metadata = {
   title: "Brystreduktion i Esbjerg | Fokus på form & proportioner",
@@ -58,35 +59,29 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="bg-surface pt-40 pb-20 px-8 lg:px-24">
-        <div className="max-w-2xl">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">Brystreduktion</p>
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8">
-            Brystreduktion <span className="block italic font-light">med fokus på form</span>
-          </h1>
-          <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-sm">
-            Find din naturlige balance. Moderne B-teknik for optimal form, projektion og lindring af fysiske gener.
-          </p>
-          <div className="flex flex-wrap gap-4 mt-10">
-            <Button href="#book">Book konsultation</Button>
-            <Button href="/behandlinger/brystloeft" variant="outline">Se også brystløft</Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        label="Brystreduktion"
+        h1Main="Brystreduktion"
+        h1Italic="med fokus på form"
+        image="/images/hero-silk.png"
+        subtitle="Find din naturlige balance. Moderne B-teknik for optimal form, projektion og lindring af fysiske gener."
+        buttons={[
+          { label: "Book konsultation", href: "#book" },
+          { label: "Se også brystløft", href: "/behandlinger/brystloeft", variant: "outline" },
+        ]}
+      />
 
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Teknik</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              Moderne B-teknik (Renault)
-            </h2>
+            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">Moderne B-teknik (Renault)</h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65">
-              B-teknikken er en avanceret reduktionsteknik udviklet af den franske plastikkirurg Renault. Den er kendetegnet
-              ved sin evne til at give brystet en naturlig, fremspringende form og god projektion, selv efter fjernelse af
-              store mængder væv. Hos Brystcenter Esbjerg anvender vi B-teknikken som standard ved brystreduktioner for at
-              sikre det bedst mulige æstetiske resultat.
+              B-teknikken er en avanceret reduktionsteknik udviklet af den franske plastikkirurg Renault. Den er kendetegnet ved
+              sin evne til at give brystet en naturlig, fremspringende form og god projektion, selv efter fjernelse af store
+              mængder væv. Hos Brystcenter Esbjerg anvender vi B-teknikken som standard ved brystreduktioner for at sikre det
+              bedst mulige æstetiske resultat.
             </p>
           </div>
           <div>
@@ -95,10 +90,9 @@ export default function Page() {
               Lindring af fysiske gener og æstetisk balance
             </h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65">
-              Store bryster kan føre til kroniske smerter, nedsat livskvalitet og begrænsninger i hverdagen. En
-              brystreduktion er ikke blot et æstetisk indgreb — for mange patienter er det en medicinsk nødvendighed. Vi
-              behandler helhedsorienteret og kombinerer lindring af fysiske symptomer med et æstetisk resultat i harmoni
-              med resten af kroppen.
+              Store bryster kan føre til kroniske smerter, nedsat livskvalitet og begrænsninger i hverdagen. En brystreduktion er
+              ikke blot et æstetisk indgreb — for mange patienter er det en medicinsk nødvendighed. Vi behandler helhedsorienteret
+              og kombinerer lindring af fysiske symptomer med et æstetisk resultat i harmoni med resten af kroppen.
             </p>
           </div>
         </div>
@@ -140,7 +134,9 @@ export default function Page() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/booking">Book en konsultation</Button>
-            <Button href="tel:+4576185656" variant="outline">Ring til os: +45 76 18 56 56</Button>
+            <Button href="tel:+4576185656" variant="outline">
+              Ring til os: +45 76 18 56 56
+            </Button>
           </div>
         </div>
       </section>

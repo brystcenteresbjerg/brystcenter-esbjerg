@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
+import PageHero from "@/components/sections/PageHero";
 
 export const metadata: Metadata = {
   title: "Brystforstørrelse med eget fedt | Regenerativ æstetik",
@@ -50,21 +51,17 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="bg-surface pt-40 pb-20 px-8 lg:px-24">
-        <div className="max-w-2xl">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">Brystforstørrelse / Eget fedt</p>
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8">
-            Brystforstørrelse <span className="block italic font-light">med eget fedt</span>
-          </h1>
-          <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-sm">
-            Et naturligt og skånsomt alternativ til implantat — med dit eget fedtvæv som det eneste materiale.
-          </p>
-          <div className="flex flex-wrap gap-4 mt-10">
-            <Button href="#book">Book konsultation</Button>
-            <Button href="/behandlinger/bfo-implantat" variant="outline">Implantat som alternativ</Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        label="Brystforstørrelse / Eget fedt"
+        h1Main="Brystforstørrelse"
+        h1Italic="med eget fedt"
+        image="/images/hero-silk.png"
+        subtitle="Et naturligt og skånsomt alternativ til implantat — med dit eget fedtvæv som det eneste materiale."
+        buttons={[
+          { label: "Book konsultation", href: "#book" },
+          { label: "Implantat som alternativ", href: "/behandlinger/bfo-implantat", variant: "outline" },
+        ]}
+      />
 
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">
@@ -145,7 +142,9 @@ export default function Page() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/booking">Book en konsultation</Button>
-            <Button href="tel:+4576185656" variant="outline">Ring til os: +45 76 18 56 56</Button>
+            <Button href="tel:+4576185656" variant="outline">
+              Ring til os: +45 76 18 56 56
+            </Button>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
+import PageHero from "@/components/sections/PageHero";
 
 export const metadata: Metadata = {
   title: "Brystløft i Esbjerg | Naturlig form med Ruth Graf teknik",
@@ -50,21 +51,17 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="bg-surface pt-40 pb-20 px-8 lg:px-24">
-        <div className="max-w-2xl">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">Brystløft</p>
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8">
-            Brystløft <span className="block italic font-light">med auto-augmentation</span>
-          </h1>
-          <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-sm">
-            Ruth Graf-teknikken løfter og former brystet med dit eget kirtelvæv — uden implantater og med minimale ar.
-          </p>
-          <div className="flex flex-wrap gap-4 mt-10">
-            <Button href="#book">Book konsultation</Button>
-            <Button href="/behandlinger/bfo-implantat" variant="outline">Brystforstørrelse med implantat</Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        label="Brystløft"
+        h1Main="Brystløft"
+        h1Italic="med auto-augmentation"
+        image="/images/hero-silk.png"
+        subtitle="Ruth Graf-teknikken løfter og former brystet med dit eget kirtelvæv — uden implantater og med minimale ar."
+        buttons={[
+          { label: "Book konsultation", href: "#book" },
+          { label: "Brystforstørrelse med implantat", href: "/behandlinger/bfo-implantat", variant: "outline" },
+        ]}
+      />
 
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">
@@ -75,9 +72,9 @@ export default function Page() {
               Genvind din naturlige fylde uden implantater
             </h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65">
-              Ruth Graf-teknikken er en avanceret form for vertikal mastopeksi, der omplacerer patientens eget brystkirtelvæv
-              for at skabe volumen i den øvre pol. Resultatet er et løftet, fyldigere bryst med en naturlig fremtræden – helt
-              uden fremmedlegemer. Teknikken er særligt velegnet til kvinder, der ønsker en permanent forbedring uden de
+              Ruth Graf-teknikken er en avanceret form for vertikal mastopeksi, der omplacerer patientens eget brystkirtelvæv for
+              at skabe volumen i den øvre pol. Resultatet er et løftet, fyldigere bryst med en naturlig fremtræden – helt uden
+              fremmedlegemer. Teknikken er særligt velegnet til kvinder, der ønsker en permanent forbedring uden de
               vedligeholdelseskrav, der følger med implantater.
             </p>
           </div>
@@ -126,7 +123,9 @@ export default function Page() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/booking">Book en konsultation</Button>
-            <Button href="tel:+4576185656" variant="outline">Ring til os: +45 76 18 56 56</Button>
+            <Button href="tel:+4576185656" variant="outline">
+              Ring til os: +45 76 18 56 56
+            </Button>
           </div>
         </div>
       </section>

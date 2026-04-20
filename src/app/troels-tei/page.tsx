@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
-import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
+import PageHero from "@/components/sections/PageHero";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Speciallæge Troels Tei | Ekspert i regenerativ brystkirurgi",
@@ -50,21 +51,16 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="bg-surface pt-40 pb-20 px-8 lg:px-24">
-        <div className="max-w-2xl">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">Mød Kirurgen</p>
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8">
-            Troels Tei <span className="block italic font-light">Speciallæge</span>
-          </h1>
-          <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-sm">
-            Speciallæge i plastikkirurgi med særlig ekspertise i regenerativ brystkirurgi og avancerede teknikker for naturlige resultater.
-          </p>
-          <div className="flex flex-wrap gap-4 mt-10">
-            <Button href="#book">Book konsultation</Button>
-            <Button href="/patientrejsen" variant="outline">Se patientrejsen</Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        label="Mød Kirurgen"
+        h1Main="Troels Tei"
+        h1Italic="Speciallæge"
+        subtitle="Speciallæge i plastikkirurgi med særlig ekspertise i regenerativ brystkirurgi og avancerede teknikker for naturlige resultater."
+        buttons={[
+          { label: "Book konsultation", href: "#book" },
+          { label: "Se patientrejsen", href: "/patientrejsen", variant: "outline" },
+        ]}
+      />
 
       {/* ── FILOSOFI ─────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">

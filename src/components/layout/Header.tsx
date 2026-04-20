@@ -1,9 +1,10 @@
 "use client";
 
+import { ChevronDown, Menu, X } from "lucide-react";
+
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
 
 const treatments = [
   { label: "Brystforstørrelse med implantat", href: "/behandlinger/bfo-implantat" },
@@ -32,8 +33,8 @@ export default function Header() {
     <>
       <header className="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-[20px]">
         <div className="max-w-7xl mx-auto px-8 lg:px-16 h-16 flex items-center justify-between gap-8">
-          <Link href="/" className="shrink-0 w-40 mt-1 mb-1" onClick={close}>
-            <img src="/logo_light.svg" alt="Brystcenter Esbjerg Logo" />
+          <Link href="/" className="shrink-0 w-62 mt-1 mb-1" onClick={close}>
+            <img src="/logos/brystcenter-primary.svg" alt="Brystcenter Esbjerg Logo" />
           </Link>
 
           {/* Desktop nav */}
@@ -103,7 +104,10 @@ export default function Header() {
               onClick={() => setTreatmentsOpen(!treatmentsOpen)}
             >
               Behandlinger
-              <ChevronDown size={16} className={`opacity-40 transition-transform duration-200 ${treatmentsOpen ? "rotate-180" : ""}`} />
+              <ChevronDown
+                size={16}
+                className={`opacity-40 transition-transform duration-200 ${treatmentsOpen ? "rotate-180" : ""}`}
+              />
             </button>
 
             {treatmentsOpen && (

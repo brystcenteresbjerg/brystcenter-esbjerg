@@ -14,8 +14,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pt-16 pb-10 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Brand */}
         <div>
-          <Link href="/" className="block w-40 mb-5 shrink-0">
-            <img src="/logo_dark.svg" alt="Brystcenter Esbjerg Logo" />
+          <Link href="/" className="block w-56 mb-5 shrink-0">
+            <img src="/logos/brystcenter-primary-reversed.svg" alt="Brystcenter Esbjerg Logo" />
           </Link>
           <p className="font-sans text-sm leading-relaxed text-on-primary/50">
             Specialister i regenerativ brystkirurgi i Esbjerg.

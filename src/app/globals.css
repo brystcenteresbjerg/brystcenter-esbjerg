@@ -12,9 +12,12 @@
   --tertiary: #d4a373;
   --on-tertiary: #ffffff;
 
-  /* Surface Hierarchy — derived from Soft Nude #FAF3EE */
+  --nude: #faf6f1;
+  --on-nude: var(--secondary);
+
+  /* Surface Hierarchy — derived from Soft Nude */
   --surface: #fffdfa;
-  --surface-container-low: #faf6f1;
+  --surface-container-low: var(--nude);
   --surface-container: #ebdfd4;
   --surface-container-high: #e4d6c9;
   --surface-container-highest: #ddcec0;
@@ -34,6 +37,8 @@
   --color-on-secondary: var(--on-secondary);
   --color-tertiary: var(--tertiary);
   --color-on-tertiary: var(--on-tertiary);
+  --color-nude: var(--nude);
+  --color-on-nude: var(--on-nude);
   --color-surface: var(--surface);
   --color-surface-container-low: var(--surface-container-low);
   --color-surface-container: var(--surface-container);

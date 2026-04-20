@@ -1,5 +1,7 @@
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
+import PageHero from "@/components/sections/PageHero";
+import PatientTimeline from "@/components/sections/PatientTimeline";
 
 export const metadata: Metadata = {
   title: "Patientrejsen | Brystcenter Esbjerg",
@@ -65,44 +67,17 @@ export default function Page() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="bg-surface pt-40 pb-20 px-8 lg:px-24">
-        <div className="max-w-2xl">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">Patientrejsen</p>
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8">
-            Fra første tanke <span className="block italic font-light">til endeligt resultat</span>
-          </h1>
-          <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-sm">
-            Vi tror på, at tryghed skabes af klarhed. Her ser du præcist, hvad du kan forvente — trin for trin.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        label="Patientrejsen"
+        h1Main="Fra første tanke"
+        h1Italic="til endeligt resultat"
+        image="/images/hero-silk.png"
+        subtitle="Vi tror på, at tryghed skabes af klarhed. Her ser du præcist, hvad du kan forvente — trin for trin."
+      />
 
       {/* ── STEPS ────────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-24 pb-24 bg-surface">
-        <div className="max-w-3xl space-y-0">
-          {steps.map((step, i) => (
-            <div key={step.number} className="relative grid grid-cols-[48px_1fr] gap-8">
-              {/* Timeline line */}
-              {i < steps.length - 1 && (
-                <div className="absolute left-[23px] top-10 bottom-0 w-px bg-secondary/8" />
-              )}
-
-              {/* Step number bubble */}
-              <div className="relative z-10 flex flex-col items-center pt-1">
-                <div className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0">
-                  <span className="font-sans text-xs font-semibold text-primary">{step.number}</span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="pb-14">
-                <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/30 mb-2 mt-3">{step.label}</p>
-                <h2 className="font-serif text-2xl font-semibold text-secondary mb-4">{step.title}</h2>
-                <p className="font-sans text-sm leading-relaxed text-secondary/65">{step.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <section className="bg-surface">
+        <PatientTimeline steps={steps} />
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}

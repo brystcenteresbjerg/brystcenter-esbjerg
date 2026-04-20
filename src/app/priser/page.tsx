@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import PageHero from "@/components/sections/PageHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -54,18 +55,12 @@ export default function Page() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="bg-surface pt-40 pb-20 px-8 lg:px-24">
-        <div className="max-w-2xl">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">Priser</p>
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8">
-            Gennemsigtige <span className="block italic font-light">priser</span>
-          </h1>
-          <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-sm">
-            Alle priser er vejledende og inkluderer konsultation, indgreb, narkose og efterkontrol. Den endelige pris
-            fastsættes ved konsultationen.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        label="Priser"
+        h1Main="Gennemsigtige"
+        h1Italic="priser"
+        subtitle="Alle priser er vejledende og inkluderer konsultation, indgreb, narkose og efterkontrol. Den endelige pris fastsættes ved konsultationen."
+      />
 
       {/* ── PRICE LIST ───────────────────────────────────────────── */}
       <section className="px-8 lg:px-24 py-16 bg-surface">

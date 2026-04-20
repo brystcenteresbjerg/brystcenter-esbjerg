@@ -2,8 +2,8 @@ import { ArrowRight, BriefcaseMedical, Heart, Microscope, Sparkles, Star } from 
 
 import Button from "@/components/ui/Button";
 import FAQAccordion from "@/components/sections/FAQAccordion";
-import Image from "next/image";
 import Link from "next/link";
+import PageHero from "@/components/sections/PageHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -66,7 +66,7 @@ const services = [
       { label: "Implantat", href: "/behandlinger/bfo-implantat" },
       { label: "Eget fedt", href: "/behandlinger/bfo-eget-fedt-lipofilling" },
     ],
-    image: "/brunette_happy.png",
+    image: "/images/brunette_happy.png",
     span: "md:col-span-2",
     minHeight: "min-h-[320px]",
   },
@@ -74,7 +74,7 @@ const services = [
     title: "Brystløft",
     desc: "Genvind din naturlige form med Ruth Graf-teknikken og auto-augmentation — uden implantat.",
     links: [{ label: "Læs mere", href: "/behandlinger/brystloeft" }],
-    image: "/body_boobs.png",
+    image: "/images/body_boobs.png",
     span: "md:col-span-1",
     minHeight: "min-h-[240px]",
   },
@@ -82,7 +82,7 @@ const services = [
     title: "Brystreduktion",
     desc: "Find din naturlige balance. Moderne B-teknik for optimal form, projektion og lindring af fysiske gener.",
     links: [{ label: "Læs mere", href: "/behandlinger/brystreduktion" }],
-    image: "/hero-silk.png",
+    image: "/images/hero-silk.png",
     span: "md:col-span-1",
     minHeight: "min-h-[240px]",
   },
@@ -90,7 +90,7 @@ const services = [
     title: "Implantatudskiftning",
     desc: "Revisionskirurgi med avancerede PU-overflader for præcis placering og langvarig stabilitet.",
     links: [{ label: "Læs mere", href: "/behandlinger/udskiftning-af-protese" }],
-    image: "/implants_hands.png",
+    image: "/images/implants_hands.png",
     span: "md:col-span-2",
     minHeight: "min-h-[240px]",
   },
@@ -102,35 +102,17 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="relative flex items-end">
-        {/* 1. background image */}
-        <Image src="/hero-silk.png" alt="Brystcenter Esbjerg" fill sizes="100vw" className="object-cover" priority />
-        {/* 2. gradient overlay */}
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(to right, #FAF3EE 0%, rgba(250,243,238,0.7) 10%, rgba(250,243,238,0) 80%)" }}
-        />
-        {/* 3. content */}
-        <div className="relative z-10 w-full px-8 lg:px-24 pb-20 pt-32">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">Brystcenter Esbjerg</p>
-
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-xl">
-            Skræddersyet <span className="block italic font-light">brystkirurgi</span>
-          </h1>
-
-          <p className="font-sans text-base leading-relaxed mb-10 max-w-sm text-secondary/65">
-            Fra første konsultation til det endelige resultat. Vi kombinerer klinisk præcision med en personlig tilgang for
-            naturlig harmoni.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Button href="#book">Book konsultation</Button>
-            <Button href="/behandlinger/bfo-eget-fedt-lipofilling" variant="outline">
-              Mød vores kirurg
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        label="Brystcenter Esbjerg"
+        h1Main="Skræddersyet"
+        h1Italic="brystkirurgi"
+        subtitle="Fra første konsultation til det endelige resultat. Vi kombinerer klinisk præcision med en personlig tilgang for naturlig harmoni."
+        image="/images/hero-silk.png"
+        buttons={[
+          { label: "Book konsultation", href: "#book" },
+          { label: "Mød vores kirurg", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
+        ]}
+      />
 
       {/* ── VORES FILOSOFI ───────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-14 bg-surface-container-low">
