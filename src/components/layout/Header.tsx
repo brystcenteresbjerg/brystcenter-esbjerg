@@ -1,9 +1,10 @@
 "use client";
 
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 
 import Button from "@/components/ui/Button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const treatments = [
@@ -23,11 +24,15 @@ const navLinks = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [treatmentsOpen, setTreatmentsOpen] = useState(false);
+  const pathname = usePathname();
 
   const close = () => {
     setOpen(false);
     setTreatmentsOpen(false);
   };
+
+  const isActive = (href: string) => pathname === href;
+  const treatmentsActive = treatments.some((t) => pathname === t.href);
 
   return (
     <>
@@ -40,7 +45,13 @@ export default function Header() {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             <div className="group relative">
-              <button className="flex items-center gap-1.5 font-sans text-sm text-on-background/70 hover:text-primary transition-colors cursor-pointer">
+              <button
+                className={`flex items-center gap-1.5 font-sans text-sm transition-colors cursor-pointer relative pb-0.5 ${
+                  treatmentsActive
+                    ? "text-primary after:absolute after:-bottom-5.5 after:inset-x-0 after:h-0.5 after:bg-primary"
+                    : "text-on-background/70 hover:text-primary"
+                }`}
+              >
                 Behandlinger
                 <ChevronDown size={14} className="opacity-50 transition-transform duration-200 group-hover:rotate-180" />
               </button>
@@ -72,16 +83,30 @@ export default function Header() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="font-sans text-sm text-on-background/70 hover:text-primary transition-colors"
+                className={`relative font-sans text-sm transition-colors pb-0.5 ${
+                  isActive(l.href)
+                    ? "text-primary after:absolute after:-bottom-5.5 after:inset-x-0 after:h-0.5 after:bg-primary"
+                    : "text-on-background/70 hover:text-primary"
+                }`}
               >
                 {l.label}
               </Link>
             ))}
           </nav>
 
-          <Button href="/booking" size="sm" className="hidden lg:flex shrink-0">
-            Book konsultation
-          </Button>
+          {/* Right side: phone + CTA */}
+          <div className="hidden lg:flex items-center gap-5 shrink-0">
+            <Link
+              href="tel:+4576185656"
+              className="flex items-center gap-2 font-sans text-sm text-secondary/60 hover:text-primary transition-colors border-l border-secondary/12 pl-5"
+            >
+              <Phone size={13} className="opacity-60" />
+              +45 76 18 56 56
+            </Link>
+            <Button href="/booking" size="sm">
+              Book konsultation
+            </Button>
+          </div>
 
           {/* Burger button — mobile only */}
           <button
@@ -135,13 +160,15 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
-          </nav>
 
-          {/* <div className="px-8 pb-10 mt-auto">
-            <Button href="/booking" className="w-full justify-center" onClick={close}>
-              Book konsultation
-            </Button>
-          </div> */}
+            <Link
+              href="tel:+4576185656"
+              onClick={close}
+              className="block py-4 font-sans text-base text-primary font-medium"
+            >
+              +45 76 18 56 56
+            </Link>
+          </nav>
         </div>
       )}
     </>

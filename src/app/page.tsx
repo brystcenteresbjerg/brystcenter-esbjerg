@@ -1,10 +1,10 @@
-import { ArrowRight, BriefcaseMedical, Heart, Microscope, Sparkles, Star } from "lucide-react";
+import { BriefcaseMedical, Heart, Microscope, Sparkles, Star } from "lucide-react";
 
 import Button from "@/components/ui/Button";
 import FAQAccordion from "@/components/sections/FAQAccordion";
 import Link from "next/link";
-import PageHero from "@/components/sections/PageHero";
 import type { Metadata } from "next";
+import PageHero from "@/components/sections/PageHero";
 
 export const metadata: Metadata = {
   title: "Brystcenter Esbjerg | Specialister i naturlig brystkirurgi",
@@ -60,36 +60,44 @@ const faqItems = [
 
 const services = [
   {
-    title: "Brystforstørrelse",
+    category: "01 · Brystforstørrelse",
+    title: "Implantat eller eget fedt",
     desc: "Opnå dit ønskede volumen med implantat eller eget fedt. Vi skræddersyr løsningen til din anatomi og dine ønsker.",
+    showDesc: true,
     links: [
-      { label: "Implantat", href: "/behandlinger/bfo-implantat" },
-      { label: "Eget fedt", href: "/behandlinger/bfo-eget-fedt-lipofilling" },
+      { label: "Implantat →", href: "/behandlinger/bfo-implantat" },
+      { label: "Eget fedt →", href: "/behandlinger/bfo-eget-fedt-lipofilling" },
     ],
     image: "/images/brunette_happy.png",
     span: "md:col-span-2",
     minHeight: "min-h-[320px]",
   },
   {
+    category: "02 · Mastopeksi",
     title: "Brystløft",
-    desc: "Genvind din naturlige form med Ruth Graf-teknikken og auto-augmentation — uden implantat.",
-    links: [{ label: "Læs mere", href: "/behandlinger/brystloeft" }],
+    desc: "",
+    showDesc: false,
+    links: [{ label: "Læs mere →", href: "/behandlinger/brystloeft" }],
     image: "/images/body_boobs.png",
     span: "md:col-span-1",
     minHeight: "min-h-[240px]",
   },
   {
+    category: "03 · Reduktion",
     title: "Brystreduktion",
-    desc: "Find din naturlige balance. Moderne B-teknik for optimal form, projektion og lindring af fysiske gener.",
-    links: [{ label: "Læs mere", href: "/behandlinger/brystreduktion" }],
+    desc: "",
+    showDesc: false,
+    links: [{ label: "Læs mere →", href: "/behandlinger/brystreduktion" }],
     image: "/images/hero-silk.png",
     span: "md:col-span-1",
     minHeight: "min-h-[240px]",
   },
   {
+    category: "04 · Revision",
     title: "Implantatudskiftning",
     desc: "Revisionskirurgi med avancerede PU-overflader for præcis placering og langvarig stabilitet.",
-    links: [{ label: "Læs mere", href: "/behandlinger/udskiftning-af-protese" }],
+    showDesc: true,
+    links: [{ label: "Læs mere →", href: "/behandlinger/udskiftning-af-protese" }],
     image: "/images/implants_hands.png",
     span: "md:col-span-2",
     minHeight: "min-h-[240px]",
@@ -103,14 +111,14 @@ export default function Home() {
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <PageHero
-        label="Brystcenter Esbjerg"
+        label="Brystcenter Esbjerg - Speciallæge Troels Tei"
         h1Main="Skræddersyet"
         h1Italic="brystkirurgi"
         subtitle="Fra første konsultation til det endelige resultat. Vi kombinerer klinisk præcision med en personlig tilgang for naturlig harmoni."
-        image="/images/hero-silk.png"
+        image="/images/woman_stonewall.png"
         buttons={[
           { label: "Book konsultation", href: "#book" },
-          { label: "Mød vores kirurg", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
+          { label: "Mød Troels Tei", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
         ]}
       />
 
@@ -157,7 +165,7 @@ export default function Home() {
             {services.map((s) => (
               <div
                 key={s.title}
-                className={`relative overflow-hidden rounded-2xl flex flex-col justify-end p-8 ${s.span} ${s.minHeight}`}
+                className={`relative overflow-hidden rounded-2xl flex flex-col justify-between p-8 ${s.span} ${s.minHeight}`}
               >
                 <img src={s.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
                 <div
@@ -167,17 +175,21 @@ export default function Home() {
                       "linear-gradient(to top, rgba(30,20,10,0.80) 0%, rgba(30,20,10,0.35) 55%, rgba(30,20,10,0.10) 100%)",
                   }}
                 />
+                {/* Category label — top left */}
+                <p className="relative z-10 font-sans text-[10px] uppercase tracking-[0.18em] text-white/40">{s.category}</p>
+
+                {/* Bottom content */}
                 <div className="relative z-10">
                   <h2 className="font-serif text-2xl font-semibold text-white mb-2">{s.title}</h2>
-                  <p className="font-sans text-sm leading-relaxed mb-5 text-on-primary/68">{s.desc}</p>
-                  <div className="flex flex-wrap gap-3">
+                  {s.showDesc && <p className="font-sans text-sm leading-relaxed mb-5 text-on-primary/68">{s.desc}</p>}
+                  <div className={`flex flex-wrap gap-3 ${!s.showDesc ? "mt-3" : ""}`}>
                     {s.links.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
                         className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.15em] uppercase font-bold text-tertiary hover:text-white transition-colors"
                       >
-                        {link.label} <ArrowRight size={12} />
+                        {link.label}
                       </Link>
                     ))}
                   </div>
@@ -227,17 +239,40 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Testimonial */}
-            <div className="rounded-2xl p-10 bg-surface shadow-ambient">
-              <p className="font-serif text-xl leading-relaxed text-secondary mb-8">
-                &ldquo;Jeg oplevede hos Brystcenter Esbjerg et meget professionelt og menneskeligt behandlingsforløb. Jeg føler
-                mig tryg og i de kompetente hænder.&rdquo;
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full shrink-0 bg-primary-container" />
+            {/* Stats + testimonial */}
+            <div className="flex flex-col gap-4">
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { num: "2.400+", label: "Udførte indgreb" },
+                  { num: "18 år", label: "Som speciallæge" },
+                  { num: "4,9 / 5", label: "Google · 187 anm." },
+                ].map((s) => (
+                  <div key={s.label} className="rounded-2xl p-5 bg-surface border border-secondary/8 flex flex-col gap-1">
+                    <p className="font-serif text-2xl font-light text-primary leading-none">{s.num}</p>
+                    <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-secondary/40 leading-snug">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Testimonial */}
+              <div className="rounded-2xl p-8 bg-surface border border-secondary/8 grid grid-cols-[64px_1fr] gap-5 items-start">
+                <div
+                  className="w-16 h-16 rounded-full shrink-0 bg-primary-container bg-cover bg-center"
+                  style={{ backgroundImage: "url('/images/brunette_happy.png')" }}
+                />
                 <div>
-                  <p className="font-sans text-sm font-semibold text-secondary">Maria, 34 år</p>
-                  <p className="font-sans text-xs text-secondary/50">Brystforstørrelse</p>
+                  <p className="font-serif text-base leading-relaxed text-secondary mb-4">
+                    &ldquo;Troels tog sig tid til at forklare hvorfor eget fedt var det rigtige for mig — ikke hvad der var
+                    nemmest at sælge. Et år efter mærker jeg knap nok forskel, og det er præcis pointen.&rdquo;
+                  </p>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <p className="font-sans text-xs font-semibold text-secondary">Sofie, 41 år</p>
+                    <span className="text-secondary/20">·</span>
+                    <p className="font-sans text-xs text-secondary/50">Brystforstørrelse med eget fedt</p>
+                    <span className="text-secondary/20">·</span>
+                    <p className="font-sans text-[10px] uppercase tracking-[0.15em] font-semibold text-primary">Verificeret</p>
+                  </div>
                 </div>
               </div>
             </div>

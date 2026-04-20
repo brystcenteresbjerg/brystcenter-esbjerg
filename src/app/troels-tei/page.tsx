@@ -1,7 +1,7 @@
 import Button from "@/components/ui/Button";
+import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Speciallæge Troels Tei | Ekspert i regenerativ brystkirurgi",
@@ -55,6 +55,7 @@ export default function Page() {
         label="Mød Kirurgen"
         h1Main="Troels Tei"
         h1Italic="Speciallæge"
+        image="/images/woman_stonewall.png"
         subtitle="Speciallæge i plastikkirurgi med særlig ekspertise i regenerativ brystkirurgi og avancerede teknikker for naturlige resultater."
         buttons={[
           { label: "Book konsultation", href: "#book" },
@@ -71,9 +72,9 @@ export default function Page() {
               En filosofi om naturlig harmoni
             </h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65">
-              Troels Tei arbejder ud fra én grundlæggende overbevisning: det bedste kirurgiske resultat er det, der ser
-              naturligt ud — som om det altid har hørt til. Hans tilgang kombinerer klinisk præcision med en dyb forståelse
-              for kroppens proportioner og de biologiske processer, der sikrer et holdbart og harmonisk resultat.
+              Troels Tei arbejder ud fra én grundlæggende overbevisning: det bedste kirurgiske resultat er det, der ser naturligt
+              ud — som om det altid har hørt til. Hans tilgang kombinerer klinisk præcision med en dyb forståelse for kroppens
+              proportioner og de biologiske processer, der sikrer et holdbart og harmonisk resultat.
             </p>
           </div>
           <div className="bg-primary-container/30 rounded-2xl p-10">
@@ -109,19 +110,17 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-3xl mx-auto">
           <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Baggrund</p>
-          <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-            Uddannelse og faglig baggrund
-          </h2>
+          <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">Uddannelse og faglig baggrund</h2>
           <p className="font-sans text-base leading-relaxed text-secondary/65">
             Troels Tei er uddannet speciallæge i plastik- og rekonstruktionskirurgi og har bred klinisk erfaring fra både
-            offentlige og private sygehuse. Han holder sig løbende opdateret via internationale konferencer og samarbejder
-            med ledende europæiske plastikkirurger. Han er tilknyttet Brystcenter Esbjerg som primær opererende speciallæge.
+            offentlige og private sygehuse. Han holder sig løbende opdateret via internationale konferencer og samarbejder med
+            ledende europæiske plastikkirurger. Han er tilknyttet Brystcenter Esbjerg som primær opererende speciallæge.
           </p>
         </div>
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
-      <div className="px-8 lg:px-16 py-24 bg-surface-container-low">
+      <div className="px-8 lg:px-16 py-14 bg-surface-container-low">
         <div className="max-w-3xl mx-auto">
           <PageFAQ items={faqItems} />
         </div>
@@ -136,7 +135,9 @@ export default function Page() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/booking">Book en konsultation</Button>
-            <Button href="tel:+4576185656" variant="outline">Ring til os: +45 76 18 56 56</Button>
+            <Button href="tel:+4576185656" variant="outline">
+              Ring til os: +45 76 18 56 56
+            </Button>
           </div>
         </div>
       </section>

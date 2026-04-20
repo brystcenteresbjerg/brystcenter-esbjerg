@@ -13,15 +13,7 @@ interface PageHeroProps {
   gradient?: boolean;
 }
 
-export default function PageHero({
-  label,
-  h1Main,
-  h1Italic,
-  subtitle,
-  buttons,
-  image,
-  gradient = true,
-}: PageHeroProps) {
+export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, image, gradient = true }: PageHeroProps) {
   if (image) {
     return (
       <section className="relative flex items-end h-[75vh]">
@@ -30,8 +22,7 @@ export default function PageHero({
           <div
             className="absolute inset-0"
             style={{
-              background:
-                "linear-gradient(to right, #FAF3EE 0%, rgba(250,243,238,0.7) 10%, rgba(250,243,238,0) 80%)",
+              background: "linear-gradient(to right, #FAF3EE 0%, rgba(250,243,238,0.7) 10%, rgba(250,243,238,0) 80%)",
             }}
           />
         )}

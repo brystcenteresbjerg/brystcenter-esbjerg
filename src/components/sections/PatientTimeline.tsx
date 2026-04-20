@@ -10,6 +10,7 @@ interface Step {
   label: string;
   title: string;
   body: string;
+  time?: string;
 }
 
 export default function PatientTimeline({ steps }: { steps: Step[] }) {
@@ -36,8 +37,8 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
   };
 
   return (
-    <div ref={containerRef} style={{ height: `${steps.length * 80}vh` }}>
-      <div className="sticky top-0 h-screen flex items-center px-8 lg:px-24">
+    <div ref={containerRef} style={{ height: `${steps.length * 50}vh` }}>
+      <div className="sticky top-0 h-screen flex items-center lg:px-24">
         <div className="w-full max-w-4xl grid grid-cols-[56px_1fr] gap-12 lg:gap-20 items-center">
           {/* Left: step dot rail */}
           <div className="flex flex-col items-center">
@@ -91,7 +92,15 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
             >
-              <p className="font-sans text-xs uppercase tracking-[0.15em] text-primary mb-5">{steps[activeStep].label}</p>
+              <div className="flex items-center gap-4 mb-5">
+                <p className="font-sans text-xs uppercase tracking-[0.15em] text-primary">{steps[activeStep].label}</p>
+                {steps[activeStep].time && (
+                  <>
+                    <span className="w-px h-3 bg-secondary/15 shrink-0" />
+                    <p className="font-sans text-xs text-secondary/35">{steps[activeStep].time}</p>
+                  </>
+                )}
+              </div>
               <h2 className="font-serif text-4xl xl:text-5xl font-semibold text-secondary mb-6 leading-tight">
                 {steps[activeStep].title}
               </h2>
