@@ -91,30 +91,31 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              className="grid grid-cols-[1fr_auto] gap-12 items-center"
             >
-              <div className="flex items-center gap-4 mb-5">
-                <p className="font-sans text-xs uppercase tracking-[0.15em] text-primary">{steps[activeStep].label}</p>
-                {steps[activeStep].time && (
-                  <>
-                    <span className="w-px h-3 bg-secondary/15 shrink-0" />
-                    <p className="font-sans text-xs text-secondary/35">{steps[activeStep].time}</p>
-                  </>
+              <div>
+                <p className="font-sans text-xs uppercase tracking-[0.15em] text-primary mb-5">{steps[activeStep].label}</p>
+                <h2 className="font-serif text-4xl xl:text-5xl font-semibold text-secondary mb-6 leading-tight">
+                  {steps[activeStep].title}
+                </h2>
+                <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-lg">{steps[activeStep].body}</p>
+
+                {activeStep < steps.length - 1 && (
+                  <motion.div className="mt-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
+                    <motion.div
+                      animate={{ y: [0, 6, 0], opacity: [0.3, 0.7, 0.3] }}
+                      transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <ChevronDown size={20} className="text-secondary/40" />
+                    </motion.div>
+                  </motion.div>
                 )}
               </div>
-              <h2 className="font-serif text-4xl xl:text-5xl font-semibold text-secondary mb-6 leading-tight">
-                {steps[activeStep].title}
-              </h2>
-              <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-lg">{steps[activeStep].body}</p>
 
-              {activeStep < steps.length - 1 && (
-                <motion.div className="mt-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-                  <motion.div
-                    animate={{ y: [0, 6, 0], opacity: [0.3, 0.7, 0.3] }}
-                    transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <ChevronDown size={20} className="text-secondary/40" />
-                  </motion.div>
-                </motion.div>
+              {steps[activeStep].time && (
+                <p className="font-sans text-sm text-secondary/30 tracking-[0.08em] shrink-0">
+                  {steps[activeStep].time}
+                </p>
               )}
             </motion.div>
           </AnimatePresence>
