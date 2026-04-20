@@ -165,11 +165,11 @@ export default function Home() {
             {services.map((s) => (
               <div
                 key={s.title}
-                className={`relative overflow-hidden rounded-2xl flex flex-col justify-between p-8 ${s.span} ${s.minHeight}`}
+                className={`group relative overflow-hidden rounded-2xl flex flex-col justify-between p-8 ${s.span} ${s.minHeight}`}
               >
-                <img src={s.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={s.image} alt="" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
                 <div
-                  className="absolute inset-0"
+                  className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
                   style={{
                     background:
                       "linear-gradient(to top, rgba(30,20,10,0.80) 0%, rgba(30,20,10,0.35) 55%, rgba(30,20,10,0.10) 100%)",
