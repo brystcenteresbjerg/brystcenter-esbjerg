@@ -13,6 +13,8 @@ const treatments = [
   { label: "Brystløft", href: "/behandlinger/brystloeft" },
   { label: "Brystreduktion", href: "/behandlinger/brystreduktion" },
   { label: "Implantatudskiftning", href: "/behandlinger/udskiftning-af-protese" },
+  { label: "Fedttransplantation", href: "/behandlinger/fedttransplantation" },
+  { label: "Second Opinion", href: "/behandlinger/second-opinion" },
 ];
 
 const navLinks = [

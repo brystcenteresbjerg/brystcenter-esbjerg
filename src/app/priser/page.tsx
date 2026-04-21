@@ -12,23 +12,56 @@ export const metadata: Metadata = {
 const featured = [
   {
     title: "Implantat",
-    price: "48.000 kr.",
-    bullets: ["Høj-kohæsiv gel", "1,5–2 t operation", "Inkl. konsultation og efterkontrol"],
+    price: "40.000 kr.",
+    bullets: ["Høj-kohæsiv gel", "1,5–2 t operation", "Inkl. narkose og efterkontrol"],
   },
   {
     title: "Eget fedt",
-    price: "42.000 kr.",
+    price: "54.000 kr.",
     popular: true,
-    bullets: ["Ingen fremmedlegemer", "Dobbelt æstetisk resultat", "1 uges restitution"],
+    bullets: ["Inkl. fedttransplantation", "Ingen fremmedlegemer", "1 uges restitution"],
   },
   {
     title: "Brystløft",
-    price: "44.000 kr.",
-    bullets: ["Ruth Graf-teknik", "Uden implantat", "Minimale ar"],
+    price: "32.000 kr.",
+    bullets: ["Traditionelt eller Ruth Graf", "Inkl. narkose", "Minimale ar"],
   },
 ];
 
-const treatments = [
+interface Supplement {
+  label: string;
+  price: string;
+}
+
+interface TreatmentItem {
+  label: string;
+  desc?: string;
+  duration?: string;
+  recovery?: string;
+  anbefales?: string;
+  price: string | null;
+  href: string;
+  supplements?: Supplement[];
+}
+
+const treatments: { category: string; items: TreatmentItem[] }[] = [
+  {
+    category: "Konsultation",
+    items: [
+      {
+        label: "Forundersøgelse",
+        desc: "Gennemgang af dine ønsker og muligheder med speciallæge Troels Tei.",
+        price: "750 kr.",
+        href: "/booking",
+      },
+      {
+        label: "Second Opinion",
+        desc: "Uafhængig vurdering af dit forløb eller tidligere behandlingsplan.",
+        price: "1.500 kr.",
+        href: "/booking",
+      },
+    ],
+  },
   {
     category: "Brystforstørrelse",
     items: [
@@ -36,41 +69,75 @@ const treatments = [
         label: "Brystforstørrelse med implantat",
         desc: "Høj-kohæsive gel-implantater tilpasset din anatomi. 3D-simulering og individuel planlægning.",
         duration: "1,5–2 t",
-        recovery: "1–2 ugers restitution",
+        recovery: "1–2 uger",
         anbefales: "Ønske om markant volumen",
-        price: "Fra 48.000 kr.",
+        price: "40.000 kr.",
         href: "/behandlinger/bfo-implantat",
+        supplements: [
+          { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
+          { label: "Tillæg brystløft", price: "+ 15.000 kr." },
+        ],
       },
       {
         label: "Brystforstørrelse med eget fedt (lipofilling)",
-        desc: "Naturlig volumen uden fremmedlegemer. Fedttransplantation med stamcelleanrigt væv.",
+        desc: "Naturlig volumen uden fremmedlegemer. Stamcelleanrigt fedtvæv. Inkl. tillæg fedttransplantation.",
         duration: "2–3 t",
-        recovery: "1 uges restitution",
-        anbefales: "Moderat volumeønske uden fremmedlegemer",
-        price: "Fra 42.000 kr.",
+        recovery: "1 uge",
+        anbefales: "Moderat volumenønske uden fremmedlegemer",
+        price: "54.000 kr.",
         href: "/behandlinger/bfo-eget-fedt-lipofilling",
+      },
+      {
+        label: "Hybrid brystforstørrelse",
+        desc: "Kombination af implantat og fedttransplantation for optimalt volumen og naturlighed.",
+        price: "00.000 kr.",
+        href: "/booking",
+        supplements: [
+          { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
+          { label: "Tillæg brystløft", price: "+ 15.000 kr." },
+          { label: "Tillæg fedttransplantation", price: "+ 14.000 kr." },
+        ],
       },
     ],
   },
   {
-    category: "Brystløft & Reduktion",
+    category: "Brystløft",
     items: [
       {
-        label: "Brystløft (mastopeksi) · Ruth Graf",
-        desc: "Vertikal mastopeksi med auto-augmentation. Løft og fylde uden implantat — minimale ar.",
+        label: "Traditionelt brystløft",
+        desc: "Klassisk mastopeksi med fokus på form og projektion. Inkl. narkose.",
         duration: "2–3 t",
-        recovery: "2 ugers restitution",
-        anbefales: "Efter vægttab eller amning",
-        price: "Fra 44.000 kr.",
+        recovery: "2 uger",
+        price: "32.000 kr.",
         href: "/behandlinger/brystloeft",
       },
+      {
+        label: "Brystløft · Ruth Graf-teknik",
+        desc: "Vertikal mastopeksi med auto-augmentation. Løft og fylde uden implantat — minimale ar. Inkl. narkose.",
+        duration: "2–3 t",
+        recovery: "2 uger",
+        anbefales: "Efter vægttab eller amning",
+        price: "36.000 kr.",
+        href: "/behandlinger/brystloeft",
+      },
+      {
+        label: "B-plastik / Renault-teknik",
+        desc: "Brystløft med reducerende effekt. Teknikvalget afhænger af din anatomi og ønsker.",
+        price: "00.000 kr.",
+        href: "/booking",
+      },
+    ],
+  },
+  {
+    category: "Brystreduktion",
+    items: [
       {
         label: "Brystreduktion",
         desc: "Moderne B-teknik for optimal form og projektion. Lindring af fysiske gener og æstetisk balance.",
         duration: "2–3 t",
-        recovery: "2 ugers restitution",
+        recovery: "2 uger",
         anbefales: "Fysiske gener eller ubalance i proportioner",
-        price: "Fra 46.000 kr.",
+        price: "44.000 kr.",
         href: "/behandlinger/brystreduktion",
       },
     ],
@@ -79,13 +146,57 @@ const treatments = [
     category: "Revisionskirurgi",
     items: [
       {
-        label: "Implantatudskiftning",
+        label: "Udskiftning af implantat",
         desc: "Revisionskirurgi med PU-belagte implantater. Præcis placering og langvarig stabilitet.",
         duration: "1–2 t",
-        recovery: "1–2 ugers restitution",
+        recovery: "1–2 uger",
         anbefales: "Eksisterende implantater over 10–15 år",
-        price: "Fra 38.000 kr.",
+        price: "45.000 kr.",
         href: "/behandlinger/udskiftning-af-protese",
+        supplements: [
+          { label: "Tillæg brystløft", price: "+ 15.000 kr." },
+          { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
+        ],
+      },
+      {
+        label: "Fjernelse af implantat (Eksplantation)",
+        desc: "Fjernelse af eksisterende implantater uden indsættelse af nyt implantat.",
+        price: "00.000 kr.",
+        href: "/booking",
+      },
+    ],
+  },
+  {
+    category: "Fedttransplantation",
+    items: [
+      {
+        label: "Fedttransplantation til ansigtet",
+        desc: "Stamcelleanrigt fedt til naturlig volumengenopbygning i ansigtet.",
+        price: "00.000 kr.",
+        href: "/booking",
+      },
+      {
+        label: "Fedttransplantation til ar og vævsforbedring",
+        desc: "Målrettet fedttransplantation til korrektion af ar og forbedring af vævskvalitet.",
+        price: "00.000 kr.",
+        href: "/booking",
+      },
+    ],
+  },
+  {
+    category: "Korrektioner",
+    items: [
+      {
+        label: "Korrektion af brystvorter",
+        desc: "Inddragne brystvorter eller reduktion af areola. Udføres ofte i lokalbedøvelse.",
+        price: "00.000 kr.",
+        href: "/booking",
+      },
+      {
+        label: "Kapselfjernelse",
+        desc: "Som selvstændig procedure eller specifikt tillæg ved implantatudskiftning.",
+        price: "00.000 kr.",
+        href: "/booking",
       },
     ],
   },
@@ -148,25 +259,52 @@ export default function Page() {
               <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-secondary/25 mb-4">{group.category}</p>
               <div>
                 {group.items.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="group flex items-start justify-between gap-8 py-6 border-b border-secondary/8 last:border-0 hover:opacity-70 transition-opacity"
-                  >
-                    <div className="flex-1 min-w-0">
-                      <p className="font-sans text-sm font-medium text-secondary mb-1">{item.label}</p>
-                      <p className="font-sans text-xs text-secondary/50 leading-relaxed mb-3">{item.desc}</p>
-                      <div className="flex flex-wrap gap-x-5 gap-y-1">
-                        <span className="font-sans text-[11px] text-secondary/40">⏱ {item.duration}</span>
-                        <span className="font-sans text-[11px] text-secondary/40">↻ {item.recovery}</span>
-                        <span className="font-sans text-[11px] text-secondary/40">◇ {item.anbefales}</span>
+                  <div key={item.label} className="border-b border-secondary/8 last:border-0">
+                    <Link
+                      href={item.href}
+                      className="group flex items-start justify-between gap-8 py-6 hover:opacity-70 transition-opacity"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <p className="font-sans text-sm font-medium text-secondary mb-1">{item.label}</p>
+                        {item.desc && (
+                          <p className="font-sans text-xs text-secondary/50 leading-relaxed mb-3">{item.desc}</p>
+                        )}
+                        {(item.duration || item.recovery || item.anbefales) && (
+                          <div className="flex flex-wrap gap-x-5 gap-y-1">
+                            {item.duration && (
+                              <span className="font-sans text-[11px] text-secondary/40">⏱ {item.duration}</span>
+                            )}
+                            {item.recovery && (
+                              <span className="font-sans text-[11px] text-secondary/40">↻ {item.recovery}</span>
+                            )}
+                            {item.anbefales && (
+                              <span className="font-sans text-[11px] text-secondary/40">◇ {item.anbefales}</span>
+                            )}
+                          </div>
+                        )}
                       </div>
-                    </div>
-                    <div className="shrink-0 flex flex-col items-end gap-2 pt-0.5">
-                      <p className="font-serif text-lg font-light text-primary">{item.price}</p>
-                      <span className="font-sans text-[11px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">Læs mere →</span>
-                    </div>
-                  </Link>
+                      <div className="shrink-0 flex flex-col items-end gap-2 pt-0.5">
+                        {item.price ? (
+                          <p className="font-serif text-lg font-light text-primary">{item.price}</p>
+                        ) : (
+                          <p className="font-sans text-xs text-secondary/35 mt-1">Kontakt os</p>
+                        )}
+                        <span className="font-sans text-[11px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                          {item.href.startsWith("/behandlinger") ? "Læs mere →" : "Book →"}
+                        </span>
+                      </div>
+                    </Link>
+                    {item.supplements && item.supplements.length > 0 && (
+                      <div className="pb-5 space-y-1.5">
+                        {item.supplements.map((s) => (
+                          <div key={s.label} className="flex justify-between gap-8">
+                            <span className="font-sans text-[11px] text-secondary/30">— {s.label}</span>
+                            <span className="font-sans text-[11px] text-secondary/30 shrink-0">{s.price}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
