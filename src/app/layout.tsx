@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ConsultationFloat from "@/components/layout/ConsultationFloat";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
@@ -40,6 +41,7 @@ export default function RootLayout({
         <div className="flex-1 pt-16">{children}</div>
         <ConsultationFloat />
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
