@@ -16,7 +16,7 @@ interface PageHeroProps {
 export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, image, gradient = true }: PageHeroProps) {
   if (image) {
     return (
-      <section className="relative flex items-end h-[50vh]">
+      <section className="relative flex items-end h-[70vh]">
         <Image src={image} alt={h1Main} fill sizes="100vw" className="object-cover" priority />
         {gradient && (
           <div
