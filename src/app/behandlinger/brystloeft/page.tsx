@@ -2,21 +2,22 @@ import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
+import Testimonial from "@/components/sections/Testimonial";
 
 export const metadata: Metadata = {
-  title: "Brystløft i Esbjerg | Naturlig form med Ruth Graf teknik",
+  title: "Brystløft med Ruth Graf teknik | Genvind fylde uden implantat",
   description:
-    "Få et naturligt brystløft hos Brystcenter Esbjerg. Vi anvender Ruth Graf-teknikken til auto-augmentation, der giver fylde uden implantater. Book tid i dag.",
+    "Ønsker du et løftet bryst med naturlig fylde i toppen? Læs om brystløft med auto-augmentation (Ruth Graf teknik) hos Brystcenter Esbjerg. Book her.",
 };
 
 const faqItems = [
   {
     q: "Hvem er egnet til et vertikalt brystløft?",
-    a: "Et vertikalt brystløft er velegnet til kvinder med moderate til svære grader af brystptose (hængen), som ønsker et løft og gerne mere fylde – uden at anvende implantat. Det er særligt relevant efter graviditet, amning eller vægttab, hvor brystet har mistet volumen og form. Forudsætningen er tilstrækkeligt brystkirtelvæv til at skabe auto-augmentation. Under konsultationen vurderer vi din anatomi og afklarer, om teknikken er den rette løsning for dig.",
+    a: "Et vertikalt brystløft med auto-augmentation er ideelt til kvinder, der har en vis mængde eksisterende brystvæv, men oplever, at tyngdekraften har flyttet volumen nedad (ptose). Teknikken er særligt velegnet, hvis du ønsker at undgå implantater, men stadig savner den fylde i toppen af brystet, som ofte forsvinder efter amning eller vægttab. Ved en forundersøgelse vurderer vi din vævskvalitet og mængden af kirtelvæv for at sikre, at der er ressourcer nok til at skabe den ønskede projektion.",
   },
   {
-    q: "Hvad er forskellen på et klassisk løft og Ruth Graf teknikken?",
-    a: "Et klassisk brystløft fjerner hud og løfter brystkirtlen op, men efterlader brystet fladere. Ruth Graf-teknikken (vertikal mastopeksi med auto-augmentation) omplacerer derimod kirtelvævet indvendigt, så det fungerer som en intern fylde. Det giver volumen i den øvre pol og en mere rund, ungdommelig form – uden implantat. Arlinjen er kortere: kun en vertikal ar og en areola-ar, ingen horisontal ar i brystranden.",
+    q: "Hvad er forskellen på et klassisk brystløft og Ruth Graf teknikken?",
+    a: 'Den primære forskel ligger i håndteringen af brystets indre struktur. Ved et klassisk brystløft fjerner man primært overskydende hud og strammer op, mens brystet indvendigt forbliver stort set uændret. Ruth Graf-teknikken derimod inkluderer en "auto-augmentation", hvor vi aktivt bruger brystets eget væv som fyldstof ved at transponere det til den øvre del af brystet. Dette giver en visuel volumen, som et traditionelt brystløft ikke kan præstere alene, og ofte eliminerer det behovet for et supplerende implantat.',
   },
 ];
 
@@ -32,16 +33,16 @@ const faqSchema = {
 
 const features = [
   {
-    label: "Vertikal mastopeksi",
-    text: "Den vertikale teknik efterlader kun en diskret ar langs brystvorten ned til brystranden – uden den lange horisontale ar fra klassiske teknikker. Det vertikale snit komprimerer og former brystet indefra.",
+    label: "Hvad er fordelen ved vertikal mastopeksi?",
+    text: "Den vertikale mastopeksi er fundamentet i denne behandling. Fordelen ved denne tilgang er en mere kontrolleret omformning af brystet, hvor vi minimerer behovet for de store, horisontale ar i brystfolden, som ses ved klassiske anker-løft. Resultatet er en mere markeret og løftet brystprofil med en naturlig og langtidsholdbar form.",
   },
   {
-    label: "Omplacering af eget væv",
-    text: "Frem for at tilføje et fremmedlegeme omformes det eksisterende kirtelvæv og flyttes til en højere position. Dette skaber en naturlig intern støtte og volumen, der ikke kræver fremtidig udskiftning.",
+    label: "Omplacering af eget væv frem for implantat",
+    text: 'Teknikken bag auto-augmentation fungerer ved en intern repositionering af brystvævet. Væv, der tidligere har søgt mod den nedre del af brystet, mobiliseres skånsomt og flyttes højere op i brystet. Her fungerer dit eget væv som et "naturligt implantat", der skaber øget fylde og projektion i brystets øvre pol, præcis der hvor mange savner volumen.',
   },
   {
-    label: "Forventet resultat",
-    text: "Arene lyser op over 12–18 måneder. Det endelige resultat ses typisk 6 måneder efter operationen. De fleste oplever et naturligt, symmetrisk resultat med god projektion i den øvre pol.",
+    label: "Forventet resultat og ardannelse",
+    text: "Målet er et løftet bryst med en harmonisk placering af brystvorten og en mere afrundet kontur. Ved Ruth Graf-teknikken placeres arrene diskret omkring brystvorten og vertikalt ned mod brystfolden. Selvom ar er en uundgåelig del af ethvert brystløft, arbejder vi med præcisionsteknikker for at sikre, at de heler så pænt og usynligt som muligt over tid.",
   },
 ];
 
@@ -56,9 +57,9 @@ export default function Page() {
         h1Main="Brystløft"
         h1Italic="med auto-augmentation"
         image="/images/hero-silk.png"
-        subtitle="Ruth Graf-teknikken løfter og former brystet med dit eget kirtelvæv — uden implantater og med minimale ar."
+        subtitle="Et brystløft med auto-augmentation er en kirurgisk teknik til dig, der ønsker at genvinde brystets ungdommelige projektion og form uden brug af fremmedlegemer."
         buttons={[
-          { label: "Book konsultation", href: "#book" },
+          { label: "Book en uforpligtende konsultation i Esbjerg", href: "#book" },
           { label: "Brystforstørrelse med implantat", href: "/behandlinger/bfo-implantat", variant: "outline" },
         ]}
       />
@@ -72,30 +73,23 @@ export default function Page() {
               Genvind din naturlige fylde uden implantater
             </h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65">
-              Ruth Graf-teknikken er en avanceret form for vertikal mastopeksi, der omplacerer patientens eget brystkirtelvæv for
-              at skabe volumen i den øvre pol. Resultatet er et løftet, fyldigere bryst med en naturlig fremtræden – helt uden
-              fremmedlegemer. Teknikken er særligt velegnet til kvinder, der ønsker en permanent forbedring uden de
-              vedligeholdelseskrav, der følger med implantater.
+              Mange kvinder oplever, at brystet med tiden mister fylde i den øvre del, hvilket ofte giver et ønske om både et løft
+              af brystet og en øget volumen. Hvor man traditionelt ville indsætte et implantat for at skabe denne fylde, gør Ruth
+              Graf-teknikken det muligt at opnå en visuel volumenforøgelse udelukkende ved brug af brystets eget væv. Det er
+              regenerativ æstetik, når det er mest virkningsfuldt.
             </p>
           </div>
-          <div className="bg-primary-container/30 rounded-2xl p-10">
-            <p className="font-serif font-light text-lg italic leading-relaxed text-tertiary mb-5">
-              &ldquo;Det bedste kirurgiske resultat er det, der ser naturligt ud — som om det altid har hørt til.&rdquo;
-            </p>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/40">— Kirurg, Troels Tei</p>
-          </div>
+          <Testimonial
+            quote="Fik foretaget en BFO af Troels Tei. Hele forløbet var topprofessionelt og kan kun på det varmeste anbefale Troels. Super æstetisk og smukt resultat."
+            name="Amalie"
+            treatment="Brystforstørrelse med implantater"
+          />
         </div>
       </section>
 
       {/* ── FEATURES ─────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-serif text-4xl font-semibold text-secondary mb-4">Teknik og resultat</h2>
-            <p className="font-sans text-base max-w-md mx-auto text-secondary/60">
-              Tre nøgleaspekter ved Ruth Graf vertikal mastopeksi.
-            </p>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {features.map((item) => (
               <div key={item.label} className="bg-white px-10 py-10 rounded-2xl">
@@ -117,12 +111,13 @@ export default function Page() {
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section id="book" className="px-8 lg:px-16 py-24 bg-surface-container-low">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Klar til at tage det første skridt?</h2>
+          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Genvind din naturlige form uden implantater</h2>
           <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei.
+            Ønsker du et brystløft, der udelukkende anvender din krops eget væv? Book en uforpligtende konsultation i Esbjerg og
+            hør, hvordan vi med Ruth Graf-teknikken kan skabe naturlig fylde og projektion.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Book en konsultation</Button>
+            <Button href="/booking">Bestil tid til forundersøgelse</Button>
             <Button href="tel:+4576185656" variant="outline">
               Ring til os: +45 76 18 56 56
             </Button>

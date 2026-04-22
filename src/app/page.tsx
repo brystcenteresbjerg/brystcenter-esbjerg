@@ -1,15 +1,16 @@
-import { BriefcaseMedical, Heart, Microscope, Sparkles, Star } from "lucide-react";
+import { BriefcaseMedical, Microscope, Star } from "lucide-react";
 
 import Button from "@/components/ui/Button";
-import FAQAccordion from "@/components/sections/FAQAccordion";
 import Link from "next/link";
 import type { Metadata } from "next";
+import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
+import Testimonial from "@/components/sections/Testimonial";
 
 export const metadata: Metadata = {
   title: "Brystcenter Esbjerg | Specialister i naturlig brystkirurgi",
   description:
-    "Skræddersyet brystkirurgi i Esbjerg. Implantater, fedttransplantation, brystløft og reduktion hos specialister. Book konsultation.",
+    "Skræddersyet brystkirurgi i Esbjerg. Implantater, fedttransplantation, brystløft og brystreduktion hos specialister. Book konsultation.",
 };
 
 const faqSchema = {
@@ -104,6 +105,52 @@ const services = [
   },
 ];
 
+const treatmentDetails = [
+  {
+    heading: "Brystforstørrelse med implantat eller eget fedt",
+    intro: "Vi tilbyder flere metoder til volumenøgning, så vi kan ramme præcis det udtryk, du søger:",
+    items: [
+      {
+        label: "Implantater",
+        text: "Velegnet til en tydelig volumenøgning. Vi tilbyder flere implantattyper, profiler og producenter, så vi kan opfylde dine ønsker til form og projektion.",
+      },
+      {
+        label: "Fedttransplantation (lipofilling)",
+        text: "Naturlig volumen med dit eget væv. Velegnet til en diskret brystforstørrelse og formforbedring. Vi anvender et dedikeret lipofilling-system (Lipografter) for optimal overlevelse af fedtcellerne.",
+      },
+      {
+        label: "Hybrid brystforstørrelse",
+        text: "En kombination af implantat og fedt, der giver både volumen og en blødere kontur. Valget afhænger af en individuel vurdering af din vævskvalitet.",
+      },
+    ],
+  },
+  {
+    heading: "Brystløft og brystreduktion",
+    intro:
+      "Ved korrektion af brystets form og tyngde anvender vi individuelt tilpassede teknikker afhængig af hudoverskud og graden af ptose (hæng):",
+    items: [
+      {
+        label: "Brystløft",
+        text: "Vi udfører alt fra klassiske ankerformede brystløft til vertikale brystløft med Ruth Graf-teknik, hvor eget væv omplaceres til de øvre dele af brystet for naturlig fylde. Vi tilbyder også B-teknik (Renault), særligt velegnet hvis vævet overvejende er lateraliseret.",
+      },
+      {
+        label: "Brystreduktion",
+        text: "Vi anvender gennemprøvede kirurgiske teknikker for at opnå reduktion af volumen og vægt samt lindring af fysiske gener. Målet er altid et funktionelt og æstetisk balanceret resultat.",
+      },
+    ],
+  },
+  {
+    heading: "Ekspertise i udskiftning af brystimplantater",
+    intro: null,
+    items: [
+      {
+        label: null,
+        text: "Revision og implantatudskiftning kræver særlig erfaring, da lommen (kaviteten) fra tidligere operationer ofte afviger fra det nye implantats størrelse og form. For at sikre optimal stabilitet anvender vi implantater med særlige overflader, som reducerer risikoen for forskydning og rotation.",
+      },
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -114,39 +161,45 @@ export default function Home() {
         label="Brystcenter Esbjerg - Speciallæge Troels Tei"
         h1Main="Skræddersyet"
         h1Italic="brystkirurgi"
-        subtitle="Fra første konsultation til det endelige resultat. Vi kombinerer klinisk præcision med en personlig tilgang for naturlig harmoni."
+        subtitle="En specialiseret enhed under Privathospitalet Kollund, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat."
         image="/images/woman_stonewall.png"
         buttons={[
           { label: "Book konsultation", href: "#book" },
-          { label: "Mød Troels Tei", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
+          { label: "Mød Troels Tei", href: "/troels-tei", variant: "outline" },
         ]}
       />
 
-      {/* ── VORES FILOSOFI ───────────────────────────────────────── */}
+      {/* ── HELE FORLØBET ────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-14 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-24 lg:items-start">
-          <p className="font-sans text-xs uppercase tracking-[0.12em] shrink-0 pt-1 text-secondary/40">Vores filosofi</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 flex-1">
-            <div>
-              <div className="w-10 h-10 rounded-full border border-secondary/15 flex items-center justify-center mb-4">
-                <Sparkles size={18} className="text-tertiary" />
-              </div>
-              <p className="font-serif text-lg font-semibold text-secondary mb-3">Specialister i naturlig harmoni</p>
-              <p className="font-sans text-sm leading-relaxed text-secondary/65">
-                Vi tror på, at det bedste kirurgiske resultat er det, der aldrig behøver at forklare sig. Vores mål er naturlige
-                proportioner — resultater der ser ud som om de altid har hørt til kroppen.
-              </p>
-            </div>
-            <div>
-              <div className="w-10 h-10 rounded-full border border-secondary/15 flex items-center justify-center mb-4">
-                <Microscope size={18} className="text-tertiary" />
-              </div>
-              <p className="font-serif text-lg font-semibold text-secondary mb-3">Individuel tilpasning fra start til slut</p>
-              <p className="font-sans text-sm leading-relaxed text-secondary/65">
-                Ingen standardløsninger. Hvert forløb begynder med en grundig analyse af din anatomi, dine ønsker og dine
-                forudsætninger — og afsluttes med et resultat, der er unikt dig.
-              </p>
-            </div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <p className="font-sans text-xs uppercase tracking-[0.12em] text-secondary/40 mb-4">Patientrejsen</p>
+            <h2 className="font-serif text-2xl font-semibold text-secondary mb-5 leading-snug">
+              Hele forløbet samlet ét sted — i Esbjerg
+            </h2>
+            <p className="font-sans text-sm leading-relaxed text-secondary/65 mb-4">
+              Hos Brystcenter Esbjerg tror vi på, at tryghed skabes gennem kontinuitet. Vi har valgt at samle hele din{" "}
+              <Link href="/patientrejsen" className="text-primary hover:underline underline-offset-2">
+                patientrejse
+              </Link>{" "}
+              under ét tag, så du aldrig skal rejse mellem forskellige byer eller klinikker for at gennemføre dit forløb.
+            </p>
+            <p className="font-sans text-sm leading-relaxed text-secondary/65">
+              Fra din første forundersøgelse til selve operationsdagen og de efterfølgende kontroller foregår alt i vores rammer i
+              Esbjerg. Du er gennem hele forløbet tilknyttet den samme speciallæge, som kender din forhistorie og dine ønsker.
+            </p>
+          </div>
+          <div>
+            <p className="font-sans text-xs uppercase tracking-[0.12em] text-secondary/40 mb-4">Filosofi</p>
+            <h2 className="font-serif text-2xl font-semibold text-secondary mb-5 leading-snug">
+              Specialister i naturlig harmoni
+            </h2>
+            <p className="font-sans text-sm leading-relaxed text-secondary/65">
+              Uanset om dit ønske er en brystforstørrelse, et brystløft eller en brystreduktion, tilbyder vi et forløb baseret på
+              tryghed og faglig tyngde. Vi arbejder ud fra en filosofi om naturlig harmoni, hvor valget af metode altid afhænger
+              af din specifikke vævskvalitet, anatomi og det ønskede resultat. Hos os møder du ikke standardløsninger, men
+              individuelle løsninger med fokus på ukompliceret kirurgi og fravær af problemer.
+            </p>
           </div>
         </div>
       </section>
@@ -167,7 +220,11 @@ export default function Home() {
                 key={s.title}
                 className={`group relative overflow-hidden rounded-2xl flex flex-col justify-between p-8 ${s.span} ${s.minHeight}`}
               >
-                <img src={s.image} alt="" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
+                <img
+                  src={s.image}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
                 <div
                   className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
                   style={{
@@ -175,10 +232,7 @@ export default function Home() {
                       "linear-gradient(to top, rgba(30,20,10,0.80) 0%, rgba(30,20,10,0.35) 55%, rgba(30,20,10,0.10) 100%)",
                   }}
                 />
-                {/* Category label — top left */}
                 <p className="relative z-10 font-sans text-[10px] uppercase tracking-[0.18em] text-white/40">{s.category}</p>
-
-                {/* Bottom content */}
                 <div className="relative z-10">
                   <h2 className="font-serif text-2xl font-semibold text-white mb-2">{s.title}</h2>
                   {s.showDesc && <p className="font-sans text-sm leading-relaxed mb-5 text-on-primary/68">{s.desc}</p>}
@@ -200,8 +254,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── HVORFOR VÆLGE OS ─────────────────────────────────────── */}
+      {/* ── BEHANDLINGSTYPER ─────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+          {treatmentDetails.map((group) => (
+            <div key={group.heading}>
+              <h2 className="font-serif text-xl font-semibold text-secondary mb-4 leading-snug">{group.heading}</h2>
+              {group.intro && <p className="font-sans text-sm text-secondary/60 leading-relaxed mb-6">{group.intro}</p>}
+              <div className="space-y-5">
+                {group.items.map((item, i) => (
+                  <div key={i}>
+                    {item.label && <p className="font-sans text-xs font-semibold text-secondary mb-1">{item.label}</p>}
+                    <p className="font-sans text-xs leading-relaxed text-secondary/55">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── HVORFOR VÆLGE OS ─────────────────────────────────────── */}
+      <section className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-7xl mx-auto">
           <h3 className="font-serif text-4xl font-semibold text-secondary mb-16 text-center">
             Hvorfor vælge Brystcenter Esbjerg?
@@ -212,19 +286,19 @@ export default function Home() {
             <div className="space-y-10">
               {[
                 {
-                  icon: <BriefcaseMedical size={20} className="text-tertiary" />,
-                  label: "Ekspertise",
-                  text: "Troels Tei er speciallæge med dybdegående erfaring i regenerativ brystkirurgi og avancerede teknikker som Ruth Graf mastopeksi og PU-belagte implantater.",
-                },
-                {
-                  icon: <Heart size={20} className="text-tertiary" />,
-                  label: "Tryghed",
-                  text: "Fra den første konsultation til den afsluttende opfølgning er du i trygge hænder. Vi prioriterer ærlighed og tager os tid til at besvare alle dine spørgsmål.",
-                },
-                {
                   icon: <Star size={20} className="text-tertiary" />,
-                  label: "Resultater",
-                  text: "Vores filosofi er naturlig harmoni. Resultater der ser ud som om de altid har hørt til — aldrig overdrevne, altid æstetisk afbalancerede og holdbare.",
+                  label: "Skræddersyet behandling",
+                  text: "Vi arbejder ikke med standardløsninger, men tilpasser hver operation til den enkelte patient, så der opnås en individuel løsning med fokus på ukompliceret kirurgi.",
+                },
+                {
+                  icon: <Microscope size={20} className="text-tertiary" />,
+                  label: "Teknisk overskud",
+                  text: "Vi har mange kirurgiske teknikker, implantattyper og producenter til rådighed, hvilket giver de bedste forudsætninger for et præcist valg tilpasset din anatomi.",
+                },
+                {
+                  icon: <BriefcaseMedical size={20} className="text-tertiary" />,
+                  label: "Æstetik og præcision",
+                  text: "Vi forener det smukke resultat med kirurgisk integritet og fokus på lav risiko for komplikationer. Naturlig harmoni er målet i hvert eneste indgreb.",
                 },
               ].map((item) => (
                 <div key={item.label} className="flex gap-5 items-start">
@@ -240,56 +314,27 @@ export default function Home() {
             </div>
 
             {/* Stats + testimonial */}
-            <div className="flex flex-col gap-4">
-              {/* Stats row */}
-              <div className="grid grid-cols-3 gap-4">
-                {[
-                  { num: "2.400+", label: "Udførte indgreb" },
-                  { num: "18 år", label: "Som speciallæge" },
-                  { num: "4,9 / 5", label: "Google · 187 anm." },
-                ].map((s) => (
-                  <div key={s.label} className="rounded-2xl p-5 bg-surface border border-secondary/8 flex flex-col gap-1">
-                    <p className="font-serif text-2xl font-light text-primary leading-none">{s.num}</p>
-                    <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-secondary/40 leading-snug">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Testimonial */}
-              <div className="rounded-2xl p-8 bg-surface border border-secondary/8 grid grid-cols-[64px_1fr] gap-5 items-start">
-                <div
-                  className="w-16 h-16 rounded-full shrink-0 bg-primary-container bg-cover bg-center"
-                  style={{ backgroundImage: "url('/images/brunette_happy.png')" }}
-                />
-                <div>
-                  <p className="font-serif text-base leading-relaxed text-secondary mb-4">
-                    &ldquo;Troels tog sig tid til at forklare hvorfor eget fedt var det rigtige for mig — ikke hvad der var
-                    nemmest at sælge. Et år efter mærker jeg knap nok forskel, og det er præcis pointen.&rdquo;
-                  </p>
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <p className="font-sans text-xs font-semibold text-secondary">Sofie, 41 år</p>
-                    <span className="text-secondary/20">·</span>
-                    <p className="font-sans text-xs text-secondary/50">Brystforstørrelse med eget fedt</p>
-                    <span className="text-secondary/20">·</span>
-                    <p className="font-sans text-[10px] uppercase tracking-[0.15em] font-semibold text-primary">Verificeret</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Testimonial
+              quote="Meget kompetent rådgivning hele vejen igennem. Jeg fik lavet en brystforstørrelse. Mit ønske var at få lavet noget, der så naturligt ud og passede til min krop. Troels Tei har ramt helt plet og jeg er meget tilfreds med både behandling og resultat."
+              name="Karina"
+              treatment="Brystforstørrelse med implantater"
+            />
           </div>
         </div>
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
+      <section id="book" className="px-8 lg:px-16 py-24 bg-surface-container-low">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Klar til at tage det første skridt?</h2>
+          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">
+            Tag det næste skridt mod et naturligt resultat
+          </h2>
           <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            En uforpligtende konsultation er det første skridt mod det resultat, du ønsker. Vi gennemgår dine muligheder og
-            besvarer alle dine spørgsmål.
+            Vejen til naturlig harmoni starter med en samtale. Kontakt vores specialister i Esbjerg for at høre mere om, hvordan
+            vi kan hjælpe dig med at opnå dine ønsker.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Book en konsultation</Button>
+            <Button href="/booking">Kontakt Brystcenter Esbjerg</Button>
             <Button href="tel:+4576185656" variant="outline">
               Ring til os: +45 76 18 56 56
             </Button>
@@ -298,10 +343,9 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
+      <section className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-2xl font-semibold text-secondary mb-14 text-center">Spørgsmål & Svar</h2>
-          <FAQAccordion items={faqItems} />
+          <PageFAQ items={faqItems} />
         </div>
       </section>
     </main>

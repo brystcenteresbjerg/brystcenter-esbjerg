@@ -1,7 +1,4 @@
-import { AlignJustify, Gem, Ruler } from "lucide-react";
-
 import Button from "@/components/ui/Button";
-import Link from "next/link";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -15,15 +12,15 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "Hvor lang tid holder et brystimplantat?",
-    a: "Moderne brystimplantater har ingen fast udløbsdato, men de fleste producenter anbefaler en vurdering efter 10-15 år. Mange kvinder beholder deres implantater i årtier uden problemer. Behovet for udskiftning opstår typisk ved kapselkontraktur, displacering eller ønske om en størrelsesændring. Hos Brystcenter Esbjerg anvender vi høj-kohæsive gel-implantater med dokumenteret holdbarhed, og vi rådgiver om langsigtet opfølgning allerede ved den første konsultation.",
+    a: "Moderne implantater af høj kvalitet er skabt til at holde i mange år. Selvom der ikke findes en decideret 'udløbsdato', anbefaler vi regelmæssige tjek. Mange vælger at få dem udskiftet efter 10–15 år, enten på grund af naturlige forandringer i kroppen eller ønske om en ny form. Vi anvender kun dokumenterede implantater med livslang produktgaranti mod brud.",
   },
   {
     q: "Kan man amme efter en brystforstørrelse?",
-    a: "I de fleste tilfælde er det muligt at amme efter en brystforstørrelse med implantat. Valget af operationsteknik og implantatplacering har betydning: en submandibulær (under brystmusklen) eller dual-plane placering bevarer typisk kirtelvævet og mælkegangene intakte. Vi drøfter dine planer om eventuel fremtidig graviditet og amning under konsultationen, så vi kan tilpasse teknikken til dit liv.",
+    a: "I langt de fleste tilfælde kan man amme normalt efter en brystforstørrelse med implantater. Fordi vi placerer implantatet bag brystkirtlen eller muskelvævet, bliver mælkegangene og nerveforsyningen til brystvorten som regel ikke berørt. Ved forundersøgelsen gennemgår vi dine fremtidsplaner, så vi kan vælge den mest skånsomme teknik.",
   },
   {
     q: "Gør det ondt at få lagt implantater ind?",
-    a: "Indgrebet foregår i fuld narkose, så du ikke mærker noget under operationen. De første dage efterfølgende oplever de fleste ømhed og en følelse af stramhed, særligt hvis implantatet placeres under brystmusklen. Smerterne håndteres effektivt med ordineret smertestillende medicin. Hævelsen aftager gradvist over 4-6 uger, og de fleste er klar til let arbejde inden for 1-2 uger.",
+    a: "Selve operationen foregår i fuld bedøvelse, så du mærker intet. I dagene efter vil der være ømhed og en følelse af spænding, som minder om en kraftig muskelpine. Vi lægger en individuel smerteplan til dig, så du er dækket ind i den første tid, og de fleste kan vende tilbage til stillesiddende arbejde efter 1–2 uger.",
   },
 ];
 
@@ -37,21 +34,24 @@ const faqSchema = {
   })),
 };
 
-const implantProperties = [
+const alaCartePoints = [
+  "Brystets nuværende udgangspunkt og symmetri.",
+  "Din huds elasticitet og vævets kvalitet.",
+  "Den ønskede volumen og form i balance med din øvrige kropsbygning.",
+];
+
+const implantChoices = [
   {
-    icon: <Gem size={18} className="text-tertiary" />,
-    label: "Kvalitet & Konsistens",
-    text: "Vi anvender udelukkende høj-kohæsive gel-implantater fra certificerede producenter. Konsistensen er tilpasset det ønskede resultat — fra blød og naturlig til fastere og mere projicerende.",
+    label: "Runde vs. Anatomiske (dråbeformede)",
+    text: "Afhængig af om du ønsker mest fylde øverst eller et mere naturligt fald.",
   },
   {
-    icon: <AlignJustify size={18} className="text-tertiary rotate-45" />,
-    label: "Overflade & Cohesion",
-    text: "Valget af overflade — glat, tekstureret eller polyuretan — påvirker implantatets stabilitet og risikoen for rotation. Vi gennemgår fordele og ulemper ved hvert valg individuelt under konsultationen.",
+    label: "Profil og Projektion",
+    text: "Hvor meget brystet skal træde frem fra brystkassen.",
   },
   {
-    icon: <Ruler size={18} className="text-tertiary" />,
-    label: "Volumen & Profil",
-    text: "Størrelse alene er ikke nok. Profilen — lav, medium eller høj — bestemmer projektionen og harmonien med din eksisterende anatomi. Vi bruger målsystemer og 3D-simulering til at finde det rette match.",
+    label: "Overfladestruktur",
+    text: "Vi anvender PU-implantater for at sikre maksimal stabilitet og minimere risikoen for komplikationer som kapseldannelse.",
   },
 ];
 
@@ -65,19 +65,17 @@ export default function Page() {
         label="Brystforstørrelse / Implantat"
         h1Main="Brystforstørrelse"
         h1Italic="med implantater"
-        subtitle="Et skræddersyet indgreb, der tager udgangspunkt i din anatomi, dine proportioner og dine ønsker — ikke en standardstørrelse."
+        subtitle="Vi ser det som en individuel behandling, hvor målet altid er et harmonisk og naturligt resultat, der respekterer din krops proportioner og dine personlige ønsker."
         image="/images/hero-silk.png"
-        gradient={false}
         buttons={[
-          { label: "Book konsultation", href: "#book" },
+          { label: "Book en personlig konsultation i Esbjerg", href: "#book" },
           { label: "Eget fedt som alternativ", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
         ]}
       />
 
       {/* ── À LA CARTE ───────────────────────────────────────────── */}
-      <section className="">
+      <section>
         <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Portrait image with floating quote card */}
           <div className="relative rounded-2xl overflow-hidden aspect-square">
             <img src="/images/body_boobs.png" alt="" className="w-full h-full object-cover" />
             <div
@@ -99,11 +97,19 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               En &ldquo;à la carte&rdquo;-tilgang til din krop
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
-              Ingen to kvinder er ens — og det skal resultatet afspejle. Hos Brystcenter Esbjerg starter enhver brystforstørrelse
-              med en grundig analyse af din anatomi, din hudkvalitet og dine ønsker. Vi bruger 3D-simulering og målsystemer til at
-              identificere det implantat, der harmonerer med dine proportioner, frem for blot at opfylde en størrelsesbetegnelse.
+            <p className="font-sans text-base leading-relaxed text-secondary/65 mb-6">
+              Vi tror ikke på standardløsninger. Der findes ikke ét implantat, der passer til alle. Derfor arbejder vi ud fra et
+              &ldquo;à la carte&rdquo;-princip, hvor vi udvælger både implantattype og kirurgisk teknik specifikt til dig. Denne
+              differentierede tilgang betyder, at vi kan tage præcis højde for:
             </p>
+            <ul className="space-y-3">
+              {alaCartePoints.map((p) => (
+                <li key={p} className="flex items-start gap-3 font-sans text-sm leading-relaxed text-secondary/65">
+                  <span className="text-primary mt-0.5 shrink-0">—</span>
+                  {p}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -111,19 +117,18 @@ export default function Page() {
       {/* ── VALG AF IMPLANTAT ────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-serif text-4xl font-semibold text-secondary mb-4">Valg af implantat</h2>
-            <p className="font-sans text-base max-w-md mx-auto text-secondary/60">
-              Tre parametre der tilsammen definerer dit resultat. Vi gennemgår dem alle grundigt ved konsultationen.
+          <div className="mb-14">
+            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Rådgivning</p>
+            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">Valg af implantat</h2>
+            <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-2xl">
+              For at sikre det perfekte match tilbyder vi et bredt udvalg af implantater fra førende producenter. Ved
+              forundersøgelsen gennemgår vi dine muligheder i detaljer, så du er tryg ved dit valg. Vi rådgiver dig om
+              forskellene på:
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {implantProperties.map((item) => (
-              <div key={item.label} className="bg-white px-12 py-12 rounded-2xl">
-                <div className="w-9 h-9 rounded-full border border-secondary/15 flex items-center justify-center mb-5">
-                  {item.icon}
-                </div>
+            {implantChoices.map((item) => (
+              <div key={item.label} className="bg-white px-10 py-10 rounded-2xl">
                 <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
                 <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
               </div>
@@ -133,44 +138,20 @@ export default function Page() {
       </section>
 
       {/* ── PLACERING & KIRURGISK PRÆCISION ──────────────────────── */}
-      <section className="">
+      <section>
         <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-secondary/40">Teknik</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-10 leading-snug">
+            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Teknik</p>
+            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Placering og kirurgisk præcision
             </h2>
-
-            <div className="space-y-8">
-              <div>
-                <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-secondary mb-3">Placering</h3>
-                <p className="font-sans text-sm leading-relaxed text-secondary/65">
-                  Implantatplacering under brystmusklen (sub-muskulær eller dual-plane) giver ofte et mere naturligt udseende og
-                  reducerer risikoen for kapselkontraktur. Vi vælger placeringen individuelt baseret på din hudkvalitet og mængden
-                  af kirtelvæv.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-secondary mb-3">
-                  Kirurgisk incision
-                </h3>
-                <p className="font-sans text-sm leading-relaxed text-secondary/65">
-                  Incisionen placeres diskret i brystranden (inframammær fold) eller akslen, tilpasset din anatomi og
-                  implantattype. Præcis kaveteforberedelse er afgørende for implantatets langsigtede stabilitet og det æstetiske
-                  resultat.
-                </p>
-              </div>
-
-              <Link
-                href="#book"
-                className="inline-flex items-center gap-2 font-sans text-sm font-medium text-primary hover:opacity-70 transition-opacity"
-              >
-                Dual Plane metode →
-              </Link>
-            </div>
+            <p className="font-sans text-base leading-relaxed text-secondary/65">
+              Teknikken bag placeringen af implantatet er afgørende for det endelige udtryk. Afhængig af mængden af dit eget
+              brystvæv kan implantatet placeres enten over eller under brystmusklen. Vores plastikkirurg Troels Tei benytter
+              teknikker, der sikrer, at overgangen mellem dit eget væv og implantatet bliver så usynlig som muligt — essentielt
+              for at opnå den naturlige harmoni, vi efterstræber.
+            </p>
           </div>
-
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-2xl overflow-hidden aspect-square">
               <img src="/images/gemini_generated_image_implants.png" alt="" className="w-full h-full object-cover" />
@@ -190,14 +171,17 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24">
+      <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Klar til at tage det første skridt?</h2>
+          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">
+            Tag det næste skridt mod naturlig harmoni
+          </h2>
           <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei.
+            Vi tror på, at de bedste resultater skabes gennem individuel planlægning og kirurgisk præcision. Kontakt klinikken i
+            Esbjerg for en samtale om dine muligheder.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Book en konsultation</Button>
+            <Button href="/booking">Bestil tid til forundersøgelse i dag</Button>
             <Button href="tel:+4576185656" variant="outline">
               Ring til os: +45 76 18 56 56
             </Button>
