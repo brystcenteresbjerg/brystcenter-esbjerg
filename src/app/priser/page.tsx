@@ -71,31 +71,36 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
         duration: "1,5–2 t",
         recovery: "1–2 uger",
         anbefales: "Ønske om markant volumen",
-        price: "40.000 kr.",
+        price: "fra 40.000 kr.",
         href: "/behandlinger/bfo-implantat",
         supplements: [
           { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
-          { label: "Tillæg brystløft", price: "+ 15.000 kr." },
+          { label: "Tillæg v. anatomiske implantater", price: "+?." },
+          { label: "Tillæg v. anatomiske Mentor implantater", price: "+?." },
         ],
       },
       {
         label: "Brystforstørrelse med eget fedt (lipofilling)",
         desc: "Naturlig volumen uden fremmedlegemer. Stamcelleanrigt fedtvæv. Inkl. tillæg fedttransplantation.",
-        duration: "2–3 t",
+        duration: "1t",
         recovery: "1 uge",
         anbefales: "Moderat volumenønske uden fremmedlegemer",
-        price: "54.000 kr.",
+        price: "fra 32.000 kr.",
         href: "/behandlinger/bfo-eget-fedt-lipofilling",
+        supplements: [
+          { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
+          { label: "Touch-up 2. behandling", price: "+ 25.000 kr." },
+        ],
       },
       {
         label: "Hybrid brystforstørrelse",
         desc: "Kombination af implantat og fedttransplantation for optimalt volumen og naturlighed.",
-        price: "00.000 kr.",
+        price: "fra 44.000 kr.",
         href: "/booking",
         supplements: [
           { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
-          { label: "Tillæg brystløft", price: "+ 15.000 kr." },
-          { label: "Tillæg fedttransplantation", price: "+ 14.000 kr." },
+          { label: "Tillæg v. anatomiske implantater", price: "+?." },
+          { label: "Tillæg v. Mentor implantater", price: "+?." },
         ],
       },
     ],
@@ -108,23 +113,18 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
         desc: "Klassisk mastopeksi med fokus på form og projektion. Inkl. narkose.",
         duration: "2–3 t",
         recovery: "2 uger",
-        price: "32.000 kr.",
+        anbefales: "Hvis egnet til din anatomi og ønsker",
+        price: "36.000 kr.",
         href: "/behandlinger/brystloeft",
       },
       {
         label: "Brystløft · Ruth Graf-teknik",
         desc: "Vertikal mastopeksi med auto-augmentation. Løft og fylde uden implantat — minimale ar. Inkl. narkose.",
-        duration: "2–3 t",
+        duration: "1,5–2 t",
         recovery: "2 uger",
-        anbefales: "Efter vægttab eller amning",
+        anbefales: "Hvis egnet til din anatomi og ønsker",
         price: "36.000 kr.",
         href: "/behandlinger/brystloeft",
-      },
-      {
-        label: "B-plastik / Renault-teknik",
-        desc: "Brystløft med reducerende effekt. Teknikvalget afhænger af din anatomi og ønsker.",
-        price: "00.000 kr.",
-        href: "/booking",
       },
     ],
   },
@@ -134,10 +134,16 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       {
         label: "Brystreduktion",
         desc: "Moderne B-teknik for optimal form og projektion. Lindring af fysiske gener og æstetisk balance.",
-        duration: "2–3 t",
+        duration: "1,5–2 t",
         recovery: "2 uger",
         anbefales: "Fysiske gener eller ubalance i proportioner",
-        price: "44.000 kr.",
+        price: "42.000 kr.",
+        href: "/behandlinger/brystreduktion",
+      },
+      {
+        label: "B-plastik / Renault-teknik",
+        desc: "Brystløft med reducerende effekt. Teknikvalget afhænger af din anatomi og ønsker.",
+        price: "42.000 kr.",
         href: "/behandlinger/brystreduktion",
       },
     ],
@@ -154,15 +160,24 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
         price: "45.000 kr.",
         href: "/behandlinger/udskiftning-af-protese",
         supplements: [
-          { label: "Tillæg brystløft", price: "+ 15.000 kr." },
           { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
+          { label: "Tillæg v. anatomiske implantater", price: "+?." },
+          { label: "Tillæg v. Mentor implantater", price: "+?." },
+          { label: "Tillæg v. ved kapseldannelse", price: "+5.000 kr." },
         ],
       },
       {
         label: "Fjernelse af implantat (Eksplantation)",
         desc: "Fjernelse af eksisterende implantater uden indsættelse af nyt implantat.",
-        price: "00.000 kr.",
+        duration: "1–2 t",
+        recovery: "1–2 uger",
+        anbefales: "bla bla ?",
+        price: "30.000 kr.",
         href: "/booking",
+        supplements: [
+          { label: "Ruptur", price: "fra 3.000 kr." },
+          { label: "Kapseldannelse", price: "fra 5.000 kr." },
+        ],
       },
     ],
   },
@@ -172,14 +187,22 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       {
         label: "Fedttransplantation til ansigtet",
         desc: "Stamcelleanrigt fedt til naturlig volumengenopbygning i ansigtet.",
-        price: "00.000 kr.",
+        duration: "1 t",
+        recovery: "1–2 uger",
+        anbefales: "bla bla ?",
+        price: "14.000 kr.",
         href: "/booking",
+        supplements: [{ label: "Touch up 2. behandling", price: "fra 10.000 kr." }],
       },
       {
         label: "Fedttransplantation til ar og vævsforbedring",
         desc: "Målrettet fedttransplantation til korrektion af ar og forbedring af vævskvalitet.",
-        price: "00.000 kr.",
+        duration: "1–2 t",
+        recovery: "1–2 uger",
+        anbefales: "bla bla ?",
+        price: "fra 14.000 kr.",
         href: "/booking",
+        supplements: [{ label: "Tillæg v. fuld narkose", price: "fra 4.000 kr." }],
       },
     ],
   },
@@ -188,14 +211,8 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
     items: [
       {
         label: "Korrektion af brystvorter",
-        desc: "Inddragne brystvorter eller reduktion af areola. Udføres ofte i lokalbedøvelse.",
-        price: "00.000 kr.",
-        href: "/booking",
-      },
-      {
-        label: "Kapselfjernelse",
-        desc: "Som selvstændig procedure eller specifikt tillæg ved implantatudskiftning.",
-        price: "00.000 kr.",
+        desc: "Inddragne brystvorter eller reduktion af areola el. brystvorte. Udføres ofte i lokalbedøvelse.",
+        price: "fra 14.000 kr.",
         href: "/booking",
       },
     ],
@@ -266,17 +283,11 @@ export default function Page() {
                     >
                       <div className="flex-1 min-w-0">
                         <p className="font-sans text-sm font-medium text-secondary mb-1">{item.label}</p>
-                        {item.desc && (
-                          <p className="font-sans text-xs text-secondary/50 leading-relaxed mb-3">{item.desc}</p>
-                        )}
+                        {item.desc && <p className="font-sans text-xs text-secondary/50 leading-relaxed mb-3">{item.desc}</p>}
                         {(item.duration || item.recovery || item.anbefales) && (
                           <div className="flex flex-wrap gap-x-5 gap-y-1">
-                            {item.duration && (
-                              <span className="font-sans text-[11px] text-secondary/40">⏱ {item.duration}</span>
-                            )}
-                            {item.recovery && (
-                              <span className="font-sans text-[11px] text-secondary/40">↻ {item.recovery}</span>
-                            )}
+                            {item.duration && <span className="font-sans text-[11px] text-secondary/40">⏱ {item.duration}</span>}
+                            {item.recovery && <span className="font-sans text-[11px] text-secondary/40">↻ {item.recovery}</span>}
                             {item.anbefales && (
                               <span className="font-sans text-[11px] text-secondary/40">◇ {item.anbefales}</span>
                             )}
