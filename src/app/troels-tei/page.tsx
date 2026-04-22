@@ -2,9 +2,10 @@ import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
+import Testimonial from "@/components/sections/Testimonial";
 
 export const metadata: Metadata = {
-  title: "Speciallæge Troels Tei | Ekspert i regenerativ brystkirurgi",
+  title: "Speciallæge Troels Tei | Kirurgisk præcision og naturlig harmoni",
   description:
     "Mød Troels Tei hos Brystcenter Esbjerg. Hør om hans filosofi for naturlig harmoni og hans ekspertise inden for Ruth Graf teknik og avancerede implantater.",
 };
@@ -52,42 +53,70 @@ export default function Page() {
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <PageHero
-        label="Mød Kirurgen"
+        label="Mød din kirurg"
         h1Main="Troels Tei"
         h1Italic="Speciallæge"
         image="/images/woman_stonewall.png"
-        subtitle="Speciallæge i plastikkirurgi med særlig ekspertise i regenerativ brystkirurgi og avancerede teknikker for naturlige resultater."
+        subtitle="Kirurgisk præcision og naturlig harmoni — brystkirurgi med kompromisløst fokus på det individuelle resultat."
         buttons={[
           { label: "Book konsultation", href: "#book" },
           { label: "Se patientrejsen", href: "/patientrejsen", variant: "outline" },
         ]}
       />
 
-      {/* ── FILOSOFI ─────────────────────────────────────────────── */}
+      {/* ── EN DEDIKATION ────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Filosofi</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              En filosofi om naturlig harmoni
+              En dedikation til det personlige resultat
             </h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65">
-              Troels Tei arbejder ud fra én grundlæggende overbevisning: det bedste kirurgiske resultat er det, der ser naturligt
-              ud — som om det altid har hørt til. Hans tilgang kombinerer klinisk præcision med en dyb forståelse for kroppens
-              proportioner og de biologiske processer, der sikrer et holdbart og harmonisk resultat.
+              Min tilgang til brystkirurgi er baseret på håndværksmæssig stolthed, faglige erfaringer og kompetencer samt den
+              individuelle rådgivning. Jeg tror ikke på standardløsninger, da ingen bryster er ens. Vi skal respektere det
+              forskellige og bruge det til at finde de små, usynlige detaljer, der gør det endelige resultat naturligt og
+              harmonisk for den enkelte kvinde.
             </p>
           </div>
-          <div className="bg-primary-container/30 rounded-2xl p-10">
-            <p className="font-serif font-light text-xl italic leading-relaxed text-tertiary mb-6">
-              &ldquo;Det bedste kirurgiske resultat er det, der ser naturligt ud — som om det altid har hørt til kroppen.&rdquo;
+          <Testimonial
+            quote="Jeg tror ikke på standardløsninger, da ingen bryster er ens. Vi skal respektere det forskellige og bruge det til at finde de små, usynlige detaljer, der gør det endelige resultat naturligt og harmonisk for den enkelte kvinde."
+            name="Troels Tei"
+            treatment="Speciallæge i plastikkirurgi"
+            verified={false}
+          />
+        </div>
+      </section>
+
+      {/* ── FAGLIG INTEGRITET ────────────────────────────────────── */}
+      <section className="px-8 lg:px-16 py-20 bg-surface-container-low">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Baggrund</p>
+            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
+              Faglig integritet og specialisering
+            </h2>
+            <p className="font-sans text-base leading-relaxed text-secondary/65 mb-5">
+              Jeg har mange års erfaring som speciallæge og henter inspiration fra førende klinikker i USA, Brasilien og Europa.
+              Jeg arbejder efter internationale principper for skånsom kirurgi uden komplikationer, der sikrer de mest harmoniske
+              resultater.
             </p>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/40">— Troels Tei, Speciallæge</p>
+            <p className="font-sans text-base leading-relaxed text-secondary/65">
+              Jeg har specialiseret mig i teknikker som Ruth Graf og lukkede systemer til fedttransplantation (Lipografter), der
+              sikrer maksimal overlevelse af fedtcellerne. For mig handler brystkirurgi om at forene høj sikkerhed med et æstetisk
+              udtryk, der respekterer din naturlige anatomi.
+            </p>
+          </div>
+
+          {/* ── BILLEDPLADSHOLDER ── skift src til det rigtige foto ── */}
+          <div className="rounded-2xl overflow-hidden aspect-3/4 lg:max-w-sm lg:ml-auto w-full">
+            <img src="/images/troels_tei.png" alt="Speciallæge Troels Tei" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
 
       {/* ── EKSPERTISE ───────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
+      <section className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-serif text-4xl font-semibold text-secondary mb-4">Ekspertise</h2>
@@ -103,19 +132,6 @@ export default function Page() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── UDDANNELSE ───────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-20 bg-surface">
-        <div className="max-w-3xl mx-auto">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Baggrund</p>
-          <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">Uddannelse og faglig baggrund</h2>
-          <p className="font-sans text-base leading-relaxed text-secondary/65">
-            Troels Tei er uddannet speciallæge i plastik- og rekonstruktionskirurgi og har bred klinisk erfaring fra både
-            offentlige og private sygehuse. Han holder sig løbende opdateret via internationale konferencer og samarbejder med
-            ledende europæiske plastikkirurger. Han er tilknyttet Brystcenter Esbjerg som primær opererende speciallæge.
-          </p>
         </div>
       </section>
 

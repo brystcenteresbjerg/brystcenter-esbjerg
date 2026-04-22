@@ -16,13 +16,13 @@ interface PageHeroProps {
 export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, image, gradient = true }: PageHeroProps) {
   if (image) {
     return (
-      <section className="relative flex items-end h-[75vh]">
+      <section className="relative flex items-end h-[50vh]">
         <Image src={image} alt={h1Main} fill sizes="100vw" className="object-cover" priority />
         {gradient && (
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to right, #FAF3EE 0%, rgba(250,243,238,0.7) 10%, rgba(250,243,238,0) 80%)",
+              background: "linear-gradient(to right, #FAF3EE 0%, rgba(250,243,238,0.7) 4%, rgba(250,243,238,0) 50%)",
             }}
           />
         )}
