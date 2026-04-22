@@ -28,7 +28,7 @@ export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, i
         )}
         <div className="relative z-10 w-full px-8 lg:px-24 pb-20 pt-32">
           <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">{label}</p>
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-xl">
+          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
           </h1>
           <p className="font-sans text-base leading-relaxed mb-10 max-w-sm text-secondary/65">{subtitle}</p>
