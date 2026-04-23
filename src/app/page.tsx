@@ -1,4 +1,5 @@
 import { BriefcaseMedical, Microscope, Star } from "lucide-react";
+import { faqItems, services, treatmentDetails } from "@/data/home";
 
 import Button from "@/components/ui/Button";
 import Link from "next/link";
@@ -6,7 +7,6 @@ import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
 import Testimonial from "@/components/sections/Testimonial";
-import { faqItems, services, treatmentDetails } from "@/data/home";
 
 export const metadata: Metadata = {
   title: "Brystcenter Esbjerg | Specialister i naturlig brystkirurgi",
@@ -48,7 +48,7 @@ export default function Home() {
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.12em] text-secondary/40 mb-4">Patientrejsen</p>
             <h2 className="font-serif text-2xl font-semibold text-secondary mb-5 leading-snug">
-              Hele forløbet samlet ét sted — i Esbjerg
+              Hele forløbet samlet ét sted - i Esbjerg
             </h2>
             <p className="font-sans text-sm leading-relaxed text-secondary/65 mb-4">
               Hos Brystcenter Esbjerg tror vi på, at tryghed skabes gennem kontinuitet. Vi har valgt at samle hele din{" "}
@@ -91,7 +91,7 @@ export default function Home() {
             {services.map((s) => (
               <div
                 key={s.title}
-                className={`group relative overflow-hidden rounded-2xl flex flex-col justify-between p-8 ${s.span} ${s.minHeight}`}
+                className={`group relative overflow-hidden rounded-sm flex flex-col justify-between p-8 ${s.span} ${s.minHeight}`}
               >
                 <img
                   src={s.image}

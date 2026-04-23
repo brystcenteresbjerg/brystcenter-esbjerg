@@ -123,7 +123,7 @@ export const treatments: TreatmentGroup[] = [
       },
       {
         label: "Brystløft · Ruth Graf-teknik",
-        desc: "Vertikal mastopeksi med auto-augmentation. Løft og fylde uden implantat — minimale ar. Inkl. narkose.",
+        desc: "Vertikal mastopeksi med auto-augmentation. Løft og fylde uden implantat - minimale ar. Inkl. narkose.",
         duration: "1,5–2 t",
         recovery: "1-2 uger",
         anbefales: "Hvis passende til din anatomi: efter amning, vægttab eller naturlig hæng",
@@ -233,3 +233,85 @@ export const included: string[] = [
   "Planlagte efterkontroller",
   "Adgang til kirurgen ved spørgsmål",
 ];
+
+export interface TreatmentFact {
+  label: string;
+  value: string;
+}
+
+export interface TreatmentSummary {
+  name: string;
+  price: string;
+  facts: TreatmentFact[];
+}
+
+export const treatmentSummaries: Record<string, TreatmentSummary> = {
+  "bfo-implantat": {
+    name: "Brystforstørrelse med implantat",
+    price: "fra 40.000 kr.",
+    facts: [
+      { label: "Operation", value: "Fuld bedøvelse" },
+      { label: "Operationstid", value: "45–60 min." },
+      { label: "Tid på klinikken", value: "2–3 timer" },
+      { label: "Sygemelding", value: "Typisk 1–2 uger" },
+    ],
+  },
+  "bfo-eget-fedt-lipofilling": {
+    name: "Brystforstørrelse med eget fedt",
+    price: "fra 54.000 kr.",
+    facts: [
+      { label: "Operation", value: "Fuld bedøvelse" },
+      { label: "Operationstid", value: "1,5–2 timer" },
+      { label: "Tid på klinikken", value: "3–4 timer" },
+      { label: "Sygemelding", value: "Typisk 1–2 uger" },
+    ],
+  },
+  brystloeft: {
+    name: "Brystløft",
+    price: "fra 36.000 kr.",
+    facts: [
+      { label: "Operation", value: "Fuld bedøvelse" },
+      { label: "Operationstid", value: "1,5–2 timer" },
+      { label: "Tid på klinikken", value: "2–3 timer" },
+      { label: "Sygemelding", value: "Typisk 1–2 uger" },
+    ],
+  },
+  brystreduktion: {
+    name: "Brystreduktion",
+    price: "42.000 kr.",
+    facts: [
+      { label: "Operation", value: "Fuld bedøvelse" },
+      { label: "Operationstid", value: "2 timer" },
+      { label: "Tid på klinikken", value: "3–4 timer" },
+      { label: "Sygemelding", value: "Typisk 2 uger" },
+    ],
+  },
+  "udskiftning-af-protese": {
+    name: "Udskiftning af implantater",
+    price: "fra 45.000 kr.",
+    facts: [
+      { label: "Operation", value: "Fuld bedøvelse" },
+      { label: "Operationstid", value: "1–2 timer" },
+      { label: "Tid på klinikken", value: "2–3 timer" },
+      { label: "Sygemelding", value: "Typisk 1–2 uger" },
+    ],
+  },
+  fedttransplantation: {
+    name: "Fedttransplantation",
+    price: "fra 14.000 kr.",
+    facts: [
+      { label: "Operation", value: "Lokal- el. fuld bedøvelse" },
+      { label: "Operationstid", value: "1–2 timer" },
+      { label: "Tid på klinikken", value: "2–3 timer" },
+      { label: "Sygemelding", value: "2–14 dage" },
+    ],
+  },
+  "second-opinion": {
+    name: "Second Opinion",
+    price: "1.500 kr.",
+    facts: [
+      { label: "Type", value: "Konsultation" },
+      { label: "Varighed", value: "Ca. 1 time" },
+    ],
+  },
+};

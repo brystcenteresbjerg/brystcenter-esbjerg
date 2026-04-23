@@ -1,9 +1,10 @@
+import { expertiseItems, faqItems } from "@/data/troels-tei";
+
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
 import Testimonial from "@/components/sections/Testimonial";
-import { expertiseItems, faqItems } from "@/data/troels-tei";
 
 export const metadata: Metadata = {
   title: "Speciallæge Troels Tei | Kirurgisk præcision og naturlig harmoni",
@@ -32,7 +33,7 @@ export default function Page() {
         h1Main="Troels Tei"
         h1Italic="Speciallæge"
         image="/images/woman_stonewall.png"
-        subtitle="Kirurgisk præcision og naturlig harmoni — brystkirurgi med kompromisløst fokus på det individuelle resultat."
+        subtitle="Kirurgisk præcision og naturlig harmoni - brystkirurgi med kompromisløst fokus på det individuelle resultat."
         buttons={[
           { label: "Book konsultation", href: "#book" },
           { label: "Se patientrejsen", href: "/patientrejsen", variant: "outline" },

@@ -1,8 +1,11 @@
+import { faqItems, features } from "@/data/behandlinger/fedttransplantation";
+
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
-import { faqItems, features } from "@/data/behandlinger/fedttransplantation";
+import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
+import { treatmentSummaries } from "@/data/priser";
 
 export const metadata: Metadata = {
   title: "Fedttransplantation i Esbjerg | Naturlig fornyelse med eget fedt",
@@ -31,12 +34,15 @@ export default function Page() {
         h1Main="Naturlig fornyelse"
         h1Italic="med kroppens eget væv"
         image="/images/woman_stonewall.png"
-        subtitle="Fedttransplantation (lipofilling) genskaber volumen og forbedrer vævets kvalitet med kroppens egne stamceller — for et resultat, der er naturligt indefra og ud."
+        subtitle="Fedttransplantation (lipofilling) genskaber volumen og forbedrer vævets kvalitet med kroppens egne stamceller - for et resultat, der er naturligt indefra og ud."
         buttons={[
           { label: "Book konsultation", href: "#book" },
           { label: "Brystforstørrelse med eget fedt", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
         ]}
       />
+
+      {/* ── FACTS BAR ────────────────────────────────────────────── */}
+      <TreatmentFactsBar {...treatmentSummaries["fedttransplantation"]} />
 
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">
@@ -55,9 +61,9 @@ export default function Page() {
           </div>
           <div className="bg-primary-container/30 rounded-2xl p-10">
             <p className="font-serif font-light text-lg italic leading-relaxed text-tertiary mb-5">
-              &ldquo;Det handler om at arbejde med kroppen, ikke mod den — volumen og biologisk fornyelse i ét indgreb.&rdquo;
+              &ldquo;Det handler om at arbejde med kroppen, ikke mod den - volumen og biologisk fornyelse i ét indgreb.&rdquo;
             </p>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/40">— Kirurg, Troels Tei</p>
+            <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/40">- Kirurg, Troels Tei</p>
           </div>
         </div>
       </section>
@@ -68,7 +74,7 @@ export default function Page() {
           <div className="text-center mb-14">
             <h2 className="font-serif text-4xl font-semibold text-secondary mb-4">Hvad kan vi behandle med eget fedt?</h2>
             <p className="font-sans text-base max-w-md mx-auto text-secondary/60">
-              Fedttransplantation kan anvendes bredt — fra æstetisk foryngelse til medicinsk vævsforbedring.
+              Fedttransplantation kan anvendes bredt - fra æstetisk foryngelse til medicinsk vævsforbedring.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -94,8 +100,8 @@ export default function Page() {
         <div className="max-w-xl mx-auto text-center">
           <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Få en faglig vurdering af dine muligheder</h2>
           <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Drømmer du om et naturligt resultat baseret på dine egne biologiske forudsætninger? Book en uforpligtende
-            konsultation og hør mere om regenerativ æstetik hos speciallæge Troels Tei.
+            Drømmer du om et naturligt resultat baseret på dine egne biologiske forudsætninger? Book en uforpligtende konsultation
+            og hør mere om regenerativ æstetik hos speciallæge Troels Tei.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/booking">Book en konsultation</Button>

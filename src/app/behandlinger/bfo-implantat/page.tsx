@@ -1,8 +1,11 @@
+import { alaCartePoints, faqItems, implantChoices } from "@/data/behandlinger/bfo-implantat";
+
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
-import { alaCartePoints, faqItems, implantChoices } from "@/data/behandlinger/bfo-implantat";
+import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
+import { treatmentSummaries } from "@/data/priser";
 
 export const metadata: Metadata = {
   title: "Brystforstørrelse med implantat | Skræddersyet i Esbjerg",
@@ -38,23 +41,26 @@ export default function Page() {
         ]}
       />
 
+      {/* ── FACTS BAR ────────────────────────────────────────────── */}
+      <TreatmentFactsBar {...treatmentSummaries["bfo-implantat"]} />
+
       {/* ── À LA CARTE ───────────────────────────────────────────── */}
       <section>
         <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative rounded-2xl overflow-hidden aspect-square">
+          <div className="relative rounded-sm overflow-hidden aspect-square">
             <img src="/images/body_boobs.png" alt="" className="w-full h-full object-cover" />
             <div
               className="absolute inset-0"
               style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 55%)" }}
             />
             <div
-              className="absolute bottom-5 left-5 w-1/2 rounded-xl p-5"
+              className="absolute bottom-5 left-5 w-1/2 rounded-md p-5"
               style={{ background: "rgba(250,243,238,0.82)", backdropFilter: "blur(12px)" }}
             >
               <p className="font-serif font-light text-base italic leading-relaxed text-secondary">
-                &ldquo;Det bedste kirurgiske resultat er det, der ser naturligt ud — som om det altid har hørt til.&rdquo;
+                &ldquo;Det bedste kirurgiske resultat er det, der ser naturligt ud - som om det altid har hørt til.&rdquo;
               </p>
-              <p className="font-sans text-xs uppercase tracking-[0.15em] mt-3 text-secondary/50">— Kirurg, Troels Tei</p>
+              <p className="font-sans text-xs uppercase tracking-[0.15em] mt-3 text-secondary/50">- Kirurg, Troels Tei</p>
             </div>
           </div>
           <div>
@@ -70,7 +76,7 @@ export default function Page() {
             <ul className="space-y-3">
               {alaCartePoints.map((p) => (
                 <li key={p} className="flex items-start gap-3 font-sans text-sm leading-relaxed text-secondary/65">
-                  <span className="text-primary mt-0.5 shrink-0">—</span>
+                  <span className="text-primary mt-0.5 shrink-0">-</span>
                   {p}
                 </li>
               ))}
@@ -87,13 +93,13 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">Valg af implantat</h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-2xl">
               For at sikre det perfekte match tilbyder vi et bredt udvalg af implantater fra førende producenter. Ved
-              forundersøgelsen gennemgår vi dine muligheder i detaljer, så du er tryg ved dit valg. Vi rådgiver dig om
-              forskellene på:
+              forundersøgelsen gennemgår vi dine muligheder i detaljer, så du er tryg ved dit valg. Vi rådgiver dig om forskellene
+              på:
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {implantChoices.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-2xl">
+              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
                 <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
                 <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
               </div>
@@ -113,15 +119,15 @@ export default function Page() {
             <p className="font-sans text-base leading-relaxed text-secondary/65">
               Teknikken bag placeringen af implantatet er afgørende for det endelige udtryk. Afhængig af mængden af dit eget
               brystvæv kan implantatet placeres enten over eller under brystmusklen. Vores plastikkirurg Troels Tei benytter
-              teknikker, der sikrer, at overgangen mellem dit eget væv og implantatet bliver så usynlig som muligt — essentielt
+              teknikker, der sikrer, at overgangen mellem dit eget væv og implantatet bliver så usynlig som muligt - essentielt
               for at opnå den naturlige harmoni, vi efterstræber.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-2xl overflow-hidden aspect-square">
+            <div className="rounded-sm overflow-hidden aspect-square">
               <img src="/images/gemini_generated_image_implants.png" alt="" className="w-full h-full object-cover" />
             </div>
-            <div className="rounded-2xl overflow-hidden aspect-square mt-8">
+            <div className="rounded-sm overflow-hidden aspect-square mt-8">
               <img src="/images/gemini_generated_image_implants_hands.png" alt="" className="w-full h-full object-cover" />
             </div>
           </div>
@@ -138,9 +144,7 @@ export default function Page() {
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">
-            Tag det næste skridt mod naturlig harmoni
-          </h2>
+          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Tag det næste skridt mod naturlig harmoni</h2>
           <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
             Vi tror på, at de bedste resultater skabes gennem individuel planlægning og kirurgisk præcision. Kontakt klinikken i
             Esbjerg for en samtale om dine muligheder.

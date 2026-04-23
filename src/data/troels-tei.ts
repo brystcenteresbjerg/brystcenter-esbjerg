@@ -14,7 +14,7 @@ export const faqItems: FAQItem[] = [
 export const expertiseItems: FeatureItem[] = [
   {
     label: "Ruth Graf-teknikken",
-    text: "Troels Tei er en af de få speciallæger i Danmark, der mestrer Ruth Graf vertikal mastopeksi med auto-augmentation — en teknik, der giver brystløft og volumen uden implantat ved at omplacere patientens eget kirtelvæv.",
+    text: "Troels Tei er en af de få speciallæger i Danmark, der mestrer Ruth Graf vertikal mastopeksi med auto-augmentation - en teknik, der giver brystløft og volumen uden implantat ved at omplacere patientens eget kirtelvæv.",
   },
   {
     label: "PU-overflader og implantater",

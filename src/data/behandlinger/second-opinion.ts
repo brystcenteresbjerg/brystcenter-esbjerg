@@ -7,14 +7,14 @@ export const faqItems: FAQItem[] = [
   },
   {
     q: "Er en second opinion det samme som en klagesag?",
-    a: "Nej, en second opinion hos Brystcenter Esbjerg er en lægelig vurdering af din nuværende tilstand og dine fremtidige muligheder. Vi agerer ikke som part i en eventuel klagesag mod en anden klinik, men fokuserer udelukkende på din sundhed og det æstetiske resultat. Vores opgave er at give dig en uvildig, faglig status, så du kan komme videre med ro i maven — uanset om det kræver en korrektion eller blot en beroligende forklaring på din opheling.",
+    a: "Nej, en second opinion hos Brystcenter Esbjerg er en lægelig vurdering af din nuværende tilstand og dine fremtidige muligheder. Vi agerer ikke som part i en eventuel klagesag mod en anden klinik, men fokuserer udelukkende på din sundhed og det æstetiske resultat. Vores opgave er at give dig en uvildig, faglig status, så du kan komme videre med ro i maven - uanset om det kræver en korrektion eller blot en beroligende forklaring på din opheling.",
   },
 ];
 
 export const features: FeatureItem[] = [
   {
     label: "Uvildig rådgivning",
-    text: "Vi forklarer de anatomiske årsager til din nuværende situation — uden forudindtagede konklusioner og uden at tage parti.",
+    text: "Vi forklarer de anatomiske årsager til din nuværende situation - uden forudindtagede konklusioner og uden at tage parti.",
   },
   {
     label: "Anbefalinger til udbedring",

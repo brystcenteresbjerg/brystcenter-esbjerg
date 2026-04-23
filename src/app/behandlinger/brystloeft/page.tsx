@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
 import Testimonial from "@/components/sections/Testimonial";
+import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
 import { faqItems, features } from "@/data/behandlinger/brystloeft";
+import { treatmentSummaries } from "@/data/priser";
 
 export const metadata: Metadata = {
   title: "Brystløft med Ruth Graf teknik | Genvind fylde uden implantat",
@@ -38,6 +40,9 @@ export default function Page() {
           { label: "Brystforstørrelse med implantat", href: "/behandlinger/bfo-implantat", variant: "outline" },
         ]}
       />
+
+      {/* ── FACTS BAR ────────────────────────────────────────────── */}
+      <TreatmentFactsBar {...treatmentSummaries["brystloeft"]} />
 
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">

@@ -1,8 +1,9 @@
+import { featured, included, treatments } from "@/data/priser";
+
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
-import { featured, included, treatments } from "@/data/priser";
 
 export const metadata: Metadata = {
   title: "Priser | Brystcenter Esbjerg",
@@ -47,7 +48,7 @@ export default function Page() {
                 <ul className="flex flex-col gap-2 mt-auto">
                   {card.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2 font-sans text-xs leading-relaxed text-secondary/60">
-                      <span className="text-primary mt-0.5 shrink-0">—</span>
+                      <span className="text-primary mt-0.5 shrink-0">-</span>
                       {b}
                     </li>
                   ))}
@@ -100,7 +101,7 @@ export default function Page() {
                       <div className="pb-5 space-y-1.5">
                         {item.supplements.map((s) => (
                           <div key={s.label} className="flex justify-between gap-8">
-                            <span className="font-sans text-[11px] text-secondary/30">— {s.label}</span>
+                            <span className="font-sans text-[11px] text-secondary/30">- {s.label}</span>
                             <span className="font-sans text-[11px] text-secondary/30 shrink-0">{s.price}</span>
                           </div>
                         ))}
@@ -122,7 +123,7 @@ export default function Page() {
             <ul className="space-y-3">
               {included.map((item) => (
                 <li key={item} className="flex items-start gap-3 font-sans text-sm text-secondary/65">
-                  <span className="text-primary mt-0.5">—</span>
+                  <span className="text-primary mt-0.5">-</span>
                   {item}
                 </li>
               ))}

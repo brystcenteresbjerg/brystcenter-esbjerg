@@ -1,13 +1,14 @@
+import { faqs, steps } from "@/data/patientrejsen";
+
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import PatientTimeline from "@/components/sections/PatientTimeline";
-import { faqs, steps } from "@/data/patientrejsen";
 
 export const metadata: Metadata = {
   title: "Patientrejsen | Brystcenter Esbjerg",
   description:
-    "Fra første konsultation til det endelige resultat. Se hvordan dit forløb ser ud hos Brystcenter Esbjerg — trin for trin.",
+    "Fra første konsultation til det endelige resultat. Se hvordan dit forløb ser ud hos Brystcenter Esbjerg - trin for trin.",
 };
 
 export default function Page() {
@@ -19,7 +20,7 @@ export default function Page() {
         h1Main="Fra første tanke"
         h1Italic="til endeligt resultat"
         image="/images/hero-silk.png"
-        subtitle="Vi tror på, at tryghed skabes af klarhed. Her ser du præcist, hvad du kan forvente — trin for trin."
+        subtitle="Vi tror på, at tryghed skabes af klarhed. Her ser du præcist, hvad du kan forvente - trin for trin."
       />
 
       {/* ── STEPS ────────────────────────────────────────────────── */}

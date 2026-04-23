@@ -1,8 +1,11 @@
+import { faqItems, features } from "@/data/behandlinger/brystreduktion";
+
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
-import { faqItems, features } from "@/data/behandlinger/brystreduktion";
+import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
+import { treatmentSummaries } from "@/data/priser";
 
 export const metadata: Metadata = {
   title: "Brystreduktion i Esbjerg | Fokus på form & proportioner",
@@ -38,6 +41,9 @@ export default function Page() {
         ]}
       />
 
+      {/* ── FACTS BAR ────────────────────────────────────────────── */}
+      <TreatmentFactsBar {...treatmentSummaries["brystreduktion"]} />
+
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -52,7 +58,7 @@ export default function Page() {
             </p>
             <p className="font-sans text-base leading-relaxed text-secondary/65">
               Denne teknik adskiller sig ved at have et særligt fokus på intern vævsomformning, hvilket optimerer brystets støtte
-              og projektion. B-teknikken er særligt målrettet patienter med en øget lateral fylde — altså hvor brystet fremstår
+              og projektion. B-teknikken er særligt målrettet patienter med en øget lateral fylde - altså hvor brystet fremstår
               bredt eller er orienteret ud mod armhulen. Ved at reducere og omforme vævet i de laterale dele af brystet kan vi
               skabe en mere centreret, løftet og ungdommelig brystform.
             </p>
@@ -94,9 +100,7 @@ export default function Page() {
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section id="book" className="px-8 lg:px-16 py-24 bg-surface-container-low">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">
-            Klar til en konsultation?
-          </h2>
+          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Klar til en konsultation?</h2>
           <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
             Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei.
           </p>

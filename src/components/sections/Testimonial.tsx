@@ -18,7 +18,7 @@ export default function Testimonial({ quote, name, treatment, verified = true }:
       {/* Stats */}
       <div className="grid grid-cols-2 gap-4">
         {stats.map((s) => (
-          <div key={s.label} className="rounded-2xl p-5 bg-surface border border-secondary/8 flex flex-col gap-1">
+          <div key={s.label} className="rounded-sm p-5 bg-surface border border-secondary/8 flex flex-col gap-1">
             <p className="font-serif text-2xl font-light text-primary leading-none">{s.num}</p>
             <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-secondary/40 leading-snug">{s.label}</p>
           </div>
@@ -26,7 +26,7 @@ export default function Testimonial({ quote, name, treatment, verified = true }:
       </div>
 
       {/* Testimonial */}
-      <div className="rounded-2xl p-8 bg-surface border border-secondary/8 grid grid-cols-[64px_1fr] gap-5 items-start">
+      <div className="rounded-sm p-8 bg-surface border border-secondary/8 grid grid-cols-[64px_1fr] gap-5 items-start">
         <div className="w-16 h-16 rounded-full shrink-0 bg-primary-container bg-cover bg-center flex items-center justify-center font-extrabold text-primary tracking-widest">
           {initials}
         </div>

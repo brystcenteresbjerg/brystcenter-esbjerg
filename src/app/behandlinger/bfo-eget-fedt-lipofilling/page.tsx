@@ -1,8 +1,11 @@
+import { benefits, faqItems, features } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
+
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
-import { benefits, faqItems, features } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
+import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
+import { treatmentSummaries } from "@/data/priser";
 
 export const metadata: Metadata = {
   title: "Brystforstørrelse med eget fedt | Regenerativ æstetik",
@@ -31,12 +34,15 @@ export default function Page() {
         h1Main="Brystforstørrelse"
         h1Italic="med eget fedt"
         image="/images/hero-silk.png"
-        subtitle="Fedttransplantation anvender kroppens eget fedt til at genskabe volumen og forbedre brystets konturer — for et resultat, der føles naturligt og harmonerer med din krops egne proportioner."
+        subtitle="Fedttransplantation anvender kroppens eget fedt til at genskabe volumen og forbedre brystets konturer - for et resultat, der føles naturligt og harmonerer med din krops egne proportioner."
         buttons={[
           { label: "Book konsultation", href: "#book" },
           { label: "Implantat som alternativ", href: "/behandlinger/bfo-implantat", variant: "outline" },
         ]}
       />
+
+      {/* ── FACTS BAR ────────────────────────────────────────────── */}
+      <TreatmentFactsBar {...treatmentSummaries["bfo-eget-fedt-lipofilling"]} />
 
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">
@@ -64,7 +70,7 @@ export default function Page() {
             <ul className="space-y-3">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start gap-3 font-sans text-sm leading-relaxed text-secondary/65">
-                  <span className="text-primary mt-0.5 shrink-0">—</span>
+                  <span className="text-primary mt-0.5 shrink-0">-</span>
                   {b}
                 </li>
               ))}
@@ -81,9 +87,9 @@ export default function Page() {
             Hvordan foregår en brystforstørrelse med lipofilling?
           </h2>
           <p className="font-sans text-base leading-relaxed text-secondary/65">
-            Processen kræver høj teknisk præcision for at sikre, at de transplanterede celler integreres optimalt i brystvævet.
-            Da fedttransplantation er afhængig af biologiske forhold, vurderes det endelige resultat efter nogle måneder, når
-            kroppen har optaget en del af det transplanterede væv og stabiliseret den nye volumen.
+            Processen kræver høj teknisk præcision for at sikre, at de transplanterede celler integreres optimalt i brystvævet. Da
+            fedttransplantation er afhængig af biologiske forhold, vurderes det endelige resultat efter nogle måneder, når kroppen
+            har optaget en del af det transplanterede væv og stabiliseret den nye volumen.
           </p>
         </div>
       </section>
@@ -112,9 +118,7 @@ export default function Page() {
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">
-            Overvejer du brystforstørrelse med eget fedt?
-          </h2>
+          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Overvejer du brystforstørrelse med eget fedt?</h2>
           <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
             Hos Brystcenter Esbjerg prioriterer vi en grundig forundersøgelse, hvor vi gennemgår dine muligheder og forventninger
             til resultatet.

@@ -2,7 +2,9 @@ import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
+import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
 import { faqItems, features } from "@/data/behandlinger/udskiftning-af-protese";
+import { treatmentSummaries } from "@/data/priser";
 
 export const metadata: Metadata = {
   title: "Udskiftning af brystimplantater i Esbjerg | Fokus på stabilitet",
@@ -37,6 +39,9 @@ export default function Page() {
           { label: "Om brystimplantater", href: "/behandlinger/bfo-implantat", variant: "outline" },
         ]}
       />
+
+      {/* ── FACTS BAR ────────────────────────────────────────────── */}
+      <TreatmentFactsBar {...treatmentSummaries["udskiftning-af-protese"]} />
 
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">

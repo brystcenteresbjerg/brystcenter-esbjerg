@@ -1,8 +1,11 @@
+import { faqItems, features } from "@/data/behandlinger/second-opinion";
+
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
-import { faqItems, features } from "@/data/behandlinger/second-opinion";
+import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
+import { treatmentSummaries } from "@/data/priser";
 
 export const metadata: Metadata = {
   title: "Second opinion ved brystkirurgi | Uvildig vurdering i Esbjerg",
@@ -35,6 +38,9 @@ export default function Page() {
         buttons={[{ label: "Book tid til en uvildig vurdering", href: "#book" }]}
       />
 
+      {/* ── FACTS BAR ────────────────────────────────────────────── */}
+      <TreatmentFactsBar {...treatmentSummaries["second-opinion"]} />
+
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -52,9 +58,10 @@ export default function Page() {
           </div>
           <div className="bg-primary-container/30 rounded-2xl p-10">
             <p className="font-serif font-light text-lg italic leading-relaxed text-tertiary mb-5">
-              &ldquo;En second opinion handler om at give dig klarhed og tryghed — gennem en saglig gennemgang af din situation.&rdquo;
+              &ldquo;En second opinion handler om at give dig klarhed og tryghed - gennem en saglig gennemgang af din
+              situation.&rdquo;
             </p>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/40">— Kirurg, Troels Tei</p>
+            <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/40">- Kirurg, Troels Tei</p>
           </div>
         </div>
       </section>
@@ -87,7 +94,7 @@ export default function Page() {
             Hvornår er en second opinion relevant?
           </h2>
           <p className="font-sans text-base leading-relaxed text-secondary/65">
-            En second opinion kan være relevant i mange situationer — eksempelvis hvis du oplever uventede smerter, hvis brystet
+            En second opinion kan være relevant i mange situationer - eksempelvis hvis du oplever uventede smerter, hvis brystet
             har ændret form, eller hvis du blot har brug for en bekræftelse på, at din opheling følger den rette kurve. Målet er
             altid at give dig det fundament, du har brug for, for at kunne træffe den rigtige beslutning for din krop fremover.
           </p>

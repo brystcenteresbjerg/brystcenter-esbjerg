@@ -125,7 +125,7 @@ export default function Header() {
             </Button>
           </div>
 
-          {/* Burger button — mobile only */}
+          {/* Burger button - mobile only */}
           <button
             className="lg:hidden flex items-center justify-center w-8 h-8 shrink-0 text-secondary"
             onClick={() => setOpen(!open)}

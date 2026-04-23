@@ -11,7 +11,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     q: "Hvor meget af det transplanterede fedt bliver siddende?",
-    a: "Ved en lipofilling skal man forvente, at kroppen naturligt absorberer en del af det transplanterede fedt i månederne efter indgrebet — typisk mellem 20% og 40%. Derfor overkorrigerer vi ofte en smule under selve operationen. Det fedt, der er tilbage efter 3–4 måneder, har etableret sin egen blodforsyning og vil i princippet blive siddende permanent. Resultatet vil herefter følge din krops naturlige svingninger i vægt, præcis som dit øvrige fedtvæv. Vi vurderer altid det endelige resultat ved en kontrol efter ca. seks måneder.",
+    a: "Ved en lipofilling skal man forvente, at kroppen naturligt absorberer en del af det transplanterede fedt i månederne efter indgrebet - typisk mellem 20% og 40%. Derfor overkorrigerer vi ofte en smule under selve operationen. Det fedt, der er tilbage efter 3–4 måneder, har etableret sin egen blodforsyning og vil i princippet blive siddende permanent. Resultatet vil herefter følge din krops naturlige svingninger i vægt, præcis som dit øvrige fedtvæv. Vi vurderer altid det endelige resultat ved en kontrol efter ca. seks måneder.",
   },
   {
     q: "Efterlader fedttransplantation synlige ar?",
@@ -37,5 +37,5 @@ export const features: FeatureItem[] = [
 export const benefits: string[] = [
   "Ønsker en naturlig brystforstørrelse uden brug af fremmedlegemer.",
   "Søger en diskret og harmonisk ændring af brystets størrelse.",
-  "Ønsker at kombinere indgrebet med en fedtsugning af depoter andre steder på kroppen — en såkaldt win-win situation.",
+  "Ønsker at kombinere indgrebet med en fedtsugning af depoter andre steder på kroppen - en såkaldt win-win situation.",
 ];
