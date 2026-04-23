@@ -159,8 +159,8 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <PageHero
         label="Brystcenter Esbjerg - Speciallæge Troels Tei"
-        h1Main="Skræddersyet"
-        h1Italic="brystkirurgi"
+        h1Main="Skræddersyet kosmetisk"
+        h1Italic="plastik kirurgi"
         subtitle="En specialiseret enhed under Privathospitalet Kollund, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat."
         image="/images/woman_stonewall.png"
         buttons={[
