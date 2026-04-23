@@ -24,7 +24,7 @@ const featured = [
   {
     title: "Brystløft",
     price: "32.000 kr.",
-    bullets: ["Traditionelt eller Ruth Graf", "Inkl. narkose", "Minimale ar"],
+    bullets: ["Traditionelt el. Ruth Graf", "Inkl. narkose", "Minimale ar"],
   },
 ];
 
@@ -56,7 +56,7 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       },
       {
         label: "Second Opinion",
-        desc: "Uafhængig vurdering af dit forløb eller tidligere behandlingsplan.",
+        desc: "Uafhængig vurdering af dit forløb el. tidligere behandlingsplan.",
         price: "1.500 kr.",
         href: "/booking",
       },
@@ -68,9 +68,9 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       {
         label: "Brystforstørrelse med implantat",
         desc: "Høj-kohæsive gel-implantater tilpasset din anatomi. 3D-simulering og individuel planlægning.",
-        duration: "1,5–2 t",
+        duration: "45-60 min.",
         recovery: "1–2 uger",
-        anbefales: "Ønske om markant volumen",
+        anbefales: "Ønske om volumen eller øge symmetrien",
         price: "fra 40.000 kr.",
         href: "/behandlinger/bfo-implantat",
         supplements: [
@@ -82,9 +82,9 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       {
         label: "Brystforstørrelse med eget fedt (lipofilling)",
         desc: "Naturlig volumen uden fremmedlegemer. Stamcelleanrigt fedtvæv. Inkl. tillæg fedttransplantation.",
-        duration: "1t",
-        recovery: "1 uge",
-        anbefales: "Moderat volumenønske uden fremmedlegemer",
+        duration: "1,5-2 t",
+        recovery: "1-2 uger",
+        anbefales: "Moderat volumenønske uden fremmedlegemer og samtidig fedtsuget et el. flere områder",
         price: "fra 32.000 kr.",
         href: "/behandlinger/bfo-eget-fedt-lipofilling",
         supplements: [
@@ -95,6 +95,9 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       {
         label: "Hybrid brystforstørrelse",
         desc: "Kombination af implantat og fedttransplantation for optimalt volumen og naturlighed.",
+        duration: "2 t",
+        recovery: "1-2 uger",
+        anbefales: "Moderat volumenønske og stort mellemrum mellem brysterne",
         price: "fra 44.000 kr.",
         href: "/booking",
         supplements: [
@@ -111,9 +114,9 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       {
         label: "Traditionelt brystløft",
         desc: "Klassisk mastopeksi med fokus på form og projektion. Inkl. narkose.",
-        duration: "2–3 t",
-        recovery: "2 uger",
-        anbefales: "Hvis egnet til din anatomi og ønsker",
+        duration: "1,5–2 t",
+        recovery: "1-2 uger",
+        anbefales: "Efter amning, vægttab eller naturlig hæng",
         price: "36.000 kr.",
         href: "/behandlinger/brystloeft",
       },
@@ -121,8 +124,8 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
         label: "Brystløft · Ruth Graf-teknik",
         desc: "Vertikal mastopeksi med auto-augmentation. Løft og fylde uden implantat — minimale ar. Inkl. narkose.",
         duration: "1,5–2 t",
-        recovery: "2 uger",
-        anbefales: "Hvis egnet til din anatomi og ønsker",
+        recovery: "1-2 uger",
+        anbefales: "Hvis passende til din anatomi: efter amning, vægttab eller naturlig hæng",
         price: "36.000 kr.",
         href: "/behandlinger/brystloeft",
       },
@@ -134,7 +137,7 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       {
         label: "Brystreduktion",
         desc: "Moderne B-teknik for optimal form og projektion. Lindring af fysiske gener og æstetisk balance.",
-        duration: "1,5–2 t",
+        duration: "2 t",
         recovery: "2 uger",
         anbefales: "Fysiske gener eller ubalance i proportioner",
         price: "42.000 kr.",
@@ -143,6 +146,9 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       {
         label: "B-plastik / Renault-teknik",
         desc: "Brystløft med reducerende effekt. Teknikvalget afhænger af din anatomi og ønsker.",
+        duration: "2 t",
+        recovery: "2 uger",
+        anbefales: "Fysiske gener eller ubalance i proportioner",
         price: "42.000 kr.",
         href: "/behandlinger/brystreduktion",
       },
@@ -156,7 +162,7 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
         desc: "Revisionskirurgi med PU-belagte implantater. Præcis placering og langvarig stabilitet.",
         duration: "1–2 t",
         recovery: "1–2 uger",
-        anbefales: "Eksisterende implantater over 10–15 år",
+        anbefales: "Ønske om ændring, kapseldannelse el. implantatkomplikationer",
         price: "45.000 kr.",
         href: "/behandlinger/udskiftning-af-protese",
         supplements: [
@@ -169,9 +175,9 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
       {
         label: "Fjernelse af implantat (Eksplantation)",
         desc: "Fjernelse af eksisterende implantater uden indsættelse af nyt implantat.",
-        duration: "1–2 t",
+        duration: "30-90 min.",
         recovery: "1–2 uger",
-        anbefales: "bla bla ?",
+        anbefales: "Æstetiske såvel som fysiologiske faktorer",
         price: "30.000 kr.",
         href: "/booking",
         supplements: [
@@ -188,8 +194,8 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
         label: "Fedttransplantation til ansigtet",
         desc: "Stamcelleanrigt fedt til naturlig volumengenopbygning i ansigtet.",
         duration: "1 t",
-        recovery: "1–2 uger",
-        anbefales: "bla bla ?",
+        recovery: "2-14 dage",
+        anbefales: "Permanent volumenopbygning alternativt til midlertidlige fillers",
         price: "14.000 kr.",
         href: "/booking",
         supplements: [{ label: "Touch up 2. behandling", price: "fra 10.000 kr." }],
@@ -198,8 +204,8 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
         label: "Fedttransplantation til ar og vævsforbedring",
         desc: "Målrettet fedttransplantation til korrektion af ar og forbedring af vævskvalitet.",
         duration: "1–2 t",
-        recovery: "1–2 uger",
-        anbefales: "bla bla ?",
+        recovery: "2-14 dage",
+        anbefales: "Forbedring af ar eller vævskvalitet, f.eks. efter tidligere operationer eller traumer",
         price: "fra 14.000 kr.",
         href: "/booking",
         supplements: [{ label: "Tillæg v. fuld narkose", price: "fra 4.000 kr." }],
@@ -211,7 +217,7 @@ const treatments: { category: string; items: TreatmentItem[] }[] = [
     items: [
       {
         label: "Korrektion af brystvorter",
-        desc: "Inddragne brystvorter eller reduktion af areola el. brystvorte. Udføres ofte i lokalbedøvelse.",
+        desc: "Inddragne brystvorter el. reduktion af areola el. brystvorte. Udføres ofte i lokalbedøvelse.",
         price: "fra 14.000 kr.",
         href: "/booking",
       },
