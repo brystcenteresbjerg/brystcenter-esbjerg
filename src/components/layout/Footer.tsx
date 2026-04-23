@@ -28,7 +28,7 @@ export default function Footer() {
           <ul className="space-y-3">
             {services.map((s) => (
               <li key={s.href}>
-                <Link href={s.href} className="font-sans text-sm text-on-primary/65 hover:text-on-primary transition-colors">
+                <Link href={s.href} className="font-sans text-sm text-white hover:text-on-primary transition-colors">
                   {s.label}
                 </Link>
               </li>
@@ -38,19 +38,22 @@ export default function Footer() {
 
         {/* Kontakt */}
         <div>
-          <p className="font-sans text-xs uppercase tracking-widest mb-5 text-tertiary">Kontakt</p>
+          <p className="font-sans text-xs uppercase tracking-widest mb-5 text-white">Kontakt</p>
           <address className="not-italic space-y-3">
-            <p className="font-sans text-sm text-on-primary/65">Bavnehøjvej 2</p>
+            <p className="font-sans text-sm text-white">Bavnehøjvej 2</p>
             <p className="font-sans text-sm text-on-primary/65">6700 Esbjerg</p>
             <p className="font-sans text-sm text-on-primary/65">Tlf. +45 22288888</p>
-
-            <Link
-              href="/troels-tei"
-              className="font-sans text-sm block text-on-primary/65 hover:text-on-primary transition-colors"
-            >
-              Book en konsultation
-            </Link>
           </address>
+          <Link
+            href="https://www.privathospitaletkollund.com/"
+            className="font-sans text-sm block text-on-primary/65 hover:text-on-primary mt-3 transition-colors"
+          >
+            En del af Privathospitalet Kollund
+          </Link>
+
+          {/* <Link href="/troels-tei" className="font-sans text-sm block text-on-primary/65 hover:text-on-primary transition-colors">
+            Book en konsultation
+          </Link> */}
         </div>
       </div>
 
