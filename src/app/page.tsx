@@ -31,7 +31,7 @@ export default function Home() {
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <PageHero
-        label="Brystcenter Esbjerg - Speciallæge Troels Tei"
+        label="Brystcenter Esbjerg"
         h1Main="Skræddersyet kosmetisk"
         h1Italic="plastik kirurgi"
         subtitle="En specialiseret enhed under Privathospitalet Kollund, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat."
@@ -46,7 +46,7 @@ export default function Home() {
       <section className="px-8 lg:px-16 py-14 bg-surface-container-low">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.12em] text-secondary/40 mb-4">Patientrejsen</p>
+            <p className="label mb-4">Patientrejsen</p>
             <h2 className="font-serif text-2xl font-semibold text-secondary mb-5 leading-snug">
               Hele forløbet samlet ét sted - i Esbjerg
             </h2>
@@ -63,7 +63,7 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.12em] text-secondary/40 mb-4">Filosofi</p>
+            <p className="label mb-4">Filosofi</p>
             <h2 className="font-serif text-2xl font-semibold text-secondary mb-5 leading-snug">
               Specialister i naturlig harmoni
             </h2>

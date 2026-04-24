@@ -1,6 +1,8 @@
+import { Activity, HeartPulse, PenLine } from "lucide-react";
 import { faqItems, features } from "@/data/behandlinger/brystreduktion";
 
 import Button from "@/components/ui/Button";
+import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -48,7 +50,7 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Teknik</p>
+            <p className="label mb-6">Teknik</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Moderne teknikker: B-teknik (Renault)
             </h2>
@@ -64,7 +66,7 @@ export default function Page() {
             </p>
           </div>
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Formål</p>
+            <p className="label mb-6">Formål</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Lindring af fysiske gener og æstetisk balance
             </h2>
@@ -77,18 +79,12 @@ export default function Page() {
       </section>
 
       {/* ── FEATURES ─────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {features.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
-                <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
-                <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection
+        items={features.map((f, i) => ({
+          ...f,
+          icon: [<HeartPulse size={22} />, <Activity size={22} />, <PenLine size={22} />][i],
+        }))}
+      />
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <div className="px-8 lg:px-16 py-24 bg-surface">

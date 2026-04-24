@@ -1,6 +1,8 @@
+import { ClipboardList, MessageCircle, Scale } from "lucide-react";
 import { faqItems, features } from "@/data/behandlinger/second-opinion";
 
 import Button from "@/components/ui/Button";
+import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -45,7 +47,7 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Vurdering</p>
+            <p className="label mb-6">Vurdering</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               En objektiv gennemgang af dit forløb
             </h2>
@@ -61,35 +63,26 @@ export default function Page() {
               &ldquo;En second opinion handler om at give dig klarhed og tryghed - gennem en saglig gennemgang af din
               situation.&rdquo;
             </p>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/40">- Kirurg, Troels Tei</p>
+            <p className="label">- Kirurg, Troels Tei</p>
           </div>
         </div>
       </section>
 
       {/* ── FEATURES ─────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-serif text-4xl font-semibold text-secondary mb-4">Oplysning om muligheder og udbedring</h2>
-            <p className="font-sans text-base max-w-md mx-auto text-secondary/60">
-              Oplever du gener, asymmetri eller blot usikkerhed? Vi kortlægger dine muligheder.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {features.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
-                <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
-                <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection
+        heading="Oplysning om muligheder og udbedring"
+        intro="Oplever du gener, asymmetri eller blot usikkerhed? Vi kortlægger dine muligheder."
+        headingAlign="center"
+        items={features.map((f, i) => ({
+          ...f,
+          icon: [<Scale size={22} />, <ClipboardList size={22} />, <MessageCircle size={22} />][i],
+        }))}
+      />
 
       {/* ── HVORNÅR ──────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-3xl mx-auto">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Relevans</p>
+          <p className="label mb-6">Relevans</p>
           <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
             Hvornår er en second opinion relevant?
           </h2>

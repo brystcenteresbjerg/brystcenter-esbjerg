@@ -1,10 +1,12 @@
-import { Asterisk, Layers, Ruler, Shapes, Users, Waves } from "lucide-react";
+import { Asterisk, Crosshair, Layers, Ruler, Shapes, Users, Waves } from "lucide-react";
 import { alaCartePoints, faqItems, implantChoices } from "@/data/behandlinger/bfo-implantat";
 
 import Button from "@/components/ui/Button";
+import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
+import SplitSection from "@/components/sections/SplitSection";
 import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
 import { treatmentSummaries } from "@/data/priser";
 
@@ -49,7 +51,7 @@ export default function Page() {
       <section>
         <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative rounded-sm overflow-hidden aspect-square">
-            <img src="/images/body_boobs.png" alt="" className="w-full h-full object-cover" />
+            <img src="/images/body_breast_hand.jpg" alt="" className="w-full h-full object-cover" />
             <div
               className="absolute inset-0"
               style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 55%)" }}
@@ -65,20 +67,23 @@ export default function Page() {
             </div>
           </div>
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-primary">Behandling</p>
+            <p className="label mb-6">Behandling</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               En &ldquo;à la carte&rdquo;-tilgang til din krop
             </h2>
-            <p className="font-sans text-lg leading-relaxed text-secondary/65 mb-6">
-              Vi tror ikke på standardløsninger. Der findes ikke ét implantat, der passer til alle. Derfor arbejder vi ud fra et
-              &ldquo;à la carte&rdquo;-princip, hvor vi udvælger både implantattype og kirurgisk teknik specifikt til dig. Denne
-              differentierede tilgang betyder, at vi kan tage præcis højde for:
-            </p>
-            <ul className="space-y-3">
+            <div className="font-sans text-lg leading-relaxed text-secondary/65 mb-6">
+              <p>
+                Vi tror ikke på standardløsninger. Der findes ikke ét implantat, der passer til alle. Derfor arbejder vi ud fra et
+                &ldquo;à la carte&rdquo;-princip, hvor vi udvælger både implantattype og kirurgisk teknik specifikt til dig.
+              </p>
+              <br />
+              <p>Denne differentierede tilgang betyder, at vi kan tage præcis højde for:</p>
+            </div>
+            <ul>
               {alaCartePoints.map((p, i) => (
                 <li
                   key={p}
-                  className="flex items-center gap-4 font-sans text-base leading-relaxed text-secondary/65 border-b border-secondary/8 pb-3"
+                  className="flex items-start gap-4 font-sans text-base leading-relaxed text-secondary/65 border-b border-secondary/8 py-6"
                 >
                   <span className="text-primary/75 shrink-0">
                     {i === 0 && <Asterisk size={18} />}
@@ -94,58 +99,31 @@ export default function Page() {
       </section>
 
       {/* ── VALG AF IMPLANTAT ────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-14">
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-primary">Rådgivning</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">Valg af implantat</h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-2xl">
-              For at sikre det perfekte match tilbyder vi et bredt udvalg af implantater fra førende producenter. Ved
-              forundersøgelsen gennemgår vi dine muligheder i detaljer, så du er tryg ved dit valg. Vi rådgiver dig om forskellene
-              på:
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {implantChoices.map((item, i) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
-                <div className="mb-4 text-tertiary">
-                  {i === 0 && <Shapes size={22} />}
-                  {i === 1 && <Ruler size={22} />}
-                  {i === 2 && <Layers size={22} />}
-                </div>
-                <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
-                <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection
+        label="Rådgivning"
+        heading="Valg af implantat"
+        intro="For at sikre det perfekte match tilbyder vi et bredt udvalg af implantater fra førende producenter. Ved forundersøgelsen gennemgår vi dine muligheder i detaljer, så du er tryg ved dit valg. Vi rådgiver dig om forskellene på:"
+        items={implantChoices.map((f, i) => ({
+          ...f,
+          icon: [<Shapes size={22} />, <Ruler size={22} />, <Layers size={22} />][i],
+        }))}
+      />
 
       {/* ── PLACERING & KIRURGISK PRÆCISION ──────────────────────── */}
-      <section>
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-primary">Teknik</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              Placering og kirurgisk præcision
-            </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
-              Teknikken bag placeringen af implantatet er afgørende for det endelige udtryk. Afhængig af mængden af dit eget
-              brystvæv kan implantatet placeres enten over eller under brystmusklen. Vores plastikkirurg Troels Tei benytter
-              teknikker, der sikrer, at overgangen mellem dit eget væv og implantatet bliver så usynlig som muligt - essentielt
-              for at opnå den naturlige harmoni, vi efterstræber.
-            </p>
+      <SplitSection
+        label="Teknik"
+        heading="Placering og kirurgisk præcision"
+        body="Teknikken bag placeringen af implantatet er afgørende for det endelige udtryk. Afhængig af mængden af dit eget brystvæv kan implantatet placeres enten over eller under brystmusklen. Vores plastikkirurg Troels Tei benytter teknikker, der sikrer, at overgangen mellem dit eget væv og implantatet bliver så usynlig som muligt — essentielt for at opnå den naturlige harmoni, vi efterstræber."
+      >
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-sm overflow-hidden aspect-square">
+            <img src="/images/gemini_generated_image_implants.png" alt="" className="w-full h-full object-cover" />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-sm overflow-hidden aspect-square">
-              <img src="/images/gemini_generated_image_implants.png" alt="" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-sm overflow-hidden aspect-square mt-8">
-              <img src="/images/gemini_generated_image_implants_hands.png" alt="" className="w-full h-full object-cover" />
-            </div>
+          <div className="rounded-sm overflow-hidden aspect-square mt-8">
+            <img src="/images/gemini_generated_image_implants_hands.png" alt="" className="w-full h-full object-cover" />
           </div>
         </div>
-      </section>
+      </SplitSection>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <div className="px-8 lg:px-16 py-24 bg-surface-container-low">

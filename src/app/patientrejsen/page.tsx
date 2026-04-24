@@ -31,7 +31,7 @@ export default function Page() {
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-24 py-20 bg-surface-container-low">
         <div className="max-w-3xl">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/30 mb-10">Praktiske spørgsmål</p>
+          <p className="label mb-10">Praktiske spørgsmål</p>
           <div className="space-y-8">
             {faqs.map((item) => (
               <div key={item.q} className="border-b border-secondary/8 pb-8 last:border-0">

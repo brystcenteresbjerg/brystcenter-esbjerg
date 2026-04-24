@@ -1,6 +1,8 @@
+import { ArrowUp, Scissors, Sparkles } from "lucide-react";
 import { faqItems, features } from "@/data/behandlinger/brystloeft";
 
 import Button from "@/components/ui/Button";
+import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -49,7 +51,7 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Behandling</p>
+            <p className="label mb-6">Behandling</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Genvind din naturlige fylde uden implantater
             </h2>
@@ -69,18 +71,12 @@ export default function Page() {
       </section>
 
       {/* ── FEATURES ─────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {features.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
-                <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
-                <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection
+        items={features.map((f, i) => ({
+          ...f,
+          icon: [<Scissors size={22} />, <ArrowUp size={22} />, <Sparkles size={22} />][i],
+        }))}
+      />
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <div className="px-8 lg:px-16 py-24 bg-surface">

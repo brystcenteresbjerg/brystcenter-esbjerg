@@ -26,6 +26,7 @@
   --on-background: #2c3e50;
   --on-surface: #3a2e24;
   --outline-variant: rgba(44, 62, 80, 0.12);
+  --label: color-mix(in srgb, var(--primary) 80%, transparent);
 }
 
 @theme inline {
@@ -47,6 +48,7 @@
   --color-on-background: var(--on-background);
   --color-on-surface: var(--on-surface);
   --color-outline-variant: var(--outline-variant);
+  --color-label: var(--label);
 
   /* Fonts */
   --font-serif: var(--font-noto-serif), "Georgia", serif;
@@ -74,4 +76,14 @@ h4,
 h5,
 h6 {
   font-family: var(--font-noto-serif), "Georgia", serif;
+}
+
+@utility label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-label);
 }

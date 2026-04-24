@@ -35,7 +35,7 @@ export const services = [
     desc: "",
     showDesc: false,
     links: [{ label: "Læs mere →", href: "/behandlinger/brystloeft" }],
-    image: "/images/body_boobs.png",
+    image: "/images/body_breast_hand.jpg",
     span: "md:col-span-1",
     minHeight: "min-h-[240px]",
   },
@@ -82,7 +82,8 @@ export const treatmentDetails = [
   },
   {
     heading: "Brystløft og brystreduktion",
-    intro: "Ved korrektion af brystets form og tyngde anvender vi individuelt tilpassede teknikker afhængig af hudoverskud og graden af ptose (hæng):",
+    intro:
+      "Ved korrektion af brystets form og tyngde anvender vi individuelt tilpassede teknikker afhængig af hudoverskud og graden af ptose (hæng):",
     items: [
       {
         label: "Brystløft",

@@ -20,14 +20,7 @@ export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, i
     return (
       <section className="relative flex items-end h-[65vh]">
         {video ? (
-          <video
-            src={video}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <video src={video} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover" />
         ) : (
           <Image src={image!} alt={h1Main} fill sizes="100vw" className="object-cover" priority />
         )}
@@ -40,7 +33,7 @@ export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, i
           />
         )}
         <div className="relative z-10 w-full px-8 lg:px-24 pb-20 pt-32">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">{label}</p>
+          <p className="label mb-8">{label}</p>
           <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
           </h1>
@@ -62,7 +55,7 @@ export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, i
   return (
     <section className="bg-surface pt-40 pb-20 px-8 lg:px-24">
       <div className="max-w-2xl">
-        <p className="font-sans text-xs uppercase tracking-[0.15em] mb-8 text-primary">{label}</p>
+        <p className="label mb-8">{label}</p>
         <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8">
           {h1Main} <span className="block italic font-light">{h1Italic}</span>
         </h1>

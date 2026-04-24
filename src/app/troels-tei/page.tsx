@@ -1,6 +1,8 @@
+import { Award, Leaf, Shield } from "lucide-react";
 import { expertiseItems, faqItems } from "@/data/troels-tei";
 
 import Button from "@/components/ui/Button";
+import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -44,7 +46,7 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Filosofi</p>
+            <p className="label mb-6">Filosofi</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               En dedikation til det personlige resultat
             </h2>
@@ -59,7 +61,6 @@ export default function Page() {
             quote="Jeg tror ikke på standardløsninger, da ingen bryster er ens. Vi skal respektere det forskellige og bruge det til at finde de små, usynlige detaljer, der gør det endelige resultat naturligt og harmonisk for den enkelte kvinde."
             name="Troels Tei"
             treatment="Speciallæge i plastikkirurgi"
-            verified={false}
           />
         </div>
       </section>
@@ -68,7 +69,7 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface-container-low">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Baggrund</p>
+            <p className="label mb-6">Baggrund</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Faglig integritet og specialisering
             </h2>
@@ -92,24 +93,16 @@ export default function Page() {
       </section>
 
       {/* ── EKSPERTISE ───────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-24 bg-surface">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="font-serif text-4xl font-semibold text-secondary mb-4">Ekspertise</h2>
-            <p className="font-sans text-base max-w-md mx-auto text-secondary/60">
-              Avancerede teknikker med fokus på naturlighed, holdbarhed og individuel tilpasning.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {expertiseItems.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
-                <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
-                <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection
+        heading="Ekspertise"
+        intro="Avancerede teknikker med fokus på naturlighed, holdbarhed og individuel tilpasning."
+        headingAlign="center"
+        background="bg-surface"
+        items={expertiseItems.map((f, i) => ({
+          ...f,
+          icon: [<Award size={22} />, <Shield size={22} />, <Leaf size={22} />][i],
+        }))}
+      />
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <div className="px-8 lg:px-16 py-14 bg-surface-container-low">

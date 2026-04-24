@@ -26,7 +26,7 @@ export default function Page() {
       {/* ── FEATURED CARDS ───────────────────────────────────────── */}
       <section className="px-8 lg:px-24 pt-16 pb-4 bg-surface">
         <div className="max-w-3xl">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/30 mb-8">Mest efterspurgte</p>
+          <p className="label mb-8">Mest efterspurgte</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {featured.map((card) => (
               <div
@@ -62,7 +62,7 @@ export default function Page() {
       {/* ── FULL PRICE LIST ──────────────────────────────────────── */}
       <section className="px-8 lg:px-24 pt-12 pb-16 bg-surface">
         <div className="max-w-3xl">
-          <p className="font-sans text-xs uppercase tracking-[0.15em] text-secondary/30 mb-8">Alle behandlinger</p>
+          <p className="label mb-8">Alle behandlinger</p>
           {treatments.map((group, i) => (
             <div key={group.category} className={i > 0 ? "mt-12" : ""}>
               <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-secondary/25 mb-4">{group.category}</p>
@@ -101,8 +101,8 @@ export default function Page() {
                       <div className="pb-5 space-y-1.5">
                         {item.supplements.map((s) => (
                           <div key={s.label} className="flex justify-between gap-8">
-                            <span className="font-sans text-[11px] text-secondary/30">- {s.label}</span>
-                            <span className="font-sans text-[11px] text-secondary/30 shrink-0">{s.price}</span>
+                            <span className="font-sans text-[11px] text-label">- {s.label}</span>
+                            <span className="font-sans text-[11px] text-label shrink-0">{s.price}</span>
                           </div>
                         ))}
                       </div>

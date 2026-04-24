@@ -2,8 +2,6 @@ interface TestimonialProps {
   quote: string;
   name: string;
   treatment: string;
-  /** @default true */
-  verified?: boolean;
 }
 
 const stats = [
@@ -11,7 +9,7 @@ const stats = [
   { num: "18 år", label: "Som speciallæge" },
 ];
 
-export default function Testimonial({ quote, name, treatment, verified = true }: TestimonialProps) {
+export default function Testimonial({ quote, name, treatment }: TestimonialProps) {
   const initials = name.slice(0, 2).toUpperCase();
   return (
     <div className="flex flex-col gap-4">
@@ -36,12 +34,6 @@ export default function Testimonial({ quote, name, treatment, verified = true }:
             <p className="font-sans text-xs font-semibold text-secondary">{name}</p>
             <span className="text-secondary/20">·</span>
             <p className="font-sans text-xs text-secondary/50">{treatment}</p>
-            {verified && (
-              <>
-                <span className="text-secondary/20">·</span>
-                <p className="font-sans text-[10px] uppercase tracking-[0.15em] font-semibold text-primary">Verificeret</p>
-              </>
-            )}
           </div>
         </div>
       </div>

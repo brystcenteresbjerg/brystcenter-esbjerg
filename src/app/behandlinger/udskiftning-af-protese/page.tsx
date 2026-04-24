@@ -1,6 +1,8 @@
+import { Shield, Target, TrendingUp } from "lucide-react";
 import { faqItems, features } from "@/data/behandlinger/udskiftning-af-protese";
 
 import Button from "@/components/ui/Button";
+import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -48,7 +50,7 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Hvornår</p>
+            <p className="label mb-6">Hvornår</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Hvornår bør man få foretaget en implantatudskiftning?
             </h2>
@@ -60,7 +62,7 @@ export default function Page() {
             </p>
           </div>
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Tilgang</p>
+            <p className="label mb-6">Tilgang</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Implantater med PU-overflader for optimal sikkerhed
             </h2>
@@ -74,18 +76,12 @@ export default function Page() {
       </section>
 
       {/* ── FEATURES ─────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {features.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
-                <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
-                <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection
+        items={features.map((f, i) => ({
+          ...f,
+          icon: [<Shield size={22} />, <Target size={22} />, <TrendingUp size={22} />][i],
+        }))}
+      />
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <div className="px-8 lg:px-16 py-24 bg-surface">

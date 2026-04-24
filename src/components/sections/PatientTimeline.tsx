@@ -94,7 +94,7 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
               className="grid grid-cols-[1fr_auto] gap-12 items-center"
             >
               <div>
-                <p className="font-sans text-xs uppercase tracking-[0.15em] text-primary mb-5">{steps[activeStep].label}</p>
+                <p className="label mb-5">{steps[activeStep].label}</p>
                 <h2 className="font-serif text-4xl xl:text-5xl font-semibold text-secondary mb-6 leading-tight">
                   {steps[activeStep].title}
                 </h2>
