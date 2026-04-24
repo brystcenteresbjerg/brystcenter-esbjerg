@@ -97,7 +97,7 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-24 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Rådgivning</p>
+            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-primary">Rådgivning</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">Valg af implantat</h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-2xl">
               For at sikre det perfekte match tilbyder vi et bredt udvalg af implantater fra førende producenter. Ved
@@ -125,7 +125,7 @@ export default function Page() {
       <section>
         <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Teknik</p>
+            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-primary">Teknik</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Placering og kirurgisk præcision
             </h2>

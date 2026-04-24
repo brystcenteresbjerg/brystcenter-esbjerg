@@ -9,15 +9,28 @@ interface PageHeroProps {
   buttons?: { label: string; href: string; variant?: "primary" | "outline" }[];
   /** If provided, renders a full-height image hero instead of solid background */
   image?: string;
-  /** Show left-to-right gradient overlay on image hero (default: true) */
+  /** If provided, renders a full-height looping video hero instead of image */
+  video?: string;
+  /** Show left-to-right gradient overlay on image/video hero (default: true) */
   gradient?: boolean;
 }
 
-export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, image, gradient = true }: PageHeroProps) {
-  if (image) {
+export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, image, video, gradient = true }: PageHeroProps) {
+  if (video || image) {
     return (
-      <section className="relative flex items-end h-65vh]">
-        <Image src={image} alt={h1Main} fill sizes="100vw" className="object-cover" priority />
+      <section className="relative flex items-end h-[65vh]">
+        {video ? (
+          <video
+            src={video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : (
+          <Image src={image!} alt={h1Main} fill sizes="100vw" className="object-cover" priority />
+        )}
         {gradient && (
           <div
             className="absolute inset-0"

@@ -35,7 +35,7 @@ export default function Home() {
         h1Main="Skræddersyet kosmetisk"
         h1Italic="plastik kirurgi"
         subtitle="En specialiseret enhed under Privathospitalet Kollund, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat."
-        image="/images/woman_stonewall.png"
+        video="/images/woman_sunlight_front.mp4"
         buttons={[
           { label: "Book konsultation", href: "#book" },
           { label: "Mød Troels Tei", href: "/troels-tei", variant: "outline" },
