@@ -69,7 +69,7 @@ export default function Header() {
                     </button>
                     <div className="absolute top-full left-1/2 -translate-x-1/2 pt-5 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
                       <div
-                        className="bg-surface/95 backdrop-blur-[20px] rounded-2xl overflow-hidden min-w-72"
+                        className="bg-surface/95 backdrop-blur-[20px] rounded-sm overflow-hidden min-w-72"
                         style={{ boxShadow: "0 24px 64px rgba(44,62,80,0.10), 0 2px 8px rgba(44,62,80,0.04)" }}
                       >
                         <div className="px-6 pt-5 pb-2">

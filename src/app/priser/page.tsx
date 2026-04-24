@@ -31,7 +31,7 @@ export default function Page() {
             {featured.map((card) => (
               <div
                 key={card.title}
-                className={`relative rounded-2xl p-6 flex flex-col gap-4 border ${
+                className={`relative rounded-sm p-6 flex flex-col gap-4 border ${
                   card.popular ? "bg-surface-container-low border-primary/25" : "bg-surface border-secondary/8"
                 }`}
               >

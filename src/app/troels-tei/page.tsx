@@ -85,7 +85,7 @@ export default function Page() {
           </div>
 
           {/* ── BILLEDPLADSHOLDER ── skift src til det rigtige foto ── */}
-          <div className="rounded-2xl overflow-hidden aspect-3/4 lg:max-w-sm lg:ml-auto w-full">
+          <div className="rounded-sm overflow-hidden aspect-3/4 lg:max-w-sm lg:ml-auto w-full">
             <img src="/images/troels_tei.png" alt="Speciallæge Troels Tei" className="w-full h-full object-cover" />
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {expertiseItems.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-2xl">
+              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
                 <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
                 <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
               </div>

@@ -56,7 +56,7 @@ export default function Page() {
               resultat.
             </p>
           </div>
-          <div className="bg-primary-container/30 rounded-2xl p-10">
+          <div className="bg-primary-container/30 rounded-sm p-10">
             <p className="font-serif font-light text-lg italic leading-relaxed text-tertiary mb-5">
               &ldquo;En second opinion handler om at give dig klarhed og tryghed - gennem en saglig gennemgang af din
               situation.&rdquo;
@@ -77,7 +77,7 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {features.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-2xl">
+              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
                 <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
                 <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
               </div>

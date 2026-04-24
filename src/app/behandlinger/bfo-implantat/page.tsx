@@ -1,3 +1,4 @@
+import { Asterisk, Layers, Ruler, Shapes, Users, Waves } from "lucide-react";
 import { alaCartePoints, faqItems, implantChoices } from "@/data/behandlinger/bfo-implantat";
 
 import Button from "@/components/ui/Button";
@@ -64,19 +65,26 @@ export default function Page() {
             </div>
           </div>
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-secondary/40">Behandling</p>
+            <p className="font-sans text-xs uppercase tracking-[0.15em] mb-6 text-primary">Behandling</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               En &ldquo;à la carte&rdquo;-tilgang til din krop
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65 mb-6">
+            <p className="font-sans text-lg leading-relaxed text-secondary/65 mb-6">
               Vi tror ikke på standardløsninger. Der findes ikke ét implantat, der passer til alle. Derfor arbejder vi ud fra et
               &ldquo;à la carte&rdquo;-princip, hvor vi udvælger både implantattype og kirurgisk teknik specifikt til dig. Denne
               differentierede tilgang betyder, at vi kan tage præcis højde for:
             </p>
             <ul className="space-y-3">
-              {alaCartePoints.map((p) => (
-                <li key={p} className="flex items-start gap-3 font-sans text-sm leading-relaxed text-secondary/65">
-                  <span className="text-primary mt-0.5 shrink-0">-</span>
+              {alaCartePoints.map((p, i) => (
+                <li
+                  key={p}
+                  className="flex items-center gap-4 font-sans text-base leading-relaxed text-secondary/65 border-b border-secondary/8 pb-3"
+                >
+                  <span className="text-primary/75 shrink-0">
+                    {i === 0 && <Asterisk size={18} />}
+                    {i === 1 && <Waves size={18} />}
+                    {i === 2 && <Users size={18} />}
+                  </span>
                   {p}
                 </li>
               ))}
@@ -98,8 +106,13 @@ export default function Page() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {implantChoices.map((item) => (
+            {implantChoices.map((item, i) => (
               <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
+                <div className="mb-4 text-tertiary">
+                  {i === 0 && <Shapes size={22} />}
+                  {i === 1 && <Ruler size={22} />}
+                  {i === 2 && <Layers size={22} />}
+                </div>
                 <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
                 <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
               </div>

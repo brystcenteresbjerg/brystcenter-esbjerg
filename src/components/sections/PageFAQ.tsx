@@ -46,7 +46,7 @@ export default function PageFAQ({ items, variant = "full" }: PageFAQProps) {
   }
 
   return (
-    <section className="mt-20 bg-surface-container-low rounded-2xl p-10">
+    <section className="mt-20 bg-surface-container-low rounded-sm p-10">
       <h2 className="font-serif text-2xl font-medium text-secondary mb-8">FAQ</h2>
       <Accordion items={items} />
     </section>

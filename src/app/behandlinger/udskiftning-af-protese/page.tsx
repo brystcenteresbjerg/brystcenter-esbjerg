@@ -1,9 +1,10 @@
+import { faqItems, features } from "@/data/behandlinger/udskiftning-af-protese";
+
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
 import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
-import { faqItems, features } from "@/data/behandlinger/udskiftning-af-protese";
 import { treatmentSummaries } from "@/data/priser";
 
 export const metadata: Metadata = {
@@ -52,10 +53,10 @@ export default function Page() {
               Hvornår bør man få foretaget en implantatudskiftning?
             </h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65">
-              Der kan være mange årsager til at ønske en udskiftning af brystimplantater. For nogle handler det om et ønske om
-              en ny størrelse eller form, mens det for andre er en nødvendighed grundet kapseldannelse, implantatbrud eller at
-              implantatet har flyttet sig (displacering). Ved en grundig forundersøgelse vurderer vi dit nuværende udgangspunkt
-              og lægger en plan, der sikrer harmoni og langsigtede resultater.
+              Der kan være mange årsager til at ønske en udskiftning af brystimplantater. For nogle handler det om et ønske om en
+              ny størrelse eller form, mens det for andre er en nødvendighed grundet kapseldannelse, implantatbrud eller at
+              implantatet har flyttet sig (displacering). Ved en grundig forundersøgelse vurderer vi dit nuværende udgangspunkt og
+              lægger en plan, der sikrer harmoni og langsigtede resultater.
             </p>
           </div>
           <div>
@@ -65,8 +66,8 @@ export default function Page() {
             </h2>
             <p className="font-sans text-base leading-relaxed text-secondary/65">
               I forbindelse med revisionskirurgi anvender vi ofte implantater med en særlig overfladestruktur, kendt som en
-              polyuretanbelagt (PU) overflade. Denne teknologi er designet til at interagere aktivt med kroppens eget væv,
-              hvilket giver en række væsentlige fordele for dig som patient.
+              polyuretanbelagt (PU) overflade. Denne teknologi er designet til at interagere aktivt med kroppens eget væv, hvilket
+              giver en række væsentlige fordele for dig som patient.
             </p>
           </div>
         </div>
@@ -77,7 +78,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {features.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-2xl">
+              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
                 <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
                 <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
               </div>
@@ -96,9 +97,7 @@ export default function Page() {
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section id="book" className="px-8 lg:px-16 py-24 bg-surface-container-low">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">
-            Overvejer du en implantatudskiftning?
-          </h2>
+          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Overvejer du en implantatudskiftning?</h2>
           <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
             Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei.
           </p>

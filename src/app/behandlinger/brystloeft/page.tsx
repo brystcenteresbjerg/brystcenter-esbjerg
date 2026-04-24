@@ -1,10 +1,11 @@
+import { faqItems, features } from "@/data/behandlinger/brystloeft";
+
 import Button from "@/components/ui/Button";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
 import Testimonial from "@/components/sections/Testimonial";
 import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
-import { faqItems, features } from "@/data/behandlinger/brystloeft";
 import { treatmentSummaries } from "@/data/priser";
 
 export const metadata: Metadata = {
@@ -72,7 +73,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {features.map((item) => (
-              <div key={item.label} className="bg-white px-10 py-10 rounded-2xl">
+              <div key={item.label} className="bg-white px-10 py-10 rounded-sm">
                 <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
                 <p className="font-sans text-sm leading-relaxed text-secondary/65">{item.text}</p>
               </div>
