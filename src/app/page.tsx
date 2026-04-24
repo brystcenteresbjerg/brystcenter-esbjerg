@@ -38,7 +38,7 @@ export default function Home() {
         video="/images/woman_sunlight_front.mp4"
         buttons={[
           { label: "Book konsultation", href: "#book" },
-          { label: "Mød Troels Tei", href: "/troels-tei", variant: "outline" },
+          { label: "Mød os", href: "/troels-tei", variant: "outline" },
         ]}
       />
 

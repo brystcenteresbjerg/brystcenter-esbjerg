@@ -25,7 +25,7 @@ const navItems: NavItem[] = [
     ],
   },
   { label: "Priser", href: "/priser" },
-  { label: "Mød Kirurgen", href: "/troels-tei" },
+  { label: "Mød os", href: "/troels-tei" },
   { label: "Patientrejsen", href: "/patientrejsen" },
 ];
 

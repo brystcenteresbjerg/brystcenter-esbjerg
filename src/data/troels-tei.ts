@@ -2,11 +2,11 @@ import type { FAQItem, FeatureItem } from "@/data/types";
 
 export const faqItems: FAQItem[] = [
   {
-    q: "Hvad er Troels Teis specialisering?",
-    a: "Troels Tei er speciallæge i plastikkirurgi med særlig ekspertise i regenerativ brystkirurgi. Han arbejder med avancerede teknikker som Ruth Graf vertikal mastopeksi med auto-augmentation, fedttransplantation (lipofilling) og PU-belagte implantater ved revisionskirurgi. Hans filosofi tager udgangspunkt i naturlig harmoni: resultater, der ser ud som om de altid har hørt til kroppen.",
+    q: "Hvad er Brystcenter Esbjergs specialisering?",
+    a: "Vores speciallæge i plastikkirurgi, Troels Tei, har særlig ekspertise i regenerativ brystkirurgi. Han arbejder med avancerede teknikker som Ruth Graf vertikal mastopeksi med auto-augmentation, fedttransplantation (lipofilling) og PU-belagte implantater ved revisionskirurgi. Hans filosofi tager udgangspunkt i naturlig harmoni: resultater, der ser ud som om de altid har hørt til kroppen.",
   },
   {
-    q: "Hvilke teknikker anvender Troels Tei?",
+    q: "Hvilke teknikker anvender Brystcenter Esbjerg?",
     a: "Troels Tei anvender et bredt repertoire af brystkirurgiske teknikker tilpasset den individuelle patients anatomi og ønsker. Det inkluderer Ruth Graf vertikal mastopeksi, lipofilling med stamcelleanrigede fedttransplantater, brystforstørrelse med anatomiske og runde høj-kohæsive implantater, hybrid-teknikker samt revisionskirurgi med PU-overflader.",
   },
 ];
