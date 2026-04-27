@@ -36,7 +36,7 @@ export default function Page() {
         label="Brystløft"
         h1Main="Brystløft"
         h1Italic="med auto-augmentation"
-        image="/images/hero-silk.png"
+        image="/images/hero_brunette_smile.jpg"
         subtitle="Et brystløft med auto-augmentation er en kirurgisk teknik til dig, der ønsker at genvinde brystets ungdommelige projektion og form uden brug af fremmedlegemer."
         buttons={[
           { label: "Book en uforpligtende konsultation i Esbjerg", href: "#book" },

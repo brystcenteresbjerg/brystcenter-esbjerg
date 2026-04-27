@@ -35,7 +35,7 @@ export default function Page() {
         label="Fedttransplantation"
         h1Main="Naturlig fornyelse"
         h1Italic="med kroppens eget væv"
-        image="/images/woman_stonewall.png"
+        video="/videos/skin_freckles.mp4"
         subtitle="Fedttransplantation (lipofilling) genskaber volumen og forbedrer vævets kvalitet med kroppens egne stamceller - for et resultat, der er naturligt indefra og ud."
         buttons={[
           { label: "Book konsultation", href: "#book" },

@@ -35,7 +35,7 @@ export default function Page() {
         label="Brystforstørrelse / Eget fedt"
         h1Main="Brystforstørrelse"
         h1Italic="med eget fedt"
-        image="/images/hero-silk.png"
+        video="/videos/woman_sunlight_two.mp4"
         subtitle="Fedttransplantation anvender kroppens eget fedt til at genskabe volumen og forbedre brystets konturer - for et resultat, der føles naturligt og harmonerer med din krops egne proportioner."
         buttons={[
           { label: "Book konsultation", href: "#book" },

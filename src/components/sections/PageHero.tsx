@@ -13,31 +13,74 @@ interface PageHeroProps {
   video?: string;
   /** Show left-to-right gradient overlay on image/video hero (default: true) */
   gradient?: boolean;
+  /** Optional portrait image for mobile (shown below lg, falls back to image if omitted) */
+  mobileImage?: string;
+  /** CSS object-position for image/video, e.g. "top", "center 30%" (default: "center") */
+  mediaPosition?: string;
 }
 
-export default function PageHero({ label, h1Main, h1Italic, subtitle, buttons, image, video, gradient = true }: PageHeroProps) {
+export default function PageHero({
+  label,
+  h1Main,
+  h1Italic,
+  subtitle,
+  buttons,
+  image,
+  video,
+  gradient = true,
+  mobileImage,
+  mediaPosition = "center",
+}: PageHeroProps) {
+  const gradientBg = gradient
+    ? "linear-gradient(to right, #FAF3EE 0%, rgba(250,243,238,0.7) 10%, rgba(250,243,238,0) 40%)"
+    : null;
+
   if (video || image) {
     return (
-      <section className="relative flex items-end h-[65vh]">
+      <section className="relative flex items-end h-[70vh]">
         {video ? (
-          <video src={video} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover" />
-        ) : (
-          <Image src={image!} alt={h1Main} fill sizes="100vw" className="object-cover" priority />
-        )}
-        {gradient && (
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(to right, #FAF3EE 0%, rgba(250,243,238,0.7) 4%, rgba(250,243,238,0) 50%)",
-            }}
+          <video
+            src={video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: mediaPosition }}
           />
+        ) : (
+          <>
+            <Image
+              src={image!}
+              alt={h1Main}
+              fill
+              sizes="100vw"
+              quality={90}
+              className={`object-cover ${mobileImage ? "hidden lg:block" : ""}`}
+              style={{ objectPosition: mediaPosition }}
+              priority
+            />
+            {mobileImage && (
+              <Image
+                src={mobileImage}
+                alt={h1Main}
+                fill
+                sizes="100vw"
+                quality={90}
+                className="object-cover lg:hidden"
+                style={{ objectPosition: mediaPosition }}
+                priority
+              />
+            )}
+          </>
         )}
+        {gradientBg && <div className="absolute inset-0" style={{ background: gradientBg }} />}
         <div className="relative z-10 w-full px-8 lg:px-24 pb-20 pt-32">
           <p className="label mb-8">{label}</p>
           <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
           </h1>
-          <p className="font-sans text-base leading-relaxed mb-10 max-w-sm text-secondary/65">{subtitle}</p>
+          <p className="font-sans text-base leading-relaxed mb-10 max-w-md text-secondary/65">{subtitle}</p>
           {buttons && buttons.length > 0 && (
             <div className="flex flex-wrap gap-4">
               {buttons.map((btn) => (

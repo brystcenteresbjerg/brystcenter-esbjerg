@@ -35,10 +35,11 @@ export default function Home() {
         h1Main="Skræddersyet kosmetisk"
         h1Italic="plastik kirurgi"
         subtitle="En specialiseret enhed under Privathospitalet Kollund, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat."
-        video="/images/woman_sunlight_front.mp4"
+        video="/videos/woman_sunlight_one.mp4"
+        mediaPosition="center 20%"
         buttons={[
           { label: "Book konsultation", href: "#book" },
-          { label: "Mød os", href: "/troels-tei", variant: "outline" },
+          { label: "Mød os", href: "/moed-os", variant: "outline" },
         ]}
       />
 
@@ -102,10 +103,10 @@ export default function Home() {
                   className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(30,20,10,0.80) 0%, rgba(30,20,10,0.35) 55%, rgba(30,20,10,0.10) 100%)",
+                      "linear-gradient(to top, rgba(30,20,10,0.80) 0%, rgba(30,20,10,0.35) 70%, rgba(30,20,10,0.10) 100%)",
                   }}
                 />
-                <p className="relative z-10 font-sans text-[10px] uppercase tracking-[0.18em] text-white/40">{s.category}</p>
+                <p className="relative z-10 font-sans text-[10px] uppercase tracking-[0.18em] text-white/95">{s.category}</p>
                 <div className="relative z-10">
                   <h2 className="font-serif text-2xl font-semibold text-white mb-2">{s.title}</h2>
                   {s.showDesc && <p className="font-sans text-sm leading-relaxed mb-5 text-on-primary/68">{s.desc}</p>}

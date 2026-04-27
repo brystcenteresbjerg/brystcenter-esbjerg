@@ -19,7 +19,7 @@ export default function Page() {
         label="Priser"
         h1Main="Gennemsigtige"
         h1Italic="priser"
-        image="/images/woman_stonewall.png"
+        image="/images/hero_implants_hands_one_clay.jpg"
         subtitle="Alle priser er vejledende og inkluderer konsultation, indgreb, narkose og efterkontrol. Den endelige pris fastsættes ved konsultationen."
       />
 

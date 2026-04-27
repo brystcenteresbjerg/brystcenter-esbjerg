@@ -35,7 +35,7 @@ export default function Page() {
         label="Revisionskirurgi"
         h1Main="Udskiftning af brystimplantater"
         h1Italic="Stabilitet og præcision"
-        image="/images/hero-silk.png"
+        image="/images/hero_implants_hands_three_beige.jpg"
         subtitle="Udskiftning eller korrektion af tidligere indsatte brystimplantater kræver en særlig grad af kirurgisk præcision og erfaring. Hos Brystcenter Esbjerg prioriterer vi en stabil og korrekt placering af det nye implantat."
         buttons={[
           { label: "Book en speciallægekonsultation i Esbjerg", href: "#book" },

@@ -37,7 +37,8 @@ export default function Page() {
         h1Main="Brystforstørrelse"
         h1Italic="med implantater"
         subtitle="Vi ser det som en individuel behandling, hvor målet altid er et harmonisk og naturligt resultat, der respekterer din krops proportioner og dine personlige ønsker."
-        image="/images/hero-silk.png"
+        image="/images/hero_implants_hands_one_clay.jpg"
+        mobileImage="/images/implants_hands_one.jpg"
         buttons={[
           { label: "Book en personlig konsultation i Esbjerg", href: "#book" },
           { label: "Eget fedt som alternativ", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
@@ -51,7 +52,7 @@ export default function Page() {
       <section>
         <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative rounded-sm overflow-hidden aspect-square">
-            <img src="/images/body_breast_hand.jpg" alt="" className="w-full h-full object-cover" />
+            <img src="/images/collarbone_hands_breasts_cover.jpg" alt="" className="w-full h-full object-cover" />
             <div
               className="absolute inset-0"
               style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 55%)" }}
@@ -83,7 +84,7 @@ export default function Page() {
               {alaCartePoints.map((p, i) => (
                 <li
                   key={p}
-                  className="flex items-start gap-4 font-sans text-base leading-relaxed text-secondary/65 border-b border-secondary/8 py-6"
+                  className="flex items-center gap-4 font-sans font-semibold text-sm leading-relaxed text-secondary border-b border-secondary/8 py-6"
                 >
                   <span className="text-primary/75 shrink-0">
                     {i === 0 && <Asterisk size={18} />}
@@ -117,10 +118,10 @@ export default function Page() {
       >
         <div className="grid grid-cols-2 gap-4">
           <div className="rounded-sm overflow-hidden aspect-square">
-            <img src="/images/gemini_generated_image_implants.png" alt="" className="w-full h-full object-cover" />
+            <img src="/images/implants_hand_one.jpg" alt="" className="w-full h-full object-cover" />
           </div>
           <div className="rounded-sm overflow-hidden aspect-square mt-8">
-            <img src="/images/gemini_generated_image_implants_hands.png" alt="" className="w-full h-full object-cover" />
+            <img src="/images/body_covering_breasts_hands.jpg" alt="" className="w-full h-full object-cover" />
           </div>
         </div>
       </SplitSection>

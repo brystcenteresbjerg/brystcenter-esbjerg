@@ -48,10 +48,6 @@ export default function Footer() {
           >
             En del af Privathospitalet Kollund
           </Link>
-
-          {/* <Link href="/troels-tei" className="font-sans text-sm block text-on-primary/65 hover:text-on-primary transition-colors">
-            Book en konsultation
-          </Link> */}
         </div>
       </div>
 
