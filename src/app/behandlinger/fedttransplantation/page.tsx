@@ -1,7 +1,7 @@
 import { ArrowUp, Sparkles, Zap } from "lucide-react";
 import { faqItems, features } from "@/data/behandlinger/fedttransplantation";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -37,10 +37,9 @@ export default function Page() {
         h1Italic="med kroppens eget væv"
         video="/videos/skin_freckles.mp4"
         subtitle="Fedttransplantation (lipofilling) genskaber volumen og forbedrer vævets kvalitet med kroppens egne stamceller - for et resultat, der er naturligt indefra og ud."
-        buttons={[
-          { label: "Book konsultation", href: "#book" },
-          { label: "Brystforstørrelse med eget fedt", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
-        ]}
+        cta={{ label: "Book konsultation", href: "#book" }}
+        secondaryCta={{ label: "Brystforstørrelse med eget fedt", href: "/behandlinger/bfo-eget-fedt-lipofilling" }}
+        gradient="linear-gradient(to right, rgba(250,243,238,0.50) 30%, rgba(250,243,238,0.6) 35%, rgba(250,243,238,0) 100%)"
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -54,7 +53,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Mere end blot volumen: En biologisk opgradering
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Fedttransplantation (lipofilling) er en af de mest alsidige teknikker inden for moderne plastikkirurgi. Ved at
               anvende dine egne fedtceller som en naturlig filler kan vi ikke blot genskabe tabt volumen, men også forbedre selve
               vævets kvalitet. Det skyldes fedtvævets rige indhold af stamceller, som har en unik regenerativ effekt på hud og
@@ -89,21 +88,10 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Få en faglig vurdering af dine muligheder</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Drømmer du om et naturligt resultat baseret på dine egne biologiske forudsætninger? Book en uforpligtende konsultation
-            og hør mere om regenerativ æstetik hos speciallæge Troels Tei.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Book en konsultation</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Få en faglig vurdering af dine muligheder"
+        body="Drømmer du om et naturligt resultat baseret på dine egne biologiske forudsætninger? Book en uforpligtende konsultation og hør mere om regenerativ æstetik hos speciallæge Troels Tei."
+      />
     </>
   );
 }

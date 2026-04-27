@@ -1,7 +1,7 @@
 import { Shield, Target, TrendingUp } from "lucide-react";
 import { faqItems, features } from "@/data/behandlinger/udskiftning-af-protese";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -37,10 +37,8 @@ export default function Page() {
         h1Italic="Stabilitet og præcision"
         image="/images/hero_implants_hands_three_beige.jpg"
         subtitle="Udskiftning eller korrektion af tidligere indsatte brystimplantater kræver en særlig grad af kirurgisk præcision og erfaring. Hos Brystcenter Esbjerg prioriterer vi en stabil og korrekt placering af det nye implantat."
-        buttons={[
-          { label: "Book en speciallægekonsultation i Esbjerg", href: "#book" },
-          { label: "Om brystimplantater", href: "/behandlinger/bfo-implantat", variant: "outline" },
-        ]}
+        cta={{ label: "Book en speciallægekonsultation i Esbjerg", href: "#book" }}
+        secondaryCta={{ label: "Om brystimplantater", href: "/behandlinger/bfo-implantat" }}
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -54,7 +52,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Hvornår bør man få foretaget en implantatudskiftning?
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Der kan være mange årsager til at ønske en udskiftning af brystimplantater. For nogle handler det om et ønske om en
               ny størrelse eller form, mens det for andre er en nødvendighed grundet kapseldannelse, implantatbrud eller at
               implantatet har flyttet sig (displacering). Ved en grundig forundersøgelse vurderer vi dit nuværende udgangspunkt og
@@ -66,7 +64,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Implantater med PU-overflader for optimal sikkerhed
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               I forbindelse med revisionskirurgi anvender vi ofte implantater med en særlig overfladestruktur, kendt som en
               polyuretanbelagt (PU) overflade. Denne teknologi er designet til at interagere aktivt med kroppens eget væv, hvilket
               giver en række væsentlige fordele for dig som patient.
@@ -91,20 +89,11 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Overvejer du en implantatudskiftning?</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Bestil tid til forundersøgelse i dag</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Overvejer du en implantatudskiftning?"
+        body="Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei."
+        ctaLabel="Bestil tid til forundersøgelse i dag"
+      />
     </>
   );
 }

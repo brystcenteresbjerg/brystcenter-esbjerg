@@ -44,43 +44,40 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-[20px]">
+      <header className="fixed top-0 inset-x-0 z-50 bg-nude backdrop-blur-[20px]">
         <div className="max-w-8xl mx-auto px-8 lg:px-16 h-16 flex items-center justify-between gap-8">
           <Link href="/" className="shrink-0 w-62 mt-1 mb-1" onClick={close}>
             <img src="/logos/brystcenter-primary.svg" alt="Brystcenter Esbjerg Logo" />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-stretch h-full gap-6 xl:gap-8">
             {navItems.map((item) => {
               if (item.children) {
                 const active = isDropdownActive(item.children);
                 return (
-                  <div key={item.label} className="group relative">
+                  <div key={item.label} className="group relative flex items-center">
                     <button
                       className={`flex items-center gap-1.5 font-sans text-sm transition-colors cursor-pointer relative pb-0.5 ${
                         active
-                          ? "text-primary after:absolute after:-bottom-5.5 after:inset-x-0 after:h-0.5 after:bg-primary"
-                          : "text-on-background/70 hover:text-primary"
+                          ? "text-primary after:absolute after:bottom-0 after:inset-x-0 after:h-0.5 after:bg-primary"
+                          : "text-secondary/80 hover:text-primary"
                       }`}
                     >
                       {item.label}
                       <ChevronDown size={14} className="opacity-50 transition-transform duration-200 group-hover:rotate-180" />
                     </button>
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-5 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
                       <div
-                        className="bg-surface/95 backdrop-blur-[20px] rounded-sm overflow-hidden min-w-72"
-                        style={{ boxShadow: "0 24px 64px rgba(44,62,80,0.10), 0 2px 8px rgba(44,62,80,0.04)" }}
+                        className="bg-nude backdrop-blur-[20px] rounded-b-sm overflow-hidden min-w-72"
+                        style={{ boxShadow: "0 12px 32px rgba(44,62,80,0.08)" }}
                       >
-                        <div className="px-6 pt-5 pb-2">
-                          <p className="font-sans text-[10px] tracking-[0.15em] text-secondary/30">{item.label}</p>
-                        </div>
-                        <div className="pb-3">
+                        <div className="pt-3 pb-3">
                           {item.children.map((child) => (
                             <Link
                               key={child.href}
                               href={child.href}
-                              className="group/item flex items-center justify-between px-6 py-3 font-sans text-sm text-secondary/65 hover:text-primary transition-colors"
+                              className="group/item flex items-center justify-between px-6 py-3 font-sans text-sm text-secondary/75 hover:text-primary transition-colors"
                             >
                               {child.label}
                               <span className="text-primary opacity-0 group-hover/item:opacity-100 transition-opacity text-xs">
@@ -99,10 +96,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative font-sans text-sm transition-colors pb-0.5 whitespace-nowrap ${
+                  className={`relative font-sans text-sm transition-colors pb-0.5 whitespace-nowrap flex items-center ${
                     isActive(item.href)
-                      ? "text-primary after:absolute after:-bottom-5.5 after:inset-x-0 after:h-0.5 after:bg-primary"
-                      : "text-on-background/70 hover:text-primary"
+                      ? "text-primary after:absolute after:bottom-0 after:inset-x-0 after:h-0.5 after:bg-primary"
+                      : "text-secondary/80 hover:text-primary"
                   }`}
                 >
                   {item.label}
@@ -115,7 +112,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-5 shrink-0">
             <Link
               href="tel:+4576185656"
-              className="flex items-center gap-2 font-sans text-sm text-secondary/60 hover:text-primary transition-colors border-l border-secondary/12 pl-5"
+              className="flex items-center gap-2 font-sans text-sm text-secondary/75 hover:text-primary transition-colors border-l border-secondary/12 pl-5"
             >
               <Phone size={13} className="opacity-60" />
               +45 76 18 56 56
@@ -161,7 +158,7 @@ export default function Header() {
                             key={child.href}
                             href={child.href}
                             onClick={close}
-                            className="block py-3 pl-4 font-sans uppercase text-sm text-secondary/60 hover:text-primary border-b border-secondary/5 last:border-0 transition-colors"
+                            className="block py-3 pl-4 font-sans uppercase text-sm text-secondary/70 hover:text-primary border-b border-secondary/5 last:border-0 transition-colors"
                           >
                             {child.label}
                           </Link>

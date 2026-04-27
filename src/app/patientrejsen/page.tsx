@@ -1,6 +1,6 @@
 import { faqs, steps } from "@/data/patientrejsen";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import PatientTimeline from "@/components/sections/PatientTimeline";
@@ -36,7 +36,7 @@ export default function Page() {
             {faqs.map((item) => (
               <div key={item.q} className="border-b border-secondary/8 pb-8 last:border-0">
                 <p className="font-sans text-sm font-semibold text-secondary mb-3">{item.q}</p>
-                <p className="font-sans text-sm leading-relaxed text-secondary/60">{item.a}</p>
+                <p className="font-sans text-sm leading-relaxed text-secondary/70">{item.a}</p>
               </div>
             ))}
           </div>
@@ -44,20 +44,11 @@ export default function Page() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Klar til at begynde?</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Tag det første skridt og book en uforpligtende konsultation med speciallæge Troels Tei.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Book en konsultation</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Klar til at begynde?"
+        body="Tag det første skridt og book en uforpligtende konsultation med speciallæge Troels Tei."
+        background="bg-surface"
+      />
     </>
   );
 }

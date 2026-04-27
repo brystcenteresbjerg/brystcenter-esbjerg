@@ -6,17 +6,18 @@ interface PageHeroProps {
   h1Main: string;
   h1Italic: string;
   subtitle: string;
-  buttons?: { label: string; href: string; variant?: "primary" | "outline" }[];
+  cta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
   /** If provided, renders a full-height image hero instead of solid background */
   image?: string;
   /** If provided, renders a full-height looping video hero instead of image */
   video?: string;
-  /** Show left-to-right gradient overlay on image/video hero (default: true) */
-  gradient?: boolean;
   /** Optional portrait image for mobile (shown below lg, falls back to image if omitted) */
   mobileImage?: string;
   /** CSS object-position for image/video, e.g. "top", "center 30%" (default: "center") */
   mediaPosition?: string;
+  /** Override the default gradient with a custom CSS gradient value */
+  gradient?: string;
 }
 
 export default function PageHero({
@@ -24,16 +25,16 @@ export default function PageHero({
   h1Main,
   h1Italic,
   subtitle,
-  buttons,
+  cta,
+  secondaryCta,
   image,
   video,
-  gradient = true,
   mobileImage,
   mediaPosition = "center",
+  gradient,
 }: PageHeroProps) {
-  const gradientBg = gradient
-    ? "linear-gradient(to right, #FAF3EE 0%, rgba(250,243,238,0.7) 10%, rgba(250,243,238,0) 40%)"
-    : null;
+  const gradientBg =
+    gradient ?? "linear-gradient(to right, rgba(250,243,238,0.4) 0%, rgba(250,243,238,0.5) 40%, rgba(250,243,238,0) 75%)";
 
   if (video || image) {
     return (
@@ -74,45 +75,25 @@ export default function PageHero({
             )}
           </>
         )}
-        {gradientBg && <div className="absolute inset-0" style={{ background: gradientBg }} />}
+        <div className="absolute inset-0" style={{ background: gradientBg }} />
         <div className="relative z-10 w-full px-8 lg:px-24 pb-20 pt-32">
-          <p className="label mb-8">{label}</p>
-          <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
+          <p className="label mb-8 font-semibold">{label}</p>
+          <h1 className="font-serif text-4xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
           </h1>
-          <p className="font-sans text-base leading-relaxed mb-10 max-w-md text-secondary/65">{subtitle}</p>
-          {buttons && buttons.length > 0 && (
+          <p className="font-sans text-base leading-relaxed mb-10 max-w-md text-black/60">{subtitle}</p>
+          {(cta || secondaryCta) && (
             <div className="flex flex-wrap gap-4">
-              {buttons.map((btn) => (
-                <Button key={btn.href} href={btn.href} variant={btn.variant ?? "primary"}>
-                  {btn.label}
+              {cta && <Button href={cta.href}>{cta.label}</Button>}
+              {secondaryCta && (
+                <Button href={secondaryCta.href} variant="outline">
+                  {secondaryCta.label}
                 </Button>
-              ))}
+              )}
             </div>
           )}
         </div>
       </section>
     );
   }
-
-  return (
-    <section className="bg-surface pt-40 pb-20 px-8 lg:px-24">
-      <div className="max-w-2xl">
-        <p className="label mb-8">{label}</p>
-        <h1 className="font-serif text-5xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8">
-          {h1Main} <span className="block italic font-light">{h1Italic}</span>
-        </h1>
-        <p className="font-sans text-base leading-relaxed text-secondary/65 max-w-sm">{subtitle}</p>
-        {buttons && buttons.length > 0 && (
-          <div className="flex flex-wrap gap-4 mt-10">
-            {buttons.map((btn) => (
-              <Button key={btn.href} href={btn.href} variant={btn.variant ?? "primary"}>
-                {btn.label}
-              </Button>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
-  );
 }

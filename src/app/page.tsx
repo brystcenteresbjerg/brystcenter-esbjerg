@@ -1,7 +1,7 @@
 import { BriefcaseMedical, Microscope, Star } from "lucide-react";
 import { faqItems, services, treatmentDetails } from "@/data/home";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import Link from "next/link";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -37,10 +37,8 @@ export default function Home() {
         subtitle="En specialiseret enhed under Privathospitalet Kollund, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat."
         video="/videos/woman_sunlight_one.mp4"
         mediaPosition="center 20%"
-        buttons={[
-          { label: "Book konsultation", href: "#book" },
-          { label: "Mød os", href: "/moed-os", variant: "outline" },
-        ]}
+        cta={{ label: "Book konsultation", href: "#book" }}
+        secondaryCta={{ label: "Mød os", href: "/moed-os" }}
       />
 
       {/* ── HELE FORLØBET ────────────────────────────────────────── */}
@@ -51,14 +49,14 @@ export default function Home() {
             <h2 className="font-serif text-2xl font-semibold text-secondary mb-5 leading-snug">
               Hele forløbet samlet ét sted - i Esbjerg
             </h2>
-            <p className="font-sans text-sm leading-relaxed text-secondary/65 mb-4">
+            <p className="font-sans text-sm leading-relaxed text-secondary/75 mb-4">
               Hos Brystcenter Esbjerg tror vi på, at tryghed skabes gennem kontinuitet. Vi har valgt at samle hele din{" "}
               <Link href="/patientrejsen" className="text-primary hover:underline underline-offset-2">
                 patientrejse
               </Link>{" "}
               under ét tag, så du aldrig skal rejse mellem forskellige byer eller klinikker for at gennemføre dit forløb.
             </p>
-            <p className="font-sans text-sm leading-relaxed text-secondary/65">
+            <p className="font-sans text-sm leading-relaxed text-secondary/75">
               Fra din første forundersøgelse til selve operationsdagen og de efterfølgende kontroller foregår alt i vores rammer i
               Esbjerg. Du er gennem hele forløbet tilknyttet den samme speciallæge, som kender din forhistorie og dine ønsker.
             </p>
@@ -68,7 +66,7 @@ export default function Home() {
             <h2 className="font-serif text-2xl font-semibold text-secondary mb-5 leading-snug">
               Specialister i naturlig harmoni
             </h2>
-            <p className="font-sans text-sm leading-relaxed text-secondary/65">
+            <p className="font-sans text-sm leading-relaxed text-secondary/75">
               Uanset om dit ønske er en brystforstørrelse, et brystløft eller en brystreduktion, tilbyder vi et forløb baseret på
               tryghed og faglig tyngde. Vi arbejder ud fra en filosofi om naturlig harmoni, hvor valget af metode altid afhænger
               af din specifikke vævskvalitet, anatomi og det ønskede resultat. Hos os møder du ikke standardløsninger, men
@@ -83,7 +81,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-serif text-4xl font-semibold text-secondary mb-4">Vores Ekspertise</h2>
-            <p className="font-sans text-base max-w-md mx-auto text-secondary/60">
+            <p className="font-sans text-base max-w-md mx-auto text-secondary/70">
               Udvalgte indgreb med fokus på naturlighed, holdbarhed og individuel tilpasning til din anatomi.
             </p>
           </div>
@@ -134,12 +132,12 @@ export default function Home() {
           {treatmentDetails.map((group) => (
             <div key={group.heading}>
               <h2 className="font-serif text-xl font-semibold text-secondary mb-4 leading-snug">{group.heading}</h2>
-              {group.intro && <p className="font-sans text-sm text-secondary/60 leading-relaxed mb-6">{group.intro}</p>}
+              {group.intro && <p className="font-sans text-sm text-secondary/70 leading-relaxed mb-6">{group.intro}</p>}
               <div className="space-y-5">
                 {group.items.map((item, i) => (
                   <div key={i}>
                     {item.label && <p className="font-sans text-xs font-semibold text-secondary mb-1">{item.label}</p>}
-                    <p className="font-sans text-xs leading-relaxed text-secondary/55">{item.text}</p>
+                    <p className="font-sans text-xs leading-relaxed text-secondary/65">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -198,23 +196,11 @@ export default function Home() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">
-            Tag det næste skridt mod et naturligt resultat
-          </h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Vejen til naturlig harmoni starter med en samtale. Kontakt vores specialister i Esbjerg for at høre mere om, hvordan
-            vi kan hjælpe dig med at opnå dine ønsker.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Kontakt Brystcenter Esbjerg</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Tag det næste skridt mod et naturligt resultat"
+        body="Vejen til naturlig harmoni starter med en samtale. Kontakt vores specialister i Esbjerg for at høre mere om, hvordan vi kan hjælpe dig med at opnå dine ønsker."
+        ctaLabel="Kontakt Brystcenter Esbjerg"
+      />
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-24 bg-surface">

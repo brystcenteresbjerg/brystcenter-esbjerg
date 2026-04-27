@@ -1,7 +1,7 @@
 import { Activity, HeartPulse, PenLine } from "lucide-react";
 import { faqItems, features } from "@/data/behandlinger/brystreduktion";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -37,10 +37,8 @@ export default function Page() {
         h1Italic="med fokus på form og proportioner"
         image="/images/hero-silk.png"
         subtitle="En brystreduktion (reduktionsplastik) er et kirurgisk indgreb, der har til formål at reducere brysternes størrelse og vægt, samtidig med at brystets form og proportioner forbedres. Hos Brystcenter Esbjerg betragter vi indgrebet som en individuelt tilpasset proces, hvor vi forener medicinsk nødvendighed med æstetisk præcision."
-        buttons={[
-          { label: "Book en speciallægekonsultation i Esbjerg", href: "#book" },
-          { label: "Se også brystløft", href: "/behandlinger/brystloeft", variant: "outline" },
-        ]}
+        cta={{ label: "Book en speciallægekonsultation i Esbjerg", href: "#book" }}
+        secondaryCta={{ label: "Se også brystløft", href: "/behandlinger/brystloeft" }}
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -54,11 +52,11 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Moderne teknikker: B-teknik (Renault)
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65 mb-5">
+            <p className="font-sans text-base leading-relaxed text-secondary/75 mb-5">
               Vi anvender veldokumenterede kirurgiske metoder for at sikre det mest harmoniske resultat. En af de mest innovative
               tilgange i vores center er den såkaldte B-teknik, oprindeligt beskrevet af Renault.
             </p>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Denne teknik adskiller sig ved at have et særligt fokus på intern vævsomformning, hvilket optimerer brystets støtte
               og projektion. B-teknikken er særligt målrettet patienter med en øget lateral fylde - altså hvor brystet fremstår
               bredt eller er orienteret ud mod armhulen. Ved at reducere og omforme vævet i de laterale dele af brystet kan vi
@@ -70,7 +68,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Lindring af fysiske gener og æstetisk balance
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               For mange kvinder er en brystreduktion en vej til en markant forbedret livskvalitet. Behandlingen handler ikke kun
               om udseende, men om at genskabe en krop i balance, hvor brysternes tyngde ikke længere begrænser din hverdag.
             </p>
@@ -94,20 +92,11 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Klar til en konsultation?</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Bestil tid til forundersøgelse i dag</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Klar til en konsultation?"
+        body="Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei."
+        ctaLabel="Bestil tid til forundersøgelse i dag"
+      />
     </>
   );
 }

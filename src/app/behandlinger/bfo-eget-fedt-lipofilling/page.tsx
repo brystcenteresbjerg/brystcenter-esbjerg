@@ -1,7 +1,7 @@
 import { Dna, Droplets, Microscope } from "lucide-react";
 import { benefits, faqItems, features } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -37,10 +37,8 @@ export default function Page() {
         h1Italic="med eget fedt"
         video="/videos/woman_sunlight_two.mp4"
         subtitle="Fedttransplantation anvender kroppens eget fedt til at genskabe volumen og forbedre brystets konturer - for et resultat, der føles naturligt og harmonerer med din krops egne proportioner."
-        buttons={[
-          { label: "Book konsultation", href: "#book" },
-          { label: "Implantat som alternativ", href: "/behandlinger/bfo-implantat", variant: "outline" },
-        ]}
+        cta={{ label: "Book konsultation", href: "#book" }}
+        secondaryCta={{ label: "Implantat som alternativ", href: "/behandlinger/bfo-implantat" }}
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -54,7 +52,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Regenerativ æstetik: Mere end blot volumen
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Den moderne tilgang til brystforstørrelse med eget fedt bygger på omfattende international forskning og metoder
               perfektioneret af specialister som Andrzej Piatkowski og Roger Khouri. Hos Brystcenter Esbjerg ser vi ikke blot
               behandlingen som en volumenforøgelse, men også som regenerativ æstetik, hvor vi arbejder med kroppens biologiske
@@ -66,12 +64,12 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Fordele ved brystforstørrelse uden implantat
             </h2>
-            <p className="font-sans text-sm leading-relaxed text-secondary/65 mb-5">
+            <p className="font-sans text-sm leading-relaxed text-secondary/75 mb-5">
               Metoden er særligt fordelagtig for dig, der:
             </p>
             <ul className="space-y-3">
               {benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3 font-sans text-sm leading-relaxed text-secondary/65">
+                <li key={b} className="flex items-start gap-3 font-sans text-sm leading-relaxed text-secondary/75">
                   <span className="text-primary mt-0.5 shrink-0">-</span>
                   {b}
                 </li>
@@ -88,7 +86,7 @@ export default function Page() {
           <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
             Hvordan foregår en brystforstørrelse med lipofilling?
           </h2>
-          <p className="font-sans text-base leading-relaxed text-secondary/65">
+          <p className="font-sans text-base leading-relaxed text-secondary/75">
             Processen kræver høj teknisk præcision for at sikre, at de transplanterede celler integreres optimalt i brystvævet. Da
             fedttransplantation er afhængig af biologiske forhold, vurderes det endelige resultat efter nogle måneder, når kroppen
             har optaget en del af det transplanterede væv og stabiliseret den nye volumen.
@@ -114,21 +112,12 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Overvejer du brystforstørrelse med eget fedt?</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Hos Brystcenter Esbjerg prioriterer vi en grundig forundersøgelse, hvor vi gennemgår dine muligheder og forventninger
-            til resultatet.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Bestil tid til forundersøgelse i dag</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Overvejer du brystforstørrelse med eget fedt?"
+        body="Hos Brystcenter Esbjerg prioriterer vi en grundig forundersøgelse, hvor vi gennemgår dine muligheder og forventninger til resultatet."
+        ctaLabel="Bestil tid til forundersøgelse i dag"
+        background="bg-surface"
+      />
     </>
   );
 }

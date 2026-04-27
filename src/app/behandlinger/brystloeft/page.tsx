@@ -1,7 +1,7 @@
 import { ArrowUp, Scissors, Sparkles } from "lucide-react";
 import { faqItems, features } from "@/data/behandlinger/brystloeft";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -38,10 +38,8 @@ export default function Page() {
         h1Italic="med auto-augmentation"
         image="/images/hero_brunette_smile.jpg"
         subtitle="Et brystløft med auto-augmentation er en kirurgisk teknik til dig, der ønsker at genvinde brystets ungdommelige projektion og form uden brug af fremmedlegemer."
-        buttons={[
-          { label: "Book en uforpligtende konsultation i Esbjerg", href: "#book" },
-          { label: "Brystforstørrelse med implantat", href: "/behandlinger/bfo-implantat", variant: "outline" },
-        ]}
+        cta={{ label: "Book en uforpligtende konsultation i Esbjerg", href: "#book" }}
+        secondaryCta={{ label: "Brystforstørrelse med implantat", href: "/behandlinger/bfo-implantat" }}
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -55,7 +53,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Genvind din naturlige fylde uden implantater
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Mange kvinder oplever, at brystet med tiden mister fylde i den øvre del, hvilket ofte giver et ønske om både et løft
               af brystet og en øget volumen. Hvor man traditionelt ville indsætte et implantat for at skabe denne fylde, gør Ruth
               Graf-teknikken det muligt at opnå en visuel volumenforøgelse udelukkende ved brug af brystets eget væv. Det er
@@ -86,21 +84,11 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface-container-low">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Genvind din naturlige form uden implantater</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Ønsker du et brystløft, der udelukkende anvender din krops eget væv? Book en uforpligtende konsultation i Esbjerg og
-            hør, hvordan vi med Ruth Graf-teknikken kan skabe naturlig fylde og projektion.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Bestil tid til forundersøgelse</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Genvind din naturlige form uden implantater"
+        body="Ønsker du et brystløft, der udelukkende anvender din krops eget væv? Book en uforpligtende konsultation i Esbjerg og hør, hvordan vi med Ruth Graf-teknikken kan skabe naturlig fylde og projektion."
+        ctaLabel="Bestil tid til forundersøgelse"
+      />
     </>
   );
 }

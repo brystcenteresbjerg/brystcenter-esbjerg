@@ -28,7 +28,7 @@ function Accordion({ items }: { items: FAQItem[] }) {
               +
             </span>
           </button>
-          {open === i && <p className="pb-6 font-sans text-base leading-relaxed text-secondary/70 max-w-2xl">{item.a}</p>}
+          {open === i && <p className="pb-6 font-sans text-base leading-relaxed text-secondary/75 max-w-2xl">{item.a}</p>}
         </div>
       ))}
     </div>

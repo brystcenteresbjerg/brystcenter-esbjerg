@@ -1,7 +1,7 @@
 import { ClipboardList, MessageCircle, Scale } from "lucide-react";
 import { faqItems, features } from "@/data/behandlinger/second-opinion";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -37,7 +37,7 @@ export default function Page() {
         h1Italic="efter tidligere kirurgi"
         image="/images/curls_smile_brunette.jpg"
         subtitle="Det er ikke usædvanligt at sidde tilbage med spørgsmål efter en brystoperation. Vi tilbyder en professionel og uvildig vurdering af dit nuværende resultat og dine fremtidige muligheder."
-        buttons={[{ label: "Book tid til en uvildig vurdering", href: "#book" }]}
+        cta={{ label: "Book tid til en uvildig vurdering", href: "#book" }}
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -51,7 +51,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               En objektiv gennemgang af dit forløb
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Når du vælger en second opinion hos os, møder du en kirurg, der ser på din sag med friske øjne. Formålet er ikke at
               vurdere andres arbejde, men at give dig en objektiv status på brystets anatomi, implantatets placering eller vævets
               heling. Vi gennemgår sammen dit hidtidige forløb og ser på, om dine forventninger stemmer overens med det fysiske
@@ -86,7 +86,7 @@ export default function Page() {
           <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
             Hvornår er en second opinion relevant?
           </h2>
-          <p className="font-sans text-base leading-relaxed text-secondary/65">
+          <p className="font-sans text-base leading-relaxed text-secondary/75">
             En second opinion kan være relevant i mange situationer - eksempelvis hvis du oplever uventede smerter, hvis brystet
             har ændret form, eller hvis du blot har brug for en bekræftelse på, at din opheling følger den rette kurve. Målet er
             altid at give dig det fundament, du har brug for, for at kunne træffe den rigtige beslutning for din krop fremover.
@@ -102,21 +102,12 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Har du brug for ro i maven?</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Det vigtigste efter en operation er, at du føler dig tryg og velinformeret. Hos Brystcenter Esbjerg prioriterer vi den
-            uvildige dialog, hvor vi tager os tid til at gennemgå din situation og dine muligheder for udbedring.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Kontakt os for en uvildig vurdering</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Har du brug for ro i maven?"
+        body="Det vigtigste efter en operation er, at du føler dig tryg og velinformeret. Hos Brystcenter Esbjerg prioriterer vi den uvildige dialog, hvor vi tager os tid til at gennemgå din situation og dine muligheder for udbedring."
+        ctaLabel="Kontakt os for en uvildig vurdering"
+        background="bg-surface"
+      />
     </>
   );
 }

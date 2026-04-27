@@ -24,7 +24,7 @@ export default function TreatmentFactsBar({ name, price, facts }: TreatmentFacts
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 flex-1">
           {facts.map((fact) => (
             <div key={fact.label}>
-              <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-secondary/40 mb-1.5">{fact.label}</p>
+              <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-secondary/55 mb-1.5">{fact.label}</p>
               <p className="font-sans text-sm font-medium text-secondary">{fact.value}</p>
             </div>
           ))}

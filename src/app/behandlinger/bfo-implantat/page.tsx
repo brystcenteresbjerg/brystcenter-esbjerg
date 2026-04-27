@@ -1,7 +1,7 @@
 import { Asterisk, Crosshair, Layers, Ruler, Shapes, Users, Waves } from "lucide-react";
 import { alaCartePoints, faqItems, implantChoices } from "@/data/behandlinger/bfo-implantat";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -39,10 +39,8 @@ export default function Page() {
         subtitle="Vi ser det som en individuel behandling, hvor målet altid er et harmonisk og naturligt resultat, der respekterer din krops proportioner og dine personlige ønsker."
         image="/images/hero_implants_hands_one_clay.jpg"
         mobileImage="/images/implants_hands_one.jpg"
-        buttons={[
-          { label: "Book en personlig konsultation i Esbjerg", href: "#book" },
-          { label: "Eget fedt som alternativ", href: "/behandlinger/bfo-eget-fedt-lipofilling", variant: "outline" },
-        ]}
+        cta={{ label: "Book en personlig konsultation i Esbjerg", href: "#book" }}
+        secondaryCta={{ label: "Eget fedt som alternativ", href: "/behandlinger/bfo-eget-fedt-lipofilling" }}
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -64,7 +62,7 @@ export default function Page() {
               <p className="font-serif font-light text-base italic leading-relaxed text-secondary">
                 &ldquo;Det bedste kirurgiske resultat er det, der ser naturligt ud - som om det altid har hørt til.&rdquo;
               </p>
-              <p className="font-sans text-xs uppercase tracking-[0.15em] mt-3 text-secondary/50">- Kirurg, Troels Tei</p>
+              <p className="font-sans text-xs uppercase tracking-[0.15em] mt-3 text-secondary/65">- Kirurg, Troels Tei</p>
             </div>
           </div>
           <div>
@@ -72,7 +70,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               En &ldquo;à la carte&rdquo;-tilgang til din krop
             </h2>
-            <div className="font-sans text-lg leading-relaxed text-secondary/65 mb-6">
+            <div className="font-sans text-lg leading-relaxed text-secondary/75 mb-6">
               <p>
                 Vi tror ikke på standardløsninger. Der findes ikke ét implantat, der passer til alle. Derfor arbejder vi ud fra et
                 &ldquo;à la carte&rdquo;-princip, hvor vi udvælger både implantattype og kirurgisk teknik specifikt til dig.
@@ -134,21 +132,12 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Tag det næste skridt mod naturlig harmoni</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Vi tror på, at de bedste resultater skabes gennem individuel planlægning og kirurgisk præcision. Kontakt klinikken i
-            Esbjerg for en samtale om dine muligheder.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Bestil tid til forundersøgelse i dag</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Tag det næste skridt mod naturlig harmoni"
+        body="Vi tror på, at de bedste resultater skabes gennem individuel planlægning og kirurgisk præcision. Kontakt klinikken i Esbjerg for en samtale om dine muligheder."
+        ctaLabel="Bestil tid til forundersøgelse i dag"
+        background="bg-surface"
+      />
     </>
   );
 }

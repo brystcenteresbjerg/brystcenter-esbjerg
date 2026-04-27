@@ -14,7 +14,7 @@ interface ButtonProps {
 
 const variants: Record<Variant, string> = {
   primary: "bg-primary text-on-secondary hover:opacity-90",
-  outline: "border border-secondary/20 text-secondary hover:opacity-70",
+  outline: "border border-primary/70 text-secondary hover:opacity-70",
   "outline-light": "border border-white/40 text-white hover:opacity-70",
   float: "gap-2 bg-surface/90 backdrop-blur-[20px] text-primary shadow-float hover:opacity-90",
 };

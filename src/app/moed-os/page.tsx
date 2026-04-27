@@ -1,7 +1,7 @@
 import { Award, Leaf, Shield } from "lucide-react";
 import { expertiseItems, faqItems } from "@/data/moed-os";
 
-import Button from "@/components/ui/Button";
+import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -36,10 +36,8 @@ export default function Page() {
         h1Italic="Speciallæge"
         video="/videos/woman_sunlight_one.mp4"
         subtitle="Kirurgisk præcision og naturlig harmoni - brystkirurgi med kompromisløst fokus på det individuelle resultat."
-        buttons={[
-          { label: "Book konsultation", href: "#book" },
-          { label: "Se patientrejsen", href: "/patientrejsen", variant: "outline" },
-        ]}
+        cta={{ label: "Book konsultation", href: "#book" }}
+        secondaryCta={{ label: "Se patientrejsen", href: "/patientrejsen" }}
       />
 
       {/* ── EN DEDIKATION ────────────────────────────────────────── */}
@@ -50,7 +48,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               En dedikation til det personlige resultat
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Min tilgang til brystkirurgi er baseret på håndværksmæssig stolthed, faglige erfaringer og kompetencer samt den
               individuelle rådgivning. Jeg tror ikke på standardløsninger, da ingen bryster er ens. Vi skal respektere det
               forskellige og bruge det til at finde de små, usynlige detaljer, der gør det endelige resultat naturligt og
@@ -73,12 +71,12 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Faglig integritet og specialisering
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/65 mb-5">
+            <p className="font-sans text-base leading-relaxed text-secondary/75 mb-5">
               Jeg har mange års erfaring som speciallæge og henter inspiration fra førende klinikker i USA, Brasilien og Europa.
               Jeg arbejder efter internationale principper for skånsom kirurgi uden komplikationer, der sikrer de mest harmoniske
               resultater.
             </p>
-            <p className="font-sans text-base leading-relaxed text-secondary/65">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Jeg har specialiseret mig i teknikker som Ruth Graf og lukkede systemer til fedttransplantation (Lipografter), der
               sikrer maksimal overlevelse af fedtcellerne. For mig handler brystkirurgi om at forene høj sikkerhed med et æstetisk
               udtryk, der respekterer din naturlige anatomi.
@@ -112,20 +110,11 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Book en konsultation med Troels Tei</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/60">
-            Tag det første skridt mod dit ønskede resultat. Vi besvarer alle dine spørgsmål og gennemgår dine muligheder.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Book en konsultation</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        heading="Book en konsultation med Troels Tei"
+        body="Tag det første skridt mod dit ønskede resultat. Vi besvarer alle dine spørgsmål og gennemgår dine muligheder."
+        background="bg-surface"
+      />
     </>
   );
 }
