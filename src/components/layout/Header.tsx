@@ -57,11 +57,10 @@ export default function Header() {
                 const active = isDropdownActive(item.children);
                 return (
                   <div key={item.label} className="group relative flex items-center">
+                    {active && <span className="absolute bottom-0 inset-x-0 h-0.5 bg-primary" />}
                     <button
-                      className={`flex items-center gap-1.5 font-sans text-sm transition-colors cursor-pointer relative pb-0.5 ${
-                        active
-                          ? "text-primary after:absolute after:bottom-0 after:inset-x-0 after:h-0.5 after:bg-primary"
-                          : "text-secondary/80 hover:text-primary"
+                      className={`flex items-center gap-1.5 font-sans text-sm transition-colors cursor-pointer ${
+                        active ? "text-primary" : "text-secondary/80 hover:text-primary"
                       }`}
                     >
                       {item.label}
