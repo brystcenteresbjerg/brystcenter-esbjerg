@@ -1,4 +1,22 @@
-import type { FAQItem, FeatureItem } from "@/data/types";
+import type { CtaContent, FAQItem, FeatureItem, SectionContent, TestimonialContent } from "@/data/types";
+
+export const intro: SectionContent = {
+  label: "Behandling",
+  heading: "Genvind din naturlige fylde uden implantater",
+  body: "Mange kvinder oplever, at brystet med tiden mister fylde i den øvre del, hvilket ofte giver et ønske om både et løft af brystet og en øget volumen. Hvor man traditionelt ville indsætte et implantat for at skabe denne fylde, gør Ruth Graf-teknikken det muligt at opnå en visuel volumenforøgelse udelukkende ved brug af brystets eget væv. Det er regenerativ æstetik, når det er mest virkningsfuldt.",
+};
+
+export const testimonial: TestimonialContent = {
+  quote: "Fik foretaget en BFO af Troels Tei. Hele forløbet var topprofessionelt og kan kun på det varmeste anbefale Troels. Super æstetisk og smukt resultat.",
+  name: "Amalie",
+  treatment: "Brystforstørrelse med implantater",
+};
+
+export const cta: CtaContent = {
+  heading: "Genvind din naturlige form uden implantater",
+  body: "Ønsker du et brystløft, der udelukkende anvender din krops eget væv? Book en uforpligtende konsultation i Esbjerg og hør, hvordan vi med Ruth Graf-teknikken kan skabe naturlig fylde og projektion.",
+  ctaLabel: "Bestil tid til forundersøgelse",
+};
 
 export const faqItems: FAQItem[] = [
   {

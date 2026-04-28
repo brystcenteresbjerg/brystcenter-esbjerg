@@ -1,5 +1,5 @@
 import { ArrowUp, Scissors, Sparkles } from "lucide-react";
-import { faqItems, features } from "@/data/behandlinger/brystloeft";
+import { cta, faqItems, features, intro, testimonial } from "@/data/behandlinger/brystloeft";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -49,22 +49,11 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="label mb-6">Behandling</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              Genvind din naturlige fylde uden implantater
-            </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">
-              Mange kvinder oplever, at brystet med tiden mister fylde i den øvre del, hvilket ofte giver et ønske om både et løft
-              af brystet og en øget volumen. Hvor man traditionelt ville indsætte et implantat for at skabe denne fylde, gør Ruth
-              Graf-teknikken det muligt at opnå en visuel volumenforøgelse udelukkende ved brug af brystets eget væv. Det er
-              regenerativ æstetik, når det er mest virkningsfuldt.
-            </p>
+            <p className="label mb-6">{intro.label}</p>
+            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{intro.heading}</h2>
+            <p className="font-sans text-base leading-relaxed text-secondary/75">{intro.body}</p>
           </div>
-          <Testimonial
-            quote="Fik foretaget en BFO af Troels Tei. Hele forløbet var topprofessionelt og kan kun på det varmeste anbefale Troels. Super æstetisk og smukt resultat."
-            name="Amalie"
-            treatment="Brystforstørrelse med implantater"
-          />
+          <Testimonial quote={testimonial.quote} name={testimonial.name} treatment={testimonial.treatment} />
         </div>
       </section>
 
@@ -84,11 +73,7 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <CtaSection
-        heading="Genvind din naturlige form uden implantater"
-        body="Ønsker du et brystløft, der udelukkende anvender din krops eget væv? Book en uforpligtende konsultation i Esbjerg og hør, hvordan vi med Ruth Graf-teknikken kan skabe naturlig fylde og projektion."
-        ctaLabel="Bestil tid til forundersøgelse"
-      />
+      <CtaSection {...cta} />
     </>
   );
 }

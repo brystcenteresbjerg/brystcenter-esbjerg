@@ -1,4 +1,27 @@
-import type { FAQItem, FeatureItem } from "@/data/types";
+import type { CtaContent, FAQItem, FeatureItem, Quote, SectionContent } from "@/data/types";
+
+export const intro: SectionContent = {
+  label: "Vurdering",
+  heading: "En objektiv gennemgang af dit forløb",
+  body: "Når du vælger en second opinion hos os, møder du en kirurg, der ser på din sag med friske øjne. Formålet er ikke at vurdere andres arbejde, men at give dig en objektiv status på brystets anatomi, implantatets placering eller vævets heling. Vi gennemgår sammen dit hidtidige forløb og ser på, om dine forventninger stemmer overens med det fysiske resultat.",
+};
+
+export const introQuote: Quote = {
+  text: "En second opinion handler om at give dig klarhed og tryghed - gennem en saglig gennemgang af din situation.",
+  author: "Kirurg, Troels Tei",
+};
+
+export const hvornaar: SectionContent = {
+  label: "Relevans",
+  heading: "Hvornår er en second opinion relevant?",
+  body: "En second opinion kan være relevant i mange situationer - eksempelvis hvis du oplever uventede smerter, hvis brystet har ændret form, eller hvis du blot har brug for en bekræftelse på, at din opheling følger den rette kurve. Målet er altid at give dig det fundament, du har brug for, for at kunne træffe den rigtige beslutning for din krop fremover.",
+};
+
+export const cta: CtaContent = {
+  heading: "Har du brug for ro i maven?",
+  body: "Det vigtigste efter en operation er, at du føler dig tryg og velinformeret. Hos Brystcenter Esbjerg prioriterer vi den uvildige dialog, hvor vi tager os tid til at gennemgå din situation og dine muligheder for udbedring.",
+  ctaLabel: "Kontakt os for en uvildig vurdering",
+};
 
 export const faqItems: FAQItem[] = [
   {

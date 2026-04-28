@@ -1,5 +1,5 @@
 import { Asterisk, Layers, Ruler, Shapes, Users, Waves } from "lucide-react";
-import { alaCarteIntro, alaCartePoints, faqItems, implantChoices } from "@/data/behandlinger/bfo-implantat";
+import { alaCarteIntro, alaCartePoints, alaCarteSection, cta, faqItems, featuresContent, implantChoices, splitContent } from "@/data/behandlinger/bfo-implantat";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -49,13 +49,10 @@ export default function Page() {
 
       {/* ── À LA CARTE ───────────────────────────────────────────── */}
       <ImageListSection
-        image="/images/collarbone_hands_breasts_cover.jpg"
-        quote={{
-          text: "Det bedste kirurgiske resultat er det, der ser naturligt ud - som om det altid har hørt til.",
-          author: "Kirurg, Troels Tei",
-        }}
-        label="Behandling"
-        heading="En «à la carte»-tilgang til din krop"
+        image={alaCarteSection.image}
+        quote={alaCarteSection.quote}
+        label={alaCarteSection.label}
+        heading={alaCarteSection.heading}
         intro={alaCarteIntro}
         items={alaCartePoints.map((text, i) => ({
           text,
@@ -65,9 +62,9 @@ export default function Page() {
 
       {/* ── VALG AF IMPLANTAT ────────────────────────────────────── */}
       <FeaturesSection
-        label="Rådgivning"
-        heading="Valg af implantat"
-        intro="For at sikre det perfekte match tilbyder vi et bredt udvalg af implantater fra førende producenter. Ved forundersøgelsen gennemgår vi dine muligheder i detaljer, så du er tryg ved dit valg. Vi rådgiver dig om forskellene på:"
+        label={featuresContent.label}
+        heading={featuresContent.heading}
+        intro={featuresContent.intro}
         items={implantChoices.map((f, i) => ({
           ...f,
           icon: [<Shapes size={22} />, <Ruler size={22} />, <Layers size={22} />][i],
@@ -76,9 +73,9 @@ export default function Page() {
 
       {/* ── PLACERING & KIRURGISK PRÆCISION ──────────────────────── */}
       <SplitSection
-        label="Teknik"
-        heading="Placering og kirurgisk præcision"
-        body="Teknikken bag placeringen af implantatet er afgørende for det endelige udtryk. Afhængig af mængden af dit eget brystvæv kan implantatet placeres enten over eller under brystmusklen. Vores plastikkirurg Troels Tei benytter teknikker, der sikrer, at overgangen mellem dit eget væv og implantatet bliver så usynlig som muligt — essentielt for at opnå den naturlige harmoni, vi efterstræber."
+        label={splitContent.label}
+        heading={splitContent.heading}
+        body={splitContent.body}
       >
         <div className="grid grid-cols-2 gap-4">
           <div className="rounded-sm overflow-hidden aspect-square">
@@ -98,12 +95,7 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <CtaSection
-        heading="Tag det næste skridt mod naturlig harmoni"
-        body="Vi tror på, at de bedste resultater skabes gennem individuel planlægning og kirurgisk præcision. Kontakt klinikken i Esbjerg for en samtale om dine muligheder."
-        ctaLabel="Bestil tid til forundersøgelse i dag"
-        background="bg-surface"
-      />
+      <CtaSection {...cta} background="bg-surface" />
     </>
   );
 }

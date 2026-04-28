@@ -1,4 +1,22 @@
-import type { FAQItem, FeatureItem } from "@/data/types";
+import type { CtaContent, FAQItem, FeatureItem, SectionContent } from "@/data/types";
+
+export const introLeft: SectionContent = {
+  label: "Hvornår",
+  heading: "Hvornår bør man få foretaget en implantatudskiftning?",
+  body: "Der kan være mange årsager til at ønske en udskiftning af brystimplantater. For nogle handler det om et ønske om en ny størrelse eller form, mens det for andre er en nødvendighed grundet kapseldannelse, implantatbrud eller at implantatet har flyttet sig (displacering). Ved en grundig forundersøgelse vurderer vi dit nuværende udgangspunkt og lægger en plan, der sikrer harmoni og langsigtede resultater.",
+};
+
+export const introRight: SectionContent = {
+  label: "Tilgang",
+  heading: "Implantater med PU-overflader for optimal sikkerhed",
+  body: "I forbindelse med revisionskirurgi anvender vi ofte implantater med en særlig overfladestruktur, kendt som en polyuretanbelagt (PU) overflade. Denne teknologi er designet til at interagere aktivt med kroppens eget væv, hvilket giver en række væsentlige fordele for dig som patient.",
+};
+
+export const cta: CtaContent = {
+  heading: "Overvejer du en implantatudskiftning?",
+  body: "Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei.",
+  ctaLabel: "Bestil tid til forundersøgelse i dag",
+};
 
 export const faqItems: FAQItem[] = [
   {

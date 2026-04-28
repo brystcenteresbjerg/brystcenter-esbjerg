@@ -1,5 +1,5 @@
 import { ArrowUp, Sparkles, Zap } from "lucide-react";
-import { faqItems, features } from "@/data/behandlinger/fedttransplantation";
+import { cta, faqItems, features, intro, introQuote } from "@/data/behandlinger/fedttransplantation";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -49,22 +49,15 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="label mb-6">Behandling</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              Mere end blot volumen: En biologisk opgradering
-            </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">
-              Fedttransplantation (lipofilling) er en af de mest alsidige teknikker inden for moderne plastikkirurgi. Ved at
-              anvende dine egne fedtceller som en naturlig filler kan vi ikke blot genskabe tabt volumen, men også forbedre selve
-              vævets kvalitet. Det skyldes fedtvævets rige indhold af stamceller, som har en unik regenerativ effekt på hud og
-              underliggende væv.
-            </p>
+            <p className="label mb-6">{intro.label}</p>
+            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{intro.heading}</h2>
+            <p className="font-sans text-base leading-relaxed text-secondary/75">{intro.body}</p>
           </div>
           <div className="bg-primary-container/30 rounded-sm p-10">
             <p className="font-serif font-light text-lg italic leading-relaxed text-tertiary mb-5">
-              &ldquo;Det handler om at arbejde med kroppen, ikke mod den - volumen og biologisk fornyelse i ét indgreb.&rdquo;
+              &ldquo;{introQuote.text}&rdquo;
             </p>
-            <p className="label">- Kirurg, Troels Tei</p>
+            <p className="label">- {introQuote.author}</p>
           </div>
         </div>
       </section>
@@ -88,10 +81,7 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <CtaSection
-        heading="Få en faglig vurdering af dine muligheder"
-        body="Drømmer du om et naturligt resultat baseret på dine egne biologiske forudsætninger? Book en uforpligtende konsultation og hør mere om regenerativ æstetik hos speciallæge Troels Tei."
-      />
+      <CtaSection {...cta} />
     </>
   );
 }

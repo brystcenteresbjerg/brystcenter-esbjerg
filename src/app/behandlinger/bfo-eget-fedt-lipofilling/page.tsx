@@ -1,5 +1,5 @@
 import { Dna, Droplets, Leaf, Microscope, Sliders, Zap } from "lucide-react";
-import { benefits, benefitsIntro, faqItems, features } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
+import { behandlingSection, benefitsIntro, benefits, cta, faqItems, features, forloebetSection } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -48,9 +48,9 @@ export default function Page() {
 
       {/* ── BEHANDLING ───────────────────────────────────────────── */}
       <SplitSection
-        label="Behandling"
-        heading="Regenerativ æstetik: Mere end blot volumen"
-        body="Den moderne tilgang til brystforstørrelse med eget fedt bygger på omfattende international forskning og metoder perfektioneret af specialister som Andrzej Piatkowski og Roger Khouri. Hos Brystcenter Esbjerg ser vi ikke blot behandlingen som en volumenforøgelse, men også som regenerativ æstetik, hvor vi arbejder med kroppens biologiske byggesten for at optimere både form og vævskvalitet."
+        label={behandlingSection.label}
+        heading={behandlingSection.heading}
+        body={behandlingSection.body}
         align="center"
       >
         <div className="grid grid-cols-2 gap-4">
@@ -85,9 +85,9 @@ export default function Page() {
 
       {/* ── FORLØBET ─────────────────────────────────────────────── */}
       <SplitSection
-        label="Forløbet"
-        heading="Hvordan foregår en brystforstørrelse med lipofilling?"
-        body="Processen kræver høj teknisk præcision for at sikre, at de transplanterede celler integreres optimalt i brystvævet. Da fedttransplantation er afhængig af biologiske forhold, vurderes det endelige resultat efter nogle måneder, når kroppen har optaget en del af det transplanterede væv og stabiliseret den nye volumen."
+        label={forloebetSection.label}
+        heading={forloebetSection.heading}
+        body={forloebetSection.body}
         align="center"
       >
         <div className="grid grid-cols-2 gap-4">
@@ -108,12 +108,7 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <CtaSection
-        heading="Overvejer du brystforstørrelse med eget fedt?"
-        body="Hos Brystcenter Esbjerg prioriterer vi en grundig forundersøgelse, hvor vi gennemgår dine muligheder og forventninger til resultatet."
-        ctaLabel="Bestil tid til forundersøgelse i dag"
-        background="bg-surface"
-      />
+      <CtaSection {...cta} background="bg-surface" />
     </>
   );
 }

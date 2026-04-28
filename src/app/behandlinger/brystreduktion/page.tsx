@@ -1,5 +1,5 @@
 import { Activity, HeartPulse, PenLine } from "lucide-react";
-import { faqItems, features } from "@/data/behandlinger/brystreduktion";
+import { cta, faqItems, features, introLeft, introRight } from "@/data/behandlinger/brystreduktion";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -48,30 +48,17 @@ export default function Page() {
       <section className="px-8 lg:px-16 py-20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="label mb-6">Teknik</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              Moderne teknikker: B-teknik (Renault)
-            </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75 mb-5">
-              Vi anvender veldokumenterede kirurgiske metoder for at sikre det mest harmoniske resultat. En af de mest innovative
-              tilgange i vores center er den såkaldte B-teknik, oprindeligt beskrevet af Renault.
-            </p>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">
-              Denne teknik adskiller sig ved at have et særligt fokus på intern vævsomformning, hvilket optimerer brystets støtte
-              og projektion. B-teknikken er særligt målrettet patienter med en øget lateral fylde - altså hvor brystet fremstår
-              bredt eller er orienteret ud mod armhulen. Ved at reducere og omforme vævet i de laterale dele af brystet kan vi
-              skabe en mere centreret, løftet og ungdommelig brystform.
-            </p>
+            <p className="label mb-6">{introLeft.label}</p>
+            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{introLeft.heading}</h2>
+            <p className="font-sans text-base leading-relaxed text-secondary/75 mb-5">{introLeft.body}</p>
+            {introLeft.body2 && (
+              <p className="font-sans text-base leading-relaxed text-secondary/75">{introLeft.body2}</p>
+            )}
           </div>
           <div>
-            <p className="label mb-6">Formål</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              Lindring af fysiske gener og æstetisk balance
-            </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">
-              For mange kvinder er en brystreduktion en vej til en markant forbedret livskvalitet. Behandlingen handler ikke kun
-              om udseende, men om at genskabe en krop i balance, hvor brysternes tyngde ikke længere begrænser din hverdag.
-            </p>
+            <p className="label mb-6">{introRight.label}</p>
+            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{introRight.heading}</h2>
+            <p className="font-sans text-base leading-relaxed text-secondary/75">{introRight.body}</p>
           </div>
         </div>
       </section>
@@ -92,11 +79,7 @@ export default function Page() {
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <CtaSection
-        heading="Klar til en konsultation?"
-        body="Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei."
-        ctaLabel="Bestil tid til forundersøgelse i dag"
-      />
+      <CtaSection {...cta} />
     </>
   );
 }

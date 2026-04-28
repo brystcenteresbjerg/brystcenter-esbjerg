@@ -1,4 +1,32 @@
-import type { FAQItem, FeatureItem } from "@/data/types";
+import type { CtaContent, FAQItem, FeatureItem, Quote, SectionContent } from "@/data/types";
+
+export const alaCarteSection = {
+  image: "/images/collarbone_hands_breasts_cover.jpg",
+  quote: {
+    text: "Det bedste kirurgiske resultat er det, der ser naturligt ud - som om det altid har hørt til.",
+    author: "Kirurg, Troels Tei",
+  } satisfies Quote,
+  label: "Behandling",
+  heading: "En «à la carte»-tilgang til din krop",
+};
+
+export const featuresContent = {
+  label: "Rådgivning",
+  heading: "Valg af implantat",
+  intro: "For at sikre det perfekte match tilbyder vi et bredt udvalg af implantater fra førende producenter. Ved forundersøgelsen gennemgår vi dine muligheder i detaljer, så du er tryg ved dit valg. Vi rådgiver dig om forskellene på:",
+};
+
+export const splitContent: SectionContent = {
+  label: "Teknik",
+  heading: "Placering og kirurgisk præcision",
+  body: "Teknikken bag placeringen af implantatet er afgørende for det endelige udtryk. Afhængig af mængden af dit eget brystvæv kan implantatet placeres enten over eller under brystmusklen. Vores plastikkirurg Troels Tei benytter teknikker, der sikrer, at overgangen mellem dit eget væv og implantatet bliver så usynlig som muligt — essentielt for at opnå den naturlige harmoni, vi efterstræber.",
+};
+
+export const cta: CtaContent = {
+  heading: "Tag det næste skridt mod naturlig harmoni",
+  body: "Vi tror på, at de bedste resultater skabes gennem individuel planlægning og kirurgisk præcision. Kontakt klinikken i Esbjerg for en samtale om dine muligheder.",
+  ctaLabel: "Bestil tid til forundersøgelse i dag",
+};
 
 export const faqItems: FAQItem[] = [
   {

@@ -1,4 +1,23 @@
-import type { FAQItem, FeatureItem } from "@/data/types";
+import type { CtaContent, FAQItem, FeatureItem, SectionContent } from "@/data/types";
+
+export const introLeft: SectionContent = {
+  label: "Teknik",
+  heading: "Moderne teknikker: B-teknik (Renault)",
+  body: "Vi anvender veldokumenterede kirurgiske metoder for at sikre det mest harmoniske resultat. En af de mest innovative tilgange i vores center er den såkaldte B-teknik, oprindeligt beskrevet af Renault.",
+  body2: "Denne teknik adskiller sig ved at have et særligt fokus på intern vævsomformning, hvilket optimerer brystets støtte og projektion. B-teknikken er særligt målrettet patienter med en øget lateral fylde - altså hvor brystet fremstår bredt eller er orienteret ud mod armhulen. Ved at reducere og omforme vævet i de laterale dele af brystet kan vi skabe en mere centreret, løftet og ungdommelig brystform.",
+};
+
+export const introRight: SectionContent = {
+  label: "Formål",
+  heading: "Lindring af fysiske gener og æstetisk balance",
+  body: "For mange kvinder er en brystreduktion en vej til en markant forbedret livskvalitet. Behandlingen handler ikke kun om udseende, men om at genskabe en krop i balance, hvor brysternes tyngde ikke længere begrænser din hverdag.",
+};
+
+export const cta: CtaContent = {
+  heading: "Klar til en konsultation?",
+  body: "Book en uforpligtende konsultation og få en præcis vurdering af dine muligheder hos speciallæge Troels Tei.",
+  ctaLabel: "Bestil tid til forundersøgelse i dag",
+};
 
 export const faqItems: FAQItem[] = [
   {

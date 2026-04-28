@@ -1,4 +1,20 @@
-import type { FAQItem, FeatureItem } from "@/data/types";
+import type { CtaContent, FAQItem, FeatureItem, Quote, SectionContent } from "@/data/types";
+
+export const intro: SectionContent = {
+  label: "Behandling",
+  heading: "Mere end blot volumen: En biologisk opgradering",
+  body: "Fedttransplantation (lipofilling) er en af de mest alsidige teknikker inden for moderne plastikkirurgi. Ved at anvende dine egne fedtceller som en naturlig filler kan vi ikke blot genskabe tabt volumen, men også forbedre selve vævets kvalitet. Det skyldes fedtvævets rige indhold af stamceller, som har en unik regenerativ effekt på hud og underliggende væv.",
+};
+
+export const introQuote: Quote = {
+  text: "Det handler om at arbejde med kroppen, ikke mod den - volumen og biologisk fornyelse i ét indgreb.",
+  author: "Kirurg, Troels Tei",
+};
+
+export const cta: CtaContent = {
+  heading: "Få en faglig vurdering af dine muligheder",
+  body: "Drømmer du om et naturligt resultat baseret på dine egne biologiske forudsætninger? Book en uforpligtende konsultation og hør mere om regenerativ æstetik hos speciallæge Troels Tei.",
+};
 
 export const faqItems: FAQItem[] = [
   {
