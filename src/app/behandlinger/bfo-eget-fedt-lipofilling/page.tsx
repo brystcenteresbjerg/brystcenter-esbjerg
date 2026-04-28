@@ -1,11 +1,13 @@
-import { Dna, Droplets, Microscope } from "lucide-react";
-import { benefits, faqItems, features } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
+import { Dna, Droplets, Leaf, Microscope, Sliders, Zap } from "lucide-react";
+import { benefits, benefitsIntro, faqItems, features } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
+import ImageListSection from "@/components/sections/ImageListSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
+import SplitSection from "@/components/sections/SplitSection";
 import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
 import { treatmentSummaries } from "@/data/priser";
 
@@ -44,65 +46,59 @@ export default function Page() {
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
       <TreatmentFactsBar {...treatmentSummaries["bfo-eget-fedt-lipofilling"]} />
 
-      {/* ── INTRO ────────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-20 bg-surface">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="label mb-6">Behandling</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              Regenerativ æstetik: Mere end blot volumen
-            </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">
-              Den moderne tilgang til brystforstørrelse med eget fedt bygger på omfattende international forskning og metoder
-              perfektioneret af specialister som Andrzej Piatkowski og Roger Khouri. Hos Brystcenter Esbjerg ser vi ikke blot
-              behandlingen som en volumenforøgelse, men også som regenerativ æstetik, hvor vi arbejder med kroppens biologiske
-              byggesten for at optimere både form og vævskvalitet.
-            </p>
+      {/* ── BEHANDLING ───────────────────────────────────────────── */}
+      <SplitSection
+        label="Behandling"
+        heading="Regenerativ æstetik: Mere end blot volumen"
+        body="Den moderne tilgang til brystforstørrelse med eget fedt bygger på omfattende international forskning og metoder perfektioneret af specialister som Andrzej Piatkowski og Roger Khouri. Hos Brystcenter Esbjerg ser vi ikke blot behandlingen som en volumenforøgelse, men også som regenerativ æstetik, hvor vi arbejder med kroppens biologiske byggesten for at optimere både form og vævskvalitet."
+        align="center"
+      >
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-sm overflow-hidden aspect-square">
+            <img src="/images/collarbone_shoulder_hair.jpg" alt="" className="w-full h-full object-cover" />
           </div>
-          <div>
-            <p className="label mb-6">Fordele</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              Fordele ved brystforstørrelse uden implantat
-            </h2>
-            <p className="font-sans text-sm leading-relaxed text-secondary/75 mb-5">
-              Metoden er særligt fordelagtig for dig, der:
-            </p>
-            <ul className="space-y-3">
-              {benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3 font-sans text-sm leading-relaxed text-secondary/75">
-                  <span className="text-primary mt-0.5 shrink-0">-</span>
-                  {b}
-                </li>
-              ))}
-            </ul>
+          <div className="rounded-sm overflow-hidden aspect-square mt-8">
+            <img src="/images/curls_smile_brunette.jpg" alt="" className="w-full h-full object-cover" />
           </div>
         </div>
-      </section>
+      </SplitSection>
 
-      {/* ── PROCEDURE ────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-20 bg-surface-container-low">
-        <div className="max-w-3xl mx-auto">
-          <p className="label mb-6">Forløbet</p>
-          <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-            Hvordan foregår en brystforstørrelse med lipofilling?
-          </h2>
-          <p className="font-sans text-base leading-relaxed text-secondary/75">
-            Processen kræver høj teknisk præcision for at sikre, at de transplanterede celler integreres optimalt i brystvævet. Da
-            fedttransplantation er afhængig af biologiske forhold, vurderes det endelige resultat efter nogle måneder, når kroppen
-            har optaget en del af det transplanterede væv og stabiliseret den nye volumen.
-          </p>
-        </div>
-      </section>
+      {/* ── FORDELE ──────────────────────────────────────────────── */}
+      <ImageListSection
+        image="/images/body_breast_hand.jpg"
+        label="Fordele"
+        heading="Fordele ved brystforstørrelse uden implantat"
+        intro={benefitsIntro}
+        items={benefits.map((text, i) => ({
+          text,
+          icon: [<Leaf size={18} />, <Sliders size={18} />, <Zap size={18} />][i],
+        }))}
+      />
 
       {/* ── FEATURES ─────────────────────────────────────────────── */}
       <FeaturesSection
-        background="bg-surface"
-        cardBackground="bg-surface-container-low"
         items={features.map((f, i) => ({
           ...f,
           icon: [<Dna size={22} />, <Microscope size={22} />, <Droplets size={22} />][i],
         }))}
       />
+
+      {/* ── FORLØBET ─────────────────────────────────────────────── */}
+      <SplitSection
+        label="Forløbet"
+        heading="Hvordan foregår en brystforstørrelse med lipofilling?"
+        body="Processen kræver høj teknisk præcision for at sikre, at de transplanterede celler integreres optimalt i brystvævet. Da fedttransplantation er afhængig af biologiske forhold, vurderes det endelige resultat efter nogle måneder, når kroppen har optaget en del af det transplanterede væv og stabiliseret den nye volumen."
+        align="center"
+      >
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-sm overflow-hidden aspect-square">
+            <img src="/images/abdomen.jpg" alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="rounded-sm overflow-hidden aspect-square mt-8">
+            <img src="/images/skin.jpg" alt="" className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </SplitSection>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <div className="px-8 lg:px-16 py-24 bg-surface-container-low">

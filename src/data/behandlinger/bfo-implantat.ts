@@ -15,6 +15,11 @@ export const faqItems: FAQItem[] = [
   },
 ];
 
+export const alaCarteIntro: string[] = [
+  "Vi tror ikke på standardløsninger. Der findes ikke ét implantat, der passer til alle. Derfor arbejder vi ud fra et «à la carte»-princip, hvor vi udvælger både implantattype og kirurgisk teknik specifikt til dig.",
+  "Denne differentierede tilgang betyder, at vi kan tage præcis højde for:",
+];
+
 export const alaCartePoints: string[] = [
   "Brystets nuværende udgangspunkt og symmetri.",
   "Din huds elasticitet og vævets kvalitet.",

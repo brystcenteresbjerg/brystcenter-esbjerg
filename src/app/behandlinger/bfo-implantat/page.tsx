@@ -1,8 +1,9 @@
-import { Asterisk, Crosshair, Layers, Ruler, Shapes, Users, Waves } from "lucide-react";
-import { alaCartePoints, faqItems, implantChoices } from "@/data/behandlinger/bfo-implantat";
+import { Asterisk, Layers, Ruler, Shapes, Users, Waves } from "lucide-react";
+import { alaCarteIntro, alaCartePoints, faqItems, implantChoices } from "@/data/behandlinger/bfo-implantat";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
+import ImageListSection from "@/components/sections/ImageListSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -47,55 +48,20 @@ export default function Page() {
       <TreatmentFactsBar {...treatmentSummaries["bfo-implantat"]} />
 
       {/* ── À LA CARTE ───────────────────────────────────────────── */}
-      <section>
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative rounded-sm overflow-hidden aspect-square">
-            <img src="/images/collarbone_hands_breasts_cover.jpg" alt="" className="w-full h-full object-cover" />
-            <div
-              className="absolute inset-0"
-              style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 55%)" }}
-            />
-            <div
-              className="absolute bottom-5 left-5 w-1/2 rounded-md p-5"
-              style={{ background: "rgba(250,243,238,0.82)", backdropFilter: "blur(12px)" }}
-            >
-              <p className="font-serif font-light text-base italic leading-relaxed text-secondary">
-                &ldquo;Det bedste kirurgiske resultat er det, der ser naturligt ud - som om det altid har hørt til.&rdquo;
-              </p>
-              <p className="font-sans text-xs uppercase tracking-[0.15em] mt-3 text-secondary/65">- Kirurg, Troels Tei</p>
-            </div>
-          </div>
-          <div>
-            <p className="label mb-6">Behandling</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
-              En &ldquo;à la carte&rdquo;-tilgang til din krop
-            </h2>
-            <div className="font-sans text-lg leading-relaxed text-secondary/75 mb-6">
-              <p>
-                Vi tror ikke på standardløsninger. Der findes ikke ét implantat, der passer til alle. Derfor arbejder vi ud fra et
-                &ldquo;à la carte&rdquo;-princip, hvor vi udvælger både implantattype og kirurgisk teknik specifikt til dig.
-              </p>
-              <br />
-              <p>Denne differentierede tilgang betyder, at vi kan tage præcis højde for:</p>
-            </div>
-            <ul>
-              {alaCartePoints.map((p, i) => (
-                <li
-                  key={p}
-                  className="flex items-center gap-4 font-sans font-semibold text-sm leading-relaxed text-secondary border-b border-secondary/8 py-6"
-                >
-                  <span className="text-primary/75 shrink-0">
-                    {i === 0 && <Asterisk size={18} />}
-                    {i === 1 && <Waves size={18} />}
-                    {i === 2 && <Users size={18} />}
-                  </span>
-                  {p}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <ImageListSection
+        image="/images/collarbone_hands_breasts_cover.jpg"
+        quote={{
+          text: "Det bedste kirurgiske resultat er det, der ser naturligt ud - som om det altid har hørt til.",
+          author: "Kirurg, Troels Tei",
+        }}
+        label="Behandling"
+        heading="En «à la carte»-tilgang til din krop"
+        intro={alaCarteIntro}
+        items={alaCartePoints.map((text, i) => ({
+          text,
+          icon: [<Asterisk size={18} />, <Waves size={18} />, <Users size={18} />][i],
+        }))}
+      />
 
       {/* ── VALG AF IMPLANTAT ────────────────────────────────────── */}
       <FeaturesSection

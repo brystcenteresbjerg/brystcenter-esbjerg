@@ -34,6 +34,8 @@ export const features: FeatureItem[] = [
   },
 ];
 
+export const benefitsIntro = "Metoden er særligt fordelagtig for dig, der:";
+
 export const benefits: string[] = [
   "Ønsker en naturlig brystforstørrelse uden brug af fremmedlegemer.",
   "Søger en diskret og harmonisk ændring af brystets størrelse.",
