@@ -66,7 +66,7 @@ export default function PageHero({
                 src={mobileImage}
                 alt={h1Main}
                 fill
-                sizes="100vw"
+                sizes="(min-width: 1024px) 0px, 100vw"
                 quality={90}
                 className="object-cover lg:hidden"
                 style={{ objectPosition: mediaPosition }}
