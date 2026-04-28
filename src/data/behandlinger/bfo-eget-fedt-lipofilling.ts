@@ -52,10 +52,23 @@ export const features: FeatureItem[] = [
   },
 ];
 
-export const benefitsIntro = "Metoden er særligt fordelagtig for dig, der:";
+export const fordeleSection = {
+  label: "Fordele",
+  heading: "Fordele ved brystforstørrelse uden implantat",
+  intro: "Metoden er særligt fordelagtig for dig, der:",
+};
 
-export const benefits: string[] = [
-  "Ønsker en naturlig brystforstørrelse uden brug af fremmedlegemer.",
-  "Søger en diskret og harmonisk ændring af brystets størrelse.",
-  "Ønsker at kombinere indgrebet med en fedtsugning af depoter andre steder på kroppen - en såkaldt win-win situation.",
+export const benefits: FeatureItem[] = [
+  {
+    label: "Naturlig og uden fremmedlegemer",
+    text: "Ønsker en naturlig brystforstørrelse uden brug af fremmedlegemer.",
+  },
+  {
+    label: "Diskret og harmonisk",
+    text: "Søger en diskret og harmonisk ændring af brystets størrelse.",
+  },
+  {
+    label: "Kombineret win-win",
+    text: "Ønsker at kombinere indgrebet med en fedtsugning af depoter andre steder på kroppen.",
+  },
 ];

@@ -1,9 +1,17 @@
 import { Dna, Droplets, Leaf, Microscope, Sliders, Zap } from "lucide-react";
-import { behandlingSection, benefitsIntro, benefits, cta, faqItems, features, forloebetSection } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
+import {
+  behandlingSection,
+  benefits,
+  cta,
+  faqItems,
+  features,
+  fordeleSection,
+  forloebetSection,
+} from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
-import ImageListSection from "@/components/sections/ImageListSection";
+import FeaturesWithLeadImage from "@/components/sections/FeaturesWithLeadImage";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -64,23 +72,24 @@ export default function Page() {
       </SplitSection>
 
       {/* ── FORDELE ──────────────────────────────────────────────── */}
-      <ImageListSection
-        image="/images/body_breast_hand.jpg"
-        label="Fordele"
-        heading="Fordele ved brystforstørrelse uden implantat"
-        intro={benefitsIntro}
-        items={benefits.map((text, i) => ({
-          text,
+      <FeaturesSection
+        label={fordeleSection.label}
+        heading={fordeleSection.heading}
+        intro={fordeleSection.intro}
+        items={benefits.map((f, i) => ({
+          ...f,
           icon: [<Leaf size={18} />, <Sliders size={18} />, <Zap size={18} />][i],
         }))}
       />
 
       {/* ── FEATURES ─────────────────────────────────────────────── */}
-      <FeaturesSection
-        items={features.map((f, i) => ({
-          ...f,
-          icon: [<Dna size={22} />, <Microscope size={22} />, <Droplets size={22} />][i],
-        }))}
+      <FeaturesWithLeadImage
+        image="/images/body_breast_hand.jpg"
+        items={[
+          { ...features[0], icon: <Dna size={22} /> },
+          { ...features[1], icon: <Microscope size={22} /> },
+          { ...features[2], icon: <Droplets size={22} /> },
+        ]}
       />
 
       {/* ── FORLØBET ─────────────────────────────────────────────── */}
@@ -89,6 +98,7 @@ export default function Page() {
         heading={forloebetSection.heading}
         body={forloebetSection.body}
         align="center"
+        background="bg-surface-container-low"
       >
         <div className="grid grid-cols-2 gap-4">
           <div className="rounded-sm overflow-hidden aspect-square">
@@ -101,14 +111,14 @@ export default function Page() {
       </SplitSection>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
-      <div className="px-8 lg:px-16 py-24 bg-surface-container-low">
+      <div className="px-8 lg:px-16 py-24">
         <div className="max-w-3xl mx-auto">
           <PageFAQ items={faqItems} />
         </div>
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <CtaSection {...cta} background="bg-surface" />
+      <CtaSection {...cta} background="bg-surface-container-low" />
     </>
   );
 }
