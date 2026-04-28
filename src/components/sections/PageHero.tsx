@@ -34,7 +34,7 @@ export default function PageHero({
   gradient,
 }: PageHeroProps) {
   const gradientBg =
-    gradient ?? "linear-gradient(to right, rgba(250,243,238,0.4) 0%, rgba(250,243,238,0.5) 40%, rgba(250,243,238,0) 75%)";
+    gradient ?? "linear-gradient(to right, rgba(250,243,238,0.6) 0%, rgba(250,243,238,0.5) 30%, rgba(250,243,238,0) 75%)";
 
   if (video || image) {
     return (

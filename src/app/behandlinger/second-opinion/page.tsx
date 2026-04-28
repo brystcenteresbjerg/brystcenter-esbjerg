@@ -35,7 +35,7 @@ export default function Page() {
         label="Second Opinion"
         h1Main="Uvildig vurdering"
         h1Italic="efter tidligere kirurgi"
-        image="/images/curls_smile_brunette.jpg"
+        image="/images/hero_curls_smile_brunette.jpg"
         subtitle="Det er ikke usædvanligt at sidde tilbage med spørgsmål efter en brystoperation. Vi tilbyder en professionel og uvildig vurdering af dit nuværende resultat og dine fremtidige muligheder."
         cta={{ label: "Book tid til en uvildig vurdering", href: "#book" }}
       />
