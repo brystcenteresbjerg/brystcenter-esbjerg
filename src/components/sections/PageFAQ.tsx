@@ -1,5 +1,7 @@
 "use client";
 
+import { AnimatePresence, motion } from "motion/react";
+
 import { useState } from "react";
 
 type FAQItem = { q: string; a: string };
@@ -22,13 +24,27 @@ function Accordion({ items }: { items: FAQItem[] }) {
             className="w-full flex items-start justify-between gap-8 py-6 text-left"
           >
             <span className="font-serif text-xl text-secondary leading-snug">{item.q}</span>
-            <span
-              className={`font-sans lg:text-2xl text-xl text-primary shrink-0 mt-0.5 transition-transform ${open === i ? "rotate-45" : ""}`}
+            <motion.span
+              animate={{ rotate: open === i ? 45 : 0 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="font-sans lg:text-2xl text-xl text-primary shrink-0 mt-0.5 inline-block"
             >
               +
-            </span>
+            </motion.span>
           </button>
-          {open === i && <p className="pb-6 font-sans text-base leading-relaxed text-secondary/75 max-w-2xl">{item.a}</p>}
+          <AnimatePresence initial={false}>
+            {open === i && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <p className="pb-6 font-sans text-base leading-relaxed text-secondary/75 max-w-2xl">{item.a}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       ))}
     </div>
