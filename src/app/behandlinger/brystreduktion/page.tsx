@@ -35,7 +35,7 @@ export default function Page() {
         label="Brystreduktion"
         h1Main="Brystreduktion"
         h1Italic="med fokus på form og proportioner"
-        image="/images/hero-silk.jpg"
+        image="/images/hero_blonde_woman_looking.jpg"
         subtitle="En brystreduktion (reduktionsplastik) er et kirurgisk indgreb, der har til formål at reducere brysternes størrelse og vægt, samtidig med at brystets form og proportioner forbedres. Hos Brystcenter Esbjerg betragter vi indgrebet som en individuelt tilpasset proces, hvor vi forener medicinsk nødvendighed med æstetisk præcision."
         cta={{ label: "Book en speciallægekonsultation i Esbjerg", href: "#book" }}
         secondaryCta={{ label: "Se også brystløft", href: "/behandlinger/brystloeft" }}
@@ -51,9 +51,7 @@ export default function Page() {
             <p className="label mb-6">{introLeft.label}</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{introLeft.heading}</h2>
             <p className="font-sans text-base leading-relaxed text-secondary/75 mb-5">{introLeft.body}</p>
-            {introLeft.body2 && (
-              <p className="font-sans text-base leading-relaxed text-secondary/75">{introLeft.body2}</p>
-            )}
+            {introLeft.body2 && <p className="font-sans text-base leading-relaxed text-secondary/75">{introLeft.body2}</p>}
           </div>
           <div>
             <p className="label mb-6">{introRight.label}</p>

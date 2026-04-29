@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 interface PageHeroProps {
   label: string;
@@ -106,11 +106,11 @@ export default function PageHero({
           </motion.p>
           <motion.h1
             variants={itemVariants}
-            className="font-serif text-3xl lg:text-4xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl"
+            className="font-serif text-2xl lg:text-3xl xl:text-5xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl"
           >
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
           </motion.h1>
-          <motion.p variants={itemVariants} className="font-sans text-base leading-relaxed mb-10 lg:max-w-md text-black/80">
+          <motion.p variants={itemVariants} className="font-sans text-base leading-relaxed mb-10 lg:max-w-lg text-black/80">
             {subtitle}
           </motion.p>
           {(cta || secondaryCta) && (
