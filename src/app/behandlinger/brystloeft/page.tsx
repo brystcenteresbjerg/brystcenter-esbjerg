@@ -37,9 +37,11 @@ export default function Page() {
         h1Main="Brystløft"
         h1Italic="med auto-augmentation"
         image="/images/hero_brunette_smile.jpg"
+        mobileImage="/images/mobile_brunette_smile_test.jpg"
         subtitle="Et brystløft med auto-augmentation er en kirurgisk teknik til dig, der ønsker at genvinde brystets ungdommelige projektion og form uden brug af fremmedlegemer."
         cta={{ label: "Book en uforpligtende konsultation i Esbjerg", href: "#book" }}
-        secondaryCta={{ label: "Brystforstørrelse med implantat", href: "/behandlinger/bfo-implantat" }}
+        // secondaryCta={{ label: "Brystforstørrelse med implantat", href: "/behandlinger/bfo-implantat" }}
+        gradient="linear-gradient(to left, rgba(250,243,238,0.8) 0%, rgba(250,243,238,0.7) 30%, rgba(250,243,238,0) 75%)"
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}

@@ -95,7 +95,7 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
             >
               <div>
                 <p className="label mb-5">{steps[activeStep].label}</p>
-                <h2 className="font-serif text-4xl xl:text-5xl font-semibold text-secondary mb-6 leading-tight">
+                <h2 className="font-serif text-2xl lg:text-4xl xl:text-5xl font-semibold text-secondary mb-6 leading-tight">
                   {steps[activeStep].title}
                 </h2>
                 <p className="font-sans text-base leading-relaxed text-secondary/75 max-w-lg">{steps[activeStep].body}</p>
@@ -113,9 +113,7 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
               </div>
 
               {steps[activeStep].time && (
-                <p className="font-sans text-sm text-secondary/30 tracking-[0.08em] shrink-0">
-                  {steps[activeStep].time}
-                </p>
+                <p className="font-sans text-sm text-secondary/30 tracking-[0.08em] shrink-0">{steps[activeStep].time}</p>
               )}
             </motion.div>
           </AnimatePresence>

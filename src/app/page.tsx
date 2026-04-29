@@ -46,7 +46,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <p className="label mb-4">Patientrejsen</p>
-            <h2 className="font-serif text-2xl font-semibold text-secondary mb-5 leading-snug">
+            <h2 className="font-serif lg:text-2xl text-lg font-semibold text-secondary mb-5 leading-snug">
               Hele forløbet samlet ét sted - i Esbjerg
             </h2>
             <p className="font-sans text-sm leading-relaxed text-secondary/75 mb-4">
@@ -63,7 +63,7 @@ export default function Home() {
           </div>
           <div>
             <p className="label mb-4">Filosofi</p>
-            <h2 className="font-serif text-2xl font-semibold text-secondary mb-5 leading-snug">
+            <h2 className="font-serif lg:text-2xl text-lg font-semibold text-secondary mb-5 leading-snug">
               Specialister i naturlig harmoni
             </h2>
             <p className="font-sans text-sm leading-relaxed text-secondary/75">
@@ -80,7 +80,7 @@ export default function Home() {
       <section className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-serif text-4xl font-semibold text-secondary mb-4">Vores Ekspertise</h2>
+            <h2 className="font-serif lg:text-4xl text-2xl font-semibold text-secondary mb-4">Vores Ekspertise</h2>
             <p className="font-sans text-base max-w-md mx-auto text-secondary/70">
               Udvalgte indgreb med fokus på naturlighed, holdbarhed og individuel tilpasning til din anatomi.
             </p>
@@ -106,7 +106,7 @@ export default function Home() {
                 />
                 <p className="relative z-10 font-sans text-[10px] uppercase tracking-[0.18em] text-white/95">{s.category}</p>
                 <div className="relative z-10">
-                  <h2 className="font-serif text-2xl font-semibold text-white mb-2">{s.title}</h2>
+                  <h2 className="font-serif lg:text-2xl text-xl font-semibold text-white mb-2">{s.title}</h2>
                   {s.showDesc && <p className="font-sans text-sm leading-relaxed mb-5 text-on-primary/68">{s.desc}</p>}
                   <div className={`flex flex-wrap gap-3 ${!s.showDesc ? "mt-3" : ""}`}>
                     {s.links.map((link) => (
@@ -149,7 +149,7 @@ export default function Home() {
       {/* ── HVORFOR VÆLGE OS ─────────────────────────────────────── */}
       <section className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-7xl mx-auto">
-          <h3 className="font-serif text-4xl font-semibold text-secondary mb-16 text-center">
+          <h3 className="font-serif lg:text-4xl text-2xl font-semibold text-secondary mb-16 text-center">
             Hvorfor vælge Brystcenter Esbjerg?
           </h3>
 

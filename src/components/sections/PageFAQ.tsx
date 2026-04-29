@@ -23,7 +23,7 @@ function Accordion({ items }: { items: FAQItem[] }) {
           >
             <span className="font-serif text-xl text-secondary leading-snug">{item.q}</span>
             <span
-              className={`font-sans text-2xl text-primary shrink-0 mt-0.5 transition-transform ${open === i ? "rotate-45" : ""}`}
+              className={`font-sans lg:text-2xl text-xl text-primary shrink-0 mt-0.5 transition-transform ${open === i ? "rotate-45" : ""}`}
             >
               +
             </span>
@@ -39,7 +39,7 @@ export default function PageFAQ({ items, variant = "full" }: PageFAQProps) {
   if (variant === "full") {
     return (
       <div>
-        <h2 className="font-serif text-2xl font-semibold text-secondary mb-14 text-center">FAQ</h2>
+        <h2 className="font-serif lg:text-2xl text-xl font-semibold text-secondary mb-14 text-center">FAQ</h2>
         <Accordion items={items} />
       </div>
     );
@@ -47,7 +47,7 @@ export default function PageFAQ({ items, variant = "full" }: PageFAQProps) {
 
   return (
     <section className="mt-20 bg-surface-container-low rounded-sm p-10">
-      <h2 className="font-serif text-2xl font-medium text-secondary mb-8">FAQ</h2>
+      <h2 className="font-serif lg:text-2xl text-xl font-medium text-secondary mb-8">FAQ</h2>
       <Accordion items={items} />
     </section>
   );

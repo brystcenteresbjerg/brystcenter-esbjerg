@@ -55,7 +55,7 @@ export default function PageHero({
               src={image!}
               alt={h1Main}
               fill
-              sizes="100vw"
+              sizes={mobileImage ? "(min-width: 1024px) 100vw, 0vw" : "100vw"}
               quality={90}
               className={`object-cover ${mobileImage ? "hidden lg:block" : ""}`}
               style={{ objectPosition: mediaPosition }}
@@ -76,17 +76,21 @@ export default function PageHero({
           </>
         )}
         <div className="absolute inset-0" style={{ background: gradientBg }} />
-        <div className="relative z-10 w-full px-8 lg:px-24 pb-20 pt-32">
+        <div className="relative z-10 w-full px-8 lg:px-24 lg:pb-20 pb-10 pt-32">
           <p className="label mb-8 font-semibold">{label}</p>
-          <h1 className="font-serif text-4xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
+          <h1 className="font-serif text-3xl lg:text-4xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
           </h1>
-          <p className="font-sans text-base leading-relaxed mb-10 max-w-md text-black/60">{subtitle}</p>
+          <p className="font-sans text-base leading-relaxed mb-10 lg:max-w-2xs text-black/80">{subtitle}</p>
           {(cta || secondaryCta) && (
-            <div className="flex flex-wrap gap-4">
-              {cta && <Button href={cta.href}>{cta.label}</Button>}
+            <div className="flex flex-col lg:flex-row lg:flex-wrap gap-4">
+              {cta && (
+                <Button href={cta.href} className="w-full lg:w-auto">
+                  {cta.label}
+                </Button>
+              )}
               {secondaryCta && (
-                <Button href={secondaryCta.href} variant="outline">
+                <Button href={secondaryCta.href} variant="outline" className="w-full lg:w-auto">
                   {secondaryCta.label}
                 </Button>
               )}

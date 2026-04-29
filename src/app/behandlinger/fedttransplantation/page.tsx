@@ -6,6 +6,7 @@ import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
+import SplitSection from "@/components/sections/SplitSection";
 import TreatmentFactsBar from "@/components/sections/TreatmentFactsBar";
 import { treatmentSummaries } from "@/data/priser";
 
@@ -46,21 +47,16 @@ export default function Page() {
       <TreatmentFactsBar {...treatmentSummaries["fedttransplantation"]} />
 
       {/* ── INTRO ────────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-20 bg-surface">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="label mb-6">{intro.label}</p>
-            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{intro.heading}</h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">{intro.body}</p>
+      <SplitSection label={intro.label} heading={intro.heading} body={intro.body} align="center">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-sm overflow-hidden aspect-square">
+            <img src="/images/leg_hands_touching.jpg" alt="" className="w-full h-full object-cover" />
           </div>
-          <div className="bg-primary-container/30 rounded-sm p-10">
-            <p className="font-serif font-light text-lg italic leading-relaxed text-tertiary mb-5">
-              &ldquo;{introQuote.text}&rdquo;
-            </p>
-            <p className="label">- {introQuote.author}</p>
+          <div className="rounded-sm overflow-hidden aspect-square mt-8">
+            <img src="/images/skin.jpg" alt="" className="w-full h-full object-cover" />
           </div>
         </div>
-      </section>
+      </SplitSection>
 
       {/* ── FEATURES ─────────────────────────────────────────────── */}
       <FeaturesSection
