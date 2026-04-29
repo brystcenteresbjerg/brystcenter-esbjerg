@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Brystcenter Esbjerg
 
-## Getting Started
+Marketing website for Brystcenter Esbjerg — a specialist breast surgery clinic in Esbjerg, Denmark. Built with Next.js 16 App Router, Tailwind CSS v4, and TypeScript.
 
-First, run the development server:
+## Tech stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 16** (App Router) — routing, per-page metadata, image optimisation
+- **React 19** — UI
+- **Tailwind CSS v4** — styling via custom design tokens
+- **TypeScript 5** — full type coverage
+- **Motion v12** — animations (accordion, transitions)
+- **Lucide React** — icons
+
+## Project structure
+
+```
+src/
+├── app/                        # Routes (Next.js App Router)
+│   ├── behandlinger/           # Treatment pages
+│   │   ├── bfo-implantat/      # Breast augmentation with implants
+│   │   ├── bfo-eget-fedt-lipofilling/  # Fat transfer augmentation
+│   │   ├── brystloeft/         # Breast lift
+│   │   ├── brystreduktion/     # Breast reduction
+│   │   ├── fedttransplantation/# Fat transplantation
+│   │   ├── second-opinion/     # Second opinion consultation
+│   │   └── udskiftning-af-protese/     # Implant replacement
+│   ├── booking/                # Booking page
+│   ├── moed-os/                # About / meet us
+│   ├── patientrejsen/          # Patient journey
+│   └── priser/                 # Pricing
+├── components/
+│   ├── layout/                 # Header, Footer, ConsultationFloat
+│   ├── sections/               # Reusable page sections
+│   │   ├── PageHero.tsx        # Full-bleed hero (image or video)
+│   │   ├── TreatmentFactsBar.tsx
+│   │   ├── SplitSection.tsx
+│   │   ├── FeaturesSection.tsx
+│   │   ├── FeaturesWithLeadImage.tsx
+│   │   ├── ImageListSection.tsx
+│   │   ├── PageFAQ.tsx         # Animated accordion
+│   │   ├── CtaSection.tsx
+│   │   ├── Testimonial.tsx
+│   │   └── PatientTimeline.tsx
+│   └── ui/                     # Button and other primitives
+└── data/
+    ├── behandlinger/           # Per-page copy (label, heading, body, FAQ, features)
+    ├── priser.ts               # Treatment pricing and facts bar data
+    └── types.ts                # Shared TypeScript interfaces
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Content architecture
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All page copy lives in `src/data/behandlinger/<slug>.ts` — pages import from there and are purely structural (which components, which images, which icons). This keeps SEO text versioned alongside code and makes it easy to update copy without touching layout.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Shared interfaces (`SectionContent`, `FeatureItem`, `FAQItem`, `CtaContent`, etc.) are defined in `src/data/types.ts`.
 
-## Learn More
+## Getting started
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Build
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run start
+```
