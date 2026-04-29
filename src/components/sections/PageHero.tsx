@@ -1,8 +1,9 @@
 "use client";
 
+import { stagger, useAnimate } from "motion/react";
+import { useEffect } from "react";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
-import { motion } from "motion/react";
 
 interface PageHeroProps {
   label: string;
@@ -23,17 +24,9 @@ interface PageHeroProps {
   gradient?: string;
   /** Override the default mobile gradient */
   mobileGradient?: string;
+  /** Poster image shown while video loads — becomes the LCP element */
+  videoPoster?: string;
 }
-
-const contentVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 14 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
-};
 
 export default function PageHero({
   label,
@@ -48,7 +41,18 @@ export default function PageHero({
   mediaPosition = "center",
   gradient,
   mobileGradient,
+  videoPoster,
 }: PageHeroProps) {
+  const [scope, animate] = useAnimate();
+
+  useEffect(() => {
+    animate(
+      ".hero-item",
+      { opacity: [0, 1], y: [14, 0] },
+      { duration: 0.6, ease: "easeOut", delay: stagger(0.12, { startDelay: 0.25 }) }
+    );
+  }, [animate]);
+
   const desktopGradient =
     gradient ?? "linear-gradient(to right, rgba(250,243,238,0.6) 0%, rgba(250,243,238,0.5) 30%, rgba(250,243,238,0) 75%)";
   const mobileGradientBg =
@@ -64,6 +68,7 @@ export default function PageHero({
             muted
             loop
             playsInline
+            poster={videoPoster}
             className="absolute inset-0 w-full h-full object-cover"
             style={{ objectPosition: mediaPosition }}
           />
@@ -95,26 +100,14 @@ export default function PageHero({
         )}
         <div className="absolute inset-0 hidden lg:block" style={{ background: desktopGradient }} />
         <div className="absolute inset-0 lg:hidden" style={{ background: mobileGradientBg }} />
-        <motion.div
-          className="relative z-10 w-full px-8 lg:px-24 lg:pb-20 pb-10 pt-32"
-          variants={contentVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.p variants={itemVariants} className="label mb-8 font-semibold">
-            {label}
-          </motion.p>
-          <motion.h1
-            variants={itemVariants}
-            className="font-serif text-2xl lg:text-3xl xl:text-5xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl"
-          >
+        <div ref={scope} className="relative z-10 w-full px-8 lg:px-24 lg:pb-20 pb-10 pt-32">
+          <p className="hero-item label mb-8 font-semibold">{label}</p>
+          <h1 className="hero-item font-serif text-2xl lg:text-3xl xl:text-5xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
-          </motion.h1>
-          <motion.p variants={itemVariants} className="font-sans text-base leading-relaxed mb-10 lg:max-w-lg text-black/80">
-            {subtitle}
-          </motion.p>
+          </h1>
+          <p className="hero-item font-sans text-base leading-relaxed mb-10 lg:max-w-lg text-black/80">{subtitle}</p>
           {(cta || secondaryCta) && (
-            <motion.div variants={itemVariants} className="flex flex-col lg:flex-row lg:flex-wrap gap-4">
+            <div className="hero-item flex flex-col lg:flex-row lg:flex-wrap gap-4">
               {cta && (
                 <Button href={cta.href} className="w-full lg:w-auto">
                   {cta.label}
@@ -125,9 +118,9 @@ export default function PageHero({
                   {secondaryCta.label}
                 </Button>
               )}
-            </motion.div>
+            </div>
           )}
-        </motion.div>
+        </div>
       </section>
     );
   }

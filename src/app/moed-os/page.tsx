@@ -36,6 +36,7 @@ export default function Page() {
         h1Main="Troels Tei"
         h1Italic="Speciallæge"
         video="/videos/woman_sunlight_one.mp4"
+        videoPoster="/images/video_cap.jpg"
         subtitle="Kirurgisk præcision og naturlig harmoni - brystkirurgi med kompromisløst fokus på det individuelle resultat."
         cta={{ label: "Book konsultation", href: "#book" }}
         secondaryCta={{ label: "Se patientrejsen", href: "/patientrejsen" }}

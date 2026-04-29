@@ -38,6 +38,7 @@ export default function Home() {
         h1Italic="plastik kirurgi"
         subtitle="En specialiseret enhed under Privathospitalet Kollund, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat."
         video="/videos/woman_sunlight_one.mp4"
+        videoPoster="/images/video_cap.jpg"
         mediaPosition="center 20%"
         cta={{ label: "Book konsultation", href: "#book" }}
         secondaryCta={{ label: "Mød os", href: "/moed-os" }}
