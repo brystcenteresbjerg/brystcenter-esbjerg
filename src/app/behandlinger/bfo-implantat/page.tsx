@@ -1,5 +1,14 @@
 import { Asterisk, Layers, Ruler, Shapes, Users, Waves } from "lucide-react";
-import { alaCarteIntro, alaCartePoints, alaCarteSection, cta, faqItems, featuresContent, implantChoices, splitContent } from "@/data/behandlinger/bfo-implantat";
+import {
+  alaCarteIntro,
+  alaCartePoints,
+  alaCarteSection,
+  cta,
+  faqItems,
+  featuresContent,
+  implantChoices,
+  splitContent,
+} from "@/data/behandlinger/bfo-implantat";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -42,6 +51,7 @@ export default function Page() {
         mobileImage="/images/implants_hands_one.jpg"
         cta={{ label: "Book en personlig konsultation i Esbjerg", href: "#book" }}
         secondaryCta={{ label: "Eget fedt som alternativ", href: "/behandlinger/bfo-eget-fedt-lipofilling" }}
+        mobileGradient=""
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -72,11 +82,7 @@ export default function Page() {
       />
 
       {/* ── PLACERING & KIRURGISK PRÆCISION ──────────────────────── */}
-      <SplitSection
-        label={splitContent.label}
-        heading={splitContent.heading}
-        body={splitContent.body}
-      >
+      <SplitSection label={splitContent.label} heading={splitContent.heading} body={splitContent.body}>
         <div className="grid grid-cols-2 gap-4">
           <div className="rounded-sm overflow-hidden aspect-square">
             <img src="/images/implants_hand_one.jpg" alt="" className="w-full h-full object-cover" />

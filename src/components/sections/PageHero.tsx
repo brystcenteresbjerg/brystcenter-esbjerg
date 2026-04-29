@@ -16,8 +16,10 @@ interface PageHeroProps {
   mobileImage?: string;
   /** CSS object-position for image/video, e.g. "top", "center 30%" (default: "center") */
   mediaPosition?: string;
-  /** Override the default gradient with a custom CSS gradient value */
+  /** Override the default desktop gradient */
   gradient?: string;
+  /** Override the default mobile gradient */
+  mobileGradient?: string;
 }
 
 export default function PageHero({
@@ -32,9 +34,12 @@ export default function PageHero({
   mobileImage,
   mediaPosition = "center",
   gradient,
+  mobileGradient,
 }: PageHeroProps) {
-  const gradientBg =
+  const desktopGradient =
     gradient ?? "linear-gradient(to right, rgba(250,243,238,0.6) 0%, rgba(250,243,238,0.5) 30%, rgba(250,243,238,0) 75%)";
+  const mobileGradientBg =
+    mobileGradient ?? "linear-gradient(to top, rgba(250,243,238,0.8) 0%, rgba(250,243,238,0.6) 60%, rgba(250,243,238,0) 100%)";
 
   if (video || image) {
     return (
@@ -75,7 +80,8 @@ export default function PageHero({
             )}
           </>
         )}
-        <div className="absolute inset-0" style={{ background: gradientBg }} />
+        <div className="absolute inset-0 hidden lg:block" style={{ background: desktopGradient }} />
+        <div className="absolute inset-0 lg:hidden" style={{ background: mobileGradientBg }} />
         <div className="relative z-10 w-full px-8 lg:px-24 lg:pb-20 pb-10 pt-32">
           <p className="label mb-8 font-semibold">{label}</p>
           <h1 className="font-serif text-3xl lg:text-4xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
