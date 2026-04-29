@@ -113,7 +113,7 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
               </div>
 
               {steps[activeStep].time && (
-                <p className="font-sans text-sm text-secondary/30 tracking-[0.08em] shrink-0">{steps[activeStep].time}</p>
+                <p className="font-sans text-sm text-secondary/65 tracking-[0.08em] shrink-0">{steps[activeStep].time}</p>
               )}
             </motion.div>
           </AnimatePresence>
