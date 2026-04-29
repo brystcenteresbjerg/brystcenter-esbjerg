@@ -2,8 +2,8 @@ import { ArrowUp, Sparkles, Zap } from "lucide-react";
 import { cta, faqItems, features, intro, introQuote } from "@/data/behandlinger/fedttransplantation";
 
 import CtaSection from "@/components/sections/CtaSection";
-import Image from "next/image";
 import FeaturesSection from "@/components/sections/FeaturesSection";
+import Image from "next/image";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -41,7 +41,7 @@ export default function Page() {
         subtitle="Fedttransplantation (lipofilling) genskaber volumen og forbedrer vævets kvalitet med kroppens egne stamceller - for et resultat, der er naturligt indefra og ud."
         cta={{ label: "Book konsultation", href: "#book" }}
         secondaryCta={{ label: "Brystforstørrelse med eget fedt", href: "/behandlinger/bfo-eget-fedt-lipofilling" }}
-        gradient="linear-gradient(to right, rgba(250,243,238,0.50) 30%, rgba(250,243,238,0.6) 35%, rgba(250,243,238,0) 100%)"
+        gradient="linear-gradient(to right, rgba(250,243,238,0.60) 0%, rgba(250,243,238,0.4) 60%, rgba(250,243,238,0) 100%)"
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -51,7 +51,13 @@ export default function Page() {
       <SplitSection label={intro.label} heading={intro.heading} body={intro.body} align="center">
         <div className="grid grid-cols-2 gap-4">
           <div className="relative rounded-sm overflow-hidden aspect-square">
-            <Image src="/images/leg_hands_touching.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+            <Image
+              src="/images/leg_hands_touching.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
           </div>
           <div className="relative rounded-sm overflow-hidden aspect-square mt-8">
             <Image src="/images/skin.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
