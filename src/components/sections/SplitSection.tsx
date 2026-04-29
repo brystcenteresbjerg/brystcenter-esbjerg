@@ -1,3 +1,4 @@
+import FadeUp from "@/components/ui/FadeUp";
 import type { ReactNode } from "react";
 
 interface SplitSectionProps {
@@ -26,13 +27,17 @@ export default function SplitSection({
           align === "center" ? "items-center" : "items-start"
         }`}
       >
-        <div>
-          {icon && <div className="mb-5 text-tertiary">{icon}</div>}
-          <p className="label mb-6">{label}</p>
-          <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{heading}</h2>
-          <p className="font-sans text-base leading-relaxed text-secondary/75">{body}</p>
-        </div>
-        <div>{children}</div>
+        <FadeUp>
+          <div>
+            {icon && <div className="mb-5 text-tertiary">{icon}</div>}
+            <p className="label mb-6">{label}</p>
+            <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{heading}</h2>
+            <p className="font-sans text-base leading-relaxed text-secondary/75">{body}</p>
+          </div>
+        </FadeUp>
+        <FadeUp delay={0.15}>
+          <div>{children}</div>
+        </FadeUp>
       </div>
     </section>
   );

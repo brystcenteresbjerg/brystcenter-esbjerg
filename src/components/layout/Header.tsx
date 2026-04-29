@@ -1,11 +1,28 @@
 "use client";
 
+import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+
+const overlayVariants = {
+  hidden: { opacity: 0, y: -12 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.25, ease: "easeOut" as const } },
+  exit: { opacity: 0, y: -12, transition: { duration: 0.2, ease: "easeIn" as const } },
+};
+
+const navListVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.045, delayChildren: 0.1 } },
+};
+
+const navItemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" as const } },
+};
 
 type NavItem =
   | { label: string; href: string; children?: never }
@@ -123,69 +140,106 @@ export default function Header() {
 
           {/* Burger button - mobile only */}
           <button
-            className="lg:hidden flex items-center justify-center w-8 h-8 shrink-0 text-secondary"
+            className="lg:hidden relative flex items-center justify-center w-8 h-8 shrink-0 text-secondary"
             onClick={() => setOpen(!open)}
-            aria-label="Menu"
+            aria-label={open ? "Luk menu" : "Åbn menu"}
           >
-            {open ? <X size={22} /> : <Menu size={22} />}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={open ? "x" : "menu"}
+                initial={{ opacity: 0, rotate: open ? -45 : 45, scale: 0.7 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: open ? 45 : -45, scale: 0.7 }}
+                transition={{ duration: 0.15 }}
+                className="absolute flex"
+              >
+                {open ? <X size={22} /> : <Menu size={22} />}
+              </motion.span>
+            </AnimatePresence>
           </button>
         </div>
       </header>
 
       {/* Mobile menu overlay */}
-      {open && (
-        <div className="fixed inset-0 z-40 bg-surface pt-16 flex flex-col overflow-y-auto">
-          <nav className="px-8 py-10 flex flex-col gap-1">
-            {navItems.map((item) => {
-              if (item.children) {
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            variants={overlayVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed inset-0 z-40 bg-surface pt-16 flex flex-col overflow-y-auto"
+          >
+            <motion.nav
+              variants={navListVariants}
+              initial="hidden"
+              animate="visible"
+              className="px-8 py-10 flex flex-col gap-1"
+            >
+              {navItems.map((item) => {
+                if (item.children) {
+                  return (
+                    <motion.div key={item.label} variants={navItemVariants}>
+                      <button
+                        className="flex items-center justify-between w-full py-4 border-b border-secondary/8 font-sans text-base text-secondary text-left"
+                        onClick={() => setOpenItem(openItem === item.label ? null : item.label)}
+                      >
+                        {item.label}
+                        <ChevronDown
+                          size={16}
+                          className={`opacity-40 transition-transform duration-200 ${openItem === item.label ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {openItem === item.label && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="overflow-hidden"
+                          >
+                            <div className="mb-2">
+                              {item.children.map((child) => (
+                                <Link
+                                  key={child.href}
+                                  href={child.href}
+                                  onClick={close}
+                                  className="block py-3 pl-4 font-sans uppercase text-sm text-secondary/70 hover:text-primary border-b border-secondary/5 last:border-0 transition-colors"
+                                >
+                                  {child.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  );
+                }
+
                 return (
-                  <div key={item.label}>
-                    <button
-                      className="flex items-center justify-between w-full py-4 border-b border-secondary/8 font-sans text-base text-secondary text-left"
-                      onClick={() => setOpenItem(openItem === item.label ? null : item.label)}
+                  <motion.div key={item.href} variants={navItemVariants}>
+                    <Link
+                      href={item.href}
+                      onClick={close}
+                      className="block py-4 border-b border-secondary/8 font-sans text-base text-secondary hover:text-primary transition-colors"
                     >
                       {item.label}
-                      <ChevronDown
-                        size={16}
-                        className={`opacity-40 transition-transform duration-200 ${openItem === item.label ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                    {openItem === item.label && (
-                      <div className="mb-2">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            onClick={close}
-                            className="block py-3 pl-4 font-sans uppercase text-sm text-secondary/70 hover:text-primary border-b border-secondary/5 last:border-0 transition-colors"
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                    </Link>
+                  </motion.div>
                 );
-              }
+              })}
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={close}
-                  className="block py-4 border-b border-secondary/8 font-sans text-base text-secondary hover:text-primary transition-colors"
-                >
-                  {item.label}
+              <motion.div variants={navItemVariants}>
+                <Link href="tel:+4576185656" onClick={close} className="block py-4 font-sans text-base text-primary font-medium">
+                  +45 76 18 56 56
                 </Link>
-              );
-            })}
-
-            <Link href="tel:+4576185656" onClick={close} className="block py-4 font-sans text-base text-primary font-medium">
-              +45 76 18 56 56
-            </Link>
-          </nav>
-        </div>
-      )}
+              </motion.div>
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -2,6 +2,7 @@ import { BriefcaseMedical, Microscope, Star } from "lucide-react";
 import { faqItems, services, treatmentDetails } from "@/data/home";
 
 import CtaSection from "@/components/sections/CtaSection";
+import FadeUp from "@/components/ui/FadeUp";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -88,10 +89,10 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {services.map((s) => (
+            {services.map((s, i) => (
+              <FadeUp key={s.title} delay={i * 0.08} className={`${s.span} ${s.minHeight}`}>
               <div
-                key={s.title}
-                className={`group relative overflow-hidden rounded-sm flex flex-col justify-between p-8 ${s.span} ${s.minHeight}`}
+                className="group relative overflow-hidden rounded-sm flex flex-col justify-between p-8 h-full w-full"
               >
                 <Image
                   src={s.image}
@@ -124,6 +125,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              </FadeUp>
             ))}
           </div>
         </div>

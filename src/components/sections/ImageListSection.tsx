@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
@@ -10,13 +13,29 @@ interface ImageListSectionProps {
   items: { text: string; icon: ReactNode }[];
 }
 
+const listContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07 } },
+};
+
+const listItemVariants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
+};
+
 export default function ImageListSection({ image, quote, label, heading, intro, items }: ImageListSectionProps) {
   const paragraphs = intro ? (Array.isArray(intro) ? intro : [intro]) : [];
 
   return (
     <section>
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-center">
-        <div className="relative rounded-sm overflow-hidden aspect-square">
+        <motion.div
+          className="relative rounded-sm overflow-hidden aspect-square"
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <Image src={image} alt="" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" />
           <div
             className="absolute inset-0"
@@ -31,8 +50,13 @@ export default function ImageListSection({ image, quote, label, heading, intro, 
               <p className="font-sans text-xs uppercase tracking-[0.15em] mt-3 text-secondary/65">- {quote.author}</p>
             </div>
           )}
-        </div>
-        <div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        >
           <p className="label mb-6">{label}</p>
           <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{heading}</h2>
           {paragraphs.length > 0 && (
@@ -42,18 +66,24 @@ export default function ImageListSection({ image, quote, label, heading, intro, 
               ))}
             </div>
           )}
-          <ul>
+          <motion.ul
+            variants={listContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+          >
             {items.map((item) => (
-              <li
+              <motion.li
                 key={item.text}
+                variants={listItemVariants}
                 className="flex items-center gap-4 font-sans font-medium text-sm leading-relaxed text-secondary border-b border-secondary/8 py-6"
               >
                 <span className="text-primary/75 shrink-0">{item.icon}</span>
                 {item.text}
-              </li>
+              </motion.li>
             ))}
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
       </div>
     </section>
   );

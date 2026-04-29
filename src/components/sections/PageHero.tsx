@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 
@@ -21,6 +24,16 @@ interface PageHeroProps {
   /** Override the default mobile gradient */
   mobileGradient?: string;
 }
+
+const contentVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
+};
 
 export default function PageHero({
   label,
@@ -82,14 +95,26 @@ export default function PageHero({
         )}
         <div className="absolute inset-0 hidden lg:block" style={{ background: desktopGradient }} />
         <div className="absolute inset-0 lg:hidden" style={{ background: mobileGradientBg }} />
-        <div className="relative z-10 w-full px-8 lg:px-24 lg:pb-20 pb-10 pt-32">
-          <p className="label mb-8 font-semibold">{label}</p>
-          <h1 className="font-serif text-3xl lg:text-4xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
+        <motion.div
+          className="relative z-10 w-full px-8 lg:px-24 lg:pb-20 pb-10 pt-32"
+          variants={contentVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p variants={itemVariants} className="label mb-8 font-semibold">
+            {label}
+          </motion.p>
+          <motion.h1
+            variants={itemVariants}
+            className="font-serif text-3xl lg:text-4xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl"
+          >
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
-          </h1>
-          <p className="font-sans text-base leading-relaxed mb-10 lg:max-w-md text-black/80">{subtitle}</p>
+          </motion.h1>
+          <motion.p variants={itemVariants} className="font-sans text-base leading-relaxed mb-10 lg:max-w-md text-black/80">
+            {subtitle}
+          </motion.p>
           {(cta || secondaryCta) && (
-            <div className="flex flex-col lg:flex-row lg:flex-wrap gap-4">
+            <motion.div variants={itemVariants} className="flex flex-col lg:flex-row lg:flex-wrap gap-4">
               {cta && (
                 <Button href={cta.href} className="w-full lg:w-auto">
                   {cta.label}
@@ -100,9 +125,9 @@ export default function PageHero({
                   {secondaryCta.label}
                 </Button>
               )}
-            </div>
+            </motion.div>
           )}
-        </div>
+        </motion.div>
       </section>
     );
   }
