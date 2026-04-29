@@ -23,7 +23,7 @@ export default function ImageListSection({ image, quote, label, heading, intro, 
           />
           {quote && (
             <div
-              className="absolute bottom-5 left-5 w-1/2 rounded-md p-5"
+              className="absolute top-5 left-5 lg:w-2/3 w-90% rounded-md p-5 mr-5"
               style={{ background: "rgba(250,243,238,0.82)", backdropFilter: "blur(12px)" }}
             >
               <p className="font-serif font-light text-base italic leading-relaxed text-secondary">&ldquo;{quote.text}&rdquo;</p>

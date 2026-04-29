@@ -6,6 +6,7 @@ const services = [
   { label: "Brystløft", href: "/behandlinger/brystloeft" },
   { label: "Brystreduktion", href: "/behandlinger/brystreduktion" },
   { label: "Implantatudskiftning", href: "/behandlinger/udskiftning-af-protese" },
+  { label: "Second Opinion", href: "/behandlinger/second-opinion" },
 ];
 
 export default function Footer() {

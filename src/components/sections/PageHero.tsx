@@ -87,7 +87,7 @@ export default function PageHero({
           <h1 className="font-serif text-3xl lg:text-4xl xl:text-6xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
           </h1>
-          <p className="font-sans text-base leading-relaxed mb-10 lg:max-w-2xs text-black/80">{subtitle}</p>
+          <p className="font-sans text-base leading-relaxed mb-10 lg:max-w-md text-black/80">{subtitle}</p>
           {(cta || secondaryCta) && (
             <div className="flex flex-col lg:flex-row lg:flex-wrap gap-4">
               {cta && (

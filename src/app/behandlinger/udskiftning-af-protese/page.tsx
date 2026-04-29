@@ -36,6 +36,7 @@ export default function Page() {
         h1Main="Udskiftning af brystimplantater"
         h1Italic="Stabilitet og præcision"
         image="/images/hero_implants_hands_three_beige.jpg"
+        mobileImage="/images/implants_hands_three_brown.jpg"
         subtitle="Udskiftning eller korrektion af tidligere indsatte brystimplantater kræver en særlig grad af kirurgisk præcision og erfaring. Hos Brystcenter Esbjerg prioriterer vi en stabil og korrekt placering af det nye implantat."
         cta={{ label: "Book en speciallægekonsultation i Esbjerg", href: "#book" }}
         secondaryCta={{ label: "Om brystimplantater", href: "/behandlinger/bfo-implantat" }}

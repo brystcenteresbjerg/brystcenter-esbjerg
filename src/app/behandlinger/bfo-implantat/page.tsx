@@ -51,7 +51,7 @@ export default function Page() {
         mobileImage="/images/implants_hands_one.jpg"
         cta={{ label: "Book en personlig konsultation i Esbjerg", href: "#book" }}
         secondaryCta={{ label: "Eget fedt som alternativ", href: "/behandlinger/bfo-eget-fedt-lipofilling" }}
-        mobileGradient=""
+        mobileGradient="linear-gradient(to top, rgba(250,243,238,0.5) 0%, rgba(250,243,238,0.4) 20%, rgba(250,243,238,0) 30%)"
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
