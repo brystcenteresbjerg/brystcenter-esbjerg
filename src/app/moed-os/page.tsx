@@ -2,6 +2,7 @@ import { Award, Leaf, Shield } from "lucide-react";
 import { expertiseItems, faqItems } from "@/data/moed-os";
 
 import CtaSection from "@/components/sections/CtaSection";
+import Image from "next/image";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -84,8 +85,8 @@ export default function Page() {
           </div>
 
           {/* ── BILLEDPLADSHOLDER ── skift src til det rigtige foto ── */}
-          <div className="rounded-sm overflow-hidden aspect-3/4 lg:max-w-sm lg:ml-auto w-full">
-            <img src="/images/troels_tei.jpg" alt="Speciallæge Troels Tei" className="w-full h-full object-cover" />
+          <div className="relative rounded-sm overflow-hidden aspect-3/4 lg:max-w-sm lg:ml-auto w-full">
+            <Image src="/images/troels_tei.jpg" alt="Speciallæge Troels Tei" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 384px" />
           </div>
         </div>
       </section>

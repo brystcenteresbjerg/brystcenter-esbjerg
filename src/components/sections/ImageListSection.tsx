@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 interface ImageListSectionProps {
@@ -16,7 +17,7 @@ export default function ImageListSection({ image, quote, label, heading, intro, 
     <section>
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-center">
         <div className="relative rounded-sm overflow-hidden aspect-square">
-          <img src={image} alt="" className="w-full h-full object-cover" />
+          <Image src={image} alt="" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" />
           <div
             className="absolute inset-0"
             style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 55%)" }}

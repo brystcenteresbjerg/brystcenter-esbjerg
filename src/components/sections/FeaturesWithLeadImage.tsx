@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 interface FeatureItem {
@@ -27,8 +28,8 @@ export default function FeaturesWithLeadImage({
         {/* Left: lead card with image */}
         <div className={`${cardBackground} rounded-sm overflow-hidden flex flex-col`}>
           <div className="px-10 py-10 flex-1">
-            <div className="aspect-video overflow-hidden rounded-sm mb-6">
-              <img src={image} alt="" className="w-full h-full object-cover" />
+            <div className="relative aspect-video overflow-hidden rounded-sm mb-6">
+              <Image src={image} alt="" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
             </div>
             <div className="flex">
               {lead.icon && <div className="mb-4 mr-2 text-tertiary">{lead.icon}</div>}

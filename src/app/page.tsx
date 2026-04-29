@@ -2,6 +2,7 @@ import { BriefcaseMedical, Microscope, Star } from "lucide-react";
 import { faqItems, services, treatmentDetails } from "@/data/home";
 
 import CtaSection from "@/components/sections/CtaSection";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -92,10 +93,12 @@ export default function Home() {
                 key={s.title}
                 className={`group relative overflow-hidden rounded-sm flex flex-col justify-between p-8 ${s.span} ${s.minHeight}`}
               >
-                <img
+                <Image
                   src={s.image}
                   alt=""
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div
                   className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"

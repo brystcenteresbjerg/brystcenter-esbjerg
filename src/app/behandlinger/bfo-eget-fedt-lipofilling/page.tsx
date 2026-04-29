@@ -10,6 +10,7 @@ import {
 } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
 
 import CtaSection from "@/components/sections/CtaSection";
+import Image from "next/image";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import FeaturesWithLeadImage from "@/components/sections/FeaturesWithLeadImage";
 import type { Metadata } from "next";
@@ -62,11 +63,11 @@ export default function Page() {
         align="center"
       >
         <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-sm overflow-hidden aspect-square">
-            <img src="/images/collarbone_shoulder_hair.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-sm overflow-hidden aspect-square">
+            <Image src="/images/collarbone_shoulder_hair.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
           </div>
-          <div className="rounded-sm overflow-hidden aspect-square mt-8">
-            <img src="/images/curls_smile_brunette.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-sm overflow-hidden aspect-square mt-8">
+            <Image src="/images/curls_smile_brunette.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
           </div>
         </div>
       </SplitSection>
@@ -101,11 +102,11 @@ export default function Page() {
         background="bg-surface-container-low"
       >
         <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-sm overflow-hidden aspect-square">
-            <img src="/images/abdomen.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-sm overflow-hidden aspect-square">
+            <Image src="/images/abdomen.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
           </div>
-          <div className="rounded-sm overflow-hidden aspect-square mt-8">
-            <img src="/images/skin.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-sm overflow-hidden aspect-square mt-8">
+            <Image src="/images/skin.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
           </div>
         </div>
       </SplitSection>

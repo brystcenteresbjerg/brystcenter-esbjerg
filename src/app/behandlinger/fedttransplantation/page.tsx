@@ -2,6 +2,7 @@ import { ArrowUp, Sparkles, Zap } from "lucide-react";
 import { cta, faqItems, features, intro, introQuote } from "@/data/behandlinger/fedttransplantation";
 
 import CtaSection from "@/components/sections/CtaSection";
+import Image from "next/image";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -49,11 +50,11 @@ export default function Page() {
       {/* ── INTRO ────────────────────────────────────────────────── */}
       <SplitSection label={intro.label} heading={intro.heading} body={intro.body} align="center">
         <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-sm overflow-hidden aspect-square">
-            <img src="/images/leg_hands_touching.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-sm overflow-hidden aspect-square">
+            <Image src="/images/leg_hands_touching.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
           </div>
-          <div className="rounded-sm overflow-hidden aspect-square mt-8">
-            <img src="/images/skin.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="relative rounded-sm overflow-hidden aspect-square mt-8">
+            <Image src="/images/skin.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
           </div>
         </div>
       </SplitSection>
