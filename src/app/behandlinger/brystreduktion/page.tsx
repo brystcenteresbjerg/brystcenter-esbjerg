@@ -35,7 +35,7 @@ export default function Page() {
         label="Brystreduktion"
         h1Main="Brystreduktion"
         h1Italic="med fokus på form og proportioner"
-        image="/images/hero-silk.png"
+        image="/images/hero-silk.jpg"
         subtitle="En brystreduktion (reduktionsplastik) er et kirurgisk indgreb, der har til formål at reducere brysternes størrelse og vægt, samtidig med at brystets form og proportioner forbedres. Hos Brystcenter Esbjerg betragter vi indgrebet som en individuelt tilpasset proces, hvor vi forener medicinsk nødvendighed med æstetisk præcision."
         cta={{ label: "Book en speciallægekonsultation i Esbjerg", href: "#book" }}
         secondaryCta={{ label: "Se også brystløft", href: "/behandlinger/brystloeft" }}

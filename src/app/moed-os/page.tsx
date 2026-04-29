@@ -85,7 +85,7 @@ export default function Page() {
 
           {/* ── BILLEDPLADSHOLDER ── skift src til det rigtige foto ── */}
           <div className="rounded-sm overflow-hidden aspect-3/4 lg:max-w-sm lg:ml-auto w-full">
-            <img src="/images/troels_tei.png" alt="Speciallæge Troels Tei" className="w-full h-full object-cover" />
+            <img src="/images/troels_tei.jpg" alt="Speciallæge Troels Tei" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
