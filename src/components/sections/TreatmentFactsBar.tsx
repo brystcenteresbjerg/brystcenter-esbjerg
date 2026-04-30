@@ -14,7 +14,7 @@ export default function TreatmentFactsBar({ name, price, facts }: TreatmentFacts
       <FadeUp>
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16">
           <div className="lg:w-56 shrink-0">
-            <p className="font-sans text-sm font-semibold text-secondary mb-1">{name}</p>
+            <p className="font-sans text-lg font-semibold text-secondary mb-1">{name}</p>
             <p className="font-serif text-lg font-light text-primary mb-5">{price}</p>
             <Link
               href="/priser"
@@ -27,8 +27,10 @@ export default function TreatmentFactsBar({ name, price, facts }: TreatmentFacts
             {facts.map((fact, i) => (
               <FadeUp key={fact.label} delay={i * 0.06}>
                 <div>
-                  <p className="font-sans text-[10px] uppercase tracking-[0.15em] text-secondary/55 mb-1.5">{fact.label}</p>
-                  <p className="font-sans text-sm font-medium text-secondary">{fact.value}</p>
+                  <p className="font-sans font-medium text-xs uppercase tracking-[0.15em] text-secondary/55 mb-1.5">
+                    {fact.label}
+                  </p>
+                  <p className="font-sans text-lg font-medium text-secondary">{fact.value}</p>
                 </div>
               </FadeUp>
             ))}

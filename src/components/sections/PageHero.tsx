@@ -1,9 +1,10 @@
 "use client";
 
 import { stagger, useAnimate } from "motion/react";
-import { useEffect } from "react";
+
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import { useEffect } from "react";
 
 interface PageHeroProps {
   label: string;
@@ -49,7 +50,7 @@ export default function PageHero({
     animate(
       ".hero-item",
       { opacity: [0, 1], y: [14, 0] },
-      { duration: 0.6, ease: "easeOut", delay: stagger(0.12, { startDelay: 0.25 }) }
+      { duration: 0.6, ease: "easeOut", delay: stagger(0.12, { startDelay: 0.25 }) },
     );
   }, [animate]);
 
@@ -105,7 +106,7 @@ export default function PageHero({
           <h1 className="hero-item font-serif text-2xl lg:text-3xl xl:text-5xl font-semibold leading-[1.1] text-secondary mb-8 max-w-5xl">
             {h1Main} <span className="block italic font-light">{h1Italic}</span>
           </h1>
-          <p className="hero-item font-sans text-base leading-relaxed mb-10 lg:max-w-lg text-black/80">{subtitle}</p>
+          <p className="hero-item font-sans text-lg leading-relaxed mb-10 lg:max-w-lg text-black/80">{subtitle}</p>
           {(cta || secondaryCta) && (
             <div className="hero-item flex flex-col lg:flex-row lg:flex-wrap gap-4">
               {cta && (

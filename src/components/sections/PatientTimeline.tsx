@@ -98,7 +98,7 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
                 <h2 className="font-serif text-2xl lg:text-4xl xl:text-5xl font-semibold text-secondary mb-6 leading-tight">
                   {steps[activeStep].title}
                 </h2>
-                <p className="font-sans text-base leading-relaxed text-secondary/75 max-w-lg">{steps[activeStep].body}</p>
+                <p className="font-sans text-lg leading-relaxed text-secondary/75 max-w-lg">{steps[activeStep].body}</p>
 
                 {activeStep < steps.length - 1 && (
                   <motion.div className="mt-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
@@ -106,14 +106,14 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
                       animate={{ y: [0, 6, 0], opacity: [0.3, 0.7, 0.3] }}
                       transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <ChevronDown size={20} className="text-secondary/55" />
+                      <ChevronDown size={20} className="text-secondary/65" />
                     </motion.div>
                   </motion.div>
                 )}
               </div>
 
               {steps[activeStep].time && (
-                <p className="font-sans text-sm text-secondary/65 tracking-[0.08em] shrink-0">{steps[activeStep].time}</p>
+                <p className="font-sans text-lg text-secondary/65 tracking-[0.08em] shrink-0">{steps[activeStep].time}</p>
               )}
             </motion.div>
           </AnimatePresence>

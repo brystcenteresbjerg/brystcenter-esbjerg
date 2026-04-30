@@ -41,7 +41,7 @@ function Accordion({ items }: { items: FAQItem[] }) {
                 transition={{ duration: 0.25, ease: "easeInOut" }}
                 className="overflow-hidden"
               >
-                <p className="pb-6 font-sans text-base leading-relaxed text-secondary/75 max-w-2xl">{item.a}</p>
+                <p className="pb-6 font-sans text-lg leading-relaxed text-secondary/75 max-w-2xl">{item.a}</p>
               </motion.div>
             )}
           </AnimatePresence>

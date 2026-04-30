@@ -62,7 +62,7 @@ export default function Testimonial({ quote, name, treatment }: TestimonialProps
                   sm:grid-cols-[64px_1fr] sm:gap-x-5 sm:gap-y-3"
         >
           <p
-            className="col-span-2 font-serif text-base leading-relaxed text-secondary
+            className="col-span-2 font-serif text-lg leading-relaxed text-secondary
                   sm:col-span-1 sm:col-start-2 sm:row-start-1"
           >
             &ldquo;{quote}&rdquo;
@@ -73,7 +73,7 @@ export default function Testimonial({ quote, name, treatment }: TestimonialProps
                     flex items-center justify-center
                     font-extrabold text-primary tracking-widest text-xs
                     self-center
-                    sm:w-16 sm:h-16 sm:text-base sm:row-start-1 sm:self-start"
+                    sm:w-16 sm:h-16 sm:text-lg sm:row-start-1 sm:self-start"
           >
             {initials}
           </div>

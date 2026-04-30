@@ -50,13 +50,13 @@ export default function Page() {
           <div>
             <p className="label mb-6">{introLeft.label}</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{introLeft.heading}</h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75 mb-5">{introLeft.body}</p>
-            {introLeft.body2 && <p className="font-sans text-base leading-relaxed text-secondary/75">{introLeft.body2}</p>}
+            <p className="font-sans text-lg leading-relaxed text-secondary/75 mb-5">{introLeft.body}</p>
+            {introLeft.body2 && <p className="font-sans text-lg leading-relaxed text-secondary/75">{introLeft.body2}</p>}
           </div>
           <div>
             <p className="label mb-6">{introRight.label}</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{introRight.heading}</h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">{introRight.body}</p>
+            <p className="font-sans text-lg leading-relaxed text-secondary/75">{introRight.body}</p>
           </div>
         </div>
       </section>

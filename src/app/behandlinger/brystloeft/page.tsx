@@ -53,7 +53,7 @@ export default function Page() {
           <div>
             <p className="label mb-6">{intro.label}</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{intro.heading}</h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">{intro.body}</p>
+            <p className="font-sans text-lg leading-relaxed text-secondary/75">{intro.body}</p>
           </div>
           <Testimonial quote={testimonial.quote} name={testimonial.name} treatment={testimonial.treatment} />
         </div>

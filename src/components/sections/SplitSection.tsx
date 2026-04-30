@@ -32,7 +32,7 @@ export default function SplitSection({
             {icon && <div className="mb-5 text-tertiary">{icon}</div>}
             <p className="label mb-6">{label}</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{heading}</h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">{body}</p>
+            <p className="font-sans text-lg leading-relaxed text-secondary/75">{body}</p>
           </div>
         </FadeUp>
         <FadeUp delay={0.15}>

@@ -35,7 +35,7 @@ export default function Home() {
       <PageHero
         label="Brystcenter Esbjerg"
         h1Main="Skræddersyet kosmetisk"
-        h1Italic="plastik kirurgi"
+        h1Italic="plastikkirurgi"
         subtitle="En specialiseret enhed under Privathospitalet Kollund, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat."
         video="/videos/woman_sunlight_one.mp4"
         videoPoster="/images/video_cap.jpg"
@@ -52,14 +52,14 @@ export default function Home() {
             <h2 className="font-serif lg:text-2xl text-lg font-semibold text-secondary mb-5 leading-snug">
               Hele forløbet samlet ét sted - i Esbjerg
             </h2>
-            <p className="font-sans text-sm leading-relaxed text-secondary/75 mb-4">
+            <p className="font-sans text-lg leading-relaxed text-secondary/75 mb-4">
               Hos Brystcenter Esbjerg tror vi på, at tryghed skabes gennem kontinuitet. Vi har valgt at samle hele din{" "}
               <Link href="/patientrejsen" className="text-primary hover:underline underline-offset-2">
                 patientrejse
               </Link>{" "}
               under ét tag, så du aldrig skal rejse mellem forskellige byer eller klinikker for at gennemføre dit forløb.
             </p>
-            <p className="font-sans text-sm leading-relaxed text-secondary/75">
+            <p className="font-sans text-lg leading-relaxed text-secondary/75">
               Fra din første forundersøgelse til selve operationsdagen og de efterfølgende kontroller foregår alt i vores rammer i
               Esbjerg. Du er gennem hele forløbet tilknyttet den samme speciallæge, som kender din forhistorie og dine ønsker.
             </p>
@@ -69,7 +69,7 @@ export default function Home() {
             <h2 className="font-serif lg:text-2xl text-lg font-semibold text-secondary mb-5 leading-snug">
               Specialister i naturlig harmoni
             </h2>
-            <p className="font-sans text-sm leading-relaxed text-secondary/75">
+            <p className="font-sans text-lg leading-relaxed text-secondary/75">
               Uanset om dit ønske er en brystforstørrelse, et brystløft eller en brystreduktion, tilbyder vi et forløb baseret på
               tryghed og faglig tyngde. Vi arbejder ud fra en filosofi om naturlig harmoni, hvor valget af metode altid afhænger
               af din specifikke vævskvalitet, anatomi og det ønskede resultat. Hos os møder du ikke standardløsninger, men
@@ -84,7 +84,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-serif lg:text-4xl text-2xl font-semibold text-secondary mb-4">Vores Ekspertise</h2>
-            <p className="font-sans text-base max-w-md mx-auto text-secondary/70">
+            <p className="font-sans text-lg max-w-md mx-auto text-secondary/70">
               Udvalgte indgreb med fokus på naturlighed, holdbarhed og individuel tilpasning til din anatomi.
             </p>
           </div>
@@ -92,40 +92,38 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {services.map((s, i) => (
               <FadeUp key={s.title} delay={i * 0.08} className={`${s.span} ${s.minHeight}`}>
-              <div
-                className="group relative overflow-hidden rounded-sm flex flex-col justify-between p-8 h-full w-full"
-              >
-                <Image
-                  src={s.image}
-                  alt=""
-                  fill
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div
-                  className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
-                  style={{
-                    background:
-                      "linear-gradient(to top, rgba(30,20,10,0.80) 0%, rgba(30,20,10,0.35) 70%, rgba(30,20,10,0.10) 100%)",
-                  }}
-                />
-                <p className="relative z-10 font-sans text-[10px] uppercase tracking-[0.18em] text-white/95">{s.category}</p>
-                <div className="relative z-10">
-                  <h2 className="font-serif lg:text-2xl text-xl font-semibold text-white mb-2">{s.title}</h2>
-                  {s.showDesc && <p className="font-sans text-sm leading-relaxed mb-5 text-on-primary/68">{s.desc}</p>}
-                  <div className={`flex flex-wrap gap-3 ${!s.showDesc ? "mt-3" : ""}`}>
-                    {s.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.15em] uppercase font-bold text-tertiary hover:text-white transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
+                <div className="group relative overflow-hidden rounded-sm flex flex-col justify-between p-8 h-full w-full">
+                  <Image
+                    src={s.image}
+                    alt=""
+                    fill
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div
+                    className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-80"
+                    style={{
+                      background:
+                        "linear-gradient(to top, rgba(30,20,10,0.80) 0%, rgba(30,20,10,0.35) 70%, rgba(30,20,10,0.10) 100%)",
+                    }}
+                  />
+                  <p className="relative z-10 font-sans text-[10px] uppercase tracking-[0.18em] text-white/95">{s.category}</p>
+                  <div className="relative z-10">
+                    <h2 className="font-serif lg:text-2xl text-xl font-semibold text-white mb-2">{s.title}</h2>
+                    {s.showDesc && <p className="font-sans text-lg leading-relaxed mb-5 text-on-primary/68">{s.desc}</p>}
+                    <div className={`flex flex-wrap gap-3 ${!s.showDesc ? "mt-3" : ""}`}>
+                      {s.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="inline-flex items-center gap-1.5 font-sans text-xs tracking-[0.15em] uppercase font-bold text-tertiary hover:text-white transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
               </FadeUp>
             ))}
           </div>
@@ -138,7 +136,7 @@ export default function Home() {
           {treatmentDetails.map((group) => (
             <div key={group.heading}>
               <h2 className="font-serif text-xl font-semibold text-secondary mb-4 leading-snug">{group.heading}</h2>
-              {group.intro && <p className="font-sans text-sm text-secondary/70 leading-relaxed mb-6">{group.intro}</p>}
+              {group.intro && <p className="font-sans text-lg text-secondary/70 leading-relaxed mb-6">{group.intro}</p>}
               <div className="space-y-5">
                 {group.items.map((item, i) => (
                   <div key={i}>
@@ -184,8 +182,8 @@ export default function Home() {
                     {item.icon}
                   </div>
                   <div className="pt-1">
-                    <p className="font-sans text-sm font-semibold text-secondary mb-2">{item.label}</p>
-                    <p className="font-sans text-base leading-relaxed text-secondary/70">{item.text}</p>
+                    <p className="font-sans text-lg font-semibold text-secondary mb-2">{item.label}</p>
+                    <p className="font-sans text-lg leading-relaxed text-secondary/70">{item.text}</p>
                   </div>
                 </div>
               ))}

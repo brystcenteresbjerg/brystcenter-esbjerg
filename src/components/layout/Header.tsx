@@ -62,9 +62,9 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 bg-nude backdrop-blur-[20px]">
-        <div className="max-w-8xl mx-auto px-8 lg:px-16 h-16 flex items-center justify-between gap-8">
-          <Link href="/" className="shrink-0 w-62 mt-1 mb-1" onClick={close}>
-            <img src="/logos/brystcenter-primary.svg" alt="Brystcenter Esbjerg Logo" />
+        <div className="max-w-8xl mx-auto px-8 lg:px-16 h-20 flex items-center justify-between gap-8">
+          <Link href="/" className="shrink-0" onClick={close}>
+            <img src="/logos/logo_terracotta_primary.png" alt="Brystcenter Logo" className="h-14" />
           </Link>
 
           {/* Desktop nav */}
@@ -72,11 +72,12 @@ export default function Header() {
             {navItems.map((item) => {
               if (item.children) {
                 const active = isDropdownActive(item.children);
+
                 return (
                   <div key={item.label} className="group relative flex items-center">
                     {active && <span className="absolute bottom-0 inset-x-0 h-0.5 bg-primary" />}
                     <button
-                      className={`flex items-center gap-1.5 font-sans text-sm transition-colors cursor-pointer ${
+                      className={`flex items-center gap-1.5 font-sans text-base transition-colors cursor-pointer ${
                         active ? "text-primary" : "text-secondary/80 hover:text-primary"
                       }`}
                     >
@@ -112,7 +113,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative font-sans text-sm transition-colors pb-0.5 whitespace-nowrap flex items-center ${
+                  className={`relative font-sans text-base transition-colors pb-0.5 whitespace-nowrap flex items-center ${
                     isActive(item.href)
                       ? "text-primary after:absolute after:bottom-0 after:inset-x-0 after:h-0.5 after:bg-primary"
                       : "text-secondary/80 hover:text-primary"
@@ -128,7 +129,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-5 shrink-0">
             <Link
               href="tel:+4576185656"
-              className="flex items-center gap-2 font-sans text-sm text-secondary/75 hover:text-primary transition-colors border-l border-secondary/12 pl-5"
+              className="flex items-center gap-2 font-sans text-base text-secondary/75 hover:text-primary transition-colors border-l border-secondary/12 pl-5"
             >
               <Phone size={13} className="opacity-60" />
               +45 76 18 56 56
@@ -165,17 +166,12 @@ export default function Header() {
         {open && (
           <motion.div
             variants={overlayVariants}
-            initial="hidden"
+            initial="visible"
             animate="visible"
             exit="exit"
-            className="fixed inset-0 z-40 bg-surface pt-16 flex flex-col overflow-y-auto"
+            className="fixed inset-0 z-40 bg-surface pt-20 flex flex-col overflow-y-auto"
           >
-            <motion.nav
-              variants={navListVariants}
-              initial="hidden"
-              animate="visible"
-              className="px-8 py-10 flex flex-col gap-1"
-            >
+            <motion.nav variants={navListVariants} initial="visible" animate="visible" className="px-8 py-10 flex flex-col gap-1">
               {navItems.map((item) => {
                 if (item.children) {
                   return (
@@ -205,7 +201,7 @@ export default function Header() {
                                   key={child.href}
                                   href={child.href}
                                   onClick={close}
-                                  className="block py-3 pl-4 font-sans uppercase text-sm text-secondary/70 hover:text-primary border-b border-secondary/5 last:border-0 transition-colors"
+                                  className="block py-3 pl-4 font-sans uppercase text-base text-secondary/70 hover:text-primary border-b border-secondary/5 last:border-0 transition-colors"
                                 >
                                   {child.label}
                                 </Link>
@@ -232,7 +228,7 @@ export default function Header() {
               })}
 
               <motion.div variants={navItemVariants}>
-                <Link href="tel:+4576185656" onClick={close} className="block py-4 font-sans text-base text-primary font-medium">
+                <Link href="tel:+4576185656" onClick={close} className="block py-4 font-sans text-sm text-primary font-medium">
                   +45 76 18 56 56
                 </Link>
               </motion.div>

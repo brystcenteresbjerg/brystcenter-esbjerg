@@ -35,8 +35,8 @@ export default function Page() {
           <div className="space-y-8">
             {faqs.map((item) => (
               <div key={item.q} className="border-b border-secondary/8 pb-8 last:border-0">
-                <p className="font-sans text-sm font-semibold text-secondary mb-3">{item.q}</p>
-                <p className="font-sans text-sm leading-relaxed text-secondary/70">{item.a}</p>
+                <p className="font-sans text-lg font-semibold text-secondary mb-3">{item.q}</p>
+                <p className="font-sans text-lg leading-relaxed text-secondary/70">{item.a}</p>
               </div>
             ))}
           </div>

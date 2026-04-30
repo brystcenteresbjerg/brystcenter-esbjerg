@@ -16,18 +16,18 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <Link href="/" className="block w-56 mb-5 shrink-0">
-            <img src="/logos/brystcenter-primary-reversed.svg" alt="Brystcenter Esbjerg Logo" />
+            <img src="/logos/logo_light.png" alt="Brystcenter Esbjerg Logo" />
           </Link>
-          <p className="font-sans text-sm leading-relaxed">Specialister i regenerativ brystkirurgi i Esbjerg.</p>
+          <p className="font-sans text-base leading-relaxed">Specialister i regenerativ brystkirurgi i Esbjerg.</p>
         </div>
 
         {/* Ydelser */}
         <div>
-          <p className="font-sans text-xs uppercase tracking-widest text-on-primary/80 mb-5">Behandlinger</p>
+          <p className="font-sans text-sm uppercase font-medium tracking-widest text-on-primary/80 mb-5">Behandlinger</p>
           <ul className="space-y-3">
             {services.map((s) => (
               <li key={s.href}>
-                <Link href={s.href} className="font-sans text-sm  hover:text-on-primary transition-colors">
+                <Link href={s.href} className="font-sans text-base  hover:text-on-primary transition-colors">
                   {s.label}
                 </Link>
               </li>
@@ -37,15 +37,15 @@ export default function Footer() {
 
         {/* Kontakt */}
         <div>
-          <p className="font-sans text-xs uppercase tracking-widest text-on-primary/80 mb-5 ">Kontakt</p>
+          <p className="font-sans text-sm font-medium uppercase tracking-widest text-on-primary/80 mb-5 ">Kontakt</p>
           <address className="not-italic space-y-3">
-            <p className="font-sans text-sm">Bavnehøjvej 2</p>
-            <p className="font-sans text-sm ">6700 Esbjerg</p>
-            <p className="font-sans text-sm ">Tlf. +45 22288888</p>
+            <p className="font-sans text-base">Bavnehøjvej 2</p>
+            <p className="font-sans text-base ">6700 Esbjerg</p>
+            <p className="font-sans text-base ">Tlf. +45 22288888</p>
           </address>
           <Link
             href="https://www.privathospitaletkollund.com/"
-            className="font-sans text-sm block hover:text-on-primary mt-3 transition-colors"
+            className="font-sans text-base block hover:text-on-primary mt-3 transition-colors"
           >
             En del af Privathospitalet Kollund
           </Link>

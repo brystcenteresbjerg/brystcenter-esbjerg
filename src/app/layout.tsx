@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
-import { Noto_Serif, Manrope } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+
+import { Manrope, Noto_Serif } from "next/font/google";
+
 import ConsultationFloat from "@/components/layout/ConsultationFloat";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const notoSerif = Noto_Serif({
@@ -32,14 +34,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="da"
-      data-scroll-behavior="smooth"
-      className={`${notoSerif.variable} ${manrope.variable} h-full antialiased`}
-    >
+    <html lang="da" data-scroll-behavior="smooth" className={`${notoSerif.variable} ${manrope.variable} h-full antialiased`}>
+      <head>
+        <link rel="icon" href="/icon_light.png" type="image/png" media="(prefers-color-scheme: light)" />
+        <link rel="icon" href="/icon_dark.png" type="image/png" media="(prefers-color-scheme: dark)" />
+      </head>
       <body className="min-h-full flex flex-col bg-surface text-on-background">
         <Header />
-        <div className="flex-1 pt-16">{children}</div>
+        <div className="flex-1 pt-20">{children}</div>
         <ConsultationFloat />
         <Footer />
         <SpeedInsights />
