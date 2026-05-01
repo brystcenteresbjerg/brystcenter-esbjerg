@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+
 import { useState } from "react";
 
 export interface ForlobetStep {
@@ -9,7 +10,6 @@ export interface ForlobetStep {
   title: string;
   body: string;
   bullets: string[];
-  when: string;
   duration: string;
 }
 
@@ -28,22 +28,17 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
   return (
     <section className="px-8 lg:px-16 py-24 bg-surface-container-low" aria-labelledby="forlobet-heading">
       <div className="max-w-6xl mx-auto">
-
         {/* Intro */}
         <div className="max-w-3xl mb-14">
           <p className="label mb-6">{label}</p>
           <h2 id="forlobet-heading" className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
             {heading}
           </h2>
-          <p className="font-sans text-base leading-relaxed text-secondary/75">{body}</p>
+          <p className="font-sans text-base leading-relaxed text-secondary/90">{body}</p>
         </div>
 
         {/* Step tabs */}
-        <div
-          role="tablist"
-          className="grid grid-cols-2 md:grid-cols-5"
-          style={{ borderTop: "1px solid rgba(44,62,80,0.10)" }}
-        >
+        <div role="tablist" className="grid grid-cols-2 md:grid-cols-5" style={{ borderTop: "1px solid rgba(44,62,80,0.10)" }}>
           {steps.map((step, i) => {
             const isActive = i === active;
             return (
@@ -67,7 +62,7 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
                   className="font-serif block mb-1.5 transition-colors"
                   style={{
                     fontSize: 14,
-                    color: isActive ? "var(--primary)" : "rgba(44,62,80,0.45)",
+                    color: isActive ? "var(--primary)" : "rgba(44,62,80,0.75)",
                     fontWeight: 500,
                     letterSpacing: "0.05em",
                   }}
@@ -79,7 +74,7 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
                   style={{
                     fontSize: 13,
                     fontWeight: isActive ? 600 : 500,
-                    color: isActive ? "var(--secondary)" : "rgba(44,62,80,0.55)",
+                    color: isActive ? "var(--secondary)" : "rgba(44,62,80,0.80)",
                     lineHeight: 1.3,
                   }}
                 >
@@ -109,25 +104,20 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
               >
                 <p
                   className="font-sans uppercase mb-3"
-                  style={{ fontSize: 11, letterSpacing: "0.18em", color: "rgba(125,86,45,0.85)" }}
+                  style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--primary)" }}
                 >
-                  Trin {active + 1} af {steps.length} · {s.duration} · {s.when}
+                  Trin {active + 1} af {steps.length} · {s.duration}
                 </p>
-                <h3
-                  className="font-serif text-3xl text-secondary mb-5 leading-snug"
-                  style={{ fontWeight: 500 }}
-                >
+                <h3 className="font-serif text-2xl text-secondary mb-5 leading-snug" style={{ fontWeight: 500 }}>
                   {s.title}
                 </h3>
-                <p className="font-sans text-base leading-relaxed text-secondary/75 mb-7">
-                  {s.body}
-                </p>
+                <p className="font-sans text-base leading-relaxed text-secondary/90 mb-7">{s.body}</p>
                 <ul
                   className="flex flex-col gap-2.5 mb-10"
                   style={{ borderLeft: "2px solid var(--primary-container)", paddingLeft: 18 }}
                 >
                   {s.bullets.map((b) => (
-                    <li key={b} className="font-sans text-sm text-secondary/75">
+                    <li key={b} className="font-sans text-sm text-secondary/85">
                       {b}
                     </li>
                   ))}
@@ -151,10 +141,7 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
               >
                 ← Forrige
               </button>
-              <div
-                className="flex-1 h-[2px] relative"
-                style={{ background: "rgba(125,86,45,0.15)" }}
-              >
+              <div className="flex-1 h-0.5 relative" style={{ background: "rgba(125,86,45,0.15)" }}>
                 <motion.div
                   className="absolute left-0 top-0 h-full"
                   style={{ background: "var(--primary)" }}
@@ -181,13 +168,10 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
 
           {/* Right — side card */}
           <aside className="lg:col-span-5">
-            <div
-              className="rounded-sm p-8"
-              style={{ background: "var(--surface)", border: "1px solid rgba(44,62,80,0.10)" }}
-            >
+            <div className="rounded-sm p-8" style={{ background: "var(--surface)", border: "1px solid rgba(44,62,80,0.10)" }}>
               <p
                 className="font-sans uppercase mb-5"
-                style={{ fontSize: 10, letterSpacing: "0.20em", color: "rgba(44,62,80,0.55)" }}
+                style={{ fontSize: 10, letterSpacing: "0.20em", color: "rgba(44,62,80,0.80)" }}
               >
                 Trin i overblik
               </p>
@@ -201,7 +185,7 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
                         className="font-serif tabular-nums shrink-0 transition-colors"
                         style={{
                           fontSize: 13,
-                          color: isActive ? "var(--primary)" : isPast ? "rgba(125,86,45,0.5)" : "rgba(44,62,80,0.35)",
+                          color: isActive ? "var(--primary)" : isPast ? "rgba(125,86,45,0.80)" : "rgba(44,62,80,0.65)",
                           fontWeight: isActive ? 500 : 400,
                           width: 24,
                         }}
@@ -211,7 +195,7 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
                       <span
                         className="font-sans text-sm transition-colors"
                         style={{
-                          color: isActive ? "var(--secondary)" : "rgba(44,62,80,0.55)",
+                          color: isActive ? "var(--secondary)" : "rgba(44,62,80,0.80)",
                           fontWeight: isActive ? 600 : 400,
                         }}
                       >
@@ -219,7 +203,7 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
                       </span>
                       <span
                         className="font-sans ml-auto"
-                        style={{ fontSize: 11, color: "rgba(44,62,80,0.45)", letterSpacing: "0.05em" }}
+                        style={{ fontSize: 11, color: "rgba(44,62,80,0.75)", letterSpacing: "0.05em" }}
                       >
                         {step.duration}
                       </span>
@@ -230,16 +214,14 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
               <div className="mt-7 pt-6" style={{ borderTop: "1px solid rgba(44,62,80,0.10)" }}>
                 <p
                   className="font-sans uppercase mb-2"
-                  style={{ fontSize: 10, letterSpacing: "0.18em", color: "rgba(44,62,80,0.55)" }}
+                  style={{ fontSize: 10, letterSpacing: "0.18em", color: "rgba(44,62,80,0.75)" }}
                 >
                   Samlet
                 </p>
                 <p className="font-serif text-lg text-secondary" style={{ fontWeight: 500 }}>
                   2–3 timer · ambulant
                 </p>
-                <p className="font-sans text-xs text-secondary/60 mt-1">
-                  Fuld narkose · kontrol efter 6 mdr.
-                </p>
+                <p className="font-sans text-xs text-secondary/85 mt-1">Fuld narkose · kontrol efter 6 mdr.</p>
               </div>
             </div>
           </aside>

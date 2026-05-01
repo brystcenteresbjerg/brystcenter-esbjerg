@@ -58,7 +58,6 @@ export interface ForlobetStep {
   title: string;
   body: string;
   bullets: string[];
-  when: string;
   duration: string;
 }
 
@@ -69,7 +68,6 @@ export const forloebetSteps: ForlobetStep[] = [
     title: "Skånsom fedtsugning af donorområde",
     body: "Indgrebet starter med en kontrolleret høst af fedt fra de aftalte områder. Vi anvender lukkede, lavtryks-systemer og tynde kanyler, så fedtcellerne forbliver intakte. Den skånsomme teknik er afgørende for cellernes overlevelse – og donorområdet får samtidig en fin konturering.",
     bullets: ["Lukket, vævsbeskyttende system", "Tynde kanyler – minimal arvæv", "Konturering af mave / hofter / lår"],
-    when: "Trin 1 af 3 i op.",
     duration: "45–60 min",
   },
   {
@@ -78,7 +76,6 @@ export const forloebetSteps: ForlobetStep[] = [
     title: "Rensning og koncentration af fedtvæv",
     body: "Det høstede væv overføres til et lukket, sterilt kredsløb, hvor olie, blod og bedøvelsesvæske separeres fra de levedygtige fedtceller og stamceller. Resultatet er et koncentreret, rent transplantat – kun det bedst egnede væv injiceres tilbage.",
     bullets: ["Sterilt, lukket kredsløb", "Adskillelse af olie og bedøvelse", "Bevarelse af regenerative celler"],
-    when: "Trin 2 af 3 i op.",
     duration: "20–30 min",
   },
   {
@@ -87,7 +84,6 @@ export const forloebetSteps: ForlobetStep[] = [
     title: "Præcis micro-injektion i brystet",
     body: "Fedtet placeres i mange små depoter gennem 2–3 mm kanyler – i flere lag og fra forskellige indstik for at opnå en jævn, tredimensionel fordeling. Den fine spredning sikrer, at hver enkelt fedtcelle hurtigt får adgang til ilt og blodforsyning, hvilket er forudsætningen for permanent integration. Vi overkorrigerer typisk en smule, da kroppen naturligt absorberer 20–40 % af det indsatte fedt.",
     bullets: ["Multi-layer micro-droplet teknik", "2–3 mm indstik – næsten usynlige ar", "Bevidst overkorrektion 20–30 %"],
-    when: "Trin 3 af 3 i op.",
     duration: "60–90 min",
   },
   {
@@ -96,7 +92,6 @@ export const forloebetSteps: ForlobetStep[] = [
     title: "Restitution og endelig vurdering",
     body: "De første dage er præget af mild ømhed og hævelse. De fleste er tilbage på let kontorarbejde efter 1–2 uger. Det transplanterede væv etablerer egen blodforsyning over de første 3–4 måneder, og det endelige resultat vurderes ved kontrol efter ca. 6 måneder, når volumen har stabiliseret sig.",
     bullets: ["Tilbage på job efter 1–2 uger", "Stabilisering 3–6 måneder", "Endelig kontrol efter 6 måneder"],
-    when: "Efter operation",
     duration: "Op til 6 mdr.",
   },
 ];

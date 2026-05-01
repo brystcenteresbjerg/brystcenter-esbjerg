@@ -11,8 +11,8 @@ import {
 } from "@/data/behandlinger/bfo-implantat";
 
 import CtaSection from "@/components/sections/CtaSection";
-import Image from "next/image";
 import FeaturesSection from "@/components/sections/FeaturesSection";
+import Image from "next/image";
 import ImageListSection from "@/components/sections/ImageListSection";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -86,10 +86,22 @@ export default function Page() {
       <SplitSection label={splitContent.label} heading={splitContent.heading} body={splitContent.body}>
         <div className="grid grid-cols-2 gap-4">
           <div className="relative rounded-sm overflow-hidden aspect-square">
-            <Image src="/images/implants_hand_one.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+            <Image
+              src="/images/implants_hand_one.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
           </div>
           <div className="relative rounded-sm overflow-hidden aspect-square mt-8">
-            <Image src="/images/body_covering_breasts_hands.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+            <Image
+              src="/images/body_covering_breasts_hands.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
           </div>
         </div>
       </SplitSection>

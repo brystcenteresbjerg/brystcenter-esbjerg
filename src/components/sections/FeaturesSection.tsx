@@ -54,13 +54,13 @@ export default function FeaturesSection({
           >
             {label && <p className="label mb-6">{label}</p>}
             {heading && (
-              <h2 className={`font-serif font-semibold text-secondary mb-4 ${isCenter ? "text-4xl" : "text-3xl leading-snug"}`}>
+              <h2 className={`font-serif font-semibold text-secondary mb-4 ${isCenter ? "text-4xl" : "text-2xl leading-snug"}`}>
                 {heading}
               </h2>
             )}
             {intro && (
               <p
-                className={`font-sans text-base leading-relaxed ${isCenter ? "text-secondary/70 max-w-md mx-auto" : "max-w-2xl"}`}
+                className={`font-sans text-base leading-relaxed ${isCenter ? "text-secondary/85 max-w-md mx-auto" : "max-w-2xl"}`}
               >
                 {intro}
               </p>
@@ -77,8 +77,8 @@ export default function FeaturesSection({
           {items.map((item) => (
             <motion.div key={item.label} variants={cardVariants} className={`${cardBackground} px-10 py-10 rounded-sm`}>
               {item.icon && <div className="mb-4 text-tertiary">{item.icon}</div>}
-              <h3 className="font-sans text-base font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
-              <p className="font-sans text-base leading-relaxed text-secondary/75">{item.text}</p>
+              <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
+              <p className="font-sans text-base leading-relaxed text-secondary/85">{item.text}</p>
             </motion.div>
           ))}
         </motion.div>

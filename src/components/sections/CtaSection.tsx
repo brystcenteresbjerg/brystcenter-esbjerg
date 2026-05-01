@@ -19,7 +19,7 @@ export default function CtaSection({
       <FadeUp>
         <div className="max-w-xl mx-auto text-center">
           <h2 className="font-serif lg:text-4xl text-2xl font-semibold text-secondary mb-6">{heading}</h2>
-          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/70">{body}</p>
+          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/80">{body}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/booking">{ctaLabel}</Button>
             <Button href="tel:+4576185656" variant="outline">

@@ -47,7 +47,7 @@ export default function ImageListSection({ image, quote, label, heading, intro, 
               style={{ background: "rgba(250,243,238,0.82)", backdropFilter: "blur(12px)" }}
             >
               <p className="font-serif font-light text-base italic leading-relaxed text-secondary">&ldquo;{quote.text}&rdquo;</p>
-              <p className="font-sans text-xs uppercase tracking-[0.15em] mt-3 text-secondary/65">- {quote.author}</p>
+              <p className="font-sans text-xs uppercase tracking-[0.15em] mt-3 text-secondary/80">- {quote.author}</p>
             </div>
           )}
         </motion.div>
@@ -60,7 +60,7 @@ export default function ImageListSection({ image, quote, label, heading, intro, 
           <p className="label mb-6">{label}</p>
           <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{heading}</h2>
           {paragraphs.length > 0 && (
-            <div className="font-sans text-base leading-relaxed text-secondary/75 mb-6 space-y-4">
+            <div className="font-sans text-base leading-relaxed text-secondary/85 mb-6 space-y-4">
               {paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -76,9 +76,9 @@ export default function ImageListSection({ image, quote, label, heading, intro, 
               <motion.li
                 key={item.text}
                 variants={listItemVariants}
-                className="flex items-center gap-4 font-sans text-base leading-relaxed text-secondary border-b border-secondary/8 py-6"
+                className="flex items-center gap-4 font-sans text-sm leading-relaxed text-secondary border-b border-secondary/8 py-5"
               >
-                <span className="text-primary/75 shrink-0">{item.icon}</span>
+                <span className="text-primary/60 shrink-0">{item.icon}</span>
                 {item.text}
               </motion.li>
             ))}

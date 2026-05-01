@@ -16,7 +16,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <Link href="/" className="block w-56 mb-5 shrink-0">
-            <img src="/logos/logo_light.png" alt="Brystcenter Esbjerg Logo" />
+            <img src="/logos/logo_nude.svg" alt="Brystcenter Esbjerg Logo" />
           </Link>
           <p className="font-sans text-base leading-relaxed">Specialister i regenerativ brystkirurgi i Esbjerg.</p>
         </div>

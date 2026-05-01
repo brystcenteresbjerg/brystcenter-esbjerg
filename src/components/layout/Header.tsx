@@ -64,7 +64,7 @@ export default function Header() {
       <header className="fixed top-0 inset-x-0 z-50 bg-nude backdrop-blur-[20px]">
         <div className="max-w-8xl mx-auto px-8 lg:px-16 h-20 flex items-center justify-between gap-8">
           <Link href="/" className="shrink-0" onClick={close}>
-            <img src="/logos/logo_terracotta_primary.png" alt="Brystcenter Logo" className="h-14" />
+            <img src="/logos/logo_primary.svg" alt="Brystcenter Logo" className="h-12" />
           </Link>
 
           {/* Desktop nav */}
@@ -94,7 +94,7 @@ export default function Header() {
                             <Link
                               key={child.href}
                               href={child.href}
-                              className="group/item flex items-center justify-between px-6 py-3 font-sans text-sm text-secondary/75 hover:text-primary transition-colors"
+                              className="group/item flex items-center justify-between px-6 py-3 font-sans text-sm text-secondary/85 hover:text-primary transition-colors"
                             >
                               {child.label}
                               <span className="text-primary opacity-0 group-hover/item:opacity-100 transition-opacity text-xs">
@@ -116,7 +116,7 @@ export default function Header() {
                   className={`relative font-sans text-base transition-colors pb-0.5 whitespace-nowrap flex items-center ${
                     isActive(item.href)
                       ? "text-primary after:absolute after:bottom-0 after:inset-x-0 after:h-0.5 after:bg-primary"
-                      : "text-secondary/80 hover:text-primary"
+                      : "text-secondary/90 hover:text-primary"
                   }`}
                 >
                   {item.label}
@@ -201,7 +201,7 @@ export default function Header() {
                                   key={child.href}
                                   href={child.href}
                                   onClick={close}
-                                  className="block py-3 pl-4 font-sans uppercase text-base text-secondary/70 hover:text-primary border-b border-secondary/5 last:border-0 transition-colors"
+                                  className="block py-3 pl-4 font-sans uppercase text-base text-secondary/85 hover:text-primary border-b border-secondary/5 last:border-0 transition-colors"
                                 >
                                   {child.label}
                                 </Link>

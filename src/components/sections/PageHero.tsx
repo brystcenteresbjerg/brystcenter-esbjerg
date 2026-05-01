@@ -61,7 +61,7 @@ export default function PageHero({
 
   if (video || image) {
     return (
-      <section className="relative flex items-end h-[70vh]">
+      <section className="relative flex items-end h-[80vh]">
         {video ? (
           <video
             src={video}

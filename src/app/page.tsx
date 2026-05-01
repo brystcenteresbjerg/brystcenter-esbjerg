@@ -53,14 +53,14 @@ export default function Home() {
             <h2 className="font-serif lg:text-2xl text-lg font-semibold text-secondary mb-5 leading-snug">
               Hele forløbet samlet ét sted - i Esbjerg
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75 mb-4">
+            <p className="font-sans text-base leading-relaxed text-secondary/85 mb-4">
               Hos Brystcenter Esbjerg tror vi på, at tryghed skabes gennem kontinuitet. Vi har valgt at samle hele din{" "}
               <Link href="/patientrejsen" className="text-primary hover:underline underline-offset-2">
                 patientrejse
               </Link>{" "}
               under ét tag, så du aldrig skal rejse mellem forskellige byer eller klinikker for at gennemføre dit forløb.
             </p>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">
+            <p className="font-sans text-base leading-relaxed text-secondary/85">
               Fra din første forundersøgelse til selve operationsdagen og de efterfølgende kontroller foregår alt i vores rammer i
               Esbjerg. Du er gennem hele forløbet tilknyttet den samme speciallæge, som kender din forhistorie og dine ønsker.
             </p>
@@ -70,7 +70,7 @@ export default function Home() {
             <h2 className="font-serif lg:text-2xl text-lg font-semibold text-secondary mb-5 leading-snug">
               Specialister i naturlig harmoni
             </h2>
-            <p className="font-sans text-base leading-relaxed text-secondary/75">
+            <p className="font-sans text-base leading-relaxed text-secondary/85">
               Uanset om dit ønske er en brystforstørrelse, et brystløft eller en brystreduktion, tilbyder vi et forløb baseret på
               tryghed og faglig tyngde. Vi arbejder ud fra en filosofi om naturlig harmoni, hvor valget af metode altid afhænger
               af din specifikke vævskvalitet, anatomi og det ønskede resultat. Hos os møder du ikke standardløsninger, men
@@ -85,7 +85,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-serif lg:text-4xl text-2xl font-semibold text-secondary mb-4">Vores Ekspertise</h2>
-            <p className="font-sans text-base max-w-md mx-auto text-secondary/70">
+            <p className="font-sans text-base max-w-md mx-auto text-secondary/80">
               Udvalgte indgreb med fokus på naturlighed, holdbarhed og individuel tilpasning til din anatomi.
             </p>
           </div>
