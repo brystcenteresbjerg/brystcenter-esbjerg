@@ -50,7 +50,7 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               En dedikation til det personlige resultat
             </h2>
-            <p className="font-sans text-lg leading-relaxed text-secondary/75">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Min tilgang til brystkirurgi er baseret på håndværksmæssig stolthed, faglige erfaringer og kompetencer samt den
               individuelle rådgivning. Jeg tror ikke på standardløsninger, da ingen bryster er ens. Vi skal respektere det
               forskellige og bruge det til at finde de små, usynlige detaljer, der gør det endelige resultat naturligt og
@@ -73,12 +73,12 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">
               Faglig integritet og specialisering
             </h2>
-            <p className="font-sans text-lg leading-relaxed text-secondary/75 mb-5">
+            <p className="font-sans text-base leading-relaxed text-secondary/75 mb-5">
               Jeg har mange års erfaring som speciallæge og henter inspiration fra førende klinikker i USA, Brasilien og Europa.
               Jeg arbejder efter internationale principper for skånsom kirurgi uden komplikationer, der sikrer de mest harmoniske
               resultater.
             </p>
-            <p className="font-sans text-lg leading-relaxed text-secondary/75">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Jeg har specialiseret mig i teknikker som Ruth Graf og lukkede systemer til fedttransplantation (Lipografter), der
               sikrer maksimal overlevelse af fedtcellerne. For mig handler brystkirurgi om at forene høj sikkerhed med et æstetisk
               udtryk, der respekterer din naturlige anatomi.

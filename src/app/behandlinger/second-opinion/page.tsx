@@ -49,10 +49,10 @@ export default function Page() {
           <div>
             <p className="label mb-6">{intro.label}</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{intro.heading}</h2>
-            <p className="font-sans text-lg leading-relaxed text-secondary/75">{intro.body}</p>
+            <p className="font-sans text-base leading-relaxed text-secondary/75">{intro.body}</p>
           </div>
           <div className="bg-primary-container/30 rounded-sm p-10">
-            <p className="font-serif font-light text-lg italic leading-relaxed text-tertiary mb-5">
+            <p className="font-serif font-light text-base italic leading-relaxed text-tertiary mb-5">
               &ldquo;{introQuote.text}&rdquo;
             </p>
             <p className="label">- {introQuote.author}</p>
@@ -76,7 +76,7 @@ export default function Page() {
         <div className="max-w-3xl mx-auto">
           <p className="label mb-6">{hvornaar.label}</p>
           <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{hvornaar.heading}</h2>
-          <p className="font-sans text-lg leading-relaxed text-secondary/75">{hvornaar.body}</p>
+          <p className="font-sans text-base leading-relaxed text-secondary/75">{hvornaar.body}</p>
         </div>
       </section>
 

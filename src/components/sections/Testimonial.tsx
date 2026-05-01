@@ -62,7 +62,7 @@ export default function Testimonial({ quote, name, treatment }: TestimonialProps
                   sm:grid-cols-[64px_1fr] sm:gap-x-5 sm:gap-y-3"
         >
           <p
-            className="col-span-2 font-serif text-lg leading-relaxed text-secondary
+            className="col-span-2 font-serif text-base leading-relaxed text-secondary
                   sm:col-span-1 sm:col-start-2 sm:row-start-1"
           >
             &ldquo;{quote}&rdquo;

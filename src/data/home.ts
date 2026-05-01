@@ -63,8 +63,10 @@ export const services = [
 
 export const treatmentDetails = [
   {
+    id: "bfo",
     heading: "Brystforstørrelse med implantat eller eget fedt",
     intro: "Vi tilbyder flere metoder til volumenøgning, så vi kan ramme præcis det udtryk, du søger:",
+    image: "/images/implants_hand_one.jpg",
     items: [
       {
         label: "Implantater",
@@ -81,9 +83,11 @@ export const treatmentDetails = [
     ],
   },
   {
+    id: "loft",
     heading: "Brystløft og brystreduktion",
     intro:
       "Ved korrektion af brystets form og tyngde anvender vi individuelt tilpassede teknikker afhængig af hudoverskud og graden af ptose (hæng):",
+    image: "/images/breast_back_ponytail_smile.jpg",
     items: [
       {
         label: "Brystløft",
@@ -96,8 +100,10 @@ export const treatmentDetails = [
     ],
   },
   {
+    id: "udskiftning",
     heading: "Ekspertise i udskiftning af brystimplantater",
     intro: null,
+    image: "/images/collarbones_skin.jpg",
     items: [
       {
         label: null,

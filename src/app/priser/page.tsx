@@ -122,7 +122,7 @@ export default function Page() {
             <h2 className="font-serif text-xl font-semibold text-secondary mb-4">Hvad er inkluderet?</h2>
             <ul className="space-y-3">
               {included.map((item) => (
-                <li key={item} className="flex items-start gap-3 font-sans text-lg text-secondary/75">
+                <li key={item} className="flex items-start gap-3 font-sans text-base text-secondary/75">
                   <span className="text-primary mt-0.5">-</span>
                   {item}
                 </li>
@@ -131,7 +131,7 @@ export default function Page() {
           </div>
           <div>
             <h2 className="font-serif text-xl font-semibold text-secondary mb-4">Finansiering</h2>
-            <p className="font-sans text-lg leading-relaxed text-secondary/75">
+            <p className="font-sans text-base leading-relaxed text-secondary/75">
               Vi samarbejder med udvalgte finansieringspartnere, så du har mulighed for at fordele betalingen. Spørg os om
               mulighederne ved din konsultation.
             </p>
@@ -143,7 +143,7 @@ export default function Page() {
       <section id="book" className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="font-serif text-4xl font-semibold text-secondary mb-6">Book en konsultation</h2>
-          <p className="font-sans text-lg leading-relaxed mb-10 text-secondary/70">
+          <p className="font-sans text-base leading-relaxed mb-10 text-secondary/70">
             Få en præcis prisindikation tilpasset netop din situation hos speciallæge Troels Tei.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

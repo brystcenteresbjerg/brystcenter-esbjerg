@@ -98,7 +98,7 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
                 <h2 className="font-serif text-2xl lg:text-4xl xl:text-5xl font-semibold text-secondary mb-6 leading-tight">
                   {steps[activeStep].title}
                 </h2>
-                <p className="font-sans text-lg leading-relaxed text-secondary/75 max-w-lg">{steps[activeStep].body}</p>
+                <p className="font-sans text-base leading-relaxed text-secondary/75 max-w-lg">{steps[activeStep].body}</p>
 
                 {activeStep < steps.length - 1 && (
                   <motion.div className="mt-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
