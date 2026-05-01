@@ -77,8 +77,8 @@ export default function Header() {
                   <div key={item.label} className="group relative flex items-center">
                     {active && <span className="absolute bottom-0 inset-x-0 h-0.5 bg-primary" />}
                     <button
-                      className={`flex items-center gap-1.5 font-sans text-base transition-colors cursor-pointer ${
-                        active ? "text-primary" : "text-secondary/80 hover:text-primary"
+                      className={`flex items-center gap-1.5 font-sans font-semibold text-base transition-colors cursor-pointer ${
+                        active ? "text-primary" : "text-secondary/85 hover:text-primary"
                       }`}
                     >
                       {item.label}
@@ -113,10 +113,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative font-sans text-base transition-colors pb-0.5 whitespace-nowrap flex items-center ${
+                  className={`relative font-sans font-semibold text-base transition-colors pb-0.5 whitespace-nowrap flex items-center ${
                     isActive(item.href)
                       ? "text-primary after:absolute after:bottom-0 after:inset-x-0 after:h-0.5 after:bg-primary"
-                      : "text-secondary/90 hover:text-primary"
+                      : "text-secondary/85 hover:text-primary"
                   }`}
                 >
                   {item.label}
