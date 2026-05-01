@@ -30,9 +30,7 @@ export default function TreatmentTabs({ groups }: { groups: TreatmentGroup[] }) 
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
           <p className="label mb-4">Behandlinger</p>
-          <h2 className="font-serif lg:text-4xl text-2xl font-semibold text-secondary">
-            Behandlingstyper i detaljer
-          </h2>
+          <h2 className="font-serif lg:text-4xl text-2xl font-semibold text-secondary">Behandlingstyper i detaljer</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
@@ -59,9 +57,7 @@ export default function TreatmentTabs({ groups }: { groups: TreatmentGroup[] }) 
                     <div className="flex-1">
                       <p
                         className={`font-serif text-lg leading-snug transition-colors ${
-                          isActive
-                            ? "text-secondary"
-                            : "text-secondary/55 group-hover:text-secondary/80"
+                          isActive ? "text-secondary" : "text-secondary/55 group-hover:text-secondary/80"
                         }`}
                       >
                         {g.heading}
@@ -84,29 +80,15 @@ export default function TreatmentTabs({ groups }: { groups: TreatmentGroup[] }) 
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <div className="relative aspect-3/4 md:aspect-auto md:h-full md:min-h-130 rounded-sm overflow-hidden bg-surface-container">
               <AnimatePresence mode="wait">
-                <motion.div
-                  key={group.id + "-img"}
-                  className="absolute inset-0"
-                  {...fade}
-                >
-                  <Image
-                    src={group.image}
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
+                <motion.div key={group.id + "-img"} className="absolute inset-0" {...fade}>
+                  <Image src={group.image} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                 </motion.div>
               </AnimatePresence>
             </div>
 
             <AnimatePresence mode="wait">
               <motion.div key={group.id + "-text"} {...fade}>
-                {group.intro && (
-                  <p className="font-sans text-sm text-secondary/75 leading-relaxed mb-8 italic">
-                    {group.intro}
-                  </p>
-                )}
+                {group.intro && <p className="font-sans text-sm text-secondary/75 leading-relaxed mb-8 italic">{group.intro}</p>}
                 <div className="space-y-7">
                   {group.items.map((item, j) => (
                     <div key={j}>
@@ -115,7 +97,7 @@ export default function TreatmentTabs({ groups }: { groups: TreatmentGroup[] }) 
                           {item.label}
                         </p>
                       )}
-                      <p className="font-sans text-sm leading-relaxed text-secondary/75">{item.text}</p>
+                      <p className="font-sans text-base leading-relaxed text-secondary/75">{item.text}</p>
                     </div>
                   ))}
                 </div>
