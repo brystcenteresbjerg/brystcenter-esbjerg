@@ -7,12 +7,14 @@ import {
   features,
   fordeleSection,
   forloebetSection,
+  forloebetSteps,
 } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
 
 import CtaSection from "@/components/sections/CtaSection";
-import Image from "next/image";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import FeaturesWithLeadImage from "@/components/sections/FeaturesWithLeadImage";
+import ForlobetStepper from "@/components/sections/ForlobetStepper";
+import Image from "next/image";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
@@ -64,10 +66,22 @@ export default function Page() {
       >
         <div className="grid grid-cols-2 gap-4">
           <div className="relative rounded-sm overflow-hidden aspect-square">
-            <Image src="/images/collarbone_shoulder_hair.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+            <Image
+              src="/images/collarbone_shoulder_hair.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
           </div>
           <div className="relative rounded-sm overflow-hidden aspect-square mt-8">
-            <Image src="/images/curls_smile_brunette.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
+            <Image
+              src="/images/curls_smile_brunette.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
           </div>
         </div>
       </SplitSection>
@@ -86,30 +100,16 @@ export default function Page() {
       {/* ── FEATURES ─────────────────────────────────────────────── */}
       <FeaturesWithLeadImage
         image="/images/body_breast_hand.jpg"
-        items={[
-          { ...features[0], icon: <Dna size={22} /> },
-          { ...features[1], icon: <Microscope size={22} /> },
-          { ...features[2], icon: <Droplets size={22} /> },
-        ]}
+        items={[{ ...features[0] }, { ...features[1] }, { ...features[2] }]}
       />
 
       {/* ── FORLØBET ─────────────────────────────────────────────── */}
-      <SplitSection
+      <ForlobetStepper
         label={forloebetSection.label}
         heading={forloebetSection.heading}
         body={forloebetSection.body}
-        align="center"
-        background="bg-surface-container-low"
-      >
-        <div className="grid grid-cols-2 gap-4">
-          <div className="relative rounded-sm overflow-hidden aspect-square">
-            <Image src="/images/abdomen.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
-          </div>
-          <div className="relative rounded-sm overflow-hidden aspect-square mt-8">
-            <Image src="/images/skin.jpg" alt="" fill className="object-cover" sizes="(max-width: 1024px) 50vw, 25vw" />
-          </div>
-        </div>
-      </SplitSection>
+        steps={forloebetSteps}
+      />
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <div className="px-8 lg:px-16 py-24">

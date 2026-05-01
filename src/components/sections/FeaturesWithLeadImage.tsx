@@ -33,7 +33,7 @@ export default function FeaturesWithLeadImage({
             </div>
             <div className="flex">
               {lead.icon && <div className="mb-4 mr-2 text-tertiary">{lead.icon}</div>}
-              <h3 className="font-sans text-lg font-semibold uppercase tracking-widest text-secondary mb-3">{lead.label}</h3>
+              <h3 className="font-sans text-base font-semibold uppercase tracking-widest text-secondary mb-3">{lead.label}</h3>
             </div>
             <p className="font-sans text-base leading-relaxed text-secondary/75">{lead.text}</p>
           </div>
@@ -45,7 +45,7 @@ export default function FeaturesWithLeadImage({
             <div key={item.label} className={`${cardBackground} rounded-sm px-10 py-10 flex-1`}>
               <div className="flex">
                 {item.icon && <div className="mb-4 mr-2 text-tertiary">{item.icon}</div>}
-                <h3 className="font-sans text-lg font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
+                <h3 className="font-sans text-base font-semibold uppercase tracking-widest text-secondary mb-3">{item.label}</h3>
               </div>
               <p className="font-sans text-base leading-relaxed text-secondary/75">{item.text}</p>
             </div>

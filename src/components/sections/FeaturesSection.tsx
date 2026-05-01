@@ -59,7 +59,9 @@ export default function FeaturesSection({
               </h2>
             )}
             {intro && (
-              <p className={`font-sans text-base leading-relaxed ${isCenter ? "text-secondary/70 max-w-md mx-auto" : "max-w-2xl"}`}>
+              <p
+                className={`font-sans text-base leading-relaxed ${isCenter ? "text-secondary/70 max-w-md mx-auto" : "max-w-2xl"}`}
+              >
                 {intro}
               </p>
             )}
