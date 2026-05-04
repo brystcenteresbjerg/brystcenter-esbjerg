@@ -19,7 +19,7 @@ export default function Page() {
         label="Patientrejsen"
         h1Main="Fra første tanke"
         h1Italic="til endeligt resultat"
-        video="./videos/skin_freckles.mp4"
+        video="/videos/skin_freckles.mp4"
         subtitle="Vi tror på, at tryghed skabes af klarhed. Her ser du præcist, hvad du kan forvente - trin for trin."
       />
 

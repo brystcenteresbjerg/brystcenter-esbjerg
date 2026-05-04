@@ -1,6 +1,5 @@
 import { BriefcaseMedical, Microscope, Star } from "lucide-react";
 import { faqItems, services, treatmentDetails } from "@/data/home";
-import { site } from "@/data/site";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FadeUp from "@/components/ui/FadeUp";
@@ -11,6 +10,7 @@ import PageFAQ from "@/components/sections/PageFAQ";
 import PageHero from "@/components/sections/PageHero";
 import Testimonial from "@/components/sections/Testimonial";
 import TreatmentTabs from "@/components/sections/TreatmentTabs";
+import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Brystcenter Esbjerg | Specialister i naturlig brystkirurgi",
