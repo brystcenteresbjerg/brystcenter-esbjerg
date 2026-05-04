@@ -111,8 +111,7 @@ export default function Home() {
                   <p className="relative z-10 font-sans text-[10px] uppercase tracking-[0.18em] text-white/95">{s.category}</p>
                   <div className="relative z-10">
                     <h2 className="font-serif lg:text-2xl text-xl font-semibold text-white mb-2">{s.title}</h2>
-                    {s.showDesc && <p className="font-sans text-base leading-relaxed mb-5 text-on-primary/68">{s.desc}</p>}
-                    <div className={`flex flex-wrap gap-3 ${!s.showDesc ? "mt-3" : ""}`}>
+                    <div className="flex flex-wrap gap-3 mt-3">
                       {s.links.map((link) => (
                         <Link
                           key={link.href}

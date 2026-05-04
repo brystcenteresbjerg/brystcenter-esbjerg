@@ -19,8 +19,6 @@ export const services = [
   {
     category: "01 · Brystforstørrelse",
     title: "Implantat eller eget fedt",
-    desc: "Opnå dit ønskede volumen med implantat eller eget fedt. Vi skræddersyr løsningen til din anatomi og dine ønsker.",
-    showDesc: true,
     links: [
       { label: "Implantat →", href: "/behandlinger/bfo-implantat" },
       { label: "Eget fedt →", href: "/behandlinger/bfo-eget-fedt-lipofilling" },
@@ -32,8 +30,6 @@ export const services = [
   {
     category: "02 · Mastopeksi",
     title: "Brystløft",
-    desc: "",
-    showDesc: false,
     links: [{ label: "Læs mere →", href: "/behandlinger/brystloeft" }],
     image: "/images/body_breast_hand.jpg",
     span: "md:col-span-1",
@@ -42,8 +38,6 @@ export const services = [
   {
     category: "03 · Reduktion",
     title: "Brystreduktion",
-    desc: "",
-    showDesc: false,
     links: [{ label: "Læs mere →", href: "/behandlinger/brystreduktion" }],
     image: "/images/collarbones_shoulders_brunette.jpg",
     span: "md:col-span-1",
@@ -52,8 +46,6 @@ export const services = [
   {
     category: "04 · Revision",
     title: "Implantatudskiftning",
-    desc: "Revisionskirurgi med avancerede PU-overflader for præcis placering og langvarig stabilitet.",
-    showDesc: true,
     links: [{ label: "Læs mere →", href: "/behandlinger/udskiftning-af-protese" }],
     image: "/images/expertise_udskiftning.jpg",
     span: "md:col-span-2",
