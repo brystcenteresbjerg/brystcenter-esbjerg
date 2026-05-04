@@ -38,7 +38,7 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
         </div>
 
         {/* Step tabs */}
-        <div role="tablist" className="grid grid-cols-2 md:grid-cols-5" style={{ borderTop: "1px solid rgba(44,62,80,0.10)" }}>
+        <div role="tablist" className={`grid grid-cols-2 ${{ 2: "md:grid-cols-2", 3: "md:grid-cols-3", 4: "md:grid-cols-4", 5: "md:grid-cols-5" }[steps.length] ?? "md:grid-cols-4"}`} style={{ borderTop: "1px solid rgba(44,62,80,0.10)" }}>
           {steps.map((step, i) => {
             const isActive = i === active;
             return (
