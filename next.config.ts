@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     qualities: [90],
     formats: ["image/avif", "image/webp"],
   },
+  allowedDevOrigins: process.env.ALLOWED_DEV_ORIGINS?.split(",") ?? [],
 };
 
 export default nextConfig;
