@@ -5,6 +5,7 @@ import { ChevronDown, Menu, Phone, X } from "lucide-react";
 
 import Button from "@/components/ui/Button";
 import Link from "next/link";
+import { site } from "@/data/site";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -128,14 +129,14 @@ export default function Header() {
           {/* Right side: phone + CTA */}
           <div className="hidden lg:flex items-center gap-5 shrink-0">
             <Link
-              href="tel:+4576185656"
+              href={site.phone.href}
               className="flex items-center gap-2 font-sans text-base text-secondary/75 hover:text-primary transition-colors border-l border-secondary/12 pl-5"
             >
               <Phone size={13} className="opacity-60" />
-              +45 76 18 56 56
+              {site.phone.display}
             </Link>
-            <Button href="/booking" size="sm">
-              Book konsultation
+            <Button href={site.booking.href} size="sm">
+              {site.cta}
             </Button>
           </div>
 
@@ -228,8 +229,8 @@ export default function Header() {
               })}
 
               <motion.div variants={navItemVariants}>
-                <Link href="tel:+4576185656" onClick={close} className="block py-4 font-sans text-sm text-primary font-medium">
-                  +45 76 18 56 56
+                <Link href={site.phone.href} onClick={close} className="block py-4 font-sans text-sm text-primary font-medium">
+                  {site.phone.display}
                 </Link>
               </motion.div>
             </motion.nav>

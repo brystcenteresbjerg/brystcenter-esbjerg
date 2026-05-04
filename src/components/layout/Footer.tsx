@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { site } from "@/data/site";
 
 const services = [
   { label: "Brystforstørrelse med eget fedt", href: "/behandlinger/bfo-eget-fedt-lipofilling" },
@@ -39,15 +40,15 @@ export default function Footer() {
         <div>
           <p className="font-sans text-sm font-medium uppercase tracking-widest text-on-primary/80 mb-5 ">Kontakt</p>
           <address className="not-italic space-y-3">
-            <p className="font-sans text-base">Bavnehøjvej 2</p>
-            <p className="font-sans text-base ">6700 Esbjerg</p>
-            <p className="font-sans text-base ">Tlf. +45 22288888</p>
+            <p className="font-sans text-base">{site.address.street}</p>
+            <p className="font-sans text-base ">{site.address.city}</p>
+            <p className="font-sans text-base ">Tlf. {site.footerPhone}</p>
           </address>
           <Link
-            href="https://www.privathospitaletkollund.com/"
+            href={site.partner.url}
             className="font-sans text-base block hover:text-on-primary mt-3 transition-colors"
           >
-            En del af Privathospitalet Kollund
+            En del af {site.partner.name}
           </Link>
         </div>
       </div>

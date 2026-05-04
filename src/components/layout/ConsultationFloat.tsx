@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import Button from "@/components/ui/Button";
+import { site } from "@/data/site";
 
 export default function ConsultationFloat() {
   return (
@@ -11,8 +12,8 @@ export default function ConsultationFloat() {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 1.2, duration: 0.4, ease: "easeOut" }}
     >
-      <Button href="/booking" variant="float" size="md">
-        Book konsultation
+      <Button href={site.booking.href} variant="float" size="md">
+        {site.cta}
       </Button>
     </motion.div>
   );

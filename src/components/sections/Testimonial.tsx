@@ -4,6 +4,7 @@ import { animate, useInView } from "motion/react";
 import { useEffect, useRef } from "react";
 
 import FadeUp from "@/components/ui/FadeUp";
+import { site } from "@/data/site";
 
 interface TestimonialProps {
   quote: string;
@@ -11,10 +12,7 @@ interface TestimonialProps {
   treatment: string;
 }
 
-const stats = [
-  { target: 2400, suffix: "+", label: "Udførte indgreb" },
-  { target: 18, suffix: " år", label: "Som speciallæge" },
-];
+const stats = site.stats;
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);

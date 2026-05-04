@@ -1,5 +1,6 @@
 import { BriefcaseMedical, Microscope, Star } from "lucide-react";
 import { faqItems, services, treatmentDetails } from "@/data/home";
+import { site } from "@/data/site";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FadeUp from "@/components/ui/FadeUp";
@@ -37,7 +38,7 @@ export default function Home() {
         label="Brystcenter Esbjerg"
         h1Main="Skræddersyet kosmetisk"
         h1Italic="plastikkirurgi"
-        subtitle="En specialiseret enhed under Privathospitalet Kollund, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat."
+        subtitle={`En specialiseret enhed under ${site.partner.name}, dedikeret til brystkirurgi med et kompromisløst fokus på det individuelle resultat.`}
         video="/videos/woman_sunlight_one.mp4"
         videoPoster="/images/video_cap.jpg"
         mediaPosition="center 20%"

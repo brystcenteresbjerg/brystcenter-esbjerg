@@ -1,4 +1,5 @@
 import { featured, included, treatments } from "@/data/priser";
+import { site } from "@/data/site";
 
 import Button from "@/components/ui/Button";
 import Link from "next/link";
@@ -147,9 +148,9 @@ export default function Page() {
             Få en præcis prisindikation tilpasset netop din situation hos speciallæge Troels Tei.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking">Book en konsultation</Button>
-            <Button href="tel:+4576185656" variant="outline">
-              Ring til os: +45 76 18 56 56
+            <Button href={site.booking.href}>Book en konsultation</Button>
+            <Button href={site.phone.href} variant="outline">
+              Ring til os: {site.phone.display}
             </Button>
           </div>
         </div>
