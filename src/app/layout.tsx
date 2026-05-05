@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { site } from "@/data/site";
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
@@ -19,13 +20,26 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
+const description =
+  "Skræddersyet brystkirurgi i Esbjerg. Implantater, fedttransplantation, brystløft og reduktion hos specialister. Book konsultation.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
     default: "Brystcenter Esbjerg | Specialister i naturlig brystkirurgi",
     template: "%s | Brystcenter Esbjerg",
   },
-  description:
-    "Skræddersyet brystkirurgi i Esbjerg. Implantater, fedttransplantation, brystløft og reduktion hos specialister. Book konsultation.",
+  description,
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: "Brystcenter Esbjerg | Specialister i naturlig brystkirurgi",
+    description,
+    url: site.url,
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
