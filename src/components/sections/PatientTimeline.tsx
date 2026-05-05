@@ -107,7 +107,7 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
               className="grid grid-cols-[1fr_auto] gap-12 items-center"
             >
               <div>
-                <p className="label mb-5">{current.label}</p>
+                <p className="label font-semibold mb-5">{current.label}</p>
                 <h2 className="font-serif text-4xl xl:text-5xl font-semibold text-secondary mb-6 leading-tight">
                   {current.title}
                 </h2>
@@ -123,7 +123,7 @@ export default function PatientTimeline({ steps }: { steps: Step[] }) {
                   </motion.div>
                 )}
               </div>
-              {current.time && <p className="font-sans text-sm text-secondary/30 tracking-[0.08em] shrink-0">{current.time}</p>}
+              {current.time && <p className="font-sans text-base text-secondary/60 tracking-[0.08em] shrink-0">{current.time}</p>}
             </motion.div>
           </AnimatePresence>
         </div>
