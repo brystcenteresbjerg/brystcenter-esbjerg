@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="da" data-scroll-behavior="smooth" className={`${notoSerif.variable} ${manrope.variable} h-full antialiased`}>
+    <html lang="da" className={`${notoSerif.variable} ${manrope.variable} h-full antialiased`}>
       <head>
         <link rel="icon" href="/icon_light.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
         <link rel="icon" href="/icon_dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
