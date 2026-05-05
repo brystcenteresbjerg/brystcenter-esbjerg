@@ -1,5 +1,6 @@
 export const site = {
   name: "Brystcenter Esbjerg",
+  url: "https://brystcenteresbjerg.dk",
   phone: {
     display: "+45 76 18 56 56",
     href: "tel:+4576185656",
