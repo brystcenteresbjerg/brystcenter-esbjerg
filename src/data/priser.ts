@@ -29,7 +29,7 @@ export interface FeaturedCard {
 export const featured: FeaturedCard[] = [
   {
     title: "Implantat",
-    price: "40.000 kr.",
+    price: "32.000 kr.",
     bullets: ["Høj-kohæsiv gel", "1,5–2 t operation", "Inkl. narkose og efterkontrol"],
   },
   {
@@ -40,7 +40,7 @@ export const featured: FeaturedCard[] = [
   },
   {
     title: "Brystløft",
-    price: "32.000 kr.",
+    price: "36.000 kr.",
     bullets: ["Traditionelt el. Ruth Graf", "Inkl. narkose", "Minimale ar"],
   },
 ];
@@ -76,8 +76,8 @@ export const treatments: TreatmentGroup[] = [
         href: "/behandlinger/bfo-implantat",
         supplements: [
           { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
-          { label: "Tillæg v. anatomiske implantater", price: "+?." },
-          { label: "Tillæg v. anatomiske Mentor implantater", price: "+?." },
+          { label: "Tillæg v. anatomiske implantater", price: "+ 3.000 kr." },
+          { label: "Tillæg v. anatomiske Mentor implantater", price: "+ 5.000 kr." },
         ],
       },
       {
@@ -103,8 +103,8 @@ export const treatments: TreatmentGroup[] = [
         href: "/booking",
         supplements: [
           { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
-          { label: "Tillæg v. anatomiske implantater", price: "+?." },
-          { label: "Tillæg v. Mentor implantater", price: "+?." },
+          { label: "Tillæg v. anatomiske implantater", price: "+ 3.000 kr." },
+          { label: "Tillæg v. Mentor implantater", price: "+ 5.000 kr." },
         ],
       },
     ],
@@ -168,9 +168,9 @@ export const treatments: TreatmentGroup[] = [
         href: "/behandlinger/udskiftning-af-protese",
         supplements: [
           { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
-          { label: "Tillæg v. anatomiske implantater", price: "+?." },
-          { label: "Tillæg v. Mentor implantater", price: "+?." },
-          { label: "Tillæg v. ved kapseldannelse", price: "+5.000 kr." },
+          { label: "Tillæg v. anatomiske implantater", price: "+ 3.000 kr." },
+          { label: "Tillæg v. Mentor implantater", price: "+ 5.000 kr." },
+          { label: "Tillæg v. ved kapseldannelse", price: "+ 5.000 kr." },
         ],
       },
       {
