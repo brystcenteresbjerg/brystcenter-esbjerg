@@ -81,7 +81,7 @@ export const forloebetSteps: ForlobetStep[] = [
   {
     n: "03",
     label: "Transplantation",
-    title: "Præcis micro-injektion i brystet",
+    title: "Præcis micro-injektion",
     body: "Fedtet placeres i mange små depoter gennem 2–3 mm kanyler – i flere lag og fra forskellige indstik for at opnå en jævn, tredimensionel fordeling. Den fine spredning sikrer, at hver enkelt fedtcelle hurtigt får adgang til ilt og blodforsyning, hvilket er forudsætningen for permanent integration. Vi overkorrigerer typisk en smule, da kroppen naturligt absorberer 20–40 % af det indsatte fedt.",
     bullets: ["Multi-layer micro-droplet teknik", "2–3 mm indstik – næsten usynlige ar", "Bevidst overkorrektion 20–30 %"],
     duration: "60–90 min",

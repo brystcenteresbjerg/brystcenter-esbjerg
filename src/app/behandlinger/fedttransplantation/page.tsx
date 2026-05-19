@@ -1,7 +1,8 @@
 import { ArrowUp, Sparkles, Zap } from "lucide-react";
-import { cta, faqItems, features, intro, introQuote } from "@/data/behandlinger/fedttransplantation";
+import { cta, faqItems, features, forloebetSection, forloebetSteps, intro, introQuote } from "@/data/behandlinger/fedttransplantation";
 
 import CtaSection from "@/components/sections/CtaSection";
+import ForlobetStepper from "@/components/sections/ForlobetStepper";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -74,6 +75,14 @@ export default function Page() {
           ...f,
           icon: [<Sparkles size={22} />, <ArrowUp size={22} />, <Zap size={22} />][i],
         }))}
+      />
+
+      {/* ── FORLØBET ─────────────────────────────────────────────── */}
+      <ForlobetStepper
+        label={forloebetSection.label}
+        heading={forloebetSection.heading}
+        body={forloebetSection.body}
+        steps={forloebetSteps}
       />
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
