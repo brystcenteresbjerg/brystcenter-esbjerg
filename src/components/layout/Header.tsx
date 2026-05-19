@@ -130,9 +130,9 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-5 shrink-0">
             <Link
               href={site.phone.href}
-              className="flex items-center gap-2 font-sans text-base text-secondary/75 hover:text-primary transition-colors border-l border-secondary/12 pl-5"
+              className="flex items-center gap-2 font-sans text-sm text-secondary/75 hover:text-primary transition-colors border-l border-secondary/12 pl-5"
             >
-              <Phone size={13} className="opacity-60" />
+              <Phone size={12} className="opacity-60" />
               {site.phone.display}
             </Link>
             <Button href={site.booking.href} size="sm">
