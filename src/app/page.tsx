@@ -1,5 +1,5 @@
 import { BriefcaseMedical, Microscope, Star } from "lucide-react";
-import { faqItems, services, treatmentDetails } from "@/data/home";
+import { faqItems, introSection, services, treatmentDetails } from "@/data/home";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FadeUp from "@/components/ui/FadeUp";
@@ -50,32 +50,28 @@ export default function Home() {
       <section className="px-8 lg:px-16 py-14 bg-surface-container-low">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <p className="label mb-4">Patientrejsen</p>
+            <p className="label mb-4">{introSection.patientrejsen.label}</p>
             <h2 className="font-serif lg:text-2xl text-lg font-semibold text-secondary mb-5 leading-snug">
-              Hele forløbet samlet ét sted - i Esbjerg
+              {introSection.patientrejsen.heading}
             </h2>
             <p className="font-sans text-base leading-relaxed text-secondary/85 mb-4">
-              Hos Brystcenter Esbjerg tror vi på, at tryghed skabes gennem kontinuitet. Vi har valgt at samle hele din{" "}
-              <Link href="/patientrejsen" className="text-primary hover:underline underline-offset-2">
-                patientrejse
+              {introSection.patientrejsen.bodyPre}{" "}
+              <Link href={introSection.patientrejsen.linkHref} className="text-primary hover:underline underline-offset-2">
+                {introSection.patientrejsen.linkLabel}
               </Link>{" "}
-              under ét tag, så du aldrig skal rejse mellem forskellige byer eller klinikker for at gennemføre dit forløb.
+              {introSection.patientrejsen.bodyPost}
             </p>
             <p className="font-sans text-base leading-relaxed text-secondary/85">
-              Fra din første forundersøgelse til selve operationsdagen og de efterfølgende kontroller foregår alt i vores rammer i
-              Esbjerg. Du er gennem hele forløbet tilknyttet den samme speciallæge, som kender din forhistorie og dine ønsker.
+              {introSection.patientrejsen.body2}
             </p>
           </div>
           <div>
-            <p className="label mb-4">Filosofi</p>
+            <p className="label mb-4">{introSection.filosofi.label}</p>
             <h2 className="font-serif lg:text-2xl text-lg font-semibold text-secondary mb-5 leading-snug">
-              Specialister i naturlig harmoni
+              {introSection.filosofi.heading}
             </h2>
             <p className="font-sans text-base leading-relaxed text-secondary/85">
-              Uanset om dit ønske er en brystforstørrelse, et brystløft eller en brystreduktion, tilbyder vi et forløb baseret på
-              tryghed og faglig tyngde. Vi arbejder ud fra en filosofi om naturlig harmoni, hvor valget af metode altid afhænger
-              af din specifikke vævskvalitet, anatomi og det ønskede resultat. Hos os møder du ikke standardløsninger, men
-              individuelle løsninger med fokus på ukompliceret kirurgi og fravær af problemer.
+              {introSection.filosofi.body}
             </p>
           </div>
         </div>

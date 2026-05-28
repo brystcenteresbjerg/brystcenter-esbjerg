@@ -22,6 +22,7 @@ export interface TreatmentGroup {
 export interface FeaturedCard {
   title: string;
   price: string;
+  priceLabel?: string;
   popular?: boolean;
   bullets: string[];
 }
@@ -30,11 +31,13 @@ export const featured: FeaturedCard[] = [
   {
     title: "Implantat",
     price: "32.000 kr.",
+    priceLabel: "Fra",
     bullets: ["Høj-kohæsiv gel", "1,5–2 t operation", "Inkl. narkose og efterkontrol"],
   },
   {
     title: "Eget fedt",
-    price: "54.000 kr.",
+    price: "32.000 kr.",
+    priceLabel: "Fra",
     popular: true,
     bullets: ["Inkl. fedttransplantation", "Ingen fremmedlegemer", "1 uges restitution"],
   },
@@ -72,10 +75,10 @@ export const treatments: TreatmentGroup[] = [
         duration: "45-60 min.",
         recovery: "1–2 uger",
         anbefales: "Ønske om volumen eller øge symmetrien",
-        price: "fra 40.000 kr.",
+        price: "fra 32.000 kr.",
         href: "/behandlinger/bfo-implantat",
         supplements: [
-          { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
+          { label: "Tillæg v. implantater over 500 ml.", price: "+ 5.000 kr." },
           { label: "Tillæg v. anatomiske implantater", price: "+ 3.000 kr." },
           { label: "Tillæg v. anatomiske Mentor implantater", price: "+ 5.000 kr." },
         ],
@@ -88,10 +91,7 @@ export const treatments: TreatmentGroup[] = [
         anbefales: "Moderat volumenønske uden fremmedlegemer og samtidig fedtsuget et el. flere områder",
         price: "fra 32.000 kr.",
         href: "/behandlinger/bfo-eget-fedt-lipofilling",
-        supplements: [
-          { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
-          { label: "Touch-up 2. behandling", price: "+ 25.000 kr." },
-        ],
+        supplements: [{ label: "Touch-up 2. behandling", price: "+ 25.000 kr." }],
       },
       {
         label: "Hybrid brystforstørrelse",
@@ -102,7 +102,7 @@ export const treatments: TreatmentGroup[] = [
         price: "fra 44.000 kr.",
         href: "/booking",
         supplements: [
-          { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
+          { label: "Tillæg v. implantater over 500 ml.", price: "+ 5.000 kr." },
           { label: "Tillæg v. anatomiske implantater", price: "+ 3.000 kr." },
           { label: "Tillæg v. Mentor implantater", price: "+ 5.000 kr." },
         ],
@@ -167,10 +167,10 @@ export const treatments: TreatmentGroup[] = [
         price: "45.000 kr.",
         href: "/behandlinger/udskiftning-af-protese",
         supplements: [
-          { label: "Tillæg ved implantater over 500 ml.", price: "+ 5.000 kr." },
+          { label: "Tillæg v. implantater over 500 ml.", price: "+ 5.000 kr." },
           { label: "Tillæg v. anatomiske implantater", price: "+ 3.000 kr." },
           { label: "Tillæg v. Mentor implantater", price: "+ 5.000 kr." },
-          { label: "Tillæg v. ved kapseldannelse", price: "+ 5.000 kr." },
+          { label: "Tillæg v. kapseldannelse", price: "+ 5.000 kr." },
         ],
       },
       {
@@ -182,8 +182,8 @@ export const treatments: TreatmentGroup[] = [
         price: "30.000 kr.",
         href: "/booking",
         supplements: [
-          { label: "Ruptur", price: "fra 3.000 kr." },
-          { label: "Kapseldannelse", price: "fra 5.000 kr." },
+          { label: "Tillæg v. ruptur", price: "fra 3.000 kr." },
+          { label: "Tillæg v. kapseldannelse", price: "fra 5.000 kr." },
         ],
       },
     ],
@@ -194,8 +194,8 @@ export const treatments: TreatmentGroup[] = [
       {
         label: "Fedttransplantation til ansigtet",
         desc: "Stamcelleanrigt fedt til naturlig volumengenopbygning i ansigtet.",
-        duration: "1 t",
-        recovery: "2-14 dage",
+        duration: "30 min.",
+        recovery: "1 dag",
         anbefales: "Permanent volumenopbygning alternativt til midlertidlige fillers",
         price: "14.000 kr.",
         href: "/behandlinger/fedttransplantation",
@@ -204,8 +204,8 @@ export const treatments: TreatmentGroup[] = [
       {
         label: "Fedttransplantation til ar og vævsforbedring",
         desc: "Målrettet fedttransplantation til korrektion af ar og forbedring af vævskvalitet.",
-        duration: "1–2 t",
-        recovery: "2-14 dage",
+        duration: "1,5 t",
+        recovery: "1-7 dage",
         anbefales: "Forbedring af ar eller vævskvalitet, f.eks. efter tidligere operationer eller traumer",
         price: "fra 14.000 kr.",
         href: "/behandlinger/fedttransplantation",
@@ -248,7 +248,7 @@ export interface TreatmentSummary {
 export const treatmentSummaries: Record<string, TreatmentSummary> = {
   "bfo-implantat": {
     name: "Brystforstørrelse med implantat",
-    price: "fra 40.000 kr.",
+    price: "fra 32.000 kr.",
     facts: [
       { label: "Operation", value: "Fuld bedøvelse" },
       { label: "Operationstid", value: "45–60 min." },
@@ -258,7 +258,7 @@ export const treatmentSummaries: Record<string, TreatmentSummary> = {
   },
   "bfo-eget-fedt-lipofilling": {
     name: "Brystforstørrelse med eget fedt",
-    price: "fra 54.000 kr.",
+    price: "fra 32.000 kr.",
     facts: [
       { label: "Operation", value: "Fuld bedøvelse" },
       { label: "Operationstid", value: "1,5–2 timer" },
@@ -273,7 +273,7 @@ export const treatmentSummaries: Record<string, TreatmentSummary> = {
       { label: "Operation", value: "Fuld bedøvelse" },
       { label: "Operationstid", value: "1,5–2 timer" },
       { label: "Tid på klinikken", value: "2–3 timer" },
-      { label: "Sygemelding", value: "Typisk 1–2 uger" },
+      { label: "Sygemelding", value: "Typisk 1–7 dage" },
     ],
   },
   brystreduktion: {
@@ -283,7 +283,7 @@ export const treatmentSummaries: Record<string, TreatmentSummary> = {
       { label: "Operation", value: "Fuld bedøvelse" },
       { label: "Operationstid", value: "2 timer" },
       { label: "Tid på klinikken", value: "3–4 timer" },
-      { label: "Sygemelding", value: "Typisk 2 uger" },
+      { label: "Sygemelding", value: "Typisk 1-2 uger" },
     ],
   },
   "udskiftning-af-protese": {
@@ -301,9 +301,9 @@ export const treatmentSummaries: Record<string, TreatmentSummary> = {
     price: "fra 14.000 kr.",
     facts: [
       { label: "Operation", value: "Lokal- el. fuld bedøvelse" },
-      { label: "Operationstid", value: "1–2 timer" },
-      { label: "Tid på klinikken", value: "2–3 timer" },
-      { label: "Sygemelding", value: "2–14 dage" },
+      { label: "Operationstid", value: "40–55 min." },
+      { label: "Tid på klinikken", value: "1–3 timer" },
+      { label: "Sygemelding", value: "1-7 dage" },
     ],
   },
   "second-opinion": {

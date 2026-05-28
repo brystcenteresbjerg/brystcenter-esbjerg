@@ -17,6 +17,7 @@ interface FeaturesSectionProps {
   background?: string;
   cardBackground?: string;
   headingAlign?: "left" | "center";
+  columns?: 2 | 3;
 }
 
 const containerVariants = {
@@ -37,6 +38,7 @@ export default function FeaturesSection({
   background = "bg-surface-container-low",
   cardBackground = "bg-white",
   headingAlign = "left",
+  columns = 3,
 }: FeaturesSectionProps) {
   const hasHeader = label || heading || intro;
   const isCenter = headingAlign === "center";
@@ -68,7 +70,7 @@ export default function FeaturesSection({
           </motion.div>
         )}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-10"
+          className={`grid grid-cols-1 gap-10 ${columns === 2 ? "md:grid-cols-2" : "md:grid-cols-3"}`}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

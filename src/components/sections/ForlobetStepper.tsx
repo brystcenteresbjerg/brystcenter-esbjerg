@@ -18,9 +18,10 @@ interface Props {
   heading: string;
   body: string;
   steps: ForlobetStep[];
+  summary: { duration: string; note: string };
 }
 
-export default function ForlobetStepper({ label, heading, body, steps }: Props) {
+export default function ForlobetStepper({ label, heading, body, steps, summary }: Props) {
   const [active, setActive] = useState(0);
   const s = steps[active];
   const progress = ((active + 1) / steps.length) * 100;
@@ -38,7 +39,11 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
         </div>
 
         {/* Step tabs */}
-        <div role="tablist" className={`grid grid-cols-2 ${{ 2: "md:grid-cols-2", 3: "md:grid-cols-3", 4: "md:grid-cols-4", 5: "md:grid-cols-5" }[steps.length] ?? "md:grid-cols-4"}`} style={{ borderTop: "1px solid rgba(44,62,80,0.10)" }}>
+        <div
+          role="tablist"
+          className={`grid grid-cols-2 ${{ 2: "md:grid-cols-2", 3: "md:grid-cols-3", 4: "md:grid-cols-4", 5: "md:grid-cols-5" }[steps.length] ?? "md:grid-cols-4"}`}
+          style={{ borderTop: "1px solid rgba(44,62,80,0.10)" }}
+        >
           {steps.map((step, i) => {
             const isActive = i === active;
             return (
@@ -219,9 +224,9 @@ export default function ForlobetStepper({ label, heading, body, steps }: Props) 
                   Samlet
                 </p>
                 <p className="font-serif text-lg text-secondary" style={{ fontWeight: 500 }}>
-                  2–3 timer · ambulant
+                  {summary.duration}
                 </p>
-                <p className="font-sans text-xs text-secondary/85 mt-1">Fuld narkose · kontrol efter 6 mdr.</p>
+                <p className="font-sans text-xs text-secondary/85 mt-1">{summary.note}</p>
               </div>
             </div>
           </aside>

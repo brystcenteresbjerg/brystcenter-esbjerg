@@ -8,6 +8,7 @@ import {
   fordeleSection,
   forloebetSection,
   forloebetSteps,
+  forloebetSummary,
 } from "@/data/behandlinger/bfo-eget-fedt-lipofilling";
 
 import CtaSection from "@/components/sections/CtaSection";
@@ -109,6 +110,7 @@ export default function Page() {
         heading={forloebetSection.heading}
         body={forloebetSection.body}
         steps={forloebetSteps}
+        summary={forloebetSummary}
       />
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}

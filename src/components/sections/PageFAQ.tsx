@@ -2,9 +2,10 @@
 
 import { AnimatePresence, motion } from "motion/react";
 
+import Link from "next/link";
 import { useState } from "react";
 
-type FAQItem = { q: string; a: string };
+type FAQItem = { q: string; a: string; link?: { label: string; href: string } };
 
 interface PageFAQProps {
   items: FAQItem[];
@@ -41,7 +42,15 @@ function Accordion({ items }: { items: FAQItem[] }) {
                 transition={{ duration: 0.25, ease: "easeInOut" }}
                 className="overflow-hidden"
               >
-                <p className="pb-6 font-sans text-base leading-relaxed text-secondary/75 max-w-2xl">{item.a}</p>
+                <p className={`font-sans text-base leading-relaxed text-secondary/75 max-w-2xl${item.link ? "" : " pb-6"}`}>{item.a}</p>
+                {item.link && (
+                  <Link
+                    href={item.link.href}
+                    className="inline-block mt-3 mb-6 font-sans text-sm text-primary hover:underline underline-offset-2"
+                  >
+                    {item.link.label} →
+                  </Link>
+                )}
               </motion.div>
             )}
           </AnimatePresence>

@@ -3,13 +3,18 @@ import type { CtaContent, FAQItem, FeatureItem, SectionContent } from "@/data/ty
 export const behandlingSection: SectionContent = {
   label: "Behandling",
   heading: "Regenerativ æstetik: Mere end blot volumen",
-  body: "Den moderne tilgang til brystforstørrelse med eget fedt bygger på omfattende international forskning og metoder perfektioneret af specialister som Andrzej Piatkowski og Roger Khouri. Hos Brystcenter Esbjerg ser vi ikke blot behandlingen som en volumenforøgelse, men også som regenerativ æstetik, hvor vi arbejder med kroppens biologiske byggesten for at optimere både form og vævskvalitet.",
+  body: "Den moderne tilgang til brystforstørrelse med eget fedt bygger på omfattende international forskning og metoder perfektioneret af bl.a. specialister som Dr. Andrzej Piatkowski og Dr. Roger Khouri. Hos Brystcenter Esbjerg ser vi ikke blot behandlingen som en volumenforøgelse, men også som regenerativ æstetik, hvor vi arbejder med kroppens biologiske byggesten for at optimere både form og vævskvalitet.",
+};
+
+export const forloebetSummary = {
+  duration: "1 time · ambulant",
+  note: "Fuld narkose · kontrol efter 6 mdr.",
 };
 
 export const forloebetSection: SectionContent = {
   label: "Forløbet",
   heading: "Hvordan foregår en brystforstørrelse med lipofilling?",
-  body: "Processen kræver høj teknisk præcision for at sikre, at de transplanterede celler integreres optimalt i brystvævet. Da fedttransplantation er afhængig af biologiske forhold, vurderes det endelige resultat efter nogle måneder, når kroppen har optaget en del af det transplanterede væv og stabiliseret den nye volumen.",
+  body: "Processen kræver høj teknisk præcision for at sikre, at de transplanterede celler integreres optimalt i brystvævet. Da fedttransplantation er afhængig af biologiske forhold, vurderes det endelige resultat efter nogle måneder, når kroppen har integreret størstedelen af det transplanterede væv og stabiliseret den nye volumen.",
 };
 
 export const cta: CtaContent = {
@@ -21,7 +26,7 @@ export const cta: CtaContent = {
 export const faqItems: FAQItem[] = [
   {
     q: "Hvad er fordelen ved stamceller i fedtvæv?",
-    a: "Stamcellerne i fedtvævet spiller en central rolle i regenerativ kirurgi. Udover at skabe volumen medvirker de til at forbedre hudens struktur og elasticitet i det behandlede område. Det betyder, at en brystforstørrelse med eget fedt ofte resulterer i en sundere og mere modstandsdygtig hudoverflade, da vævet hjælpes til at forny sig selv indefra.",
+    a: "Stamcellerne i fedtvævet spiller en central rolle i regenerativ kirurgi. Udover at skabe volumen, medvirker de til at forbedre hudens struktur og elasticitet i det behandlede område. Det betyder, at brystforstørrelse med eget fedt ofte resulterer i sundere hudoverflade, og eventuelle aldersbetingede ændringer påvirkes gunstigt, da vævet hjælpes til at forny sig selv indefra.",
   },
   {
     q: "Kan man kombinere implantat og eget fedt (Hybrid)?",
@@ -33,14 +38,14 @@ export const faqItems: FAQItem[] = [
   },
   {
     q: "Efterlader fedttransplantation synlige ar?",
-    a: "En af de største fordele ved lipofilling er, at indgrebet efterlader minimale spor. Fedtet suges fra donorområdet (f.eks. mave eller lår) og indsprøjtes i brystet gennem meget tynde kanyler. Det betyder, at arrene sjældent er større end 2–3 millimeter og typisk placeres strategisk i naturlige hudfolder, hvor de med tiden bliver næsten usynlige. Dette gør metoden ideel til kvinder, der ønsker et kosmetisk resultat uden de klassiske ar fra traditionelle brystoperationer eller implantatindgreb.",
+    a: "En af de største fordele ved lipofilling er, at indgrebet efterlader minimale ar. Fedtet suges fra donorområdet (f.eks. mave, hofte eller lår) og indsprøjtes i brystet gennem meget millimeter tynde kanyler. Det betyder, at arrene sjældent er større end 2–3 millimeter og typisk placeres strategisk i naturlige hudfolder, hvor de med tiden bliver næsten usynlige. Dette gør metoden ideel til kvinder, der ønsker et kosmetisk resultat uden de klassiske ar fra traditionelle brystoperationer eller implantatindgreb.",
   },
 ];
 
 export const features: FeatureItem[] = [
   {
     label: "Biologisk integration og naturlig konsistens",
-    text: "Ved at anvende eget væv undgår man de risici, der er forbundet med implantater, og opnår en konsistens, der føles som naturligt brystvæv. Integrationen sker gradvist, hvilket giver et diskret udtryk, der følger kroppens naturlige aldringsprocesser.",
+    text: "Ved at anvende eget væv undgår man de risici, der er forbundet med implantater, og opnår en konsistens, der føles som naturligt brystvæv. Integrationen sker gradvist, hvilket giver et naturligt udtryk.",
   },
   {
     label: "Stamcellernes betydning for vævskvaliteten",
@@ -48,7 +53,7 @@ export const features: FeatureItem[] = [
   },
   {
     label: "Skånsom høst af fedtvæv med moderne systemer",
-    text: "For at sikre en høj overlevelsesrate for fedtcellerne anvender vi lukkede og skånsomme systemer gennem hele processen. Denne kontrollerede håndtering minimerer traumer mod vævet og sikrer en ensartet og præcis fordeling af volumen i brystet.",
+    text: "For at sikre en høj overlevelsesrate for fedtcellerne anvender vi lukkede og state of the art systemer gennem hele processen. Denne kontrollerede håndtering minimerer traumer mod vævet og sikrer en ensartet og præcis fordeling af volumen i brystet.",
   },
 ];
 
@@ -66,9 +71,9 @@ export const forloebetSteps: ForlobetStep[] = [
     n: "01",
     label: "Fedthøst",
     title: "Skånsom fedtsugning af donorområde",
-    body: "Indgrebet starter med en kontrolleret høst af fedt fra de aftalte områder. Vi anvender lukkede, lavtryks-systemer og tynde kanyler, så fedtcellerne forbliver intakte. Den skånsomme teknik er afgørende for cellernes overlevelse – og donorområdet får samtidig en fin konturering.",
+    body: "Indgrebet starter med en kontrolleret høst af fedt fra de aftalte områder. Vi anvender lukkede, lavtrykssystemer og milimeter tynde kanyler, så fedtcellerne forbliver intakte. Den skånsomme teknik er afgørende for cellernes overlevelse – og donorstederne - mave, hofte og lår - som fedtet tages fra  får samtidig en fin konturering.",
     bullets: ["Lukket, vævsbeskyttende system", "Tynde kanyler – minimal arvæv", "Konturering af mave / hofter / lår"],
-    duration: "45–60 min",
+    duration: "30 min.",
   },
   {
     n: "02",
@@ -76,7 +81,7 @@ export const forloebetSteps: ForlobetStep[] = [
     title: "Rensning og koncentration af fedtvæv",
     body: "Det høstede væv overføres til et lukket, sterilt kredsløb, hvor olie, blod og bedøvelsesvæske separeres fra de levedygtige fedtceller og stamceller. Resultatet er et koncentreret, rent transplantat – kun det bedst egnede væv injiceres tilbage.",
     bullets: ["Sterilt, lukket kredsløb", "Adskillelse af olie og bedøvelse", "Bevarelse af regenerative celler"],
-    duration: "20–30 min",
+    duration: "15 min.",
   },
   {
     n: "03",
@@ -84,15 +89,7 @@ export const forloebetSteps: ForlobetStep[] = [
     title: "Præcis micro-injektion",
     body: "Fedtet placeres i mange små depoter gennem 2–3 mm kanyler – i flere lag og fra forskellige indstik for at opnå en jævn, tredimensionel fordeling. Den fine spredning sikrer, at hver enkelt fedtcelle hurtigt får adgang til ilt og blodforsyning, hvilket er forudsætningen for permanent integration. Vi overkorrigerer typisk en smule, da kroppen naturligt absorberer 20–40 % af det indsatte fedt.",
     bullets: ["Multi-layer micro-droplet teknik", "2–3 mm indstik – næsten usynlige ar", "Bevidst overkorrektion 20–30 %"],
-    duration: "60–90 min",
-  },
-  {
-    n: "04",
-    label: "Heling & kontrol",
-    title: "Restitution og endelig vurdering",
-    body: "De første dage er præget af mild ømhed og hævelse. De fleste er tilbage på let kontorarbejde efter 1–2 uger. Det transplanterede væv etablerer egen blodforsyning over de første 3–4 måneder, og det endelige resultat vurderes ved kontrol efter ca. 6 måneder, når volumen har stabiliseret sig.",
-    bullets: ["Tilbage på job efter 1–2 uger", "Stabilisering 3–6 måneder", "Endelig kontrol efter 6 måneder"],
-    duration: "Op til 6 mdr.",
+    duration: "20 min.",
   },
 ];
 
@@ -109,7 +106,7 @@ export const benefits: FeatureItem[] = [
   },
   {
     label: "Diskret og harmonisk",
-    text: "Søger en diskret og harmonisk ændring af brystets størrelse.",
+    text: "Søger en moderat og harmonisk forstørrelse af brystet.",
   },
   {
     label: "Kombineret win-win",

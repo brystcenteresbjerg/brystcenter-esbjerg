@@ -1,6 +1,7 @@
 export interface FAQItem {
   q: string;
   a: string;
+  link?: { label: string; href: string };
 }
 
 export interface FeatureItem {

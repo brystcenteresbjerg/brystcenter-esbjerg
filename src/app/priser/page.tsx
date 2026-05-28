@@ -1,10 +1,10 @@
 import { featured, included, treatments } from "@/data/priser";
-import { site } from "@/data/site";
 
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
+import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Priser | Brystcenter Esbjerg",
@@ -43,7 +43,11 @@ export default function Page() {
                 )}
                 <p className="font-serif text-lg font-semibold text-secondary">{card.title}</p>
                 <div>
-                  <p className="font-sans text-[10px] uppercase tracking-[0.12em] font-semibold text-secondary/55 mb-1">Fra</p>
+                  {card.priceLabel && (
+                    <p className="font-sans text-[10px] uppercase tracking-[0.12em] font-semibold text-secondary/55 mb-1">
+                      {card.priceLabel}
+                    </p>
+                  )}
                   <p className="font-serif text-3xl font-light text-primary leading-none">{card.price}</p>
                 </div>
                 <ul className="flex flex-col gap-2 mt-auto">
@@ -133,8 +137,8 @@ export default function Page() {
           <div>
             <h2 className="font-serif text-xl font-semibold text-secondary mb-4">Finansiering</h2>
             <p className="font-sans text-base leading-relaxed text-secondary/75">
-              Vi samarbejder med udvalgte finansieringspartnere, så du har mulighed for at fordele betalingen. Spørg os om
-              mulighederne ved din konsultation.
+              Vi tilbyder en gratis finansiering via Resurs Bank. Her kan du låne op til 60.000 kr. til 0% i renter og 0 kr. i
+              gebyr.
             </p>
           </div>
         </div>

@@ -3,8 +3,8 @@ import type { CtaContent, FAQItem, FeatureItem, Quote, SectionContent } from "@/
 export const alaCarteSection = {
   image: "/images/collarbone_hands_breasts_cover.jpg",
   quote: {
-    text: "Det bedste kirurgiske resultat er det, der ser naturligt ud - som om det altid har hørt til.",
-    author: "Kirurg, Troels Tei",
+    text: "Kosmetisk kirurgi skal være sikkert og ukompliceret.",
+    author: "Plastikkirurg, Troels Tei",
   } satisfies Quote,
   label: "Behandling",
   heading: "En «à la carte»-tilgang til din krop",
@@ -13,7 +13,8 @@ export const alaCarteSection = {
 export const featuresContent = {
   label: "Rådgivning",
   heading: "Valg af implantat",
-  intro: "For at sikre det perfekte match tilbyder vi et bredt udvalg af implantater fra førende producenter. Ved forundersøgelsen gennemgår vi dine muligheder i detaljer, så du er tryg ved dit valg. Vi rådgiver dig om forskellene på:",
+  intro:
+    "For at sikre det perfekte match tilbyder vi et bredt udvalg af implantater fra anerkendte producenter. Ved forundersøgelsen gennemgår vi dine muligheder i detaljer, så du er tryg ved dit valg. Vi rådgiver dig om forskellene på:",
 };
 
 export const splitContent: SectionContent = {
@@ -39,7 +40,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     q: "Gør det ondt at få lagt implantater ind?",
-    a: "Selve operationen foregår i fuld bedøvelse, så du mærker intet. I dagene efter vil der være ømhed og en følelse af spænding, som minder om en kraftig muskelpine. Vi lægger en individuel smerteplan til dig, så du er dækket ind i den første tid, og de fleste kan vende tilbage til stillesiddende arbejde efter 1–2 uger.",
+    a: "Selve operationen foregår i fuld bedøvelse, så du mærker intet. I dagene efter vil der være ømhed og en følelse af spænding, som minder om en kraftig muskelpine. Vi ilægger lokalbedøvelse i hulrummet, hvor implantatet er placeret og anvender muskelafslappende medicin, så man minimerer behovet for morfin og undgår de kendte bivirkninger med kvalme. Vi lægger en individuel smerteplan til dig, så du er dækket ind den første tid, og de fleste kan vende tilbage til stillesiddende arbejde efter 1–2 uger.",
   },
 ];
 
@@ -65,6 +66,6 @@ export const implantChoices: FeatureItem[] = [
   },
   {
     label: "Overfladestruktur",
-    text: "Vi anvender PU-implantater for at sikre maksimal stabilitet og minimere risikoen for komplikationer som kapseldannelse.",
+    text: "Vi anvender implantater med alle typer overflader inkl. PU-implantater for at sikre maksimal stabilitet og minimere risikoen for komplikationer som forskydning, rotation og kapseldannelse.",
   },
 ];

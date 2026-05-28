@@ -1,9 +1,18 @@
-import { ArrowUp, Sparkles, Zap } from "lucide-react";
-import { cta, faqItems, features, forloebetSection, forloebetSteps, intro, introQuote } from "@/data/behandlinger/fedttransplantation";
+import { ArrowUp, ShieldPlus, Sparkles, Zap } from "lucide-react";
+import {
+  cta,
+  faqItems,
+  features,
+  forloebetSection,
+  forloebetSteps,
+  forloebetSummary,
+  intro,
+  introQuote,
+} from "@/data/behandlinger/fedttransplantation";
 
 import CtaSection from "@/components/sections/CtaSection";
-import ForlobetStepper from "@/components/sections/ForlobetStepper";
 import FeaturesSection from "@/components/sections/FeaturesSection";
+import ForlobetStepper from "@/components/sections/ForlobetStepper";
 import Image from "next/image";
 import type { Metadata } from "next";
 import PageFAQ from "@/components/sections/PageFAQ";
@@ -39,7 +48,7 @@ export default function Page() {
         h1Main="Naturlig fornyelse"
         h1Italic="med kroppens eget væv"
         video="/videos/skin_freckles.mp4"
-        subtitle="Fedttransplantation (lipofilling) genskaber volumen og forbedrer vævets kvalitet med kroppens egne stamceller - for et resultat, der er naturligt indefra og ud."
+        subtitle="Fedttransplantation (lipofilling) genskaber volumen og forbedrer vævets kvalitet med kroppens egne stamceller - for et resultat, der forynger indefra og ud."
         cta={{ label: "Book konsultation", href: "#book" }}
         secondaryCta={{ label: "Brystforstørrelse med eget fedt", href: "/behandlinger/bfo-eget-fedt-lipofilling" }}
         gradient="linear-gradient(to right, rgba(250,243,238,0.60) 0%, rgba(250,243,238,0.4) 60%, rgba(250,243,238,0) 100%)"
@@ -71,9 +80,10 @@ export default function Page() {
         heading="Hvad kan vi behandle med eget fedt?"
         intro="Fedttransplantation kan anvendes bredt - fra æstetisk foryngelse til medicinsk vævsforbedring."
         headingAlign="center"
+        columns={2}
         items={features.map((f, i) => ({
           ...f,
-          icon: [<Sparkles size={22} />, <ArrowUp size={22} />, <Zap size={22} />][i],
+          icon: [<Sparkles size={22} />, <ArrowUp size={22} />, <Zap size={22} />, <ShieldPlus size={22} />][i],
         }))}
       />
 
@@ -83,6 +93,7 @@ export default function Page() {
         heading={forloebetSection.heading}
         body={forloebetSection.body}
         steps={forloebetSteps}
+        summary={forloebetSummary}
       />
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}

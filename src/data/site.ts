@@ -22,7 +22,7 @@ export const site = {
   },
   cta: "Book konsultation",
   stats: [
-    { target: 2400, suffix: "+", label: "Udførte indgreb" },
-    { target: 18, suffix: " år", label: "Som speciallæge" },
+    { target: 5000, suffix: "+", label: "Udførte indgreb" },
+    { target: 22, suffix: " år", label: "Som speciallæge" },
   ],
 };

@@ -4,13 +4,14 @@ export const introLeft: SectionContent = {
   label: "Teknik",
   heading: "Moderne teknikker: B-teknik (Renault)",
   body: "Vi anvender veldokumenterede kirurgiske metoder for at sikre det mest harmoniske resultat. En af de mest innovative tilgange i vores center er den såkaldte B-teknik, oprindeligt beskrevet af Renault.",
-  body2: "Denne teknik adskiller sig ved at have et særligt fokus på intern vævsomformning, hvilket optimerer brystets støtte og projektion. B-teknikken er særligt målrettet patienter med en øget lateral fylde - altså hvor brystet fremstår bredt eller er orienteret ud mod armhulen. Ved at reducere og omforme vævet i de laterale dele af brystet kan vi skabe en mere centreret, løftet og ungdommelig brystform.",
+  body2:
+    "Denne teknik adskiller sig ved at have et særligt fokus på vævsfordeling, hvilket optimerer brystets støtte og projektion. B-teknikken er særligt målrettet patienter med en øget lateral fylde - altså hvor brystet fremstår bredt eller er orienteret ud mod armhulen. Ved at reducere og omforme vævet i de laterale dele af brystet kan vi skabe en mere centreret, løftet og ungdommelig brystform.",
 };
 
 export const introRight: SectionContent = {
   label: "Formål",
   heading: "Lindring af fysiske gener og æstetisk balance",
-  body: "For mange kvinder er en brystreduktion en vej til en markant forbedret livskvalitet. Behandlingen handler ikke kun om udseende, men om at genskabe en krop i balance, hvor brysternes tyngde ikke længere begrænser din hverdag.",
+  body: "For mange kvinder er en brystreduktion en vej til en markant forbedret livskvalitet dokumenteret i forskellige livskvalitetsdokumenter (Quality of life). Behandlingen handler ikke kun om udseende, men om at genskabe en krop i balance, hvor brysternes tyngde ikke længere begrænser din hverdag.",
 };
 
 export const cta: CtaContent = {
@@ -22,11 +23,7 @@ export const cta: CtaContent = {
 export const faqItems: FAQItem[] = [
   {
     q: "Hvor meget vægt kan man fjerne ved en brystreduktion?",
-    a: "Mængden af væv, der fjernes, afhænger helt af brystets oprindelige volumen, din kropsbygning og det ønskede slutresultat. Ved større brystreduktioner anvendes ofte den klassiske anker-teknik, som giver kirurgen størst fleksibilitet til at fjerne betydelige mængder hud og kirtelvæv. Målet er altid at finde en vægt, der giver fysisk lindring, men som stadig efterlader brystet med en naturlig og smuk fylde, der passer til dine proportioner.",
-  },
-  {
-    q: "Efterlader moderne teknikker som B-teknik færre ar?",
-    a: "B-teknikken og den vertikale metode (cirkumvertikal teknik) har fokus på at begrænse ardannelsen sammenlignet med de helt store reduktioner. Ved den vertikale teknik undgår man det lange tværgående ar i folden under brystet. Det er dog vigtigt at forstå, at arrets endelige udseende afhænger af individuel heling. Vi benytter præcisionsteknikker under operationen for at sikre så diskrete og fine ar som overhovedet muligt.",
+    a: "Mængden af væv, der fjernes, afhænger helt af brystets oprindelige volumen, din kropsbygning og det ønskede resultat. Ved større brystreduktioner anvendes ofte den klassiske ankerteknik, som giver kirurgen størst fleksibilitet til at fjerne betydelige mængder hud og kirtelvæv. Målet er altid at opnå en bryststørrelse, der giver fysisk lindring, men som stadig efterlader brystet med en naturlig og smuk fylde, der passer til dine proportioner.",
   },
   {
     q: "Kan man amme efter en brystreduktion?",
@@ -48,7 +45,7 @@ export const features: FeatureItem[] = [
     text: "Ved anvendelse af moderne teknikker som Renault-teknikken er der stort fokus på at bevare vævets naturlige struktur og blodforsyning. Dette er afgørende for både helingsprocessen og for at bevare følesansen i brystvorten i videst muligt omfang.",
   },
   {
-    label: "Individuel planlægning af dit armønster",
-    text: "Valget af kirurgisk teknik har betydning for placeringen af arrene. Vi tilbyder alt fra den vertikale teknik, hvor arret begrænses til området omkring brystvorten og ned mod brystfolden, til den klassiske ankerformede brystreduktion ved større volumenmæssige behov. Ved forundersøgelsen planlægger vi det præcise armønster, så det tilpasses din anatomi og dit ønske om det mindst mulige synlige spor.",
+    label: "Individuel planlægning af dit ar",
+    text: "Valget af kirurgisk teknik har betydning for placeringen af arrene. Vi tilbyder alt fra den vertikale teknik, hvor arret begrænses til området omkring brystvorten og ned mod brystfolden, til den klassiske ankerformede brystreduktion ved større volumenmæssige behov. Ved forundersøgelsen planlægger vi det præcise ar, så det tilpasses din anatomi og dit ønske om mindst mulig synlighed.",
   },
 ];
