@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Manrope, Noto_Serif } from "next/font/google";
+import Script from "next/script";
 
 import ConsultationFloat from "@/components/layout/ConsultationFloat";
 import Footer from "@/components/layout/Footer";
@@ -59,6 +60,13 @@ export default function RootLayout({
         <ConsultationFloat />
         <Footer />
         <SpeedInsights />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-YD73NJH6F1" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-YD73NJH6F1');
+        `}</Script>
       </body>
     </html>
   );
