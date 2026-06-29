@@ -2,11 +2,10 @@ export const site = {
   name: "Brystcenter Esbjerg",
   url: "https://brystcenteresbjerg.dk",
   phone: {
-    display: "+45 76 18 56 56",
-    href: "tel:+4576185656",
+    display: "+45 74 30 11 31",
+    href: "tel:+4574301131",
   },
-  // NOTE: footer currently shows a different number — verify which is correct
-  footerPhone: "+45 22288888",
+  footerPhone: "+45 74 30 11 31",
   address: {
     street: "Bavnehøjvej 2",
     city: "6700 Esbjerg",
