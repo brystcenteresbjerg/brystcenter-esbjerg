@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Manrope, Noto_Serif } from "next/font/google";
+import Script from "next/script";
 
 import ConsultationFloat from "@/components/layout/ConsultationFloat";
 import Footer from "@/components/layout/Footer";
@@ -54,11 +55,20 @@ export default function RootLayout({
         <link rel="icon" href="/icon_dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
       </head>
       <body className="min-h-full flex flex-col bg-surface text-on-background">
+        <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4RX4RPL" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }} />
         <Header />
         <div className="flex-1 pt-20">{children}</div>
         <ConsultationFloat />
         <Footer />
         <SpeedInsights />
+        <Script id="gtm-init" strategy="afterInteractive">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P4RX4RPL');`}</Script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-YD73NJH6F1" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-YD73NJH6F1');
+        `}</Script>
       </body>
     </html>
   );
