@@ -3,7 +3,7 @@ import type { CtaContent, FAQItem, FeatureItem, SectionContent } from "@/data/ty
 export const introLeft: SectionContent = {
   label: "Hvornår",
   heading: "Hvornår bør man få foretaget en implantatudskiftning?",
-  body: "Der kan være mange årsager til at ønske en udskiftning af brystimplantater. For nogle handler det om et ønske om en ny størrelse eller form, mens det for andre er en nødvendighed grundet kapseldannelse, implantatbrud eller at implantatet har flyttet sig (displacering). Ved en grundig forundersøgelse vurderer vi dit nuværende udgangspunkt og lægger en plan, der sikrer harmoni og langsigtede resultater.",
+  body: "Der kan være mange årsager til at ønske en udskiftning af brystimplantater. For nogle handler det om et ønske om en ny størrelse eller form, mens det for andre er en nødvendighed grundet kapseldannelse, implantatbrud eller at implantatet er displaceret (har flyttet sig). Ved en grundig forundersøgelse vurderer vi dit nuværende udgangspunkt og lægger en plan, der sikrer harmoni og langsigtede resultater.",
 };
 
 export const introRight: SectionContent = {
@@ -21,7 +21,7 @@ export const cta: CtaContent = {
 export const faqItems: FAQItem[] = [
   {
     q: "Hvad er fordelen ved en polyuretanbelagt (PU) overflade?",
-    a: "Den primære fordel ved en polyuretanbelagt (PU) overflade er dens evne til at hæfte til det omkringliggende væv. Dette skaber en unik stabilitet, som minimerer risikoen for, at implantatet flytter sig eller roterer inde i brystet. Samtidig er PU-overflader dokumenteret til at have en lavere risiko for kapseldannelse sammenlignet med traditionelle overflader. Dette gør dem særligt velegnede til kvinder, der har oplevet problemer med deres nuværende implantater, eller som ønsker den højest mulige grad af sikkerhed for et stabilt resultat.",
+    a: "Den primære fordel ved en polyuretanbelagt (PU) overflade er dens evne til at hæfte til det omkringliggende væv. Dette skaber en unik stabilitet, som minimerer risikoen for, at implantatet flytter sig eller roterer inde i brystet. Samtidig er PU-overflader dokumenteret til at have en lavere risiko for malrotation og displacering sammenlignet med traditionelle overflader. Dette gør dem særligt velegnede til kvinder, der har oplevet problemer med deres nuværende implantater, eller som ønsker den højest mulige grad af sikkerhed for et stabilt resultat.",
   },
   {
     q: "Kan man skifte fra implantat til eget fedt?",
@@ -29,9 +29,16 @@ export const faqItems: FAQItem[] = [
   },
   {
     q: "Er det sværere at udskifte implantater end at få dem første gang?",
-    a: "En implantatudskiftning er teknisk set mere kompleks, da kirurgen skal navigere i eksisterende arvæv og ofte korrigere den lomme, som det gamle implantat har dannet. Derfor kræver det en kirurg med særlig erfaring inden for revisionskirurgi for at sikre, at vævet håndteres skånsomt, og at det nye implantat placeres præcist. Selvom indgrebet er mere komplekst, er selve restitutionstiden ofte sammenlignelig med den første operation, og målet er altid at forbedre både brystets sundhed og dets æstetiske fremtoning.",
+    a: "En implantatudskiftning er teknisk set mere kompleks, da kirurgen skal navigere i eksisterende arvæv og ofte korrigere den lomme, som det gamle implantat har dannet. Derfor kræver det en kirurg med særlig erfaring inden for revisionskirurgi for at sikre, at vævet håndteres skånsomt, og at det nye implantat placeres præcist. Selvom indgrebet er mere komplekst, er selve restitutionstiden ofte sammenlignelig med eller kortere end den første operation.",
   },
 ];
+
+export const featuresContent = {
+  label: "Tilgang",
+  heading: "Materiale, teknik og erfaring",
+  intro:
+    "En revisionsoperation er teknisk mere krævende end et førstegangsindgreb. Vævet er allerede præget af tidligere kirurgi, og kravene til materiale, teknik og planlægning er tilsvarende højere.",
+};
 
 export const features: FeatureItem[] = [
   {
@@ -40,7 +47,7 @@ export const features: FeatureItem[] = [
   },
   {
     label: "Korrektion af eksisterende kavitet og displacering",
-    text: "Ved en genoperation er den eksisterende lomme (kaviteten) i vævet ofte præget af det tidligere implantat. Det kan betyde, at der er behov for at korrigere lommen for at sikre, at det nye implantat ikke skrider eller roterer. Her er PU-overflader særligt effektive, da de markant reducerer risikoen for både displacering (forskydning) og rotation af implantatet.",
+    text: "Ved en reoperation af den eksisterende lomme (kaviteten) er vævet ofte præget af det tidligere implantats dimensioner. Det kan betyde, at der er behov for at korrigere lommen, og herer PU-overflader særligt effektive, da de markant reducerer risikoen for både displacering (forskydning) og rotation af implantatet.",
   },
   {
     label: "Forudsigelighed ved revisionskirurgi",

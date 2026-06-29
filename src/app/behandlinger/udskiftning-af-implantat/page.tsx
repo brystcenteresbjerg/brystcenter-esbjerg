@@ -1,5 +1,5 @@
 import { Shield, Target, TrendingUp } from "lucide-react";
-import { cta, faqItems, features, introLeft, introRight } from "@/data/behandlinger/udskiftning-af-protese";
+import { cta, faqItems, features, featuresContent, introLeft } from "@/data/behandlinger/udskiftning-af-implantat";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -39,7 +39,6 @@ export default function Page() {
         mobileImage="/images/implants_hands_three_brown.jpg"
         subtitle="Udskiftning eller korrektion af tidligere indsatte brystimplantater kræver en særlig grad af kirurgisk præcision og erfaring. Hos Brystcenter Esbjerg prioriterer vi en stabil og korrekt placering af det nye implantat."
         cta={{ label: "Book en speciallægekonsultation i Esbjerg", href: "#book" }}
-        secondaryCta={{ label: "Om brystimplantater", href: "/behandlinger/bfo-implantat" }}
       />
 
       {/* ── FACTS BAR ────────────────────────────────────────────── */}
@@ -53,16 +52,19 @@ export default function Page() {
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{introLeft.heading}</h2>
             <p className="font-sans text-base leading-relaxed text-secondary/75">{introLeft.body}</p>
           </div>
-          <div>
+          {/* <div>
             <p className="label mb-6">{introRight.label}</p>
             <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{introRight.heading}</h2>
             <p className="font-sans text-base leading-relaxed text-secondary/75">{introRight.body}</p>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* ── FEATURES ─────────────────────────────────────────────── */}
       <FeaturesSection
+        label={featuresContent.label}
+        heading={featuresContent.heading}
+        intro={featuresContent.intro}
         items={features.map((f, i) => ({
           ...f,
           icon: [<Shield size={22} />, <Target size={22} />, <TrendingUp size={22} />][i],

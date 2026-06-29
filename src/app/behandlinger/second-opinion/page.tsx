@@ -1,5 +1,5 @@
 import { ClipboardList, MessageCircle, Scale } from "lucide-react";
-import { cta, faqItems, features, hvornaar, intro, introQuote } from "@/data/behandlinger/second-opinion";
+import { cta, faqItems, features, intro, introQuote } from "@/data/behandlinger/second-opinion";
 
 import CtaSection from "@/components/sections/CtaSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -36,7 +36,7 @@ export default function Page() {
         h1Main="Uvildig vurdering"
         h1Italic="efter tidligere kirurgi"
         image="/images/hero_curls_smile_brunette.jpg"
-        subtitle="Det er ikke usædvanligt at sidde tilbage med spørgsmål efter en brystoperation. Vi tilbyder en professionel og uvildig vurdering af dit nuværende resultat og dine fremtidige muligheder."
+        subtitle="Det er ikke usædvanligt at sidde tilbage med spørgsmål efter en brystoperation. Vi tilbyder en professionel og uvildig vurdering af dit nuværende resultat efter operation foretaget andre steder og dine fremtidige muligheder."
         cta={{ label: "Book tid til en uvildig vurdering", href: "#book" }}
       />
 
@@ -72,23 +72,16 @@ export default function Page() {
       />
 
       {/* ── HVORNÅR ──────────────────────────────────────────────── */}
-      <section className="px-8 lg:px-16 py-20 bg-surface">
-        <div className="max-w-3xl mx-auto">
-          <p className="label mb-6">{hvornaar.label}</p>
-          <h2 className="font-serif text-3xl font-semibold text-secondary mb-6 leading-snug">{hvornaar.heading}</h2>
-          <p className="font-sans text-base leading-relaxed text-secondary/75">{hvornaar.body}</p>
-        </div>
-      </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
-      <div className="px-8 lg:px-16 py-24 bg-surface-container-low">
+      <div className="px-8 lg:px-16 py-24 bg-surface">
         <div className="max-w-3xl mx-auto">
           <PageFAQ items={faqItems} />
         </div>
       </div>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <CtaSection {...cta} background="bg-surface" />
+      <CtaSection {...cta} />
     </>
   );
 }

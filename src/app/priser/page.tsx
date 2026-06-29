@@ -29,29 +29,27 @@ export default function Page() {
         <div className="max-w-3xl">
           <p className="label mb-8">Mest efterspurgte</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {featured.map((card) => (
+            {featured.map((item) => (
               <div
-                key={card.title}
+                key={item.id}
                 className={`relative rounded-sm p-6 flex flex-col gap-4 border ${
-                  card.popular ? "bg-surface-container-low border-primary/25" : "bg-surface border-secondary/8"
+                  item.popular ? "bg-surface-container-low border-primary/25" : "bg-surface border-secondary/8"
                 }`}
               >
-                {card.popular && (
+                {item.popular && (
                   <span className="absolute top-4 right-4 font-sans text-[9px] uppercase tracking-[0.2em] font-semibold text-primary">
                     Mest valgte
                   </span>
                 )}
-                <p className="font-serif text-lg font-semibold text-secondary">{card.title}</p>
+                <p className="font-serif text-lg font-semibold text-secondary">{item.featureTitle}</p>
                 <div>
-                  {card.priceLabel && (
-                    <p className="font-sans text-[10px] uppercase tracking-[0.12em] font-semibold text-secondary/55 mb-1">
-                      {card.priceLabel}
-                    </p>
+                  {item.priceFra && (
+                    <p className="font-sans text-[10px] uppercase tracking-[0.12em] font-semibold text-secondary/55 mb-1">Fra</p>
                   )}
-                  <p className="font-serif text-3xl font-light text-primary leading-none">{card.price}</p>
+                  <p className="font-serif text-3xl font-light text-primary leading-none">{item.price}</p>
                 </div>
                 <ul className="flex flex-col gap-2 mt-auto">
-                  {card.bullets.map((b) => (
+                  {item.featureBullets!.map((b) => (
                     <li key={b} className="flex items-start gap-2 font-sans text-xs leading-relaxed text-secondary/70">
                       <span className="text-primary mt-0.5 shrink-0">-</span>
                       {b}
@@ -93,7 +91,9 @@ export default function Page() {
                       </div>
                       <div className="shrink-0 flex flex-col items-end gap-2 pt-0.5">
                         {item.price ? (
-                          <p className="font-serif text-lg font-light text-primary">{item.price}</p>
+                          <p className="font-serif text-lg font-light text-primary">
+                            {item.priceFra ? "fra " : ""}{item.price}
+                          </p>
                         ) : (
                           <p className="font-sans text-xs text-secondary/35 mt-1">Kontakt os</p>
                         )}

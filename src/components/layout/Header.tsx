@@ -38,7 +38,7 @@ const navItems: NavItem[] = [
       { label: "Brystforstørrelse med eget fedt", href: "/behandlinger/bfo-eget-fedt-lipofilling" },
       { label: "Brystløft", href: "/behandlinger/brystloeft" },
       { label: "Brystreduktion", href: "/behandlinger/brystreduktion" },
-      { label: "Implantatudskiftning", href: "/behandlinger/udskiftning-af-protese" },
+      { label: "Udskiftning af implantat", href: "/behandlinger/udskiftning-af-implantat" },
       { label: "Second Opinion", href: "/behandlinger/second-opinion" },
     ],
   },
