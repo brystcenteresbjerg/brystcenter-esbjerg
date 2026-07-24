@@ -5,6 +5,7 @@ import { Manrope, Noto_Serif } from "next/font/google";
 import ConsultationFloat from "@/components/layout/ConsultationFloat";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+import PromoBanner from "@/components/layout/PromoBanner";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -62,7 +63,8 @@ export default function RootLayout({
         <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4RX4RPL" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }} />
         {/* End Google Tag Manager (noscript) */}
         <Header />
-        <div className="flex-1 pt-20">{children}</div>
+        <PromoBanner />
+        <div className="flex-1 pt-30">{children}</div>
         <ConsultationFloat />
         <Footer />
         <SpeedInsights />
