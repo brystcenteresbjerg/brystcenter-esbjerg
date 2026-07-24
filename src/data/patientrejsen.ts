@@ -14,7 +14,7 @@ export const steps: Step[] = [
     label: "Første kontakt",
     time: "Dag 1",
     title: "Du tager det første skridt",
-    body: "Det hele begynder med, at du kontakter os i Esbjerg. Vi besvarer dine indledende spørgsmål og aftaler et tidspunkt til en uforpligtende konsultation. Hos os er der ingen ventelister, og du får direkte kontakt til det team, der følger dig hele vejen.",
+    body: "Det hele begynder med, at du kontakter os i Esbjerg. Vi besvarer dine indledende spørgsmål og aftaler et tidspunkt til en uforpligtende konsultation. Hos os er der ingen ventelister, og du får direkte kontakt til den kirurg, der følger dig hele vejen.",
   },
   {
     number: "02",
@@ -56,7 +56,7 @@ export const steps: Step[] = [
 export const faqs: FAQItem[] = [
   {
     q: "Hvor lang tid fra konsultation til operation?",
-    a: "Det afhænger af dit ønskede tidspunkt og vores kapacitet. Typisk er der 2–6 ugers ventetid fra konsultation til operationsdag.",
+    a: "Det afhænger af dit ønskede tidspunkt. Ifølge dansk lovgivning om kosmetiske behandlinger skal der gå mindst 1 uge (7 dage), før du må blive opereret efter din forundersøgelse/konsultation.",
   },
   {
     q: "Kan jeg have nogen med til konsultationen?",

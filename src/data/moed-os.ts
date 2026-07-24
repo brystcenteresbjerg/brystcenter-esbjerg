@@ -18,10 +18,10 @@ export const expertiseItems: FeatureItem[] = [
   },
   {
     label: "PU-overflader og implantater",
-    text: "Ved primær brystforstørrelse og revisionskirurgi anvender Troels Tei polyuretan-belagte implantater, der dokumenteret reducerer risikoen for kapselkontraktur og displacering. Valget er altid individuelt og baseret på en systematisk anatomisk analyse.",
+    text: "Ved primær brystforstørrelse og revisionskirurgi anvender Troels Tei polyuretan-belagte implantater, der dokumenteret reducerer risikoen for malrotation og displacering. Valget er altid individuelt og baseret på en systematisk anatomisk analyse.",
   },
   {
     label: "Regenerativ æstetik",
-    text: "Lipofilling er et centralt element i Troels Teis arbejde. Stamcelleanrigede fedttransplantater bruges til brystforstørrelse, formkorrektion og som supplement til implantatbaserede indgreb for et naturligt, blødt overgangsresultat.",
+    text: "Lipofilling er et centralt element i Troels Tei's arbejde. Lipofilling kan anvendes som et alternativ til protese med volumenforøgelse, i kombination med protese, og i forbindelse med udskiftning eller fjernelse af tidligere ilagt proteser.",
   },
 ];
