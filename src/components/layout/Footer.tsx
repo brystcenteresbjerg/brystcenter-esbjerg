@@ -38,25 +38,59 @@ export default function Footer() {
 
         {/* Kontakt */}
         <div>
-          <p className="font-sans text-sm font-medium uppercase tracking-widest text-on-primary/80 mb-5 ">Kontakt</p>
-          <address className="not-italic space-y-3">
-            <p className="font-sans text-base">{site.address.street}</p>
-            <p className="font-sans text-base ">{site.address.city}</p>
-            <p className="font-sans text-base ">Tlf. {site.footerPhone}</p>
+          <p className="font-sans text-sm font-medium uppercase tracking-widest text-on-primary/80 mb-5">Kontakt</p>
+          <address className="not-italic font-sans text-base leading-relaxed space-y-1">
+            <p className="">Brystcenter Esbjerg</p>
+            <p>En del af {site.partner.name}</p>
+            <p>{site.address.street}</p>
+            <p>{site.address.city}</p>
+            <p>CVR: {site.cvr}</p>
           </address>
-          <Link
-            href={site.partner.url}
-            className="font-sans text-base block hover:text-on-primary mt-3 transition-colors"
-          >
-            En del af {site.partner.name}
-          </Link>
+          <div className="mt-4 font-sans text-base space-y-1">
+            <p>
+              <a href={`tel:${site.phone.href.replace("tel:", "")}`} className="hover:text-on-primary/80 transition-colors">
+                Tlf. {site.footerPhone}
+              </a>
+            </p>
+            <p>
+              <a href={`mailto:${site.email}`} className="hover:text-on-primary/80 transition-colors">
+                {site.email}
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-5 border-t border-on-primary/10">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-5 border-t border-on-primary/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <p className="font-sans text-xs text-on-primary/30">
           © {new Date().getFullYear()} Brystcenter Esbjerg. Alle rettigheder forbeholdes.
         </p>
+        <nav className="flex flex-wrap gap-x-5 gap-y-1">
+          <a
+            href="https://www.privathospitaletkollund.com/web/beskyttelse-af-personoplysninger/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-xs text-on-primary/70 hover:text-on-primary transition-colors"
+          >
+            Privatlivspolitik & GDPR
+          </a>
+          <a
+            href="https://www.privathospitaletkollund.com/web/klager"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-xs text-on-primary/70 hover:text-on-primary transition-colors"
+          >
+            Klager & Patienterstatning
+          </a>
+          <a
+            href="https://www.privathospitaletkollund.com/web/wp-content/uploads/2021/05/Tilsynsrapport-paraklinisk-Kollund-dec-2019.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-xs text-on-primary/70 hover:text-on-primary transition-colors"
+          >
+            Tilsynsrapport
+          </a>
+        </nav>
       </div>
     </footer>
   );

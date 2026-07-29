@@ -15,8 +15,10 @@ export const site = {
     iframeSrc:
       "https://privathospitaletkollund.app5.geckobooking.dk/site/index.php?icCode=d6700305c12e401a4b54e1e3a573666db12068&dtPiv=1",
   },
+  email: "info@privathospitaletkollund.dk",
+  cvr: "14616284",
   partner: {
-    name: "Privathospitalet Kollund",
+    name: "Privathospitalet Kollund A/S",
     url: "https://www.privathospitaletkollund.com/",
   },
   cta: "Book konsultation",
