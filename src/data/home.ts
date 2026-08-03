@@ -65,7 +65,7 @@ export const services = [
   {
     category: "04 · Revision",
     title: "Implantatudskiftning",
-    links: [{ label: "Læs mere →", href: "/behandlinger/udskiftning-af-protese" }],
+    links: [{ label: "Læs mere →", href: "/behandlinger/udskiftning-af-implantat" }],
     image: "/images/expertise_udskiftning.jpg",
     span: "md:col-span-2",
     minHeight: "min-h-[240px]",
