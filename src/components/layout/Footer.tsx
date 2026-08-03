@@ -6,7 +6,7 @@ const services = [
   { label: "Brystforstørrelse med implantat", href: "/behandlinger/bfo-implantat" },
   { label: "Brystløft", href: "/behandlinger/brystloeft" },
   { label: "Brystreduktion", href: "/behandlinger/brystreduktion" },
-  { label: "Implantatudskiftning", href: "/behandlinger/udskiftning-af-protese" },
+  { label: "Implantatudskiftning", href: "/behandlinger/udskiftning-af-implantat" },
   { label: "Second Opinion", href: "/behandlinger/second-opinion" },
 ];
 
