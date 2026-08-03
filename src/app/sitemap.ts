@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/behandlinger/brystloeft`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/behandlinger/brystreduktion`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/behandlinger/fedttransplantation`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/behandlinger/udskiftning-af-protese`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/behandlinger/udskiftning-af-implantat`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/behandlinger/second-opinion`, changeFrequency: "monthly", priority: 0.7 },
   ];
 }
