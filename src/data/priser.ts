@@ -146,7 +146,7 @@ export const treatments: TreatmentGroup[] = [
         recovery: "1–2 uger",
         price: "45.000 kr.",
         priceFra: true,
-        href: "/behandlinger/udskiftning-af-protese",
+        href: "/behandlinger/udskiftning-af-implantat",
         supplements: [
           { label: "Tillæg v. implantater over 500 ml.", price: "+ 5.000 kr." },
           { label: "Tillæg v. anatomiske implantater", price: "+ 3.000 kr." },
